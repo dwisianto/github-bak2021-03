@@ -145,22 +145,22 @@ code {
 
 	<p>
 		We can now define bias and variance as follows.<br> <b>Definition
-			2</b> The bias of a learner on an example x is $B(x) = L(y∗, ym)$.
-      <br>In words, the bias is the loss incurred by the <u>main prediction</u>
+			2</b> The bias of a learner on an example x is $B(x) = L(y∗, ym)$. <br>In
+		words, the bias is the loss incurred by the <u>main prediction</u>
 		relative to the <u>optimal prediction</u>.
 	</p>
 
 	<p>
 		<b>Definition 3</b> The variance of a learner on an example x is
-		$V(x)=E_D[L(y_m,y)]$. <br>In words, the variance is the average
-		loss incurred by predictions relative to the main prediction.
-    <br>Bias and variance may be averaged over all examples, in which case we will
+		$V(x)=ED[L(y_m,y)]$. <br>In words, the variance is the average
+		loss incurred by predictions relative to the main prediction. Bias and
+		variance may be averaged over all examples, in which case we will
 		refer to them as average bias $Ex[B(x)]$ and average variance
-		$E_x[V(x)]$. It is also convenient to define noise as follows.
+		$Ex[V(x)]$. It is also convenient to define noise as follows.
 	</p>
 
 	<p>
-		<b>Definition 4</b> The noise of an example x is $N(x) = E_t[L(t,
+		<b>Definition 4</b> The noise of an example x is $N(x) = Et[L(t,
 		y∗)]$. <br>In other words, noise is the unavoidable component of
 		the loss, incurred independently of the learning algorithm.
 	</p>
@@ -182,13 +182,28 @@ code {
 			same prediction regardless of the training set.</li>
 		<li></li>
 		<li>However, it is not necessarily the case that the expected
-			loss E_{D,t}[L(t,y)] for a given loss function L can be decomposed into
+			loss ED,t[L(t,y)] for a given loss function L can be decomposed into
 			bias and variance as defined above. Our approach will be to propose a
 			decomposition and then show that it applies to each of several</li>
 	</ul>
 
+
+
 	The only property that the definitions above require of the loss
 	function is that its expected value be computable.
+
+	<p>
+		This text contains <sup>superscript</sup> text.
+	</p>
+
+	When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they
+	are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a} \label{eqref1} . $$
+	Referencing can be done in the following manner \ref{eqref1} This is a
+	forward reference [\ref{ref2}] and another \eqref{ref2} for the
+	following equation: $$x+1\over\sqrt{1-x^2}\label{ref2}$$ More math:
+	$$x+1\over\sqrt{1-x^2}$$ Here is a ref inside math: \(\ref{ref2}+1\)
+	and text after it.
+
 
 	<hr></hr>
 	<sup id="fn1"> 1. @inproceedings{domingos2000unified, title={A
@@ -196,8 +211,9 @@ code {
 		author={Domingos, Pedro}, booktitle={Proceedings of the Seventeenth
 		International Conference on Machine Learning}, pages={231--238},
 		year={2000}, organization={Morgan Kaufmann Publishers Inc.} } <a
-		href="#fnId1" title="Jump back">↩</a>
+		href="#fnId1" title="Jump back to footnote 1 in the text.">↩</a>
 	</sup>
+
 
 
 </body>
