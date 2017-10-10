@@ -1,4 +1,7 @@
 <!doctype html>
+
+<html>
+<head>
 <meta charset="utf-8">
 
 <!--
@@ -17,18 +20,52 @@
   - Google Brain: http://g.co/brain
 </script>
 
-<dt-article>
+</head>
+
+
+<body>
+<dt-article class="centered">
   <h1>Hello World</h1>
   <h2>A description of the article</h2>
   <dt-byline></dt-byline>
   <p>This is the first paragraph of the article.</p>
-  <p>We can also cite <dt-cite key="gregor2015draw"></dt-cite> external publications.</p>
+  <p>We can also cite <dt-cite key="gregor2015draw"></dt-cite> external publications.
+      <dt-fn>This will become a hoverable footnote.</dt-fn>
+  </p>
+
+  <dt-code block language="javascript">
+    var x = 25;
+    function(x){
+      return x * x;
+    }
+  </dt-code>
 </dt-article>
 
-<dt-appendix>
-</dt-appendix>
+<dt-appendix class="centered">
 
-<script type="text/bibliography">
+  <div class="l-body">
+
+    <p>BibTeX citation</p>
+    <pre class="citation long">
+      @article{gregor2015draw,
+        title={DRAW: A recurrent neural network for image generation},
+        author={Gregor, Karol and Danihelka, Ivo and Graves, Alex and Rezende, Danilo Jimenez and Wierstra, Daan},
+        journal={arXivreprint arXiv:1502.04623},
+        year={2015},
+        url={https://arxiv.org/pdf/1502.04623.pdf}
+      }
+      @article{gregor2015draw,
+        title={DRAW: A recurrent neural network for image generation},
+        author={Gregor, Karol and Danihelka, Ivo and Graves, Alex and Rezende, Danilo Jimenez and Wierstra, Daan},
+        journal={arXivreprint arXiv:1502.04623},
+        year={2015},
+        url={https://arxiv.org/pdf/1502.04623.pdf}
+      }
+    </pre>
+
+  </div>
+
+  <script type="text/bibliography">
   @article{gregor2015draw,
     title={DRAW: A recurrent neural network for image generation},
     author={Gregor, Karol and Danihelka, Ivo and Graves, Alex and Rezende, Danilo Jimenez and Wierstra, Daan},
@@ -36,4 +73,10 @@
     year={2015},
     url={https://arxiv.org/pdf/1502.04623.pdf}
   }
-</script>
+  </script>
+
+</dt-appendix>
+
+</body>
+
+</html>
