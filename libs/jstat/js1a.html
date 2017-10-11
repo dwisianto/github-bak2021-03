@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+</head>
+
+<body>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.7.0/jstat.min.js"></script>
+<script>
+
+window.onload = function() {
+
+  var myVect = [2,6,4,7,2,7,4],
+    jObj = jStat( myVect );
+    console.log( jStat.sum( myVect ) );
+    console.log( jObj.sum() );
+
+// https://github.com/jstat/jstat/blob/master/doc/md/overview.md
+//var norm = new jStat.NormalDistribution(0,1) // normal distribution
+//var q = norm.getQuantile(0.95);        // the 0.95 quantile
+//console.log(q);
+
+// Calculate the cumulative density of a beta distribution
+var cumulative = jStat.beta.cdf(0.5, 2.3, 4.1);
+console.log(cumulative);  // output the result
+
+// generate 100 points betwen -5 and 5
+//var range = jstat.seq(-5,5,100);
+// calculate the densities at each point
+//var densities = jstat.dnorm(range, 0.0, 1.0);
+// produce the plot (no formatting)
+//jstat.plot(range, densities);
+}
+
+</script>
+
+</html>
