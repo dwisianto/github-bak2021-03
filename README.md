@@ -1,5 +1,8 @@
 # dwisianto.github.io
 
+*index.html
+*template1a.html
+
 ## Journal
 | | | |
 |-|-|-|

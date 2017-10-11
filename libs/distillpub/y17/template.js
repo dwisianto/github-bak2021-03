@@ -5405,7 +5405,7 @@ function citation_meta_content(ref){
   content += `citation_publication_date=${};`;*/
   return content;
 }
-
+/*
 var html$1 = "\n<style>\n  dt-banner {\n    background: #FFF59D;\n    display: block;\n    text-align: center;\n    color: black;\n    height: 70px;\n    line-height: 70px;\n  }\n</style>\n<div>This article is a draft, awaiting review for publication in Distill</div>\n";
 
 var banner = function(dom, data) {
@@ -5417,6 +5417,7 @@ var banner = function(dom, data) {
     banner.style.display = "none";
   });
 };
+*/
 
 var mustache = createCommonjsModule(function (module, exports) {
 /*!
@@ -18226,9 +18227,9 @@ if (browser) {
     window.document.addEventListener("DOMContentLoaded", function (event) {
       renderOnLoad(window.document, data);
       // Add a banner if we're not on localhost.
-      if (window.location.hostname !== "localhost" && window.location.origin !== "file://") {
-        banner(window.document, data);
-      }
+      //if (window.location.hostname !== "localhost" && window.location.origin !== "file://") {
+        //banner(window.document, data);
+      //}
       generateCrossref(data);
       // console.log(data);
     });
