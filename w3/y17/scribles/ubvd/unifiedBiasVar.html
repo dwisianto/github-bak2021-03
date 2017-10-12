@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Present 1b</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "all"} } });
+  </script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+<script src="../../../libs/distillpub/y17/template.js"></script>
+
+<style>
+p {
+	font-size: 110%;
+	font-family: "Times New Roman", Georgia, Serif;
+	margin: 10px 5px 15px 20px;
+}
+
+ul {
+	display: block;
+	list-style-type: disc;
+	margin-top: 1.4 em;
+	margin-bottom: 1.4 em;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 40px;
+	font-size: 18px;
+}
+
+code {
+	font-family: monospace;
+}
+</style>
+
+</head>
+
+<body>
+
+	<h1>
+		Unified Bias-Variance Decomposition and its application.<sup><a
+			href="#fn1" id="fnId1">1</a></sup>
+	</h1>
+
+	<ul>
+		<li>Given a training set ${(x_1,t_1),...,(x_n,t_n)}$, a learner
+			produces a model $f$.</li>
+		<li>Given a test example x, this model produces a prediction $y =
+			f(x)$. <sup>(For the sake of simplicity, the fact that y is a
+				function of x will remain implicit throughout this paper.)</sup>
+		</li>
+		<li>Let $t$ be the true value of the predicted variable for the
+			test example $x$.</li>
+		<li>A loss function $L(t,y)$ measures the cost of predicting $y$
+			when the true value is $t$.</li>
+		<li>Commonly used loss functions are squared loss $(L(t, y) =
+			(t−y)^2)$, absolute loss ($L(t, y) = |t − y|$), and zero-one loss
+			($L(t, y) = 0$ if $y = t$, $L(t, y) = 1$ otherwise).</li>
+		<li>The goal of learning can be stated as producing a model with
+			the smallest possible loss; i.e., a model that minimizes the average
+			$L(t, y)$ over all examples, with each example weighted by its
+			probability.</li>
+		<li>In general, t will be a nondeterministic function of $x$ <sup>(i.e.,
+				if x is sampled repeatedly, different values of t will be seen)</sup>.
+		</li>
+		<li>The optimal prediction y∗ for an example x is the prediction
+			that minimizes $E_t[L(t, y∗)]$, <sup>where the subscript t
+				denotes that the expectation is taken with respect to all possible
+				values of $t$, weighted by their probabilities given x</sup>.
+		</li>
+		<li>The optimal model is the model for which $f(x) = y∗$ for
+			every x.</li>
+		<li>In general, this model will have non-zero loss.</li>
+		<li>In the case of zero-one loss, the optimal model is called the
+			<i>Bayes classifier</i>, and its loss is called the <i>Bayes rate</i>.
+		</li>
+		</li>
+	</ul>
+
+	<ul>
+		<li>$L(t, y)$ will be a function of the training set since the
+			same learner will in general produce different models for different
+			training sets.</li>
+		<li>This dependency can be removed by averaging over training
+			sets.</li>
+		<li>In particular, since the training set size is an important
+			parameter of a learning problem, we will often want to average over
+			all training sets of a given size.</li>
+		<li>Let $D$ be a set of training sets.</li>
+		<li>Then the quantity of interest is the expected loss
+			$E_{D,t}[L(t,y)]$, where the expectation is taken with respect to t
+			and the training sets in D</li>
+		<li>(i.e., with respect to $t$ and the predictions $y = f(x)$
+			produced for example $x$ by applying the learner to each training set
+			in $D$).</li>
+		<li>Bias-variance decompositions decompose the expected loss into
+			three terms: bias, variance and noise.</li>
+		<li><b>A standard such decomposition exists for squared loss,
+				and a number of different ones have been proposed for zero-one loss.</b></li>
+	</ul>
+
+	<p>
+		In order to define bias and variance for an arbitrary loss function we
+		first need to define the notion of <u>main prediction</u>. <br> <strong>
+			Definition 1 </strong> The <u>main prediction</u> for a loss function $L$ and
+		set of training sets $D$ is $y_m^{L,D} = argmin_{y′} E_D [L(y, y′)]$.
+	</p>
+
+	<ul>
+		<li>When there is no danger of ambiguity, we will represent the <b>main
+				prediction</b> $y_m^{L,D}$ simply as $y_m$ .
+		</li>
+		<li>The expectation is taken with respect to the training sets in
+			$D$, i.e.,</li>
+		<li>with respect to the predictions y produced by learning on the
+			training sets in $D$.</li>
+		<li>Let $Y$ be the multiset of these predictions.</li>
+		<li>(A specific prediction y will appear more than once in Y if
+			it is produced by more than one training set.)</li>
+		<li>In words, the main prediction is the value y′ whose average
+			loss relative to all the predictions in Y is minimum</li>
+		<li>(i.e., it is the prediction that “differs least” from all the
+			predictions in Y according to L).</li>
+		<li>The main prediction under squared loss is the <b>mean</b> of
+			the predictions;
+		</li>
+		<li>under absolute loss it is the <b>median</b>;
+		</li>
+		<li>and under zero-one loss it is the <b>mode</b> (i.e., the most
+			frequent prediction).
+		</li>
+		<li>For example, if there are k training sets in D, we learn a
+			classifier on each, 0.6k of these classifiers predict class 1, and
+			0.4k predict 0, then the main prediction under zero-one loss is class
+			1.</li>
+		<li>The main prediction is not necessarily a member of Y ; for
+			example, if Y = {1, 1, 2, 2} the main prediction under squared loss
+			is 1.5.</li>
+	</ul>
+
+
+	<p>
+		We can now define bias and variance as follows.<br> <b>Definition
+			2</b> The bias of a learner on an example x is $B(x) = L(y∗, ym)$.
+      <br>In words, the bias is the loss incurred by the <u>main prediction</u>
+		relative to the <u>optimal prediction</u>.
+	</p>
+
+	<p>
+		<b>Definition 3</b> The variance of a learner on an example x is
+		$V(x)=E_D[L(y_m,y)]$. <br>In words, the variance is the average
+		loss incurred by predictions relative to the main prediction.
+    <br>Bias and variance may be averaged over all examples, in which case we will
+		refer to them as average bias $Ex[B(x)]$ and average variance
+		$E_x[V(x)]$. It is also convenient to define noise as follows.
+	</p>
+
+	<p>
+		<b>Definition 4</b> The noise of an example x is $N(x) = E_t[L(t,
+		y∗)]$. <br>In other words, noise is the unavoidable component of
+		the loss, incurred independently of the learning algorithm.
+	</p>
+
+	<ul>
+		<li>Definitions 2 and 3 have the intuitive properties associated
+			with bias and variance measures.</li>
+		<li>ym is a measure of the “central tendency” of a learner. (What
+			“central” means depends on the loss function.)</li>
+		<li>Thus B(x) measures the systematic loss incurred by a learner,
+			and V (x) measures the loss incurred by its fluctuations around the
+			central tendency in response to different training sets.</li>
+		<li>If the loss function is nonnegative then bias and variance
+			are also nonnegative.</li>
+		<li>The bias is independent of the training set, and is zero for
+			a learner that always makes the optimal prediction.</li>
+		<li>The variance is independent of the true value of the
+			predicted variable, and is zero for a learner that always makes the
+			same prediction regardless of the training set.</li>
+		<li></li>
+		<li>However, it is not necessarily the case that the expected
+			loss E_{D,t}[L(t,y)] for a given loss function L can be decomposed into
+			bias and variance as defined above. Our approach will be to propose a
+			decomposition and then show that it applies to each of several</li>
+	</ul>
+
+	The only property that the definitions above require of the loss
+	function is that its expected value be computable.
+
+
+  <script type="text/bibliography">
+  @article{gregor2015draw,
+    title={DRAW: A recurrent neural network for image generation},
+    author={Gregor, Karol and Danihelka, Ivo and Graves, Alex and Rezende, Danilo Jimenez and Wierstra, Daan},
+    journal={arXivreprint arXiv:1502.04623},
+    year={2015},
+    url={https://arxiv.org/pdf/1502.04623.pdf}
+  }
+</script>
+
+	<hr></hr>
+	<sup id="fn1"> 1. @inproceedings{domingos2000unified,
+    title={A Unified Bias-Variance Decomposition and its Applications},
+		author={Domingos, Pedro},
+    booktitle={Proceedings of the Seventeenth International Conference on Machine Learning},
+    pages={231--238},
+		year={2000},
+    organization={Morgan Kaufmann Publishers Inc.} } <a href="#fnId1" title="Jump back">↩</a>
+	</sup>
+
+
+</body>
+
+</html>
