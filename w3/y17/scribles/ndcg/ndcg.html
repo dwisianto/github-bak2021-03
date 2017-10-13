@@ -40,8 +40,26 @@
 
   <div class="tex katex-eq-central" data-expr="c = \pm\sqrt{a^2 + b^2}"></div>
 
+	<!-- http://blog.thedigitalgroup.com/vijaym/measuring-search-relevance-using-ndcg/ -->	
+	<p>
+		Normalized Discounted Cumulative Gain (NDCG) is a method for measuring
+		the quality of a set of search results
+		<dt-cite key="jarvelin2002cumulated"></dt-cite>.		
+		It asserts the following:		
+		<ul>
+			<li> Very relevant results are more useful than somewhat relevant results which are more useful than irrelevant results (cumulative gain). </li>
+			<li> Relevant results are more useful when they appear earlier in the set of results (discounting). </li>
+			<li> The result of the ranking should be irrelevant of the query performed (normalization). </li>			
+		</ul> 				
+	</p>
 
-  </div>
+
+	<p>
+		DCG originates from an earlier measure called <i>Cumulative Gain</i>.
+		<div class="tex katex-eq-central" data-expr="CG_p = \sum_{i=1}^p rel_i"></div>
+	</p>
+
+
 	<!-- 
   <p>We can also cite <dt-cite key="gregor2015draw"></dt-cite> external publications.
       <dt-fn>This will become a hoverable footnote.</dt-fn>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+
+<style>
+  .katex-eq-central {
+    font-size: 24px;
+    text-align: center;
+    margin: 30px 0;
+  }
+</style>
+
+</head>
+
+
+<body>
+
+	<dt-article class="centered">
+	<h1>Normalized Discounted Cumulative Gain</h1>
+	<h2>Definition of the ranking metric</h2>
+	<dt-byline></dt-byline> 
+
+	<!--  -->
+	<p>	
+	Discounted cumulative gain (DCG) is a measure of ranking quality. 
+	In information retrieval, it is often used to measure effectiveness of web search engine algorithms or related applications. 
+	Using a graded relevance scale of documents in a search-engine result set, DCG measures the usefulness, or gain, of a document based on its position in the result list. The gain is accumulated from the top of the result list to the bottom, with the gain of each result discounted at lower ranks
+	</p>
+	
+	<!-- http://blog.thedigitalgroup.com/vijaym/measuring-search-relevance-using-ndcg/ -->	
+	<p>
+		Normalized Discounted Cumulative Gain (NDCG) is a method for measuring
+		the quality of a set of search results
+		<dt-cite key="jarvelin2002cumulated"></dt-cite>.		
+		It asserts the following:		
+		<ul>
+			<li> Very relevant results are more useful than somewhat relevant results which are more useful than irrelevant results (cumulative gain). </li>
+			<li> Relevant results are more useful when they appear earlier in the set of results (discounting). </li>
+			<li> The result of the ranking should be irrelevant of the query preformed (normalization). </li>			
+		</ul> 				
+	</p>
+	
+	
+	<!-- 
+	<p>
+		DCG originates from an earlier measure called <i>Cumulative Gain</i>.
+		<div class="tex katex-eq-central" data-expr="CG_p = \sum_{i=1}^p rel_i"></div>
+	</p>
+	 -->
+	<!-- 
+  </div>
+	
+  <p>We can also cite <dt-cite key="gregor2015draw"></dt-cite> external publications.
+      <dt-fn>This will become a hoverable footnote.</dt-fn>
+  </p>
+
+  <dt-code block language="javascript">
+    var x = 25;
+    function(x){
+      return x * x;
+    }
+  </dt-code>
+   --> 
+   </dt-article>
+
+	<dt-appendix class="centered">
+
+	<div class="l-body">
+
+		<p>BibTeX citation</p>
+		<pre class="citation long">
+		@article{jarvelin2002cumulated,
+		  title={Cumulated gain-based evaluation of IR techniques},
+		  author={J{\"a}rvelin, Kalervo and Kek{\"a}l{\"a}inen, Jaana},
+		  journal={ACM Transactions on Information Systems (TOIS)},
+		  volume={20},
+		  number={4},
+		  pages={422--446},
+		  year={2002},
+		  publisher={ACM}
+		}
+    	</pre>
+
+	</div>
+
+	<script type="text/bibliography">
+		@article{jarvelin2002cumulated,
+		  title={Cumulated gain-based evaluation of IR techniques},
+		  author={J{\"a}rvelin, Kalervo and Kek{\"a}l{\"a}inen, Jaana},
+		  journal={ACM Transactions on Information Systems (TOIS)},
+		  volume={20},
+		  number={4},
+		  pages={422--446},
+		  year={2002},
+		  publisher={ACM}
+		}
+  </script> 
+  </dt-appendix>
+
+	<!-- 
+	 -->
+
+	<!--<script src="https://distill.pub/template.v1.js"></script> -->
+	<script src="../../../l17/distillpub/y17/template.js"></script>	
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
+
+
+	<script type="text/front-matter">
+  		title: "Normalized Description "
+  		description: "Description of the ranking metric"
+  		authors:
+  		- Dwi Sianto Mansjur: http://dwisianto.github.io
+  		- Yuanyuan Li: http://dwisianto.github.io
+  		affiliations:
+  		- Affiliation Matters: http://dwisianto.github.io
+  		- Affiliation Matters: http://yuanyuanli66.github.io
+	</script>
+
+	<script>
+  	window.onload = function() {
+      var tex = document.getElementsByClassName("tex");
+      Array.prototype.forEach.call(tex, function(el) {
+          katex.render(el.getAttribute("data-expr"), el);
+      });
+  	};
+	</script>
+
+</body>
+</html>
