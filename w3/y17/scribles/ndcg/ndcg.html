@@ -4,8 +4,6 @@
 <head>
 <meta charset="utf-8">
 
-
-
 <style>
   .katex-eq-central {
     font-size: 24px;
@@ -20,12 +18,23 @@
 
 <body>
 
+  <!-- [] title -->
 	<dt-article class="centered">
 	<h1>Normalized Discounted Cumulative Gain</h1>
 	<h2>Definition of the ranking metric</h2>
-	<dt-byline></dt-byline> 
-	
-	
+	<dt-byline></dt-byline>
+
+
+  <!-- MAP -->
+  <p>
+  <svg width="50" height="50">
+    <circle cx="25" cy="25" r="22" fill="blue" stroke="gray" stroke-width="2"/>
+    <rect x="50" y="25" width="50" height="10"/>
+    <rect x="50" y="25" width="50" height="10"/>
+  </svg>
+  </p>
+
+
 	<!-- http://blog.thedigitalgroup.com/vijaym/measuring-search-relevance-using-ndcg/ -->
 	<p>
 		Normalized Discounted Cumulative Gain (NDCG) is a method for measuring
@@ -38,19 +47,19 @@
 		ranking should be irrelevant of the query preformed (normalization).
 	</p>
 
-  <div class="tex katex-eq-central" data-expr="c = \pm\sqrt{a^2 + b^2}"></div>
 
-	<!-- http://blog.thedigitalgroup.com/vijaym/measuring-search-relevance-using-ndcg/ -->	
+
+	<!-- http://blog.thedigitalgroup.com/vijaym/measuring-search-relevance-using-ndcg/ -->
 	<p>
 		Normalized Discounted Cumulative Gain (NDCG) is a method for measuring
 		the quality of a set of search results
-		<dt-cite key="jarvelin2002cumulated"></dt-cite>.		
-		It asserts the following:		
+		<dt-cite key="jarvelin2002cumulated"></dt-cite>.
+		It asserts the following:
 		<ul>
 			<li> Very relevant results are more useful than somewhat relevant results which are more useful than irrelevant results (cumulative gain). </li>
 			<li> Relevant results are more useful when they appear earlier in the set of results (discounting). </li>
-			<li> The result of the ranking should be irrelevant of the query performed (normalization). </li>			
-		</ul> 				
+			<li> The result of the ranking should be irrelevant of the query performed (normalization). </li>
+		</ul>
 	</p>
 
 
@@ -60,7 +69,10 @@
 	</p>
 
 
-	<!-- 
+
+
+
+	<!--
   <p>We can also cite <dt-cite key="gregor2015draw"></dt-cite> external publications.
       <dt-fn>This will become a hoverable footnote.</dt-fn>
   </p>
@@ -104,16 +116,16 @@
 		  year={2002},
 		  publisher={ACM}
 		}
-  </script> 
+  </script>
   </dt-appendix>
 
-	<!-- 
-	 -->
+	<!-- [] Misc -->
 
-<!--<script src="https://distill.pub/template.v1.js"></script> -->
+
+
 <script src="../../../l17/distillpub/y17/template.js"></script>
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
+<link href="../../../l17/katex/v0.1.1/katex.min.css" rel="stylesheet">
+<script src="../../../l17/katex/v0.1.1/katex.min.js"></script>
 
 
 <script type="text/front-matter">

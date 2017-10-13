@@ -1,0 +1,11 @@
+Single cell RNA-seq (scRNA-seq) techniques can reveal valuable insights of cell-to-cell heterogeneities. 
+Projection of high-dimensional data into a low-dimensional subspace is a powerful strategy in general for mining such big data. However, scRNA-seq suffers from higher noise and lower coverage than traditional bulk RNA-seq, hence bringing in new computational difficulties. One major challenge is how to deal with the frequent drop-out events. The events, usually caused by the stochastic burst effect in gene transcription and the technical failure of RNA transcript capture, often render traditional dimension reduction methods work inefficiently. To overcome this problem, Tsinghua University researchers have developed a novel Single Cell Representation Learning (SCRL) method based on network embedding. This method can efficiently implement data-driven non-linear projection and incorporate prior biological knowledge (such as pathway information) to learn more meaningful low-dimensional representations for both cells and genes. Benchmark results show that SCRL outperforms other dimensional reduction methods on several recent scRNA-seq datasets.
+
+
+
+A) Input data. The left matrix is the scRNA-seq data and the right matrix is the pathway data. 
+(B) Network construction. SCRL builds a Cell-ContextGene network (left) based on the scRNA-seq data and a Gene-ContextGene network (right) based on the pathway annotations. In these two bipartite networks, the cells are colored blue, the context-genes are colored green and the genesare colored red. The context-genes are shared in the two networks. Then, SCRL combines these two bipartite networks to learn the low-dimensional vector representations for cells, genes and context-genes. (C) The low-dimensional representation matrixes for cells (blue), context-genes (green) and genes (red). Each row in the matrix represents a low-dimensional vector representation. (D) Visualization of the low-dimensional representations of the cells learned from SCRL.
+
+Availability – A C++ based software implementation of SCRL is made freely available online via https://github.com/SuntreeLi/SCRL.
+
+
