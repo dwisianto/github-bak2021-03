@@ -6,6 +6,7 @@
 ## Journal
 | | | |
 |-|-|-|
+| | | http://chrisburges.net/ | 
 | | | http://riejohnson.com/svrg_download.html | 
 | | | http://tongzhang-ml.org/ |
 | | | https://github.com/andrewrfreed |
