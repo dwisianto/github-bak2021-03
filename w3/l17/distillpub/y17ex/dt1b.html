@@ -31,7 +31,18 @@
   <dt-byline></dt-byline>
   <p>This is the first paragraph of the article.</p>
 
- 
+  <p>
+    <table>
+      <tr>
+        <td>1.</td>
+        <td>Set a rank threshold K</td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td>Set a rank threshold K</td>
+      </tr>
+    </table>
+  </p>
 
   <p>We can also cite <dt-cite key="gregor2015draw"></dt-cite> external publications.
       <dt-fn>This will become a hoverable footnote.</dt-fn>
@@ -45,7 +56,25 @@
   </dt-code>
 
 
- 
+  <p>
+    <svg width="500" height="80">
+      <rect x="15" y="20" width="30" height="30">
+        <animate attributeName="fill" from="black" to="green" dur="3s" fill="freeze" id="a1" />
+      </rect>
+      <rect x="55" y="20" width="30" height="30">
+        <animate attributeName="fill" from="black" to="red"  dur="3s" fill="freeze" id="a2" begin="a1.end" />
+      </rect>
+      <rect x="95" y="20" width="30" height="30">
+        <animate attributeName="fill" from="black" to="green"  dur="3s" fill="freeze" id="a3"  />
+      </rect>
+      <rect x="135" y="20" width="30" height="30">
+        <animate attributeName="fill" from="black" to="red"  dur="3s" fill="freeze" id="a4" begin="a1.end" />
+      </rect>
+      <rect x="175" y="20" width="30" height="30">
+        <animate  attributeName="fill" from="black" to="green"  dur="3s" fill="freeze" id="a5"  />
+      </rect>
+    </svg>
+  </p>
   
 </dt-article>
 
