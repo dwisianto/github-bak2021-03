@@ -6,6 +6,7 @@
 ## Journal
 | | | |
 |-|-|-|
+| | | https://juliasilge.com/ | 
 | | | http://chrisburges.net/ | 
 | | | http://riejohnson.com/svrg_download.html | 
 | | | http://tongzhang-ml.org/ |
