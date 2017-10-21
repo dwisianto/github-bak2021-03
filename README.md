@@ -1,7 +1,8 @@
 # dwisianto.github.io
 
-*index.html
-*template1a.html
+
+## ToDo
+* https://github.com/schiffner/biVar
 
 ## Journal
 | | | |
