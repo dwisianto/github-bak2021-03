@@ -6,9 +6,9 @@
 ## Journal
 | | | |
 |-|-|-|
-| | | https://juliasilge.com/ | 
-| | | http://chrisburges.net/ | 
-| | | http://riejohnson.com/svrg_download.html | 
+| | | https://juliasilge.com/ |
+| | | http://chrisburges.net/ |
+| | | http://riejohnson.com/ | 
 | | | http://tongzhang-ml.org/ |
 | | | https://github.com/andrewrfreed |
 | | | http://www.rna-seqblog.com/network-embedding-based-representation-learning-for-single-cell-rna-seq-data/ |
