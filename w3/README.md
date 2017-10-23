@@ -1,28 +1,56 @@
-# dwisianto.github.io
+# README.md
 
-*index.html
-*template1a.html
+## ToDo
 
 ## Journal
 | | | |
 |-|-|-|
 | | | https://juliasilge.com/ |
-| | | http://chrisburges.net/ |
-| | | http://riejohnson.com/ | 
-| | | http://tongzhang-ml.org/ |
 | | | https://github.com/andrewrfreed |
+| | | http://freedville.com/#/ |
 | | | http://www.rna-seqblog.com/network-embedding-based-representation-learning-for-single-cell-rna-seq-data/ |
 | | | r-bloogers.com
 | | | http://www.rna-seqblog.com/ |
-| | | https://distill.pub/ |
-| | | http://freedville.com/#/ |
 | | | remove dt-banner from distillpub |
-| | | https://github.com/davidstutz/bootstrap-multiselect |
-| | | https://github.com/bootstrap-tagsinput/bootstrap-tagsinput |
-| | | https://distill.pub/ |
-| giant | | https://en.wikipedia.org/wiki/Biing-Hwang_(Fred)_Juang |
 | tsne | | http://scienceai.github.io/tsne-js/ |
 |      | | https://distill.pub/2016/misread-tsne/ |
+| | | http://kpq.github.io/ |
+
+## Technology
+
+| | | |
+|-|-|-|
+| | | https://github.com/davidstutz/bootstrap-multiselect |
+| | | https://github.com/bootstrap-tagsinput/bootstrap-tagsinput |
+
+
+
+## Writing
+
+| | | |
+|-|-|-|
 | | | http://colah.github.io/ |
 | | | https://github.com/shancarter |
-| | | http://kpq.github.io/ |
+| | | https://distill.pub/ |
+
+
+## Giants
+
+| | | |
+|-|-|-|
+| giant | | https://en.wikipedia.org/wiki/Biing-Hwang_(Fred)_Juang |
+| | | https://homes.cs.washington.edu/~pedrod/ |
+| | | http://chrisburges.net/ |
+| | | http://riejohnson.com/ |
+| | | http://tongzhang-ml.org/ |
+
+## Manifold Learning
+
+| | | |
+|-|-|-|
+
+
+## Transfer Learning
+
+| | | |
+|-|-|-|

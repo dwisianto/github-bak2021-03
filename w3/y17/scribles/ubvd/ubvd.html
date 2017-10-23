@@ -32,19 +32,16 @@
 
 					<table>
 						<tr>
-						<td>Given a training set ${(x_1,t_1),...,(x_n,t_n)}$, a learner produces a model $f$.</td>
-						</tr>
-						<tr>
-						<td>Given a test example x, this model produces a prediction $y =f(x)$.
+						<td>Given a training set $ \{ (x_1,t_1),...,(x_n,t_n)\}$, a learner produces a model $f$.
+						   Given a test example x, this model produces a prediction $y =f(x)$.
 							<dt-fn>(For the sake of simplicity, the fact that y is a
 								function of x will remain implicit throughout this paper.)</dt-fn>
-						</td>
 						</tr>
-						<tr><td>Let $t$ be the true value of the predicted variable for the test example $x$.</td></tr>
-						<tr><td>A loss function $L(t,y)$ measures the cost of predicting $y$ when the true value is $t$.</td></tr>
-						<td>Commonly used loss functions are squared loss $(L(t, y) =
-							(t−y)^2)$, absolute loss ($L(t, y) = |t − y|$), and zero-one loss
-							($L(t, y) = 0$ if $y = t$, $L(t, y) = 1$ otherwise).</td>
+						<tr><td>Let $t$ be the true value of the predicted variable for the test example $x$.
+						<A loss function $L(t,y)$ measures the cost of predicting $y$ when the true value is $t$.</td></tr>
+						<td>Commonly used loss functions are squared loss $ L(t, y) =
+							(t−y)^2$, absolute loss ($L(t, y) = |t − y|$),
+							and zero-one loss ($L(t, y) = 0 if y = t, L(t, y) = 1$ otherwise).</td>
 						<tr><td>The goal of learning can be stated as producing a model with
 							the smallest possible loss; i.e., a model that minimizes the average
 							$L(t, y)$ over all examples, with each example weighted by its probability.</td></tr>
@@ -101,7 +98,16 @@
 
 					<p>BibTeX citation</p>
 					<pre class="citation long">
-@inproceedings{domingos2000unified,
+@article{domingos2000unified,
+	title={A unified bias-variance decomposition for zero-one and squared loss},
+	author={Domingos, Pedro},
+	journal={AAAI/IAAI},
+	volume={2000},
+	pages={564--569},
+	year={2000},
+	url={https://homes.cs.washington.edu/~pedrod/papers/aaai00.pdf}
+}
+@inproceedings{domingos2000applications,
 	title={A Unified Bias-Variance Decomposition and its Applications},
 	author={Domingos, Pedro},
   booktitle={Proceedings of the Seventeenth International Conference on Machine Learning},
@@ -116,7 +122,16 @@
 
 				<div id="idReferences">
 					<script type="text/bibliography">
-						@inproceedings{domingos2000unified,
+					@article{domingos2000unified,
+						title={A unified bias-variance decomposition for zero-one and squared loss},
+						author={Domingos, Pedro},
+						journal={AAAI/IAAI},
+						volume={2000},
+						pages={564--569},
+						year={2000},
+						url={https://homes.cs.washington.edu/~pedrod/papers/aaai00.pdf}
+					}
+						@inproceedings{domingos2000applications,
 				    title={A Unified Bias-Variance Decomposition and its Applications},
 						author={Domingos, Pedro},
 				    booktitle={Proceedings of the Seventeenth International Conference on Machine Learning},
@@ -125,7 +140,7 @@
 				    organization={Morgan Kaufmann Publishers Inc.},
 						url={https://homes.cs.washington.edu/~pedrod/papers/mlc00a.pdf}
 					 }
-  					</script>
+  				</script>
 				</div>
 
 				</dt-appendix>
