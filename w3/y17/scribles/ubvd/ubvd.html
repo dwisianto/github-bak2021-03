@@ -27,68 +27,131 @@
 
 					<h1>Unified Bias Variance Decomposition</h1>
 					<h2>Regression and Classification Problems</h2>
-					<!--<dt-byline></dt-byline>-->
+					<dt-byline></dt-byline>
 
-
-					<table>
-						<tr>
-						<td>Given a training set $ \{ (x_1,t_1),...,(x_n,t_n)\}$, a learner produces a model $f$.
-						   Given a test example x, this model produces a prediction $y =f(x)$.
-							<dt-fn>(For the sake of simplicity, the fact that y is a
-								function of x will remain implicit throughout this paper.)</dt-fn>
-						</tr>
-						<tr><td>Let $t$ be the true value of the predicted variable for the test example $x$.
-						<A loss function $L(t,y)$ measures the cost of predicting $y$ when the true value is $t$.</td></tr>
-						<td>Commonly used loss functions are squared loss $ L(t, y) =
-							(t−y)^2$, absolute loss ($L(t, y) = |t − y|$),
-							and zero-one loss ($L(t, y) = 0 if y = t, L(t, y) = 1$ otherwise).</td>
-						<tr><td>The goal of learning can be stated as producing a model with
-							the smallest possible loss; i.e., a model that minimizes the average
-							$L(t, y)$ over all examples, with each example weighted by its probability.</td></tr>
-						<tr><td>In general, t will be a nondeterministic function of $x$ <dt-fn>(i.e.,
-								if x is sampled repeatedly, different values of t will be seen)</dt-fn>.
-						</td></tr>
-						<tr><td>The optimal prediction y∗ for an example x is the prediction
-							that minimizes $E_t[L(t, y∗)]$, <dt-fn>where the subscript t
-								denotes that the expectation is taken with respect to all possible
-								values of $t$, weighted by their probabilities given x</dt-fn>.
-						</td></tr>
-						<tr><td>The optimal model is the model for which $f(x) = y∗$ for every x.</td></tr>
-						<tr><td>In general, this model will have non-zero loss.</td></tr>
-						<tr><td>In the case of zero-one loss, the optimal model is called the
-							<i>Bayes classifier</i>, and its loss is called the <i>Bayes rate</i>.
-						</td></tr>
-
-					</table>
-
-
-					<p>This is the first paragraph of the article.
-						<dt-fn>This will become a hoverable footnote.</dt-fn>
+					<p>
+						The main article is about zero-one and squred loss <dt-cite key="domingos2000applications"></dt-cite> ,
+						while another article is concerned with applications <dt-cite key="domingos2000unified"></dt-cite> .
 					</p>
 
 					<p>
-					We can also cite <dt-cite key="domingos2000unified"></dt-cite> external publications.
+					Given a training set $\{ (x_1,t_1),...,(x_n,t_n) \}$, a learner produces a model $f$.
+					Given a test example $x$, this model produces a prediction $y =f(x)$.
+					<dt-fn>(For the sake of simplicity, the fact that y is a function of x will remain implicit throughout this paper.)</dt-fn>
+					Let $t$ be the true value of the predicted variable for the test example $x$.
+					A loss function $L(t,y)$ measures the cost of predicting $y$ when the true value is $t$.
+					</p>
+
+					<p>
+						Commonly used loss functions are squared loss $ L(t,y)=(t-y)^2$ ,
+						absolute loss $L(t,y)=|t-y|$ ,
+						and zero-one loss $L(t, y) \in [0,1]$ .
+						The goal of learning can be stated as producing a model with
+						the smallest possible loss; i.e., a model that minimizes the average
+						$L(t, y)$ over all examples, with each example weighted by its probability.
+						In general, t will be a nondeterministic function of $x$
+						<dt-fn>(i.e.,if x is sampled repeatedly, different values of t will be seen)</dt-fn>.
+					</p>
+
+					<p>
+						The optimal prediction $ y^* $ for an example x is the prediction that minimizes $E_t[L(t, y^*)]$,
+						<dt-fn>where the subscript $t$
+							denotes that the expectation is taken with respect to all possible
+							values of $t$, weighted by their probabilities given $x$</dt-fn> .
+							The optimal model is the model for which $f(x)$ $ f(x) = y^∗ $ for every $x$.
+							In general, this model will have non-zero loss.
+							In the case of zero-one loss,
+							the optimal model is called the <i>Bayes classifier</i>,
+							and its loss is called the <i>Bayes rate</i>.
+					</p>
+
+					<p>
+					Since the same learner will in general produce different models for different training sets,
+					$L(t; y)$ will be a function of the training set.
+					This dependency can be removed by averaging over training sets.
+					In particular, since the training set size is an important parameter of a learning problem,
+					we will often want to average over all training sets of a given size.
+					Let $D$ be a set of training sets.
+					Then the quantity of interest is the expected loss
+					$ E_{D;t}[L(t; y)]$ , where the expectation is taken with respect to $t$ and the training sets in $D$
+					<dt-fn> (i.e.,with respect to $t$ and the predictions $y=f(x)$ produced for example $x$ by applying the learner to each training set in D) </dt-fn> .
+					Bias-variance decompositions decompose the expected loss into three terms: bias, variance and noise.
+					A standard such decomposition exists for squared loss, and a number of different ones have been proposed for zero-one loss.
+					</p>
+
+					<p>
+						In order to define bias and variance for an arbitrary loss function we
+						first need to define the notion of <u>main prediction</u>. <br> <strong>
+							Definition 1 </strong> The <u>main prediction</u> for a loss function $L$ and
+						set of training sets $D$ is $y_m^{L,D} = argmin_{y′} E_D [L(y, y′)]$.
+					</p>
+
+					<p>
+						When there is no danger of ambiguity, we will represent the <b>main prediction</b> $y_m^{L,D}$ simply as $y_m$ .
+						The expectation is taken with respect to the training sets in $D$, i.e.,
+						with respect to the predictions y produced by learning on the training sets in $D$.
+						Let $Y$ be the multiset of these predictions.
+						(A specific prediction y will appear more than once in Y if it is produced by more than one training set.)
+						In words, the main prediction is the value y′ whose average
+							loss relative to all the predictions in Y is minimum
+						<dt-fn>(i.e., it is the prediction that “differs least” from all the predictions in Y according to L).</dt-fn>
+						The main prediction under squared loss is the <b>mean</b> of the predictions;
+						under absolute loss it is the <b>median</b>;
+						and under zero-one loss it is the <b>mode</b> (i.e., the most frequent prediction).
+						For example, if there are k training sets in D, we learn a
+							classifier on each, 0.6k of these classifiers predict class 1,
+							and 0.4k predict 0, then the main prediction under zero-one loss is class 1.
+						The main prediction is not necessarily a member of Y ;
+						for example, if Y = {1, 1, 2, 2} the main prediction under squared loss is 1.5.
 					</p>
 
 
-					<dt-code block language="javascript">
-						var x = 25; function(x){ return x * x; }
-					</dt-code>
-
-					<p id="idEquation1">
+					<p>
+						We can now define bias and variance as follows.<br> <b>Definition
+							2</b> The bias of a learner on an example x is $B(x) = L(y∗, ym)$.
+							<br>In words, the bias is the loss incurred by the <u>main prediction</u>
+						relative to the <u>optimal prediction</u>.
 					</p>
 
-					<div>
-					The formula $a^2+b^2=c^2$ will be rendered inline,
-					but $$a^2+b^2=c^2$$ will be rendered as a block element.
-					</div>
-					$$
-    					f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
-  					$$
+					<p>
+						<b>Definition 3</b> The variance of a learner on an example x is
+						$V(x)=E_D[L(y_m,y)]$. <br>In words, the variance is the average
+						loss incurred by predictions relative to the main prediction.
+						<br>Bias and variance may be averaged over all examples, in which case we will
+						refer to them as average bias $Ex[B(x)]$ and average variance
+						$E_x[V(x)]$. It is also convenient to define noise as follows.
+					</p>
 
-					<div>
-					The formula \(a^2+b^2=c^2\) will be rendered inline, but \[a^2+b^2=c^2\] will be rendered as a block element.
-					</div>
+					<p>
+						<b>Definition 4</b> The noise of an example x is $N(x) = E_t[L(t,
+						y∗)]$. <br>In other words, noise is the unavoidable component of
+						the loss, incurred independently of the learning algorithm.
+					</p>
+
+					<p>
+						Definitions 2 and 3 have the intuitive properties associated with bias and variance measures.
+						ym is a measure of the “central tendency” of a learner. (What “central” means depends on the loss function.)
+						Thus B(x) measures the systematic loss incurred by a learner,
+							and V (x) measures the loss incurred by its fluctuations around the
+							central tendency in response to different training sets.
+						If the loss function is nonnegative then bias and variance are also nonnegative.
+
+						The bias is independent of the training set, and is zero for a learner that always makes the optimal prediction.
+
+						The variance is independent of the true value of the predicted variable,
+							and is zero for a learner that always makes the
+							same prediction regardless of the training set.
+						However, it is not necessarily the case that the expected
+							loss E_{D,t}[L(t,y)] for a given loss function L can be decomposed into bias and variance as defined above. 
+							Our approach will be to propose a
+							decomposition and then show that it applies to each of several
+					</p>
+
+					<p>
+					The only property that the definitions above require of the loss
+					function is that its expected value be computable.
+					</p>
+
 
 				</dt-article>
 

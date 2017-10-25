@@ -29,6 +29,7 @@
 
 | | | |
 |-|-|-|
+| | | https://www.arxiv-vanity.com/ | 
 | | | http://colah.github.io/ |
 | | | https://github.com/shancarter |
 | | | https://distill.pub/ |
