@@ -79,11 +79,13 @@
 					A standard such decomposition exists for squared loss, and a number of different ones have been proposed for zero-one loss.
 					</p>
 
+					<!-- $y_m^{L,D}$  $ E_D ( L(y, y′) ) $ -->
 					<p>
 						In order to define bias and variance for an arbitrary loss function we
 						first need to define the notion of <u>main prediction</u>. <br> <strong>
 							Definition 1 </strong> The <u>main prediction</u> for a loss function $L$ and
-						set of training sets $D$ is $y_m^{L,D} = argmin_{y′} E_D [L(y, y′)]$.
+						set of training sets $D$ is $y_m^{L,D} = \arg\min_{y′} E_D [L(y, y′)]$.
+
 					</p>
 
 					<p>
@@ -94,7 +96,7 @@
 						(A specific prediction y will appear more than once in Y if it is produced by more than one training set.)
 						In words, the main prediction is the value y′ whose average
 							loss relative to all the predictions in Y is minimum
-						<dt-fn>(i.e., it is the prediction that “differs least” from all the predictions in Y according to L).</dt-fn>
+						<dt-fn>(i.e., it is the prediction that “differs least” from all the predictions in Y according to L).
 						The main prediction under squared loss is the <b>mean</b> of the predictions;
 						under absolute loss it is the <b>median</b>;
 						and under zero-one loss it is the <b>mode</b> (i.e., the most frequent prediction).
@@ -102,7 +104,7 @@
 							classifier on each, 0.6k of these classifiers predict class 1,
 							and 0.4k predict 0, then the main prediction under zero-one loss is class 1.
 						The main prediction is not necessarily a member of Y ;
-						for example, if Y = {1, 1, 2, 2} the main prediction under squared loss is 1.5.
+						for example, if Y = {1, 1, 2, 2} the main prediction under squared loss is 1.5.</dt-fn>
 					</p>
 
 
@@ -123,17 +125,18 @@
 					</p>
 
 					<p>
-						<b>Definition 4</b> The noise of an example x is $N(x) = E_t[L(t,
-						y∗)]$. <br>In other words, noise is the unavoidable component of
-						the loss, incurred independently of the learning algorithm.
+						<b>Definition 4</b>
+						The noise of an example $x$ is $N(x)=E_t[L(t,y^*)]$ .
+						<br>In other words,
+						noise is the unavoidable component ofthe loss,
+						incurred independently of the learning algorithm.
 					</p>
 
 					<p>
 						Definitions 2 and 3 have the intuitive properties associated with bias and variance measures.
-						ym is a measure of the “central tendency” of a learner. (What “central” means depends on the loss function.)
+						$y_m$ is a measure of the “central tendency” of a learner. (What “central” means depends on the loss function.)
 						Thus B(x) measures the systematic loss incurred by a learner,
-							and V (x) measures the loss incurred by its fluctuations around the
-							central tendency in response to different training sets.
+							and V (x) measures the loss incurred by its fluctuations around the central tendency in response to different training sets.
 						If the loss function is nonnegative then bias and variance are also nonnegative.
 
 						The bias is independent of the training set, and is zero for a learner that always makes the optimal prediction.
@@ -142,7 +145,7 @@
 							and is zero for a learner that always makes the
 							same prediction regardless of the training set.
 						However, it is not necessarily the case that the expected
-							loss E_{D,t}[L(t,y)] for a given loss function L can be decomposed into bias and variance as defined above. 
+							loss $E_{D,t}[L(t,y)]$ for a given loss function L can be decomposed into bias and variance as defined above.
 							Our approach will be to propose a
 							decomposition and then show that it applies to each of several
 					</p>
@@ -151,6 +154,17 @@
 					The only property that the definitions above require of the loss
 					function is that its expected value be computable.
 					</p>
+
+					<p>
+					Consider an example x for which the true prediction is t,
+					and consider a learner that predicts y
+					given a training set in D.
+					Then, for certain loss functions L,
+					the following decomposition of $E(D;t)=[L(t; y)]$ holds
+
+					$$E(D;t)[L(t; y)]$$
+					</p>
+
 
 
 				</dt-article>

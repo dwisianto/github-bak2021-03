@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<title>Unified Bias Variance Decomposition</title>
+	<meta charset="utf-8">
+
+<style>
+	table {
+	    font-family: "Times New Roman", Times, serif;
+	}
+</style>
+
+</head>
+
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row content">
+
+
+			<div class="col-sm-10">
+
+				<dt-article id="idTitle" class="centered">
+
+					<h1>Unified Bias Variance Decomposition</h1>
+					<h2>Regression and Classification Problems</h2>
+					<!--<dt-byline></dt-byline>-->
+
+
+
+
+					Given a training set $\{ (x_1,t_1),...,(x_n,t_n) \}$, a learner produces a model $f$.
+					Given a test example x, this model produces a prediction $y =f(x)$.
+					<dt-fn>(For the sake of simplicity, the fact that y is a function of x will remain implicit throughout this paper.)</dt-fn>
+					Let $t$ be the true value of the predicted variable for the test example $x$.
+					A loss function $L(t,y)$ measures the cost of predicting $y$ when the true value is $t$.
+					<dt-cite key="domingos2000unified"></dt-cite>
+
+
+					<table>
+						<tr>
+						<tr><td>The goal of learning can be stated as producing a model with
+							the smallest possible loss; i.e., a model that minimizes the average
+							$L(t, y)$ over all examples, with each example weighted by its probability.</td></tr>
+						<tr><td>In general, t will be a nondeterministic function of $x$ <dt-fn>(i.e.,
+								if x is sampled repeatedly, different values of t will be seen)</dt-fn>.
+						</td></tr>
+						<tr><td>The optimal prediction y∗ for an example x is the prediction
+							that minimizes $E_t[L(t, y∗)]$, <dt-fn>where the subscript t
+								denotes that the expectation is taken with respect to all possible
+								values of $t$, weighted by their probabilities given x</dt-fn>.
+						</td></tr>
+						<tr><td>The optimal model is the model for which $f(x) = y∗$ for every x.</td></tr>
+						<tr><td>In general, this model will have non-zero loss.</td></tr>
+						<tr><td>In the case of zero-one loss, the optimal model is called the
+							<i>Bayes classifier</i>, and its loss is called the <i>Bayes rate</i>.
+						</td></tr>
+					</table>
+
+
+
+					<!--
+					<p>This is the first paragraph of the article.
+						<dt-fn>This will become a hoverable footnote.</dt-fn>
+					</p>
+
+					<p>
+					We can also cite <dt-cite key="domingos2000unified"></dt-cite> external publications.
+					</p>
+
+
+					<dt-code block language="javascript">
+						var x = 25; function(x){ return x * x; }
+					</dt-code>
+
+					<p id="idEquation1">
+					</p>
+
+					<div>
+					The formula $a^2+b^2=c^2$ will be rendered inline,
+					but $$a^2+b^2=c^2$$ will be rendered as a block element.
+					</div>
+					$$
+    					f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
+  					$$
+
+					<div>
+					The formula \(a^2+b^2=c^2\) will be rendered inline, but \[a^2+b^2=c^2\] will be rendered as a block element.
+					</div>
+				-->
+
+				</dt-article>
+
+				<dt-appendix class="centered">
+
+				<div id="idBibtex" class="l-body">
+
+					<p>BibTeX citation</p>
+					<pre class="citation long">
+@article{domingos2000unified,
+	title={A unified bias-variance decomposition for zero-one and squared loss},
+	author={Domingos, Pedro},
+	journal={AAAI/IAAI},
+	volume={2000},
+	pages={564--569},
+	year={2000},
+	url={https://homes.cs.washington.edu/~pedrod/papers/aaai00.pdf}
+}
+@inproceedings{domingos2000applications,
+	title={A Unified Bias-Variance Decomposition and its Applications},
+	author={Domingos, Pedro},
+  booktitle={Proceedings of the Seventeenth International Conference on Machine Learning},
+	pages={231--238},
+	year={2000},
+	organization={Morgan Kaufmann Publishers Inc.},
+	url={https://homes.cs.washington.edu/~pedrod/papers/mlc00a.pdf}
+}
+				    </pre>
+
+				</div>
+
+				<div id="idReferences">
+					<script type="text/bibliography">
+					@article{domingos2000unified,
+						title={A unified bias-variance decomposition for zero-one and squared loss},
+						author={Domingos, Pedro},
+						journal={AAAI/IAAI},
+						volume={2000},
+						pages={564--569},
+						year={2000},
+						url={https://homes.cs.washington.edu/~pedrod/papers/aaai00.pdf}
+					}
+						@inproceedings{domingos2000applications,
+				    title={A Unified Bias-Variance Decomposition and its Applications},
+						author={Domingos, Pedro},
+				    booktitle={Proceedings of the Seventeenth International Conference on Machine Learning},
+				    pages={231--238},
+						year={2000},
+				    organization={Morgan Kaufmann Publishers Inc.},
+						url={https://homes.cs.washington.edu/~pedrod/papers/mlc00a.pdf}
+					 }
+  				</script>
+				</div>
+
+				</dt-appendix>
+
+			</div>
+
+
+			<div class="col-sm-2 sidenav">
+				<ul class="nav nav-pills nav-stacked" data-spy="affix">
+					<li><a href="../../../../index.html">Home</a></li>
+					<li><a href="#idTitle"> Title</a></li>
+					<li><a href="#idEquation1"> Equation1</a></li>
+					<li><a href="#idBibtex"> Bibtex</a></li>
+					<li><a href="#idReferences"> References</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- [] Libraries -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../../l17/katex/v9/katex.min.css" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../../../l17/distillpub/y17/template.js"></script>
+	<script src="../../../l17/katex/v9/katex.min.js"></script>
+	<script src="../../../l17/katex/v9/contrib/auto-render.min.js"></script>
+
+	<!-- distillpub -->
+	<script type="text/front-matter">
+  title: "Normalized Description "
+  description: "Description of the ranking metric"
+  authors:
+  - Dwi Sianto Mansjur: http://dwisianto.github.io
+  - Yuanyuan Li: http://dwisianto.github.com
+  affiliations:
+  - Affiliation Matters: http://g.co/brain
+  - Affiliation Matters: http://g.co/brain
+	</script>
+
+	<!-- [] katex  renderMathInElement(document.body);-->
+	<script>
+	renderMathInElement(document.body,{delimiters: [{left: "$$", right: "$$", display: true},{left: "$", right: "$", display: false}]});
+	 </script>
+
+</body>
+
+
+</html>
