@@ -27,10 +27,11 @@
 
 					<h1>Unified Bias Variance Decomposition</h1>
 					<h2>Regression and Classification Problems</h2>
-					<dt-byline></dt-byline>
+					<!--<dt-byline></dt-byline> -->
 
+					<h2> </h2>
 					<p>
-						The main article is about zero-one and squred loss <dt-cite key="domingos2000applications"></dt-cite> ,
+						The main article is about zero-one and squared loss <dt-cite key="domingos2000applications"></dt-cite> ,
 						while another article is concerned with applications <dt-cite key="domingos2000unified"></dt-cite> .
 					</p>
 
@@ -160,10 +161,18 @@
 					and consider a learner that predicts y
 					given a training set in D.
 					Then, for certain loss functions L,
-					the following decomposition of $E(D;t)=[L(t; y)]$ holds
+					the following decomposition of $E(D;t)[L(t; y)]$ holds
 
-					$$E(D;t)[L(t; y)]$$
+					$$
+					\begin{align}
+					E(D;t)[L(t; y)] & = c_1 E_t[L(t,y_*)] + L(y_*,y_m) + c_2 E_D[L(y_m,y)] \\
+ 					& = c_1 N(x) + B(x) + c_2 V(x)
+ 					\end{align}
+					$$
+					$c_1$ and $c_2$ are multiplicative factors that multiplicative factors that will take on different values for different loss functions.
 					</p>
+
+
 
 
 
@@ -240,13 +249,11 @@
 
 	<!-- [] Libraries -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../../../l17/katex/v9/katex.min.css" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="../../../l17/distillpub/y17/template.js"></script>
-	<script src="../../../l17/katex/v9/katex.min.js"></script>
-	<script src="../../../l17/katex/v9/contrib/auto-render.min.js"></script>
+	<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 	<!-- distillpub -->
 	<script type="text/front-matter">
@@ -261,9 +268,11 @@
 	</script>
 
 	<!-- [] katex  renderMathInElement(document.body);-->
-	<script>
-	renderMathInElement(document.body,{delimiters: [{left: "$$", right: "$$", display: true},{left: "$", right: "$", display: false}]});
-	 </script>
+	<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+		tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+	});
+	</script>
 
 </body>
 
