@@ -32,33 +32,9 @@
 
 
 
-					Given a training set $\{ (x_1,t_1),...,(x_n,t_n) \}$, a learner produces a model $f$.
-					Given a test example x, this model produces a prediction $y =f(x)$.
-					<dt-fn>(For the sake of simplicity, the fact that y is a function of x will remain implicit throughout this paper.)</dt-fn>
-					Let $t$ be the true value of the predicted variable for the test example $x$.
-					A loss function $L(t,y)$ measures the cost of predicting $y$ when the true value is $t$.
-					<dt-cite key="domingos2000unified"></dt-cite>
-
-
-					<table>
-						<tr>
-						<tr><td>The goal of learning can be stated as producing a model with
-							the smallest possible loss; i.e., a model that minimizes the average
-							$L(t, y)$ over all examples, with each example weighted by its probability.</td></tr>
-						<tr><td>In general, t will be a nondeterministic function of $x$ <dt-fn>(i.e.,
-								if x is sampled repeatedly, different values of t will be seen)</dt-fn>.
-						</td></tr>
-						<tr><td>The optimal prediction y∗ for an example x is the prediction
-							that minimizes $E_t[L(t, y∗)]$, <dt-fn>where the subscript t
-								denotes that the expectation is taken with respect to all possible
-								values of $t$, weighted by their probabilities given x</dt-fn>.
-						</td></tr>
-						<tr><td>The optimal model is the model for which $f(x) = y∗$ for every x.</td></tr>
-						<tr><td>In general, this model will have non-zero loss.</td></tr>
-						<tr><td>In the case of zero-one loss, the optimal model is called the
-							<i>Bayes classifier</i>, and its loss is called the <i>Bayes rate</i>.
-						</td></tr>
-					</table>
+					<p>
+					</p>
+					
 
 
 
