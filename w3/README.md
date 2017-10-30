@@ -3,6 +3,14 @@
 ## ToDo
 
 
+| | | |
+|-|-|-|
+| | | remove dt-banner from distillpub |
+| | | https://juliasilge.com/blog/ab-testing/ |
+| | | http://varianceexplained.org/about/ |
+| | | http://blog.revolutionanalytics.com/2017/10/bias-bootstrap-foreach.html |
+| | | http://www.isle.illinois.edu/~akantor/software/pascam/index.html | 
+
 <pre>
 @inproceedings{cai2012variance,
   title={Variance maximization via noise injection for active sampling in learning to rank},
@@ -14,6 +22,7 @@
 }
 </pre>
 
+
 ## Journal
 
 | | | |
@@ -23,22 +32,8 @@
 | | | http://kpq.github.io/ |
 
 
-## blogging
-
-| | | |
-|-|-|-|
-| | | http://www.rna-seqblog.com/ |
-| | | r-bloogers.com |
-| | | http://www.rna-seqblog.com/network-embedding-based-representation-learning-for-single-cell-rna-seq-data/ |
 
 
-## ibmer
-
-| | | |
-|-|-|-|
-| | | |
-| | | https://github.com/andrewrfreed |
-| | | http://freedville.com/#/ |
 
 
 ## Technology
@@ -60,15 +55,11 @@
 | | | https://distill.pub/ |
 
 
-## Giants
+## Visualization
 
 | | | |
 |-|-|-|
-| giant | | https://en.wikipedia.org/wiki/Biing-Hwang_(Fred)_Juang |
-| | | https://homes.cs.washington.edu/~pedrod/ |
-| | | http://chrisburges.net/ |
-| | | http://riejohnson.com/ |
-| | | http://tongzhang-ml.org/ |
+| | | http://kpq.github.io/ |
 
 ## Manifold Learning
 

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<title>Bootstrap DistillPub</title>
+	<meta charset="utf-8">
+
+<style>
+	table {
+	    font-family: "Times New Roman", Times, serif;
+	}
+</style>
+
+</head>
+
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row content">
+
+
+			<div class="col-sm-10">
+
+
+
+				<dt-article id="idTitle" class="centered">
+
+					<h1>RPart</h1>
+					<h2>A description of the article</h2>
+					<!--<dt-byline></dt-byline>
+					<p> We can also cite <dt-cite key="gregor2015draw"></dt-cite> external publications. </p>
+					-->
+
+					<p>
+					One of the most important thing in predictive modelling is how our algorithm will cope with various datasets,
+					both training and testing <dt-fn>(previously unseen).</dt-fn>.
+					This is strictly connected with the concept of bias-variance tradeoff.
+				 </p>
+
+				 <p>
+					Roughly speaking, variance of an estimator describes, how do estimator value ranges from dataset to dataset.
+					It's defined as follows:
+					$$
+					\begin{align}
+					Var[\hat{f}(x)]
+					& = E[ ( \hat{f}(x) - E[\hat{f}(x)] )^2 ] \\
+					& = E[f(x)^2] - E[f(x)]^2
+					\end{align}
+					$$
+				One could think of a Bias as an ability to approximate function.
+					$$
+					\begin{align}
+					Bias[\hat{f}(x)]
+						& = E[ ( \hat{f}(x) - E[\hat{f}(x)] ) ] \\
+						& = E[ \hat{f}(x)] - \hat{f}(x)
+					\end{align}
+					$$
+				Typically, reducing bias results in increased variance and vice versa.
+				<p>
+
+				<p>
+					Let $E[X]$ is an expected value, this could be estimated using a mean,
+					since mean is an unbiased estimator of the expected value.
+
+					We can estimate variance and bias by bootstrapping original training dataset,
+					that is, by sampling with replacement indexes of an original dataframe,
+					then drawing rows which correspond to these indexes and obtaining new dataframes.
+					This operation was repeated over nsampl times,
+					where nsampl is the parameter describing number of bootstrap samples.
+				</p>
+				<p>
+					Variance and Bias is estimated for one value, that is to say, for one observation/row of an original dataset
+					(we calculate variance and bias over rows of predictions made on bootstrap samples).
+					We then obtain a vector containing variances/biases.
+					This vector is of the same length as the number of observations of the original dataset.
+					For the purpose of this article, for each of these two vectors a mean value was calculated.
+					We will treat these two means as our estimates of mean bias and mean variance.
+					If we don't want to measure direction of the bias, we can take absolute values of bias.
+				</p>
+				<p>
+					Because bias and variance could be controlled by parameters sent to the rpart function,
+					we can also survey how do these parameters affect tree variance.
+					The most commonly used parameters are cp (complexity parameter),
+					which describe how much each split must decrease overall variance of a decision variable in order to be attempted,
+					and minsplit, which defines minimum number of observations needed to attempt a split.
+				</p>
+				<p>
+					Operations mentioned above is rather exhaustive in computational terms:
+					we need to create nsampl bootstrap samples, grow nsampl trees,
+					calculate nsampl predictions, nrow variances,
+					nrow biases and repeat those operations for the number of parameters
+					(length of the vector cp or minsplit).
+					For that reason the foreach package was used, to take advantage of parallelism.
+					The above procedure still can't be considered as fast,
+					but It was much faster than without using the foreach package.
+				</p>
+
+			<p>
+			So, summing up, the procedure looks as follows:
+				<ul>
+					<li>Create bootstrap samples (by bootstrapping original dataset)</li>
+			    <li>Train model on each of these bootstrap datasets</li>
+			    <li>Calculate mean of predictions of these trees (for each observation) and compare these predictions with values of the original datasets (in other words, calculate bias for each row)</li>
+			    <li>Calculate variance of predictions for each row (estimate variance of an estimator-regression tree)</li>
+			    <li>Calculate mean bias/absolute bias and mean variance </li>
+				</ul>
+			</p>
+
+
+					<pre>
+						<code>
+ library(rpart)
+ library(foreach)
+ library(doParallel)
+ registerDoParallel(cores=2)  #here the number of cores for a parallel calculation is defined
+
+ #this function calulates predictions of a regresion tree, dataOriginal is an original vector of real values
+ predictions=function(dataBootstraped,dataOriginal,formula,cp=NULL,minsplit=NULL){
+
+ if(!is.null(cp)){
+	model=rpart(formula,dataBootstraped,cp=cp)
+ }
+ if(!is.null(minsplit)){
+	model=rpart(formula,dataBootstraped,minsplit=minsplit)
+ }
+
+ predictionsVector=predict(model,dataOriginal)
+ return(predictionsVector)
+}
+	</code>
+</pre>
+
+				<pre>
+					<code>
+# this function returns bias and variance estimates, cp and minsplit are vectors,
+# only one of them at a time is passed
+BiasVariance=function(data,formula,nsampl,cp=NULL,minsplit=NULL,original) {
+
+#in this step, bootstrap samples are created and passed to a predictions function.
+#This procedure is repeated for the number of cp/minsplit values, that's why 'foreach' are nested
+	if(!is.null(cp)){
+			BootstrapSamples=foreach(j=cp) %:% foreach(n=1:nsampl,.packages='rpart',.export="predictions") %dopar% predictions(data[sample(1:nrow(data),replace=TRUE),],data,formula,cp=j)
+	}
+	if(!is.null(minsplit)){
+			BootstrapSamples=foreach(j=minsplit) %:% foreach(n=1:nsampl,.packages='rpart',.export="predictions") %dopar% predictions(data[sample(1:nrow(data),replace=TRUE),],data,formula,minsplit=j)
+	}
+
+	#case when cp was passed to the function
+	if(!is.null(cp)){
+
+			#var contains mean value of variances
+			var=foreach(c=1:length(cp)) %dopar% mean(apply(data.frame(BootstrapSamples[[c]]),1,var))
+
+			#bias contains mean of absolute values of 'biases'
+			bias=foreach(c=1:length(cp)) %dopar% mean(abs(apply(data.frame(BootstrapSamples[[c]]),1,mean)-original))
+	}
+
+	#case when minsplit was passed to the function
+	if(!is.null(minsplit)){
+
+			#var contains mean value of variances
+			var=foreach(c=1:length(minsplit)) %dopar% mean(apply(data.frame(BootstrapSamples[[c]]),1,var))
+
+			#bias contains mean of absolute values of 'biases'
+			bias=foreach(c=1:length(minsplit)) %dopar% mean(abs(apply(data.frame(BootstrapSamples[[c]]),1,mean)-original))
+	}
+
+	#results is a data frame containing calculated bias and variance
+	results=data.frame(matrix(c(bias,var),ncol=2))
+	colnames(results)=c("bias","variance")
+	return(results)
+}
+				</code>
+			</pre>
+
+
+
+
+
+
+
+
+					<dt-code block language="javascript">
+						var x = 25; function(x){ return x * x; }
+					</dt-code>
+
+					<p id="idEquation1">
+					</p>
+
+
+
+
+					<div>
+					The formula $a^2+b^2=c^2$ will be rendered inline,
+					but $$a^2+b^2=c^2$$ will be rendered as a block element.
+					</div>
+					$$
+    					f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
+  					$$
+
+					<div>
+					The formula \(a^2+b^2=c^2\) will be rendered inline, but \[a^2+b^2=c^2\] will be rendered as a block element.
+					</div>
+
+					<em>Emphasized text</em><br>
+					<strong>Strong text</strong><br>
+					<code>A piece of computer code</code><br>
+					<samp>Sample output from a computer program</samp><br>
+					<kbd>Keyboard input</kbd><br>
+					<var>Variable</var>
+
+
+				</dt-article>
+
+				<dt-appendix class="centered">
+
+				<div id="idBibtex" class="l-body">
+
+					<p>BibTeX citation</p>
+					<pre class="citation short">
+http://blog.revolutionanalytics.com/2017/10/bias-bootstrap-foreach.html
+				    </pre>
+
+				</div>
+				<!--
+				<div id="idReferences">
+					<script type="text/bibliography">
+  						@article{gregor2015draw,
+    					title={DRAW: A recurrent neural network for image generation},
+    					author={Gregor, Karol and Danihelka, Ivo and Graves, Alex and Rezende, Danilo Jimenez and Wierstra, Daan},
+    					journal={arXivreprint arXiv:1502.04623},
+    					year={2015},
+    					url={https://arxiv.org/pdf/1502.04623.pdf}
+  						}
+  					</script>
+				</div>
+				</dt-appendix>
+				-->
+
+			</div>
+
+
+			<div class="col-sm-2 sidenav">
+				<ul class="nav nav-pills nav-stacked" data-spy="affix">
+					<li><a href="../../../../index.html">Home</a></li>
+					<li><a href="#idTitle"> Title</a></li>
+					<li><a href="#idEquation1"> Equation1</a></li>
+					<li><a href="#idBibtex"> Bibtex</a></li>
+					<li><a href="#idReferences"> References</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- [] Libraries -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../../../l17/distillpub/y17/template.js"></script>
+	<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+
+
+	<!-- distillpub -->
+	<script type="text/front-matter">
+  title: "Normalized Description "
+  description: "Description of the ranking metric"
+  authors:
+  - Dwi Sianto Mansjur: http://dwisianto.github.io
+  - Yuanyuan Li: http://dwisianto.github.com
+  affiliations:
+  - Affiliation Matters: http://g.co/brain
+  - Affiliation Matters: http://g.co/brain
+	</script>
+
+
+		<!-- [] katex  renderMathInElement(document.body);-->
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+		</script>
+
+</body>
+
+
+</html>
