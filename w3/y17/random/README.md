@@ -22,6 +22,7 @@
 | | | http://chrisburges.net/ |
 | | | http://riejohnson.com/ |
 | | | http://tongzhang-ml.org/ |
+| | | http://olivier.chapelle.cc/ | 
 
 
 ## ibmer
