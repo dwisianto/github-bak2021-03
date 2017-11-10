@@ -22,13 +22,13 @@
 | | | http://chrisburges.net/ |
 | | | http://riejohnson.com/ |
 | | | http://tongzhang-ml.org/ |
-| | | http://olivier.chapelle.cc/ | 
+| | | http://olivier.chapelle.cc/ |
 
 
 ## ibmer
 
 | | | |
 |-|-|-|
-| | | |
+| | | https://github.com/jamiejennings | 
 | | | https://github.com/andrewrfreed |
 | | | http://freedville.com/#/ |
