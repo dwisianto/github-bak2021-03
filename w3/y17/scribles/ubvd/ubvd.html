@@ -92,7 +92,7 @@
 					<p>
 						When there is no danger of ambiguity, we will represent the <b>main prediction</b> $y_m^{L,D}$ simply as $y_m$ .
 						The expectation is taken with respect to the training sets in $D$, i.e.,
-						with respect to the predictions y produced by learning on the training sets in $D$.
+						with respect to the predictions $y$ produced by learning on the training sets in $D$.
 						Let $Y$ be the multiset of these predictions.
 						(A specific prediction y will appear more than once in Y if it is produced by more than one training set.)
 						In words, the main prediction is the value y′ whose average
@@ -111,12 +111,12 @@
 
 					<p>
 						We can now define bias and variance as follows.<br> <b>Definition
-							2</b> The bias of a learner on an example x is $B(x) = L(y∗, ym)$.
+							2</b> The bias of a learner on an example x is $B(x) = L(y^∗, y_m)$.
 							<br>In words, the bias is the loss incurred by the <u>main prediction</u>
 						relative to the <u>optimal prediction</u>.
 					</p>
 
-					<p>
+					<p id="defn3">
 						<b>Definition 3</b> The variance of a learner on an example x is
 						$V(x)=E_D[L(y_m,y)]$. <br>In words, the variance is the average
 						loss incurred by predictions relative to the main prediction.
@@ -125,7 +125,7 @@
 						$E_x[V(x)]$. It is also convenient to define noise as follows.
 					</p>
 
-					<p>
+					<p id="defn4">
 						<b>Definition 4</b>
 						The noise of an example $x$ is $N(x)=E_t[L(t,y^*)]$ .
 						<br>In other words,
@@ -135,9 +135,10 @@
 
 					<p>
 						Definitions 2 and 3 have the intuitive properties associated with bias and variance measures.
-						$y_m$ is a measure of the “central tendency” of a learner. (What “central” means depends on the loss function.)
-						Thus B(x) measures the systematic loss incurred by a learner,
-							and V (x) measures the loss incurred by its fluctuations around the central tendency in response to different training sets.
+						$y_m$ is a measure of the “central tendency” of a learner.
+						<dt-fn>(What “central” means depends on the loss function.)<dt-fn>
+						Thus $B(x)$ measures the systematic loss incurred by a learner,
+							and $V(x)$ measures the loss incurred by its fluctuations around the central tendency in response to different training sets.
 						If the loss function is nonnegative then bias and variance are also nonnegative.
 
 						The bias is independent of the training set, and is zero for a learner that always makes the optimal prediction.
@@ -147,20 +148,18 @@
 							same prediction regardless of the training set.
 						However, it is not necessarily the case that the expected
 							loss $E_{D,t}[L(t,y)]$ for a given loss function L can be decomposed into bias and variance as defined above.
-							Our approach will be to propose a
-							decomposition and then show that it applies to each of several
+							Our approach will be to propose a decomposition and then show that it applies to each of several
 					</p>
 
 					<p>
-					The only property that the definitions above require of the loss
-					function is that its expected value be computable.
+					The only property that the definitions above require of the loss function is that its expected value be computable.
 					</p>
 
 					<p>
-					Consider an example x for which the true prediction is t,
-					and consider a learner that predicts y
-					given a training set in D.
-					Then, for certain loss functions L,
+					Consider an example $x$ for which the true prediction is $t$,
+					and consider a learner that predicts $y$
+					given a training set in $D$.
+					Then, for certain loss functions $L$,
 					the following decomposition of $E(D;t)[L(t; y)]$ holds
 
 					$$
@@ -169,7 +168,8 @@
  					& = c_1 N(x) + B(x) + c_2 V(x)
  					\end{align}
 					$$
-					$c_1$ and $c_2$ are multiplicative factors that multiplicative factors that will take on different values for different loss functions.
+					$c_1$ and $c_2$ are multiplicative factors that multiplicative factors
+					that will take on different values for different loss functions.
 					</p>
 
 
@@ -238,7 +238,9 @@
 				<ul class="nav nav-pills nav-stacked" data-spy="affix">
 					<li><a href="../../../../index.html">Home</a></li>
 					<li><a href="#idTitle"> Title</a></li>
-					<li><a href="#idEquation1"> Equation1</a></li>
+					<li><a href="#defn1"> Definition1</a></li>
+					<li><a href="#defn2"> Definition2</a></li>
+					<li><a href="#defn3"> Definition3</a></li>
 					<li><a href="#idBibtex"> Bibtex</a></li>
 					<li><a href="#idReferences"> References</a></li>
 				</ul>
