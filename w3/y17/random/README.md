@@ -10,7 +10,8 @@
 | | | https://www.r-bloggers.com/|
 | | | http://www.rna-seqblog.com/ |
 | | | http://www.rna-seqblog.com/network-embedding-based-representation-learning-for-single-cell-rna-seq-data/ |
-
+| | | http://www.planetpythons.org/ |
+| | | [fastml](http://fastml.com/piping-in-r-and-in-pandas/) | 
 
 
 ## Giants
@@ -23,12 +24,26 @@
 | | | http://riejohnson.com/ |
 | | | http://tongzhang-ml.org/ |
 | | | http://olivier.chapelle.cc/ |
+| | | http://www.singbingkang.com/publications/ |
 
 
 ## ibmer
 
 | | | |
 |-|-|-|
-| | | https://github.com/jamiejennings | 
+| | | https://github.com/IBM/ |
+| | | https://developer.ibm.com/code/community/events/ |
+| | | https://github.com/jamiejennings |
 | | | https://github.com/andrewrfreed |
 | | | http://freedville.com/#/ |
+
+## bloggers
+
+https://juliasilge.com/blog/non-academic-careers/
+https://blog.statsbot.co/ensemble-learning-d1dcd548e936
+
+
+## Books
+
+## courses
+http://www2.compute.dtu.dk/courses/02282/2017/

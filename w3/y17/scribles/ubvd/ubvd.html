@@ -31,11 +31,15 @@
 
 					<h2> </h2>
 					<p>
-						The main article is about zero-one and squared loss <dt-cite key="domingos2000applications"></dt-cite> ,
-						while another article is concerned with applications <dt-cite key="domingos2000unified"></dt-cite> .
+						The main article is about zero-one and squared loss <dt-cite key="domingos2000unified"></dt-cite> ,
+						while another article is concerned with applications <dt-cite key="domingos2000applications"></dt-cite> .
 						Pedros domingos' <a href="https://homes.cs.washington.edu/~pedrod/"> homepage</a>
-						listed an <a href="https://homes.cs.washington.edu/~pedrod/bvd.c">implementation</a> of the bvd concept.
+						listed an <a href="https://homes.cs.washington.edu/~pedrod/bvd.c">implementation</a>
 						( <a href="./ubvd_snippet.md.html">local copy</a> )
+						of the unified bias-variance decomposition concept.
+						<dt-fn> The scikit-learn python library contains a
+						<a href="http://scikit-learn.org/stable/auto_examples/ensemble/plot_bias_variance.html">plot of bias_variance</a>
+						</dt-fn>
 					</p>
 
 					<p>
@@ -85,15 +89,17 @@
 
 					<!-- $y_m^{L,D}$  $ E_D ( L(y, y′) ) $ -->
 					<p>
-						In order to define bias and variance for an arbitrary loss function we
-						first need to define the notion of <u>main prediction</u>. <br> <strong>
-							Definition 1 </strong> The <u>main prediction</u> for a loss function $L$ and
+						In order to define bias and variance for an arbitrary loss function,
+						we first need to define the notion of <u>main prediction</u> $y_m^{L,D}$.
+						<dt-fn>
+						When there is no danger of ambiguity, we will represent the <b>main prediction</b>  $y_m^{L,D}$ simply as $y_m$ .
+						<dt-fn>
+						<br>
+						<strong> Definition 1 </strong> The <u>main prediction</u> for a loss function $L$ and
 						set of training sets $D$ is $y_m^{L,D} = \arg\min_{y′} E_D [L(y, y′)]$.
-
 					</p>
 
 					<p>
-						When there is no danger of ambiguity, we will represent the <b>main prediction</b> $y_m^{L,D}$ simply as $y_m$ .
 						The expectation is taken with respect to the training sets in $D$, i.e.,
 						with respect to the predictions $y$ produced by learning on the training sets in $D$.
 						Let $Y$ be the multiset of these predictions.
@@ -113,33 +119,31 @@
 
 
 					<p>
-						We can now define bias and variance as follows.<br> <b>Definition
-							2</b> The bias of a learner on an example x is $B(x) = L(y^∗, y_m)$.
-							<br>In words, the bias is the loss incurred by the <u>main prediction</u>
-						relative to the <u>optimal prediction</u>.
+						We can now define bias and variance as follows.<br>
+						<b>Definition 2</b> The bias of a learner on an example x is $B(x) = L(y^∗, y_m)$.<br>
+						In words, the bias is the loss incurred by the <u>main prediction</u> $y_m$
+						relative to the <u>optimal prediction $y^∗$ </u>.
 					</p>
 
 					<p id="defn3">
 						<b>Definition 3</b> The variance of a learner on an example x is
-						$V(x)=E_D[L(y_m,y)]$. <br>In words, the variance is the average
-						loss incurred by predictions relative to the main prediction.
+						$V(x)=E_D[L(y_m,y)]$. <br>
+						In words, the variance is the average loss incurred by predictions relative to the main prediction.
 						<br>Bias and variance may be averaged over all examples, in which case we will
-						refer to them as average bias $Ex[B(x)]$ and average variance
-						$E_x[V(x)]$.
+						refer to them as average bias $E_x[B(x)]$ and average variance $E_x[V(x)]$.
 					</p>
 
 					<p id="defn4">
 						<b>Definition 4</b>
 						The noise of an example $x$ is $N(x)=E_t[L(t,y^*)]$ .
-						<br>In other words,
-						noise is the unavoidable component ofthe loss,
-						incurred independently of the learning algorithm.
+						<br>
+						In other words, noise is the unavoidable component ofthe loss, incurred independently of the learning algorithm.
 					</p>
 
 					<p>
 						Definitions 2 and 3 have the intuitive properties associated with bias and variance measures.
 						$y_m$ is a measure of the “central tendency” of a learner.
-						<dt-fn>(What “central” means depends on the loss function.)<dt-fn>
+						<dt-fn>(What “central” means depends on the loss function.)</dt-fn>
 						Thus $B(x)$ measures the systematic loss incurred by a learner,
 							and $V(x)$ measures the loss incurred by its fluctuations around the central tendency in response to different training sets.
 						If the loss function is nonnegative then bias and variance are also nonnegative.
@@ -174,6 +178,11 @@
 					$c_1$ and $c_2$ are multiplicative factors that multiplicative factors
 					that will take on different values for different loss functions.
 					</p>
+
+
+
+
+
 
 
 
