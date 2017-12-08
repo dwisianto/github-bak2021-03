@@ -11,7 +11,7 @@
 | | | http://www.rna-seqblog.com/ |
 | | | http://www.rna-seqblog.com/network-embedding-based-representation-learning-for-single-cell-rna-seq-data/ |
 | | | http://www.planetpythons.org/ |
-| | | [fastml](http://fastml.com/piping-in-r-and-in-pandas/) | 
+| | | [fastml](http://fastml.com/piping-in-r-and-in-pandas/) |
 
 
 ## Giants
@@ -31,6 +31,8 @@
 
 | | | |
 |-|-|-|
+| | | [moyu](http://yumo.asiteof.me/) |
+| | | http://bill.murdocks.org/ |
 | | | https://github.com/IBM/ |
 | | | https://developer.ibm.com/code/community/events/ |
 | | | https://github.com/jamiejennings |
