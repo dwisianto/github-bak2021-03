@@ -32,8 +32,8 @@
 | | | |
 |-|-|-|
 | | | [moyu](http://yumo.asiteof.me/) |
-| | | http://bill.murdocks.org/ |
-| | | https://github.com/IBM/ |
+| | | [murdocks](http://bill.murdocks.org/) |
+| | | [github_ibm](https://github.com/IBM/) |
 | | | https://developer.ibm.com/code/community/events/ |
 | | | https://github.com/jamiejennings |
 | | | https://github.com/andrewrfreed |
