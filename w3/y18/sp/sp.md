@@ -27,8 +27,9 @@ $
 
 | column | column |
 |--------|--------|
+| [pystruct](https://pystruct.github.io/) | |
 | vowpal_wabbit  |        |
-| illinois_sl    |   http://cogcomp.org/software/illinois-sl/     |
+| [illinois_sl](http://cogcomp.org/software/illinois-sl/) |      |
 | searn          |        |
 | StructED: Risk Minimization in Structured Prediction | |
 | regression tree field | | 
@@ -44,6 +45,17 @@ $
 
 
 ## Bibliogrpahy
+
+
+@article{JMLR:v15:mueller14a,
+  author  = {Andreas C. M{\"u}ller and Sven Behnke},
+  title   = {pystruct - Learning Structured Prediction in Python},
+  journal = {Journal of Machine Learning Research},
+  year    = {2014},
+  volume  = {15},
+  pages   = {2055-2060},
+  url     = {http://jmlr.org/papers/v15/mueller14a.html}
+}
 
 
 @article{dietterich2008structured,
