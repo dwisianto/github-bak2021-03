@@ -4,18 +4,34 @@ January 6, 2018 4:26 AM
 
 # Introduction
 
-	
 
-$$$\frac{1}{2} $$$
+
 
 $
-\frac{1}{2}
+y^* = \arg \max_{y \in Y} \ { f(x,y) }
 $
+
+
+$$$ f(x,y) = w \phi(x,y) $$$
+
+
+
+# Applications
+
+
 
 
 ## Researchers
 
 
+## Tutorial
+
+
+[sp](
+https://www.cs.utah.edu/~piyush/teaching/structured_prediction.pdf
+)
+
+## Review
 
 
 
@@ -29,19 +45,14 @@ $
 | [illinois_sl](http://cogcomp.org/software/illinois-sl/) |      |
 | searn          |        |
 | StructED: Risk Minimization in Structured Prediction | |
-| regression tree field | | 
+| regression tree field | |
 
 
 
 
-## Tutorial
-
-
-
-## Review
 
 
 ## Bibliogrpahy
-[illinois_sl](sp.bib.html)
+[bib](sp.bib.html)
 
 
