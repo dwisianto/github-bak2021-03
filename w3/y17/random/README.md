@@ -41,6 +41,7 @@
 
 ## bloggers
 
+http://www.di.fc.ul.pt/~jpn/r/
 https://juliasilge.com/blog/non-academic-careers/
 https://blog.statsbot.co/ensemble-learning-d1dcd548e936
 
