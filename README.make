@@ -2,12 +2,20 @@
 
 all: sev_unz
 
-MVN_GRP_ID=d.wb
-MVN_PJ_NAME=wb
-MVN_VER=1.0
-MVN_MD_NAME_WEB=d.io
+MVN_GRP_ID=d.io
+MVN_PJ_NAME=d.wb
+MVN_VER=0.1
+MVN_MD_NAME_WEB=d.io.wb
 
-
+gen_mvn_root_project:
+	mvn archetype:generate \
+	-DgroupId=$(MVN_GRP_ID) \
+	-DartifactId=$(MVN_PJ_NAME) \
+	-Dversion=$(MVN_VER) \
+	-DarchetypeGroupId=org.codehaus.mojo.archetypes \
+	-DarchetypeArtifactId=pom-root \
+	-DarchetypeVersion=RELEASE \
+	-DinteractiveMode=false
 
 gen_mvn_module_web:
 	mvn archetype:generate \
@@ -35,12 +43,7 @@ MVN_MD_NAME_W2_XLET2=w2-xlet2
 MVN_MD_NAME_W2_XLET3=w2-xlet3
 
 
-gen_mvn_module_pipe:
-	mvn archetype:generate \
-	-DartifactId=$(MVN_MD_NAME_PIPE) \
-	-DarchetypeArtifactId=maven-archetype-quickstart \
-	-DarchetypeVersion=RELEASE \
-	-DinteractiveMode=false
+
 
 
 
@@ -54,15 +57,7 @@ gen_mvn_module_bag:
 
 
 
-gen_mvn_root_project:
-	mvn archetype:generate \
-	-DgroupId=$(MVN_GRP_ID) \
-	-DartifactId=$(MVN_PJ_NAME) \
-	-Dversion=$(MVN_VER) \
-	-DarchetypeGroupId=org.codehaus.mojo.archetypes \
-	-DarchetypeArtifactId=pom-root \
-	-DarchetypeVersion=RELEASE \
-	-DinteractiveMode=false
+
 
 
 
@@ -77,6 +72,13 @@ gen_mvn_module_core:
 	-DinteractiveMode=false
 
 
+gen_mvn_module_pipe_bak:
+	mvn archetype:generate \
+	-DartifactId=$(MVN_MD_NAME_PIPE) \
+	-DarchetypeArtifactId=maven-archetype-quickstart \
+	-DarchetypeVersion=RELEASE \
+	-DinteractiveMode=false
+	
 gen_mvn_module_pipe:
 	mvn archetype:generate \
 	-DgroupId=$(MVN_GRP_ID) \
