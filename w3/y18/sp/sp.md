@@ -40,9 +40,12 @@ https://www.cs.utah.edu/~piyush/teaching/structured_prediction.pdf
 
 | column | column |
 |--------|--------|
+| [illinois_sl](http://cogcomp.org/software/illinois-sl/) |      |
+| [illinois_core](https://github.com/CogComp/cogcomp-nlp) | | 
+| [seqlearn](http://larsmans.github.io/seqlearn/) | | 
+| [svmStruct]()| | 
 | [pystruct](https://pystruct.github.io/) | |
 | vowpal_wabbit  |        |
-| [illinois_sl](http://cogcomp.org/software/illinois-sl/) |      |
 | searn          |        |
 | StructED: Risk Minimization in Structured Prediction | |
 | regression tree field | |

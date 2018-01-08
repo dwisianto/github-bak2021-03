@@ -4,18 +4,9 @@ all: sev_unz
 
 MVN_GRP_ID=d.wb
 MVN_PJ_NAME=wb
-MVN_VER=1.8
-MVN_MD_NAME_WEB=dwyk
+MVN_VER=1.0
+MVN_MD_NAME_WEB=d.io
 
-MVN_MD_NAME_UTIL=ws1-util
-MVN_MD_NAME_BAG=sp-bag
-MVN_MD_NAME_PIPE=ws-pipe
-MVN_MD_NAME_SRVC1=ws-srvc1
-MVN_MD_NAME_SRVC2=ws-srvc2
-MVN_MD_NAME_CORE=ws-core
-MVN_MD_NAME_W2_XLET1=w2-xlet1
-MVN_MD_NAME_W2_XLET2=w2-xlet2
-MVN_MD_NAME_W2_XLET3=w2-xlet3
 
 
 gen_mvn_module_web:
@@ -32,6 +23,16 @@ gen_mvn_module_web:
 
 # #############
 
+
+MVN_MD_NAME_UTIL=ws1-util
+MVN_MD_NAME_BAG=sp-bag
+MVN_MD_NAME_PIPE=ws-pipe
+MVN_MD_NAME_SRVC1=ws-srvc1
+MVN_MD_NAME_SRVC2=ws-srvc2
+MVN_MD_NAME_CORE=ws-core
+MVN_MD_NAME_W2_XLET1=w2-xlet1
+MVN_MD_NAME_W2_XLET2=w2-xlet2
+MVN_MD_NAME_W2_XLET3=w2-xlet3
 
 
 gen_mvn_module_pipe:
