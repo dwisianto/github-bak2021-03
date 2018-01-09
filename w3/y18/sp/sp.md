@@ -60,5 +60,4 @@ $$$ f(x,y) = w \phi(x,y) $$$
 
 ## Bibliogrpahy
 [bib](sp.bib.html)
-
-
+[bib_](sp_/nowozin-fnt2011.pdf)
