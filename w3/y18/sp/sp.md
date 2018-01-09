@@ -8,7 +8,7 @@ Structured Output Prediction is for predicting multivariate or structured output
 $
 h: X -> Y
 $
-using labeled training examples $$$ (x_1,y_1), ..., (x_n,y_n) $$$. Unlike regular SVMs, however, which consider only univariate predictions like in classification and regression, SVMstruct can predict complex objects y like trees, sequences, or sets. Examples of problems with complex outputs are natural language parsing, sequence alignment in protein homology detection, and markov models for part-of-speech tagging. 
+using labeled training examples $$$(x_1,y_1), ..., (x_n,y_n)$$$. Unlike regular SVMs, however, which consider only univariate predictions like in classification and regression, SVMstruct can predict complex objects y like trees, sequences, or sets. Examples of problems with complex outputs are natural language parsing, sequence alignment in protein homology detection, and markov models for part-of-speech tagging. 
 
 $
 y^* = \arg \max_{y \in Y} \ { f(x,y) }

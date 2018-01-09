@@ -1,4 +1,12 @@
-# dwisianto.github.io/k2
+
+
+## Eclipse 
+
+* Installation
+* Workspace
+* Shell - RemoteSystem
+* PyDev
+* 
 
 
 ## ToDo
@@ -6,9 +14,10 @@
 * https://github.com/RamonTavares/NCTEC17-WDS
 
 ## Journal
-| | | |
-|-|-|-|
-| | | |
+
+
+| column | column | column | column |
+|--------|--------|--------|--------|
 | giant | | https://en.wikipedia.org/wiki/Biing-Hwang_(Fred)_Juang |
 | tsne | | http://scienceai.github.io/tsne-js/ |
 |      | | https://distill.pub/2016/misread-tsne/ |
