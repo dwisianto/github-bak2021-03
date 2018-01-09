@@ -35,10 +35,8 @@ $$$ f(x,y) = w \phi(x,y) $$$
 
 ## Tutorial
 
-
-[sp](
-https://www.cs.utah.edu/~piyush/teaching/structured_prediction.pdf
-)
+[nowozin](http://pub.ist.ac.at/~chl/papers/nowozin-fnt2011.pdf)
+[sp](https://www.cs.utah.edu/~piyush/teaching/structured_prediction.pdf)
 
 ## Review
 
