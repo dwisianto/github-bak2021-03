@@ -2,7 +2,6 @@
 
 ## ToDo
 
-
 | | | |
 |-|-|-|
 | | |  https://malishoaib.wordpress.com/2017/09/08/sample-size-estimation-for-machine-learning-models-using-hoeffdings-inequality/ | 
@@ -26,6 +25,7 @@
 </pre>
 
 
+
 ## Journal
 
 | | | |
@@ -35,9 +35,7 @@
 | | | http://kpq.github.io/ |
 
 
-
-
-
+## 
 
 ## Technology
 
@@ -71,8 +69,8 @@
 | tsne | | http://scienceai.github.io/tsne-js/ |
 |      | | https://distill.pub/2016/misread-tsne/ |
 
-
 ## Transfer Learning
 
 | | | |
 |-|-|-|
+| | | | 

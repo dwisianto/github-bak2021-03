@@ -27,6 +27,12 @@ $$$ f(x,y) = w \phi(x,y) $$$
 ## Researchers
 
 
+[Dr. Sebastian Nowozin](http://www.nowozin.net/sebastian/)
+[Dr. Sebastian Nowozin](http://www.nowozin.net/sebastian/)
+
+
+
+
 ## Tutorial
 
 
