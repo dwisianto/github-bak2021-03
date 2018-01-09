@@ -26,6 +26,9 @@ gen_mvn_module_web:
 	-DarchetypeVersion=RELEASE \
 	-DinteractiveMode=false
 
+cln:
+	find ./ -name "*~" -delete
+
 
 
 
@@ -164,7 +167,7 @@ cln_ecl:
 ecl:
 	cd $(PO_NAME); mvn eclipse:eclipse -Dwtpversion=2.0
 
-cln:
+cln_pro:
 	rm -rf $(MVN_PJ_NAME)
 
 
