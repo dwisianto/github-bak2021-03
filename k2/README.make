@@ -6,6 +6,7 @@ MVN_GRP_ID=d.io
 MVN_PJ_NAME=wk18
 MVN_VER=0.1
 MVN_MD_NAME_WEB=wk18a
+MVN_MD_NAME_CORE=wk18core
 
 gen_mvn_root_project:
 	mvn archetype:generate \
@@ -28,7 +29,14 @@ gen_mvn_module_web:
 	-DarchetypeVersion=RELEASE \
 	-DinteractiveMode=false
 
-
+gen_mvn_module_core:
+	cd $(MVN_PJ_NAME); \
+	mvn archetype:generate \
+	-DgroupId=$(MVN_GRP_ID) \
+	-DartifactId=$(MVN_MD_NAME_CORE) \
+	-DarchetypeArtifactId=maven-archetype-quickstart \
+	-DarchetypeVersion=RELEASE \
+	-DinteractiveMode=false
 
 
 # #############
@@ -39,7 +47,7 @@ MVN_MD_NAME_BAG=sp-bag
 MVN_MD_NAME_PIPE=ws-pipe
 MVN_MD_NAME_SRVC1=ws-srvc1
 MVN_MD_NAME_SRVC2=ws-srvc2
-MVN_MD_NAME_CORE=ws-core
+
 MVN_MD_NAME_W2_XLET1=w2-xlet1
 MVN_MD_NAME_W2_XLET2=w2-xlet2
 MVN_MD_NAME_W2_XLET3=w2-xlet3
@@ -48,23 +56,7 @@ MVN_MD_NAME_W2_XLET3=w2-xlet3
 
 
 
-
-gen_mvn_module_bag:
-	mvn archetype:generate \
-	-DgroupId=$(MVN_GRP_ID) \
-	-DartifactId=$(MVN_MD_NAME_BAG) \
-	-DarchetypeArtifactId=maven-archetype-quickstart \
-	-DarchetypeVersion=RELEASE \
-	-DinteractiveMode=false
-
-
-
-
-
-
-
-
-gen_mvn_module_core:
+gen_mvn_module_core_bak:
 	mvn archetype:generate \
 	-DgroupId=$(MVN_GRP_ID) \
 	-Dversion=$(MVN_VER) \
@@ -73,13 +65,6 @@ gen_mvn_module_core:
 	-DarchetypeVersion=RELEASE \
 	-DinteractiveMode=false
 
-
-gen_mvn_module_pipe_bak:
-	mvn archetype:generate \
-	-DartifactId=$(MVN_MD_NAME_PIPE) \
-	-DarchetypeArtifactId=maven-archetype-quickstart \
-	-DarchetypeVersion=RELEASE \
-	-DinteractiveMode=false
 
 gen_mvn_module_pipe:
 	mvn archetype:generate \

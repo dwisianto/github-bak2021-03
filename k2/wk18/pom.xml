@@ -8,5 +8,6 @@
   <name>wk18</name>
   <modules>
     <module>wk18a</module>
+    <module>wk18core</module>
   </modules>
 </project>
