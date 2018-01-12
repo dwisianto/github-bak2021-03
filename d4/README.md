@@ -14,6 +14,8 @@
 
 ### January
 
+* https://media.bizj.us/view/img/8481972/georgia-tech-2015-salaries-above-100000.pdf
+
 | | | |
 |-|-|-|
 |J7S | | | 
@@ -28,4 +30,5 @@
 |    | publication | | 
 |    | [structsvm](http://drona.csa.iisc.ernet.in/~shirish/structsvm_sdm.html) |
 |    |      | | 
+
 
