@@ -21,11 +21,11 @@
 |J9T | jobs | deploy |
 |J10W | jobs | cartridge |  
 |J11W | rest test | com jayway restassured |
-|    |      | | 
 |    | java web app | |
 |    | resume | |
-|    | resume | scholar(https://scholar.google.com/citations?user=t4BBr0gAAAAJ&hl=en) | 
-|    | | justia(https://patents.justia.com/inventor/dwi-sianto-mansjur_ ) | 
+|    | resume | [scholar](https://scholar.google.com/citations?user=t4BBr0gAAAAJ&hl=en) | 
+|    | | [justia](https://patents.justia.com/inventor/dwi-sianto-mansjur_ ) | 
 |    | publication | | 
-|    | [structsvm](http://drona.csa.iisc.ernet.in/~shirish/structsvm_sdm.html) | 
+|    | [structsvm](http://drona.csa.iisc.ernet.in/~shirish/structsvm_sdm.html) |
+|    |      | | 
 
