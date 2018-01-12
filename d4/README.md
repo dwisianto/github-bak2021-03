@@ -7,8 +7,8 @@
 
 # Location
 
-[d18](d18)
-[resume_bib](d18/resume/r18a/d18.bib.html)
+* [d18](d18)
+* [resume_bib](d18/resume/d18.bib.html)
 
 ## Journal
 
