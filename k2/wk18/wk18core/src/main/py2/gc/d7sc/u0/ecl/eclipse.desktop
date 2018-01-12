@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=Eclipse IDE
+Comment=Eclipse Integrated Development Environment
+Icon=/opt/eclipse/java-mars/eclips/icon.xpm
+Exec=/opt/eclipse/java-mars/eclips/eclipse
+StartupNotify=true
+StartupWMClass=java-mars
