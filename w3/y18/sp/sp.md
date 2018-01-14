@@ -43,8 +43,10 @@ $$$ f(x,y) = w \phi(x,y) $$$
 
 ## Tutorial
 
+[NER](https://en.wikipedia.org/wiki/Named-entity_recognition)
 [nowozin](http://pub.ist.ac.at/~chl/papers/nowozin-fnt2011.pdf)
 [sp](https://www.cs.utah.edu/~piyush/teaching/structured_prediction.pdf)
+
 
 ## Review
 
@@ -60,6 +62,7 @@ $$$ f(x,y) = w \phi(x,y) $$$
 
 | column | column |
 |--------|--------|
+| [brat](http://brat.nlplab.org/) |  | 
 | [illinois_sl](http://cogcomp.org/software/illinois-sl/) |      |
 | [illinois_core](https://github.com/CogComp/cogcomp-nlp) | |
 | [seqlearn](http://larsmans.github.io/seqlearn/) | |
