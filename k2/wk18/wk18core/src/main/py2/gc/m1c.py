@@ -1010,7 +1010,7 @@ ACT_DICT={"vm1_start":"start a vm",
          "di2_detach":""         
          }
 
-ACT_ID="vm1_start"
+ACT_ID="vm1_stop"
 #ACT_ID="ci1_scp_to_sc"
 bExeGlobal=True
 if __name__ == '__main__':

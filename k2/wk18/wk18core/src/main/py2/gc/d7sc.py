@@ -56,6 +56,10 @@ class C1020apache2:
         sCmd = "apache starts"
         gcp_bin_exe_cmd(sCmd, bExe=bRun)
 
+
+
+
+
 def try_all(act_id,b_run):
       # []     
     try:
@@ -68,7 +72,6 @@ def try_all(act_id,b_run):
         getattr(C1020apache2(),actId)()
     except: 
         pass
-    
 
 
 #
