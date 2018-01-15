@@ -37,10 +37,12 @@ CXX7G = {
     "DI7G_TYPE":"pd-standard",
     "DI7G_MODE":"rw"
     }
-CXX = {"GC":"/Users/dsm/DSc/google-cloud-sdk/bin/gcloud",
-       "GC_PROJECT":"api-project",
+
+CXX = {"GC_PROJECT":"api-project",
        "PJ_NAME":"api-project",
        "PJ_ID":"api-project-63688615144",
+#       "GC":"/Users/dsm/DSc/google-cloud-sdk/bin/gcloud",
+       "GC":"/Users/liy19/D7Sc/u0/gcp/sdk17x/bin/gcloud",
        "CI_NAME":"m18d",
        "CI_STORE_ID":"-s1",
        "CI_MACHINE_TYPE":"n1-standard-1", 
@@ -959,11 +961,12 @@ class CXXtemplate:
 # [] disk list 3020, create 3021, attach 3022, detach 3024
 # [] flow machine : F2031, start F2031, stop 2032 
 # https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address
-ACT_DICT={"vm_start":"start a vm",
-         "vm_stop":"stop a vm",
+ACT_DICT={"vm1_start":"start a vm",
+         "vm1_stop":"stop a vm",
          "ssh_to":" connect to vm",
          "scp_to_sc":"copy sc to vm",
          "pj_describe":"",
+         "gc_version":"version of gcloud sdk",
          "lst_ci":"external ip for vnc",
          "lst_img":"",
          "lst_img_custom":" list custom images",
@@ -1007,7 +1010,7 @@ ACT_DICT={"vm_start":"start a vm",
          "di2_detach":""         
          }
 
-ACT_ID="vm1_stop"
+ACT_ID="vm1_start"
 #ACT_ID="ci1_scp_to_sc"
 bExeGlobal=True
 if __name__ == '__main__':

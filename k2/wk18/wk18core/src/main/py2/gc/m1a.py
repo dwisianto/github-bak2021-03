@@ -1,11 +1,19 @@
 
 # []
-import sys # to parse args
+import os
+import sys
+import time
 import subprocess
 
 # []
-GC="/Users/dsm/DSc/google-cloud-sdk/bin/gcloud"
-
+CX1 = {
+    "CI1_NAME":"m1a"
+    }
+CXX = {"GC_PROJECT":"api-project",
+#       "GC":"/Users/dsm/DSc/google-cloud-sdk/bin/gcloud",
+       "GC":"/Users/liy19/D7Sc/u0/gcp/sdk17x/bin/gcloud",
+}
+CXX.update(CX1)
 #
 # https://cloud.google.com/compute/docs/instances/create-start-instance
 #
@@ -17,6 +25,7 @@ def gcp_bin_exe_cmd(sCmd, bExe=True):
         process = subprocess.Popen( sCmd.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
         print output
+
 
 def gcp_ce_lst_img():
     sCmd = GC
@@ -136,15 +145,12 @@ ACT_DICT = {
 223 : gcp_c_scp_to_m1b,
 224 : gcp_c_scp_to_vnc_xstartup,
 225 : gcp_c_scp_from
-}
-def main(actId):
-    print " GC - "+ GC
-    print " Id - "+ str(ACT_DICT[actId])
-    ACT_DICT[actId]()
-
+}  
 if __name__ == '__main__':
     actId=ACT_ID
     if( len(sys.argv) == 2 ):
         actId=int(sys.argv[1])
 
-    main(actId)
+    print " GC - "+ GC
+    print " Id - "+ str(ACT_DICT[actId])
+    ACT_DICT[actId]
