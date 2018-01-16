@@ -3,18 +3,20 @@
 This site contains the following pages:
 
 1. General
-    1. German Shepherd
-    2. Belgian Shepherd
-        1. Malinois
-        2. Groenendael
-        3. Tervuren
+    1. Life Goal
+    2. Academic Goal  
+        1. Reading
+        2. Writing
+        3. Minimum Viable Prototype (MVP)
 2. Scribles
-    1. Siberian
+    1. Structured prediction
     2. NDCG
     3. Bias Variance Margin Decomposition
-3. Random
-    1. random1
-    2. random2
-4. Template
-    1. template1
-    2. template2
+3. Project
+    1. WebApp
+    2. Evaluation
+    3. Servlet
+4. Personal
+    1. Publications
+    2. Resume
+    3. Project

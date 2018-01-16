@@ -22,7 +22,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="output" path="target/classes"/>
 	<classpathentry kind="src" path="src/main/py2"/>
-	<classpathentry kind="src" path="src/main/py3"/>	
+	<classpathentry kind="src" path="src/main/py3"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>
