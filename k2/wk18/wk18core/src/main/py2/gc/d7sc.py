@@ -43,6 +43,11 @@ def cmd_run(sCmd, bExe=True):
         output, error = process.communicate()
         print output
         
+def cmd_all(act):
+    for kls in CLS_LST:
+            if hasattr(kls(),act):
+                getattr(kls(),act)()
+
 # [] common
 class C1010common:        
     def os_ls(self):
@@ -55,13 +60,19 @@ class C1020specific:
         sCmd = "echo "+CXX.get("PJ_NAME")
         cmd_run(sCmd, bExe=bRun)
 
-
+# [] composite
+class C1030complex:
+    def cx_all(self):
+        actLst = ["sp_user","os_ls"]
+        for anAct in actLst:
+            cmd_all(anAct)
 
 """
 [] help, dummy, 
 """
 ACT_ID="sp_user"
 EXE_FLG=False
+CLS_LST=[] # CLS_LST=list()
 if __name__ == '__main__':
     
     # [] 
@@ -70,19 +81,17 @@ if __name__ == '__main__':
     print " - actId " + actId + " bRun " + str(bRun)
 
     # [] Creating  CLS_LST=[ C1010common, C1020specific ]
-    clsLst = list()
+    CLS_LST = list()
     for k,v in globals().items():
         #print k, ":"," - ",type(v), "\t", isinstance(v, types.ClassType )
         if isinstance(v, types.ClassType ):
-            clsLst.append(eval(k))  
+            CLS_LST.append(eval(k))  
     #print clsLst  
 
     # []
     #print type( kls )
     if actId == "help":
-        for kls in clsLst:
+        for kls in CLS_LST:
             print dir( kls() )
     else:     
-        for kls in clsLst:
-            if hasattr(kls(),actId):
-                getattr(kls(),actId)()
+        cmd_all(actId)
