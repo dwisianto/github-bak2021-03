@@ -36,7 +36,7 @@ CXX.update(CX7G)
 
 # []
 # 
-def gcp_bin_exe_cmd(sCmd, bExe=True):
+def cmd_run(sCmd, bExe=True):
     print sCmd
     if bExe:
         process = subprocess.Popen( sCmd.split(), stdout=subprocess.PIPE)
@@ -47,35 +47,19 @@ def gcp_bin_exe_cmd(sCmd, bExe=True):
 class C1010setup:        
     def doIt(self):
         sCmd = "doIt"
-        gcp_bin_exe_cmd(sCmd, bExe=bRun)
+        cmd_run(sCmd, bExe=bRun)
   
         
 # [] apache2
 class C1020apache2:
     def ap2a_start(self):
         sCmd = "apache starts"
-        gcp_bin_exe_cmd(sCmd, bExe=bRun)
+        cmd_run(sCmd, bExe=bRun)
 
-
-
-
-
-def try_all(act_id,b_run):
-      # []     
-    try:
-        getattr(C1010setup(),actId)()
-    except: 
-        pass
-    
-        # []     
-    try:
-        getattr(C1020apache2(),actId)()
-    except: 
-        pass
 
 
 #
-ACT_ID="ap2a_start"
+ACT_ID="doIt"
 #ACT_ID="ci1_scp_to_sc"
 EXE_FLG=False
 if __name__ == '__main__':
@@ -84,5 +68,12 @@ if __name__ == '__main__':
     bRun = bool(sys.argv[2]) if( len(sys.argv) > 3 ) else EXE_FLG
     print " actId " + actId + " bRun " + str(bRun)
  
-    try_all(act_id=actId, b_run=bRun)
+    if actId == "help":
+       print dir( C1010setup() ) 
+       print dir( C1020apache2() )
+    else:
+        if hasattr(C1010setup(),actId ): getattr(C1010setup(),actId)()
+        if hasattr(C1020apache2(),actId): getattr(C1020apache2(),actId)()
+         
+        #try_all(act_id=actId, b_run=bRun)
   
