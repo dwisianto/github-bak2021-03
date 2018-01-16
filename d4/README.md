@@ -1,14 +1,13 @@
 
 ## Resume writing in markdown
 
+# Location
+
+* [resume_bib](d18/resume/d18.bib.html)
+* [d18](d18)
 * [pandoc_resume](http://mszep.github.io/pandoc_resume/)
 * [d18_resume_r18a_pandoc_resume](d18/resume/r18a/pandoc_resume/)
 
-
-# Location
-
-* [d18](d18)
-* [resume_bib](d18/resume/d18.bib.html)
 
 ## Journal
 
@@ -30,4 +29,4 @@
 |     | resume | |
 |     | [gatech2015]( https://media.bizj.us/view/img/8481972/georgia-tech-2015-salaries-above-100000.pdf ) |
 |J15M | d7sc.py | |
-|J16T | d7sc.py | | 
+|J16T | d7sc.py | |
