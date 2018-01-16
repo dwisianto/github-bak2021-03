@@ -70,7 +70,7 @@ class C1030complex:
 """
 [] help, dummy, 
 """
-ACT_ID="sp_user"
+ACT_ID="help"
 EXE_FLG=False
 CLS_LST=[] # CLS_LST=list()
 if __name__ == '__main__':
