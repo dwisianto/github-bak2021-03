@@ -1,17 +1,18 @@
 
 
-## Eclipse 
+## Eclipse
 
 * Installation
 * Workspace
 * Shell - RemoteSystem
 * PyDev
-* 
+*
 
 
 ## ToDo
 * https://github.com/schiffner/biVar
 * https://github.com/RamonTavares/NCTEC17-WDS
+
 
 ## Journal
 
@@ -43,4 +44,3 @@ WebTarget target = client.target("http://localhost:8080")
 
 RespostaExpedient response = target.request(MediaType.APPLICATION_JSON)
                                    .post(Entity.json(data)), RespostaExpedient.class);
-

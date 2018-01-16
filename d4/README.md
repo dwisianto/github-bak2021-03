@@ -29,5 +29,5 @@
 |J12F | resume  |  [resume_bib](d18/resume/d18.bib.html) |
 |     | resume | |
 |     | [gatech2015]( https://media.bizj.us/view/img/8481972/georgia-tech-2015-salaries-above-100000.pdf ) |
-|J15M | d7sc.py | | 
-|
+|J15M | d7sc.py | |
+|J16T | d7sc.py | | 
