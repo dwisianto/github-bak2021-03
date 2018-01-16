@@ -1,7 +1,4 @@
 
-
-
-
 #
 # []
 # 
@@ -55,44 +52,37 @@ class C1010common:
 # [] specific
 class C1020specific:
     def sp_user(self):
-        sCmd = "echo $USER"
+        sCmd = "echo "+CXX.get("PJ_NAME")
         cmd_run(sCmd, bExe=bRun)
 
 
 
-
-
-
-
-
 """
-[] 
+[] help, dummy, 
 """
-ACT_ID="dummy"
-#ACT_ID="ci1_scp_to_sc"
+ACT_ID="sp_user"
 EXE_FLG=False
-
 if __name__ == '__main__':
     
     # [] 
     actId = str(sys.argv[1]) if( len(sys.argv) > 2 ) else ACT_ID
     bRun = bool(sys.argv[2]) if( len(sys.argv) > 3 ) else EXE_FLG
-    #print " - actId " + actId + " bRun " + str(bRun)
+    print " - actId " + actId + " bRun " + str(bRun)
 
-    # CLS_LST=[ C1010common, C1020specific ]
+    # [] Creating  CLS_LST=[ C1010common, C1020specific ]
     clsLst = list()
     for k,v in globals().items():
         #print k, ":"," - ",type(v), "\t", isinstance(v, types.ClassType )
         if isinstance(v, types.ClassType ):
-            print k
-            clsLst.append(k)
-    
+            clsLst.append(eval(k))  
+    #print clsLst  
 
-    # []     
+    # []
+    #print type( kls )
     if actId == "help":
-        #print type( kls )
         for kls in clsLst:
             print dir( kls() )
     else:     
         for kls in clsLst:
-            if hasattr(kls(),actId): getattr(kls(),actId)()
+            if hasattr(kls(),actId):
+                getattr(kls(),actId)()

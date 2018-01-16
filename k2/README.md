@@ -9,6 +9,12 @@
 *
 
 
+## Location
+
+| column | column | column | column |
+|--------|--------|--------|--------|
+| [kPy](kPy) | b | c | d | 
+
 ## ToDo
 * https://github.com/schiffner/biVar
 * https://github.com/RamonTavares/NCTEC17-WDS
