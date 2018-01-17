@@ -4,7 +4,7 @@
 
 | | | |
 |-|-|-|
-| | |  https://malishoaib.wordpress.com/2017/09/08/sample-size-estimation-for-machine-learning-models-using-hoeffdings-inequality/ | 
+| | |  https://malishoaib.wordpress.com/2017/09/08/sample-size-estimation-for-machine-learning-models-using-hoeffdings-inequality/ |
 | | | https://homes.di.unimi.it/valentini/software.html |
 | | | http://www.jmlr.org/papers/volume5/valentini04a/valentini04a.pdf |
 | | | remove dt-banner from distillpub |
@@ -24,6 +24,10 @@
 }
 </pre>
 
+## Location
+
+* [remarkjs](yXX/md/README.html)
+
 
 
 ## Journal
@@ -35,7 +39,7 @@
 | | | http://kpq.github.io/ |
 
 
-## 
+##
 
 ## Technology
 
@@ -73,4 +77,4 @@
 
 | | | |
 |-|-|-|
-| | | | 
+| | | |
