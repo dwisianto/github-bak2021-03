@@ -15,7 +15,7 @@
 
 | column | column | column | column |
 |--------|--------|--------|--------|
-| [kPy](kPy) | b | c | d | 
+| [kPy](kPy) | b | c | d |
 
 ## ToDo
 * https://github.com/schiffner/biVar
@@ -59,6 +59,8 @@ RespostaExpedient response = target.request(MediaType.APPLICATION_JSON)
 * [github-ssh-key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 * [ssh-multiple](https://dbushell.com/2013/01/27/multiple-accounts-and-ssh-keys/)
 *  [multiusers](https://www.keybits.net/post/automatically-use-correct-ssh-key-for-remote-git-repo/)
+
+Verbatim code 
 ```
 #activehacker account
 Host github.com-user1
