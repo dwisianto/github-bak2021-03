@@ -91,3 +91,17 @@ Host bitbucket-accountB
 
 ssh-keygen -t rsa -f ~/.ssh/accountB -C "your_email@youremail.com"
 
+```
+Host github.com-dwisianto
+     HostName github.com
+     User dwisianto
+     IdentityFile ~/.ssh/id_rsa
+     PreferredAuthentications publickey
+     IdentitiesOnly yes
+Host *
+     HostName github.com
+     User yuanyuanli66
+     IdentityFile ~/.ssh/id_rsa_yyl66
+     PreferredAuthentications publickey
+     IdentitiesOnly yes
+```
