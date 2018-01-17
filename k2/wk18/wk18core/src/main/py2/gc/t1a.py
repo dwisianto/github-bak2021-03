@@ -15,7 +15,8 @@ import subprocess
 #"f1-micro","g1-small","n1-standard-1"
 C_3C = {    
     "CI3_NAME":"m18c",
-    "DI3_NAME":"d18c"
+    "DI3_NAME":"d18c",
+    "PJ_NAME":"overwrite2"
     }
 
 # git-repo
@@ -23,14 +24,15 @@ C_7G = {
     "CI7G_NAME":"m18d",
     "DI7G_NAME":"d18g",
     "DI7G_SIZE":"70GB",
+    "PJ_NAME":"overwrite"
     }
 
 CXX = {"GC_PROJECT":"api-project",
        "PJ_NAME":"api-project",
        "PJ_ID":"api-project-63688615144"
        }
-CXX.update(C_3C)
 CXX.update(C_7G)
+CXX.update(C_3C)
 
 
 #
@@ -70,7 +72,7 @@ class C1030complex:
 """
 [] help, dummy, 
 """
-ACT_ID="help"
+ACT_ID="sp_user"
 EXE_FLG=False
 CLS_LST=[] # CLS_LST=list()
 if __name__ == '__main__':

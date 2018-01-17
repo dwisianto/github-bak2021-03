@@ -3,7 +3,7 @@
 This site contains the following pages:
 
 1. General
-    1. Life Goal
+    1. [maa](https://www.maa.org)
     2. Academic Goal  
 2. [Project](../../../k2)
     1. WebApp

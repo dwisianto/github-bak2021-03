@@ -37,12 +37,13 @@ CXX7G = {
     "DI7G_TYPE":"pd-standard",
     "DI7G_MODE":"rw"
     }
-
+CXX9X = {
+    "GC":"/Users/liy19/D7Sc/u0/gcp/sdk17x/bin/gcloud",
+    }
 CXX = {"GC_PROJECT":"api-project",
        "PJ_NAME":"api-project",
        "PJ_ID":"api-project-63688615144",
-#       "GC":"/Users/dsm/DSc/google-cloud-sdk/bin/gcloud",
-       "GC":"/Users/liy19/D7Sc/u0/gcp/sdk17x/bin/gcloud",
+       "GC":"/Users/dsm/DSc/google-cloud-sdk/bin/gcloud",       
        "CI_NAME":"m18d",
        "CI_STORE_ID":"-s1",
        "CI_MACHINE_TYPE":"n1-standard-1", 
@@ -98,7 +99,7 @@ CXX = {"GC_PROJECT":"api-project",
 CXX.update(CXX3)
 CXX.update(CXX4D)
 CXX.update(CXX7G)
-
+#CXX.update(CXX9X)
 
 # []
 # 
@@ -1009,9 +1010,8 @@ ACT_DICT={"vm1_start":"start a vm",
          "di2_attach":"",
          "di2_detach":""         
          }
-
-ACT_ID="vm1_stop"
 #ACT_ID="ci1_scp_to_sc"
+ACT_ID="vm1_start"
 bExeGlobal=True
 if __name__ == '__main__':
 
