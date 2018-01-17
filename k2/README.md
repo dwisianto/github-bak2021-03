@@ -1,8 +1,6 @@
 
 ## GitHub
 
-* [github-ssh-key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
-* [ssh-multiple](https://dbushell.com/2013/01/27/multiple-accounts-and-ssh-keys/)
 
 
 ## Eclipse
@@ -54,3 +52,42 @@ WebTarget target = client.target("http://localhost:8080")
 
 RespostaExpedient response = target.request(MediaType.APPLICATION_JSON)
                                    .post(Entity.json(data)), RespostaExpedient.class);
+
+
+### github and ssh
+
+* [github-ssh-key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+* [ssh-multiple](https://dbushell.com/2013/01/27/multiple-accounts-and-ssh-keys/)
+*  [multiusers](https://www.keybits.net/post/automatically-use-correct-ssh-key-for-remote-git-repo/)
+```
+#activehacker account
+Host github.com-user1
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_rsa_activehacker
+
+#jexchan account
+Host github.com-user2
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_rsa_jexchan
+```
+
+```
+Host bitbucket.org
+  User git
+  Hostname bitbucket.org
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa
+
+Host bitbucket-accountB
+  User git
+  Hostname bitbucket.org
+  PreferredAuthentications publickey
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/accountB
+```
+
+
+ssh-keygen -t rsa -f ~/.ssh/accountB -C "your_email@youremail.com"
+
