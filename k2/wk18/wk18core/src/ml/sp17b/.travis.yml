@@ -1,6 +1,0 @@
-language: java
-
-after_success:
-      - bash <(curl -s https://codecov.io/bash)
-# Run Integration tests
-script: "mvn test && mvn verify"
