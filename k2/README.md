@@ -14,7 +14,7 @@
 
 | column | column |
 |--------|--------|
-| [isp17b](k2/wk18/wk18core/src/ml/sp17b) | illnois-structured-prection |
+| [isp17b](wk18/wk18core/src/ml/isp17) | illinois-structured-prediction |
 
 
 ## Eclipse
