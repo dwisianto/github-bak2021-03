@@ -15,18 +15,23 @@
 
 ```
 git init
-
-
 ```
 
 ### Configuration
 
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_g_dsm -C "your_email@youremail.com"
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_b_dsm -C "your_email@youremail.com"
+> ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_g_dsm -C "your_email@youremail.com"
 
-~/.ssh/config
+> ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_b_dsm -C "your_email@youremail.com"
+
+```
+ssh-add
+ssh-add 
 ```
 
+
+```
+~/.ssh/config
+git clone ssh://git@github.com/<user>/<repository name>.git
 ```
 
 
