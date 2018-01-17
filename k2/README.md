@@ -6,9 +6,9 @@
 
 | column | column |
 |--------|--------|
-| [Jv](kXX/kJv) | Java |
-| [Gt](kXX/kGt) | Git |
-| [Py](kXX/kPy) | Python |
+| [Jv](kXX/kJv) | Maven Gradle Ant |
+| [Gt](kXX/kGt) | SmartGit  |
+| [Py](kXX/kPy) | PyDev |
 
 ## project
 
@@ -16,7 +16,6 @@
 |--------|--------|
 | [mlpr](wk18/wk18core/src/ml/) | machine-learning |
 | [isl17](wk18/wk18core/src/ml/isl17) | illinois-structured-prediction |
-| [remark](wk18/wk18core/src/ml/README.html) | markdown-template |
 
 
 ## Eclipse
