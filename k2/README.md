@@ -11,11 +11,13 @@
 * PyDev
 
 
-## Location
+## Tools
 
-| column | column | column | column |
-|--------|--------|--------|--------|
-| [kPy](kPy) | b | c | d |
+| column | column |
+|--------|--------|
+| [Jv](kXX/kJv) | Java |
+| [Gt](kXX/kGt) | Git |
+| [Py](kXX/kPy) | Python |
 
 ## ToDo
 * https://github.com/schiffner/biVar
@@ -52,58 +54,3 @@ WebTarget target = client.target("http://localhost:8080")
 
 RespostaExpedient response = target.request(MediaType.APPLICATION_JSON)
                                    .post(Entity.json(data)), RespostaExpedient.class);
-
-
-### github and ssh
-
-* [github-ssh-key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
-* [ssh-multiple](https://dbushell.com/2013/01/27/multiple-accounts-and-ssh-keys/)
-*  [multiusers](https://www.keybits.net/post/automatically-use-correct-ssh-key-for-remote-git-repo/)
-
-Verbatim code 
-```
-#activehacker account
-Host github.com-user1
-	HostName github.com
-	User git
-	IdentityFile ~/.ssh/id_rsa_activehacker
-
-#jexchan account
-Host github.com-user2
-	HostName github.com
-	User git
-	IdentityFile ~/.ssh/id_rsa_jexchan
-```
-
-```
-Host bitbucket.org
-  User git
-  Hostname bitbucket.org
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_rsa
-
-Host bitbucket-accountB
-  User git
-  Hostname bitbucket.org
-  PreferredAuthentications publickey
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/accountB
-```
-
-
-ssh-keygen -t rsa -f ~/.ssh/accountB -C "your_email@youremail.com"
-
-```
-Host github.com-dwisianto
-     HostName github.com
-     User dwisianto
-     IdentityFile ~/.ssh/id_rsa
-     PreferredAuthentications publickey
-     IdentitiesOnly yes
-Host *
-     HostName github.com
-     User yuanyuanli66
-     IdentityFile ~/.ssh/id_rsa_yyl66
-     PreferredAuthentications publickey
-     IdentitiesOnly yes
-```
