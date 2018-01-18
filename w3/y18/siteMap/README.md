@@ -20,6 +20,6 @@ This site contains the following pages:
         2. Writing
         3. Minimum Viable Prototype (MVP)
 9. Others
-    1. [Markdown Presentation](../../../w3/yXX/md/)
-    2. [Annotation Visualization](../../../w3/yXX/anno/anno.html)
-    3. [brat Annotation](brat.nlplab.org)
+    1. [brat Annotation](http://brat.nlplab.org/sitemap.html)
+    2. [Markdown Presentation](../../../w3/yXX/md/README.html)
+    3. [Annotation Visualization](../../../w3/yXX/anno/anno.html)
