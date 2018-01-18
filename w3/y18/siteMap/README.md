@@ -3,8 +3,8 @@
 This site contains the following pages:
 
 1. General
-    1. [maa](https://www.maa.org)
-    2. [bio](https://en.wikipedia.org/wiki/Bioinformatics)
+    1. [bio](https://en.wikipedia.org/wiki/Bioinformatics)
+    2. [maa](https://www.maa.org)
 2. [Project](../../../k2)
     1. Cloud Platform
     2. Visualization
@@ -19,4 +19,7 @@ This site contains the following pages:
         1. Reading
         2. Writing
         3. Minimum Viable Prototype (MVP)
-9. [Others](../../../w3/yXX/md/)
+9. Others
+    1. [Markdown Presentation](../../../w3/yXX/md/)
+    2. [Annotation Visualization](../../../w3/yXX/anno/anno.html)
+    3. [brat Annotation](brat.nlplab.org)
