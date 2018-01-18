@@ -4,11 +4,10 @@ This site contains the following pages:
 
 1. General
     1. [maa](https://www.maa.org)
-    2. Academic Goal  
+    2. [bio](https://en.wikipedia.org/wiki/Bioinformatics)
 2. [Project](../../../k2)
-    1. WebApp
-    2. Evaluation
-    3. Servlet
+    1. Cloud Platform
+    2. Visualization
 3. [Scribles](../../../w3)
     1. Structured prediction
     2. NDCG

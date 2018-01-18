@@ -6,8 +6,8 @@
 | column | column |
 |--------|--------|
 | [mlpr](wk18/wk18core/src/ml/) | machine-learning |
-| [isl17](wk18/wk18core/src/ml/isl17/a/doc) | illinois-structured-prediction |
-|
+| [isl17](wk18/wk18core/src/ml/isl17/) | illinois-structured-prediction |
+
 
 ## Tools
 
@@ -16,16 +16,7 @@
 | [Jv](kXX/kJv) | Maven Gradle Ant |
 | [Gt](kXX/kGt) | SmartGit  |
 | [Py](kXX/kPy) | PyDev |
-
-
-
-## Eclipse
-
-* Installation
-* Workspace
-* Shell - RemoteSystem
-* PyDev
-
+| [Eclipse] | Installation Workspace RemoteSystem PyDev ]
 
 
 ## ToDo
@@ -45,8 +36,8 @@
 | | | https://github.com/shancarter |
 | | | http://kpq.github.io/ |
 
+## JaxRS
 
-* jaxrs
 optional path parameter
 http://www.nakov.com/blog/2009/07/15/jax-rs-path-pathparam-and-optional-parameters/
 https://developer.ibm.com/code/videos/
@@ -54,6 +45,7 @@ https://developer.ibm.com/code/videos/
 
 http://www.hascode.com/2011/09/rest-assured-vs-jersey-test-framework-testing-your-restful-web-services/
 https://stackoverflow.com/questions/33896139/call-a-rest-webservice-from-an-other-project
+````
 Client client = ClientBuilder.newClient();
 WebTarget target = client.target("http://localhost:8080")
                          .path("pmtv2")
@@ -63,3 +55,4 @@ WebTarget target = client.target("http://localhost:8080")
 
 RespostaExpedient response = target.request(MediaType.APPLICATION_JSON)
                                    .post(Entity.json(data)), RespostaExpedient.class);
+````
