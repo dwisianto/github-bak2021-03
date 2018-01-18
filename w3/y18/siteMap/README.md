@@ -19,3 +19,4 @@ This site contains the following pages:
         1. Reading
         2. Writing
         3. Minimum Viable Prototype (MVP)
+9. [Others](../../../w3/yXX/md/)
