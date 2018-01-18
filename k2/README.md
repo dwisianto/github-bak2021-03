@@ -1,6 +1,13 @@
 
 # Coding
 
+## project
+
+| column | column |
+|--------|--------|
+| [mlpr](wk18/wk18core/src/ml/) | machine-learning |
+| [isl17](wk18/wk18core/src/ml/isl17/a/doc) | illinois-structured-prediction |
+|
 
 ## Tools
 
@@ -10,12 +17,6 @@
 | [Gt](kXX/kGt) | SmartGit  |
 | [Py](kXX/kPy) | PyDev |
 
-## project
-
-| column | column |
-|--------|--------|
-| [mlpr](wk18/wk18core/src/ml/) | machine-learning |
-| [isl17](wk18/wk18core/src/ml/isl17) | illinois-structured-prediction |
 
 
 ## Eclipse
