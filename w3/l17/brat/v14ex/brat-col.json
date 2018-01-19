@@ -1,0 +1,56 @@
+{
+    "entity_types": [
+        {
+            "type": "Person",
+            "labels": [ "Person", "Per" ],
+            "bgColor": "#7fa2ff",
+            "borderColor": "darken"
+        }
+    ],
+    "entity_attribute_types": [
+        {
+            "type": "Notorious",
+            "values": {
+                "Notorious": { "glyph": "★" }
+            },
+            "bool": "Notorious"
+        }
+    ],
+    "relation_types": [
+        {
+            "type": "Anaphora",
+            "labels": [ "Anaphora", "Ana" ],
+            "dashArray": "3,3",
+            "color": "purple",
+            "args": [
+                {
+                    "role": "Anaphor",
+                    "targets": [ "Person" ]
+                },
+                {
+                    "role": "Entity",
+                    "targets": [ "Person" ]
+                }
+            ]
+        }
+    ],
+    "event_types": [
+        {
+            "type": "Assassinationz2",
+            "labels": [ "Assassination2", "Assas" ],
+            "bgColor": "lightgreen",
+            "borderColor": "darken",
+            "arcs": [
+                {
+                    "type": "Victim",
+                    "labels": [ "Victim", "Vict" ]
+                },
+                {
+                    "type": "Perpetrator",
+                    "labels": [ "Perpetrator", "Perp" ],
+                    "color": "green"
+                }
+            ]
+        }
+    ]
+}

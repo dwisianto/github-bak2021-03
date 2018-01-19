@@ -36,10 +36,23 @@ collData['entity_attribute_types'] = [ {
     values: { 'Notorious': { 'glyph': '★' } }
 } ];
 		</pre>
-		<script type="text/javascript">					
+		<script type="text/javascript">		
 		var collData = {
-			entity_attribute_types : [ { type  : 'Notorious', values: { 'Notorious': { 'glyph': '★' } } } ]
-		};
+			    entity_types: [ {
+			            type   : 'Person',
+			            labels : ['Person', 'Per'],
+			            bgColor: '#7fa2ff',
+			            borderColor: 'darken'
+			    } ]
+			};		
+		collData['entity_attribute_types'] = [ {
+		    type  : 'Notorious',
+		    /* brat supports multi-valued attributes, 
+		        but in our case we will only use a single value and 
+		        add a glyph to the visualisation 
+		        to indicate that the entity carries that attribute */         
+		    values: { 'Notorious': { 'glyph': '★' } }
+		} ];		
 	</script>
 		
 		
@@ -59,19 +72,19 @@ docData['attributes'] = [
 ];		
 		</pre>
 		<script type="text/javascript">
-		var docData = { 
+		var docData = {
 			    text     : "Ed O'Kelley was the man who shot the man who shot Jesse James.",
 			    entities : [
-			                ['T1', 'Person', [[0, 11]]],
-			                ['T2', 'Person', [[20, 23]]],
-			                ['T3', 'Person', [[37, 40]]],
-			                ['T4', 'Person', [[50, 61]]],
-			            ],			    
-				attributes : [		
+			        ['T1', 'Person', [[0, 11]]],
+			        ['T2', 'Person', [[20, 23]]],
+			        ['T3', 'Person', [[37, 40]]],
+			        ['T4', 'Person', [[50, 61]]],
+			    ],
+			};		
+		docData['attributes'] = [
 		                         // Format: [${ID}, ${TYPE}, ${TARGET}]
 		                         ['A1', 'Notorious', 'T4']
-		                     ]
-		};
+		                     ];				
 		</script>	
 		
 		
