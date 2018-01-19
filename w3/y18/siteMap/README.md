@@ -18,7 +18,7 @@ This site contains the following pages:
  - [Entities](../../../w3/l17/brat/v14ex/b14aEntities.html)
  - [Attributes](../../../w3/l17/brat/v14ex/b14bAttribute.html)
  - [Relations](../../../w3/l17/brat/v14ex/b14cRelation.html)
- - [Events](../../../w3/l17/brat/v14ex/b14cEvent.html)
+ - [Events](../../../w3/l17/brat/v14ex/b14dEvent.html)
     2. [Markdown Presentation](../../../w3/yXX/md/README.html)
     3. [Annotation Visualization](../../../w3/yXX/anno/anno.html)
 6. Others
