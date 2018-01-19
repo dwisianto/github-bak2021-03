@@ -53,4 +53,4 @@
 |J16T | d7sc.py | |
 |J17W | isl17 | |
 |J18R | brat embed mode | |
-|J19F | | | 
+|J19F | brat minimal example | | 
