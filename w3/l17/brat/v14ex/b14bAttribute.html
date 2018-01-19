@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css"></style>
+		
+	    <link rel="stylesheet" type="text/css" href="css/style-vis.css"/>
+	    <script type="text/javascript" src="js/head.js"></script>
+	    
+		<!-- load all the libraries upfront, which takes forever. -->
+		<script type="text/javascript" src="js/brat_loader.js"></script>
+		
+	</head>
+
+	<body>
+	
+		<h1>Attribute </h1>
+		<!--
+		[]  
+		 -->
+		<p>	brat supports several other annotation primitives, 
+		let's look at the simplest annotation type that references another annotation, attributes. 
+		Now, our example contained three pretty notorious historical figures, however, 
+		one must be said to be a lot more notorious than the others so, 
+		let's create an attribute "Notorious" to mark him as such.
+		</p> 
+		<pre>
+collData['entity_attribute_types'] = [ {
+    type  : 'Notorious',
+    /* brat supports multi-valued attributes, 
+        but in our case we will only use a single value and 
+        add a glyph to the visualisation 
+        to indicate that the entity carries that attribute */         
+    values: { 'Notorious': { 'glyph': '★' } }
+} ];
+		</pre>
+		<script type="text/javascript">					
+		var collData = {
+			entity_attribute_types : [ { type  : 'Notorious', values: { 'Notorious': { 'glyph': '★' } } } ]
+		};
+	</script>
+		
+		
+		
+		<!--
+		[]  
+		 -->	
+		<p>
+		Once we have the configuration in place, 
+		we can add an attribute annotation similarity to how we added the entity annotations. 
+		The main difference is that we will have a reference to the "Jesse James" person annotation that had the id "T4".
+		</p> 
+		<pre>
+docData['attributes'] = [
+    // Format: [${ID}, ${TYPE}, ${TARGET}]
+    ['A1', 'Notorious', 'T4']
+];		
+		</pre>
+		<script type="text/javascript">
+		var docData = { 
+			    text     : "Ed O'Kelley was the man who shot the man who shot Jesse James.",
+			    entities : [
+			                ['T1', 'Person', [[0, 11]]],
+			                ['T2', 'Person', [[20, 23]]],
+			                ['T3', 'Person', [[37, 40]]],
+			                ['T4', 'Person', [[50, 61]]],
+			            ],			    
+				attributes : [		
+		                         // Format: [${ID}, ${TYPE}, ${TARGET}]
+		                         ['A1', 'Notorious', 'T4']
+		                     ]
+		};
+		</script>	
+		
+		
+		<!--
+		[]  
+		 -->			
+		<p>
+		And we can now see that "Jesse James" has been marked with a neat Unicode star to signify his notoriety.
+		</p>
+		<div id="embedding-viz"></div>
+		<script type="text/javascript">
+    	head.ready(function() {
+	        Util.embed('embedding-viz', $.extend({}, collData), $.extend({}, docData), webFontURLs);                
+    	});
+		</script>		
+		
+
+	</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css"></style>
+		
+	    <link rel="stylesheet" type="text/css" href="css/style-vis.css"/>
+	    <script type="text/javascript" src="js/head.js"></script>
+	    
+		<!-- load all the libraries upfront, which takes forever. -->
+		<script type="text/javascript" src="js/brat_loader.js"></script>
+		
+	</head>
+
+	<body>
+	
+		<h1>Relation </h1>
+		<!--
+		[]  
+		 -->
+		<p>
+		Let us now consider relational annotations, 
+		these are more complex than attributes but are also far more powerful. 
+		We could use them to visualize dependency, 
+		part-of and instance-of relations, 
+		but in our example we will use them to annotate anaphoras.
+		</p>
+		<pre>
+collData['relation_types'] = [ {
+    type     : 'Anaphora',
+    labels   : ['Anaphora', 'Ana'],
+    // dashArray allows you to adjust the style of the relation arc
+    dashArray: '3,3',
+    color    : 'purple',
+    /* A relation takes two arguments, both are named and can be constrained
+        as to which types they may apply to */
+    args     : [
+        // 
+        {role: 'Anaphor', targets: ['Person'] },
+        {role: 'Entity',  targets: ['Person'] }
+    ]
+} ];
+		</pre>
+		<script type="text/javascript">	
+		var collData = {
+			    entity_types: [ {
+			            type   : 'Person',
+			            labels : ['Person', 'Per'],
+			            bgColor: '#7fa2ff',
+			            borderColor: 'darken'
+			    } ]
+			};		
+		collData['entity_attribute_types'] = [ {
+		    type  : 'Notorious',
+		    /* brat supports multi-valued attributes, but in our case we will only
+		        use a single value and add a glyph to the visualisation to indicate
+		        that the entity carries that attribute */
+		    values: { 'Notorious': { 'glyph': '★' } }
+		} ];		
+		collData['relation_types'] = [ {
+		    type     : 'Anaphora',
+		    labels   : ['Anaphora', 'Ana'],
+		    // dashArray allows you to adjust the style of the relation arc
+		    dashArray: '3,3',
+		    color    : 'purple',
+		    /* A relation takes two arguments, both are named and can be constrained
+		        as to which types they may apply to */
+		    args     : [
+		        // 
+		        {role: 'Anaphor', targets: ['Person'] },
+		        {role: 'Entity',  targets: ['Person'] }
+		    ]
+		} ];
+	</script>
+		
+		
+		
+		<!--
+		[]  
+		 -->	
+		<p>
+		Once we have the configuration in place, 
+		we can add an attribute annotation similarity to how we added the entity annotations. 
+		The main difference is that we will have a reference to the "Jesse James" person annotation that had the id "T4".
+		</p> 
+		<pre>
+docData['attributes'] = [
+    // Format: [${ID}, ${TYPE}, ${TARGET}]
+    ['A1', 'Notorious', 'T4']
+];		
+docData['relations'] = [ 
+    // Format: [${ID}, ${TYPE}, [[${ARGNAME}, ${TARGET}], [${ARGNAME}, ${TARGET}]]]
+    ['R1', 'Anaphora', [['Anaphor', 'T2'], ['Entity', 'T1']]]
+];
+		</pre>
+		<script type="text/javascript">
+		var docData = { 
+			    text     : "Ed O'Kelley was the man who shot the man who shot Jesse James.",
+			    entities : [
+			                ['T1', 'Person', [[0, 11]]],
+			                ['T2', 'Person', [[20, 23]]],
+			                ['T3', 'Person', [[37, 40]]],
+			                ['T4', 'Person', [[50, 61]]],
+			            ]			    
+		};
+		docData['attributes'] = [
+		                         // Format: [${ID}, ${TYPE}, ${TARGET}]
+		                         ['A1', 'Notorious', 'T4']
+		                     ];		
+		docData['relations'] = [ 
+		                        // Format: [${ID}, ${TYPE}, [[${ARGNAME}, ${TARGET}], [${ARGNAME}, ${TARGET}]]]
+		                        ['R1', 'Anaphora', [['Anaphor', 'T2'], ['Entity', 'T1']]]
+		                    ];		
+		</script>	
+		
+		
+		<!--
+		[]  
+		 -->			
+		<p>
+		And the annotation visualization now clearly shows that the first man mentioned in "the man who shot the man who shot..." clearly was "Ed O'Kelley". 
+		</p>
+		<div id="embedding-viz"></div>
+		<script type="text/javascript">
+    	head.ready(function() {
+	        Util.embed('embedding-viz', $.extend({}, collData), $.extend({}, docData), webFontURLs);                
+    	});
+		</script>		
+		
+
+	</body>
+
+</html>

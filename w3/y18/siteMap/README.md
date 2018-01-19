@@ -17,9 +17,10 @@ This site contains the following pages:
     2. Resume
 5. Visualization
     1. [brat Annotation](http://brat.nlplab.org/sitemap.html)
-        1. [Example1](../../../w3/l17/brat/v14ex/minimal-brat-embedded.html)
-        2. Example2
-        3. Example3
+        1. [Entities](../../../w3/l17/brat/v14ex/b14aEntities.html)
+        2. [Attributes](../../../w3/l17/brat/v14ex/b14bAttribute.html)
+        3. [Relations](../../../w3/l17/brat/v14ex/b14cRelation.html)
+        4. [Events](../../../w3/l17/brat/v14ex/b14cEvent.html)
     2. [Markdown Presentation](../../../w3/yXX/md/README.html)
     3. [Annotation Visualization](../../../w3/yXX/anno/anno.html)
 6. Others
