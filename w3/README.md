@@ -1,5 +1,16 @@
 # README.md
 
+
+
+## Location
+
+* [jquery-ex-a](l17/jquery/jq_ex/a1a.html) - [jquery-ex-b](l17/jquery/jq_ex/a1b.html)
+* [bootstrap-btn](l17/bs/bs3ex/bs1a_btn.html)
+* [remarkjs](yXX/md/README.html)
+
+
+
+
 ## ToDo
 
 | | | |
@@ -24,9 +35,6 @@
 }
 </pre>
 
-## Location
-
-* [remarkjs](yXX/md/README.html)
 
 
 

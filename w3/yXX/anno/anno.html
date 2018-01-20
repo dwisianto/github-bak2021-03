@@ -1,43 +1,51 @@
 <html>
-<head>
-<script>
-document.addEventListener( 'DOMContentLoaded',function(){
- var searchpara=document.getElementById("search_para").innerHTML;
- searchpara=searchpara.toString();
- document.getElementById("search").onclick =function ()
- {highlight_word(searchpara)};
-},false);
+	<head>
 
-function highlight_word(searchpara)
-{
- var text=document.getElementById("search_text").value;
- if(text)
- {
-  var pattern=new RegExp("("+text+")", "gi");
-  var new_text=searchpara.replace(pattern, "<span class='highlight'>"+text+"</span>");
-  document.getElementById("search_para").innerHTML=new_text;
- }
-}
-</script>
+		<script>
+		document.addEventListener( 'DOMContentLoaded',function(){
+ 			var searchpara=document.getElementById("search_para").innerHTML;
+ 			searchpara=searchpara.toString();
+ 			document.getElementById("search").onclick =function ()
+ 			{highlight_word(searchpara)};
+			},false);
 
-<style>
-#search_para
-{
- color:grey;
-}
-.highlight
-{
- color:blue;
- text-decoration:underline;
-}
-</style>
-<body>
-<div id="wrapper">
-<input type="text" id="search_text">
-<input type="button" value="search" id="search">
-<div>
-<p id="search_para">The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages.</p>
-</div>
-</div>
-</body>
+		function highlight_word(searchpara) { 
+			var text=document.getElementById("search_text").value;
+ 			if(text) {
+  				var pattern=new RegExp("("+text+")", "gi");
+  				var new_text=searchpara.replace(pattern, "<span class='highlight'>"+text+"</span>");
+  				document.getElementById("search_para").innerHTML=new_text;
+ 			}
+		}
+		</script>
+
+		<style>
+			#search_para { color:grey; } 
+			.highlight { color:blue; text-decoration:underline; } 
+		</style>
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			<input type="text" id="search_text">
+			<input type="button" value="search" id="search">
+			<div>
+				<p id="search_para">
+				The European languages are members of the same family. 
+				Their separate existence is a myth. 
+				For science, music, sport, etc, Europe uses the same vocabulary. 
+				The languages only differ in their grammar, 
+				their pronunciation and their most common words. 
+				Everyone realizes why a new common language would be desirable: 
+				one could refuse to pay expensive translators. 
+				To achieve this, it would be necessary to have uniform grammar, 
+				pronunciation and more common words. 
+				If several languages coalesce, 
+				the grammar of the resulting language is more simple and regular than that of the individual languages.  			
+				The new common language will be more simple and regular than the existing European languages.
+				</p>
+			</div>
+		</div>
+	</body>
+	
 </html>
