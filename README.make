@@ -30,6 +30,8 @@ cln:
 	find ./ -name "*~" -delete
 
 
+cln-git:
+	git repack -a -d --depth=250 --window=250
 
 
 # #############
