@@ -42,15 +42,19 @@ class C1010common:
         sCmd = "ls"
         cmd_run(sCmd, bExe=bRun)
         
-# [] specific
+# [] ciir
 class C1020ciir:
     def ciir_echo(self):
         sCmd = "echo "+CXX.get("PJ_LOC")
         cmd_run(sCmd, bExe=bRun)
         sCmd = "echo "+CXX.get("PJ_NAME")
         cmd_run(sCmd, bExe=bRun)
-    def ciir_help(self):
         sCmd = "echo "+CXX.get("CIIR_EVAL")
+        cmd_run(sCmd, bExe=bRun)
+    def ciir_help(self):
+        sCmd =" java -cp "
+        sCmd += CXX.get("PJ_LOC")+"/"+CXX.get("PJ_NAME")+"/target/classes "
+        sCmd += CXX.get("CIIR_EVAL")
         cmd_run(sCmd, bExe=bRun)
         
 
@@ -65,7 +69,7 @@ class C1030complex:
 [] help, dummy, 
 """
 ACT_ID="ciir_help"
-EXE_FLG=False
+EXE_FLG=True
 CLS_LST=[] # CLS_LST=list()
 if __name__ == '__main__':
     
@@ -75,12 +79,12 @@ if __name__ == '__main__':
     print " - actId " + actId + " bRun " + str(bRun)
 
     # [] Creating  CLS_LST=[ C1010common, C1020specific ]
+    #print k, ":"," - ",type(v), "\t", isinstance(v, types.ClassType )
+    #print clsLst  
     CLS_LST = list()
-    for k,v in globals().items():
-        #print k, ":"," - ",type(v), "\t", isinstance(v, types.ClassType )
+    for k,v in globals().items():        
         if isinstance(v, types.ClassType ):
             CLS_LST.append(eval(k))  
-    #print clsLst  
 
     # []
     #print type( kls )
