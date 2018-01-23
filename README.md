@@ -7,9 +7,9 @@
 | [w3](w3) | web |
 | [k2](k2) | coding |  
 | .gitignore | |
-| pom.xml    | |
-| README.md  | |
-| README.make | |  
+| pom.xml    | for eclipse exploration |
+| README.md  | github readme information |
+| README.make | routine tasks |  
 
 ## Location
 
@@ -53,4 +53,6 @@
 |J16T | d7sc.py | |
 |J17W | isl17 | |
 |J18R | brat embed mode | |
-|J19F | brat minimal example | | 
+|J19F | brat minimal example | |
+|J22M | ACD deploy | |
+|J23T | ACD deploy | | 
