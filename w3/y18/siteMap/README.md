@@ -31,7 +31,39 @@ This site contains the following pages:
 
 ## Technology
 
+| Terminal |   |
+| ---- | ----- |
+| apple |   [iforgot](iforgot.apple.com) |
+|  |   | [icloud](https://www.icloud.com/) |
+
+
+| GCP |   |
+| ---- | ----- |
+| gcloud |   [iforgot](iforgot.apple.com) |
+|  |   | [icloud](https://www.icloud.com/) |
+| gsutil |   |
+|        |   | 
+
+
+
+
+
+## Candia
+
 |   |   |
 | ---- | ----- |
-| apple  |   |
-| auto |   |   
+| lawn |   |
+| electric |   |
+
+## Honda
+
+|      |       | |
+| ---- | ----- | |
+|      |       | |
+
+
+## Toyota
+
+|      |       | |
+| ---- | ----- | |
+|      |       | |
