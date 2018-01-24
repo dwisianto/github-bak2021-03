@@ -55,4 +55,6 @@
 |J18R | brat embed mode | |
 |J19F | brat minimal example | |
 |J22M | ACD deploy | |
-|J23T | ACD deploy | | 
+|J23T | ACD deploy | |
+|J24W | iforgot.apple.com | |
+|J25R | | | 
