@@ -57,4 +57,8 @@
 |J22M | ACD deploy | |
 |J23T | ACD deploy | |
 |J24W | iforgot.apple.com | |
-|J25R | | | 
+|     | [zaytsev_cv](http://vladimir.io/files/zaytsev-cv-november-2015.pdf) | |
+|     | [rest-assured](https://github.com/rest-assured/rest-assured/wiki/Usage) | |
+|     | [hamcrest](http://hamcrest.org/) |
+|     | [text-razor](https://www.textrazor.com/) | 
+|J25R | | |
