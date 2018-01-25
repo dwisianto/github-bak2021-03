@@ -31,13 +31,23 @@ This site contains the following pages:
 
 ## Technology
 
-| Terminal |   |
+| Mac |   |
 | ---- | ----- |
-| apple |   [iforgot](iforgot.apple.com) |
-|  |   [icloud](https://www.icloud.com/) |
+| [appleid](appleid.apple.com) | |
+| [iforgot](iforgot.apple.com) |    |
+| [icloud](https://www.icloud.com/) |    |
+| [developer](http) |   |
+| Hardware | 2.7 GHz |
+|  | AppleCare |
 |  | |
+|  | [iforgot]( ) |
+|  | How to change icloud password |
+|  | How to setup mac |
+|  | XCode |
+|  | System Preference |
+|  | 2700 |
+|  | [mac-setup](../mac/) |
 
-### NAS
 
 | NAS|   |
 | ---- | ----- |
@@ -45,7 +55,7 @@ This site contains the following pages:
 |  |   [icloud](https://www.icloud.com/) |
 |  | |
 
-### NAS
+
 
 | [GCP](https://cloud.google.com/) |   |
 | ---- | ----- |
