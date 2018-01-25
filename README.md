@@ -60,5 +60,10 @@
 |     | [zaytsev_cv](http://vladimir.io/files/zaytsev-cv-november-2015.pdf) | |
 |     | [rest-assured](https://github.com/rest-assured/rest-assured/wiki/Usage) | |
 |     | [hamcrest](http://hamcrest.org/) |
-|     | [text-razor](https://www.textrazor.com/) | 
-|J25R | | |
+|     | [text-razor](https://www.textrazor.com/) |
+|J25R | [macbook-setup](http://sourabhbajaj.com/mac-setup/) | |
+|     | [phrase-mining](https://shangjingbo1226.github.io/) |
+|     | [NguyenBach](http://www.cs.cmu.edu/~nbach/) |
+|     | [relationExtraction](http://iesl.cs.umass.edu/riedel/ecml/)|
+|     | [deep-dive-prof](https://ds3lab.org/) |
+|     | [deep-dive-thesis](https://cs.stanford.edu/people/czhang/zhang.thesis.pdf) | 
