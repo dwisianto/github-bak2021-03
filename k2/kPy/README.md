@@ -41,3 +41,9 @@ source e1a/bin/activate
 which python
 env/bin/pip install -r requirements.txt
 ```
+
+### Data Structured
+
+aList = []
+aList = list()
+len(aList)

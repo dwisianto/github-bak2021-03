@@ -3,6 +3,7 @@
 
 # e1a
 virtualenv e1a
-pip install datrie
+#pip install datrie
+#source e1a/bin/activate
 
 
