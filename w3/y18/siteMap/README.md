@@ -1,7 +1,7 @@
 
 
 
-This site contains the following pages:
+
 This site contains the following pages:
 
 1. General
@@ -27,26 +27,18 @@ This site contains the following pages:
     1. [brat Annotation](http://brat.nlplab.org/sitemap.html)
     2. [Markdown Presentation](../../../w3/yXX/md/README.html)
     3. [Annotation Visualization](../../../w3/yXX/anno/anno.html)
-    4.
+
+Testing custom_cancer_v1.0.zip cartridge is working correctly if ContentType is set to be octet-stream. Howerver, error 500 is returned when the ContentType is set to be Multipart form.
 
 ## Technology
 
-| Mac |   |
+| [mac](../../k2/kMac/) |   |
 | ---- | ----- |
-| [appleid](appleid.apple.com) | |
-| [iforgot](iforgot.apple.com) |    |
+| [appleid](https://appleid.apple.com) | |
+| [iforgot](https://iforgot.apple.com) |    |
 | [icloud](https://www.icloud.com/) |    |
-| [developer](http) |   |
-| Hardware | 2.7 GHz |
-|  | AppleCare |
-|  | |
-|  | [iforgot]( ) |
-|  | How to change icloud password |
-|  | How to setup mac |
-|  | XCode |
-|  | System Preference |
-|  | 2700 |
-|  | [mac-setup](../mac/) |
+| [developer](https://) |   |
+
 
 
 | NAS|   |
