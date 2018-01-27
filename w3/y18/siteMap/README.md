@@ -14,7 +14,7 @@ This site contains the following pages:
     1. Structured prediction
     2. NDCG
     3. Bias Variance Margin Decomposition
-4. [Personal](../../../d4/) - Publications - Resume
+4. [Personal](../../../d4/) - [Resume](.././../d4/) - [bk](.././../d4/) 
 5. Visualization
     1. [brat Annotation Tools ](http://brat.nlplab.org/sitemap.html)
  - [Entities](../../../w3/l17/brat/v14ex/b14aEntities.html)
@@ -28,7 +28,6 @@ This site contains the following pages:
     2. [Markdown Presentation](../../../w3/yXX/md/README.html)
     3. [Annotation Visualization](../../../w3/yXX/anno/anno.html)
 
-Testing custom_cancer_v1.0.zip cartridge is working correctly if ContentType is set to be octet-stream. Howerver, error 500 is returned when the ContentType is set to be Multipart form.
 
 ## Technology
 
