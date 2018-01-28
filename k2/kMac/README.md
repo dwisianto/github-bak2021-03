@@ -2,13 +2,32 @@
 ##
 
 
-|   |   |
-|---|---|
-| appleid | |
-| icloud | |
-| bookmark | |  
-| [keychain]() | |
-| xcode   | |
+
+
+| appleid  |   |   |
+|---|---|---|
+| hardware  | | |
+| applecare | | |
+| icloud | | |
+| bookmark | | |
+| [keychain]() | | |
+| xcode | | |
+
+
+
+
+| productivity  |   |   |
+|------------|---|---|
+| tmux       |   |   |
+| iterm2     |   |   |
+| ForkLift   |   |   |
+| brew       |   |   |
+| atom       |   |   |
+| [mac-setup](http://sourabhbajaj.com/mac-setup/) | | |
+| [mac-dev-setup](http://sourabhbajaj.com/mac-setup/) | | | 
+
+
+
 
 
 
@@ -33,4 +52,4 @@
 
 
 | | |
-| | | 
+| | |

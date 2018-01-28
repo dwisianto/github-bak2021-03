@@ -66,4 +66,7 @@
 |     | [NguyenBach](http://www.cs.cmu.edu/~nbach/) |
 |     | [relationExtraction](http://iesl.cs.umass.edu/riedel/ecml/)|
 |     | [deep-dive-prof](https://ds3lab.org/) |
-|     | [deep-dive-thesis](https://cs.stanford.edu/people/czhang/zhang.thesis.pdf) | 
+|     | [deep-dive-thesis](https://cs.stanford.edu/people/czhang/zhang.thesis.pdf) |
+|J26F | [mac-dev-setup](https://github.com/nicolashery/mac-dev-setup#system-update) |
+|J27S | sentence cluster and summarization |
+|J28S | |
