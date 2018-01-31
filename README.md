@@ -69,4 +69,13 @@
 |     | [deep-dive-thesis](https://cs.stanford.edu/people/czhang/zhang.thesis.pdf) |
 |J26F | [mac-dev-setup](https://github.com/nicolashery/mac-dev-setup#system-update) |
 |J27S | sentence cluster and summarization |
-|J28S | |
+|J28S | https://www.textrazor.com/ |
+|     | https://github.com/icoxfog417/awesome-text-summarization |
+|     | https://tac.nist.gov//2011/Summarization/ |
+|     | http://duc.nist.gov/duc2004/tasks.html|
+|     | http://archive.ics.uci.edu/ml/datasets/Legal+Case+Reports |
+|     | https://aclweb.org/anthology/D15-1237 |
+|     | https://github.com/karthikncode/nlp-datasets |
+|     |  |
+|J29M | d.bee.whcs |
+|     | do.bb.io     |

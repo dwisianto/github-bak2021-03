@@ -1,6 +1,13 @@
 # README.md
 
 
+## startup
+
+| | | |
+|-|-|-|
+| | | [textrazor]() |
+| | | [textteasor](http://www.textteaser.com/) | 
+| | | []() |
 
 
 ## blogging
