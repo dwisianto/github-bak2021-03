@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="John Doe" />
+  <title>Your Title</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Your Title</h1>
+<p class="author">John Doe</p>
+<p class="date">16/06/2017</p>
+</header>
+<p>[TOC]</p>
+<h1 id="introduction">Introduction</h1>
+<p>Structured Output Prediction is for predicting multivariate or structured outputs. It performs supervised learning by approximating a mapping <br /><span class="math display"><em>h</em> : <em>X</em> −  &gt; <em>Y</em></span><br /> using labeled training examples <span class="math inline">(<em>x</em><sub>1</sub>, <em>y</em><sub>1</sub>), ..., (<em>x</em><sub><em>n</em></sub>, <em>y</em><sub><em>n</em></sub>)</span>. Unlike regular SVMs, however, which consider only univariate predictions like in classification and regression, SVMstruct can predict complex objects y like trees, sequences, or sets. Examples of problems with complex outputs are natural language parsing, markov models for part-of-speech tagging, and sequence alignment in protein homology detection.</p>
+<p><br /><span class="math display"><em>y</em><sup>*</sup> = arg max<sub><em>y</em> ∈ <em>Y</em></sub> <em>f</em>(<em>x</em>, <em>y</em>)</span><br /></p>
+<h1 id="applications">Applications</h1>
+<h2 id="approaches">Approaches</h2>
+<ul>
+<li>SvmStruct</li>
+<li>CRF</li>
+<li>CNN</li>
+<li>RNN</li>
+</ul>
+<h2 id="researchers">Researchers</h2>
+<p><a href="http://www.nowozin.net/sebastian/">Dr. Sebastian Nowozin</a> <a href="http://www.francky.me/publications.php">Franck Dernoncourt</a> <a href="https://github.com/Franck-Dernoncourt">Franck Dernoncourt</a></p>
+<h2 id="tutorial">Tutorial</h2>
+<p><a href="https://en.wikipedia.org/wiki/Named-entity_recognition">NER</a> <a href="http://pub.ist.ac.at/~chl/papers/nowozin-fnt2011.pdf">nowozin</a> <a href="https://www.cs.utah.edu/~piyush/teaching/structured_prediction.pdf">sp</a></p>
+<h2 id="review">Review</h2>
+<h2 id="dataset">Dataset</h2>
+<p><a href="https://github.com/Franck-Dernoncourt/pubmed-rct">pubmed-rct</a> <a href="https://scholar.google.com/citations?user=9vB_1ekAAAAJ&amp;hl=en">JiYoungLee</a></p>
+<h2 id="softwares">Softwares</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>column</th>
+<th>column</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="http://brat.nlplab.org/">brat</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="http://cogcomp.org/software/illinois-sl/">illinois_sl</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="https://github.com/CogComp/cogcomp-nlp">illinois_core</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="http://larsmans.github.io/seqlearn/">seqlearn</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.cs.cornell.edu/people/tj/svm_light/svm_struct.html">svmStruct</a></td>
+<td>upport Vector Machine (SVM) algorithm for predicting multivariate or structured outputs</td>
+</tr>
+<tr class="even">
+<td><a href="https://pystruct.github.io/">pystruct</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>vowpal_wabbit</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>searn</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>StructED: Risk Minimization in Structured Prediction</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>regression tree field</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="bibliogrpahy">Bibliogrpahy</h2>
+<p><a href="sp.bib.html">bib</a> <a href="sp_/nowozin-fnt2011.pdf">bib_</a></p>
+</body>
+</html>
