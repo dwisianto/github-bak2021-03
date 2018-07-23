@@ -22,8 +22,15 @@ gen_pdf_bib2:
 gen_pdf_bib3:
 		pandoc -s --bibliography $(TGT).bib --filter pandoc-citeproc $(TGT).md -o $(TGT).pdf
 
-gen_html:
+gen_html: gen_html_bib1_csl
+	
+
+gen_html_raw:
 	pandoc $(TGT).md -o $(TGT).html
+	
+gen_html_bib1_csl:
+		pandoc -s --filter pandoc-eqnos --bibliography $(TGT).bib --filter pandoc-citeproc --csl ieee.csl $(TGT).md -o $(TGT).html
+
 
 cln:
 	rm -rf $(TGT).pdf

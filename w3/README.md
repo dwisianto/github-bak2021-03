@@ -13,6 +13,13 @@
 
 ## ToDo
 
+
+| | | 
+|-|-|
+| | https://www.codeply.com/go/DgDR4ZHwDt/bootstrap-4-sidebar-menu-(toggleable) |
+| | |
+
+
 | | | |
 |-|-|-|
 | | |  https://malishoaib.wordpress.com/2017/09/08/sample-size-estimation-for-machine-learning-models-using-hoeffdings-inequality/ |
@@ -34,6 +41,7 @@
   organization={ACM}
 }
 </pre>
+
 
 
 
