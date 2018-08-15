@@ -1,23 +1,17 @@
 
 # Coding
 
-## project
-
-| column | column |
-|--------|--------|
-| [mlpr](wk18/wk18core/src/ml/) | machine-learning |
-| [isl17](wk18/wk18core/src/ml/isl17/) | illinois-structured-prediction |
-
 
 ## Tools
 
 | column | column |
 |--------|--------|
+| [Qa](kXX/kQa) | Coding Question Answer | 
 | [Jv](kXX/kJv) | Maven Gradle Ant |
-| [Gt](kXX/kGt) | SmartGit  |
 | [Py](kXX/kPy) | PyDev |
 | [Eclipse] | Installation Workspace RemoteSystem PyDev ]
-
+| [Gt](kXX/kGt) | SmartGit  |
+| [Db](kXX/kDb) | Database  | 
 
 ## ToDo
 * https://github.com/schiffner/biVar
@@ -56,3 +50,19 @@ WebTarget target = client.target("http://localhost:8080")
 RespostaExpedient response = target.request(MediaType.APPLICATION_JSON)
                                    .post(Entity.json(data)), RespostaExpedient.class);
 ````
+
+
+## Archive
+
+### Projects
+
+
+| column | column |
+|--------|--------|
+| [mlpr](wk18/wk18core/src/ml/) | machine-learning |
+| [isl17](wk18/wk18core/src/ml/isl17/) | illinois-structured-prediction |
+
+
+### Tools
+
+
