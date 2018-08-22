@@ -9,11 +9,13 @@
 | [Qa](kXX/kQa) | Coding Question Answer | 
 | [Jv](kXX/kJv) | Maven Gradle Ant |
 | [Py](kXX/kPy) | PyDev |
-| [Eclipse] | Installation Workspace RemoteSystem PyDev ]
+| [Eclipse] | Installation Workspace RemoteSystem PyDev |
 | [Gt](kXX/kGt) | SmartGit  |
 | [Db](kXX/kDb) | Database  | 
 
 ## ToDo
+
+
 * https://github.com/schiffner/biVar
 * https://github.com/RamonTavares/NCTEC17-WDS
 
