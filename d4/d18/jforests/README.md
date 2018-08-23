@@ -37,7 +37,8 @@ There are three main operations, i.e,
   - clustering
   - ranking
 
-GoTo: [top](#table-of-contents)	
+GoTo: [jfs](#jforests)	
+
 
 ## How to do a compression operation ?
 
@@ -46,20 +47,20 @@ GoTo: [top](#table-of-contents)
 - FeatureAnalyzer 
     - It processes each training file
     - It creates a statistic file
-- 
 - DiscreteSparseTextFileGenerator.convert
 - BinaryFileGenerator
-- 
 
-GoTo: [top](#table-of-contents)	
+GoTo: [jfs](#jforests)	
+
 
 ## How to do a clustering operation ?
 
-GoTo: [top](#table-of-contents)	
+GoTo: [jfs](#jforests)		
 
 ## How to do a ranking operation ?
 
-GoTo: [top](#table-of-contents)
+GoTo: [jfs](#jforests)		
+
 
 ## What are the packages in the original jforests ?
 
@@ -79,9 +80,7 @@ The evaluation
   - eval
   - tuning 
 	
-GoTo: [top](#table-of-contents)	
-
-
+GoTo: [jfs](#jforests)		
 
 ## What is the purpose of the Dataset package?
 
@@ -92,8 +91,8 @@ The feature class has a numeric array member; which is also ByteSerializable
 - Histogram is an abstract class with a feature as one of the member
 - Dataset   has a feature array
 
+GoTo: [jfs](#jforests)		
 
-GoTo: [top](#table-of-contents)	
 
 ## What is the purpose of the Input package?
 
@@ -126,7 +125,8 @@ Both the clustering and ranking used the same
 
 The input/sparse package 
 
-GoTo: [top](#table-of-contents)
+GoTo: [jfs](#jforests)		
+
 
 
 ## What is FeatureAnalyzer?
@@ -141,8 +141,7 @@ An array of max;
 An array of factor
 An array of onLogScale with boolean values.
 	
-GoTo: [top](#table-of-contents)	
-
+GoTo: [jfs](#jforests)		
 
 
 ## How to start customization
@@ -170,11 +169,10 @@ GoTo: [top](#table-of-contents)
 
 - ranking
 	- input/action/
-	- 
 
 
+GoTo: [jfs](#jforests)		
 
-GoTo: [top](#table-of-contents)	
 
 ## What is Byte ?
 
@@ -198,14 +196,13 @@ GoTo: [top](#table-of-contents)
 	- to
 - util/UtilByte is introduce to replace util/Util. It specializes in byte manipulation	
 
+GoTo: [jfs](#jforests)		
 
-GoTo: [top](#table-of-contents)	
 
 ## What is Byte Array ? 
 
+GoTo: [jfs](#jforests)		
 
-
-GoTo: [top](#table-of-contents)	
 
 ## What is Byte Buffer ? 
 
