@@ -62,7 +62,7 @@ GoTo: [jfs](#jforests)
 GoTo: [jfs](#jforests)		
 
 
-## What are the packages in the original jforests ?
+## What are the packages in the original jforests?
 
 Packages in jforests are as follows.
   - application - 
@@ -97,12 +97,16 @@ GoTo: [jfs](#jforests)
 ## What is the purpose of the Input package?
 
 
-The input package deals with the extraction of feature structures from raw texts that are appropriate for different actions; such as compression, clustering, and ranking operation.
+The input package deals with the **extraction** of feature structures from raw texts that are appropriate for different actions; such as compression, clustering, and ranking operation.
 
-- FeatureAnalyzer
-- FeatureStatistics
-- OriginalFeatureValues
-- FeatureValuePair
+
+The input/sparse package is useful for reading in a sparse feature format
+
+- SparseTextFileReader
+- SparseTextFileLine
+    - MetaData 
+    - MetaLineParser
+    - FeatureMetaData
 
 The clustering operation are dealt with the following files
 
@@ -123,9 +127,16 @@ Both the clustering and ranking used the same
 
 - DiscreteSparseTextFileGenerator 
 
-The input/sparse package 
 
-GoTo: [jfs](#jforests)		
+
+
+- FeatureAnalyzer
+- FeatureStatistics
+- OriginalFeatureValues
+- FeatureValuePair
+
+
+GoTo: [Top](#jforests)		
 
 
 
