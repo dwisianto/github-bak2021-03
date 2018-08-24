@@ -8,27 +8,78 @@
 
 - git accounts
 - git commands
-- git ide
 
 
+- ide
+    - smartgit
+    - githubDesktop : 
+    - egit : eclipse git
+- cheatsheet
+    - [github](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
+    - [bitbucket]()
 - https://stackoverflow.com/questions/52704/how-do-i-discard-unstaged-changes-in-git
-- 
 
-## git help
+
+
+## Git Configuration
+
+### git help
 
 - git help 
 - git help init
 - git help add
 
+### Git Config
 
-## git clone
+- git config --global user.name "myName"
+    - set the name you want attached to your commit transactions
+- git config --global user.email "emailAddress"
+    - set the email you want attached to your commit transactions
+- git config --global color.ui auto
+    - enables helpful colorization of command line output
+    
+## First Local Repository
+
+- git init <projectName>
+    - create a new local repository with the specific name
+- git clone 
+
+## First Remote repository
 
 
-- 
-- 
--
+
+
+### Git init
+
+
  
-## git init
+
+
+## Routine
+
+### Routine1 : add-reset-commit
+- git status
+- git diff  # show file differences not yet staged
+- git add [file] # snapshots the file in preparation for versioning
+- git diff --staged # show file differences between staging and the last file version
+- git reset [file] # unstages the file but preserve its contents
+- git commit -m "[descriptive message]" # records file pearmanently in version history
+ 
+### Routine2 : Branches
+
+- git branch
+- git branch [branch-name] # create a new branch
+- git checkout [branch-name] # 
+- git merge [branch] # combine the specified branch history into the current branch
+- git branch -d [branch-name] # delete the specified branch
+
+### 
+
+### Refactor FileNames
+
+- git rm [file] # dletes the file from the working directory and stages the deletion
+- git rm --cached [file] # removes the file from version control but perserves the file locally
+- git mv "file-original" "file-renamed" # changes the file name and prepares it for commit
 
 - 
 -
