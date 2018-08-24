@@ -1,13 +1,5 @@
 # JForests
 
-- [Customization](#customization)
-- [Timeline](#timeline)
-- [ToDo](#todo)
-- [Template](#template)
-
-
-## Table of Contents
-
 
 - [What are the main operations](#what-are-the-main-operations)
     - [How to do a compression operation](#how-to-do-a-compression-operation)
@@ -24,7 +16,13 @@
 - [What is a custom input package?](#what-is-a-custom-input-package)
 - [What is a custom dataset package?](#what-is-a-custom-dataset-package)
 
+- [Customization](#customization)
+- [Timeline](#timeline)
+- [ToDo](#todo)
+- [Template](#template)
 
+
+## Table of Contents
 
 
 
@@ -224,6 +222,32 @@ GoTo: [jfs](#jforests)
 GoTo: [top](#table-of-contents)
 
 
+
+## Customization
+	
+- jfs	
+    - apps
+        - config        
+        - tool
+    - ingest <- input
+        - types
+            - sparse
+            - dense  
+        - actions
+            - cluster
+            - compress
+            - rank
+    - conceal <- dataset
+        - ByteSerializableInterface
+        - HistogramAbstract
+        - numArray
+	- util
+        - UtlByteArray
+
+     
+GoTo: [jfs](#jforests)	
+
+
 ## What is a custom Dataset package?
 
 The development of a custom dataset package starts from 
@@ -238,7 +262,9 @@ The development of a custom dataset package starts from
 - DatasetClustering
 - DatasetRanking
 
-GoTo: [top](#table-of-contents)	
+
+GoTo: [jfs](#jforests)	
+
 	
 ## What is a custom Input package?
 
@@ -268,31 +294,7 @@ The input action can be grouped into two different purposes, i.e., Cluster and R
 	- BinFileReaderRanker
 	- BinFileWriterRanker
  
-GoTo: [top](#table-of-contents)	
 
-
-## Customization
-	
-- jfs	
-    - apps
-        - config        
-        - tool
-    - ingest <- input
-        - types
-            - sparse
-            - dense  
-        - actions
-            - cluster
-            - compress
-            - rank
-    - conceal <- dataset
-        - ByteSerializableInterface
-        - HistogramAbstract
-        - numArray
-	- util
-        - UtlByteArray
-
-     
 GoTo: [jfs](#jforests)	
 
 
@@ -305,6 +307,8 @@ GoTo: [jfs](#jforests)
     - Should a common analysis structure be available to capture different aspects of a runtime 
 - BinFileDiscretizeCluster in jf/input/action/
 - BinFileDiscretizeClusterTst 
+- FeatureAnalyzerTst
+
 
 GoTo: [jfs](#jforests)	
 
