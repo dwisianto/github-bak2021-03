@@ -9,7 +9,7 @@
 - [What is the purpose of the Dataset Package?](#what-is-the-purpose-of-the-dataset-package)
 - [What is FeatureAnalyzer?](#what-is-featureanalyzer)
 - [What is the purpose of the Input Package?](#what-is-the-purpose-of-the-input-package)
-- [How to start customization](#how-to-start-customization)
+
 - [What is Byte](#what-is-byte) 
     - [What is Byte Array?](#what-is-byte-array) 
     - [What is Byte Buffer?](#what-is-byte-buffer) 
@@ -17,6 +17,8 @@
 - [What is a custom dataset package?](#what-is-a-custom-dataset-package)
 
 - [Customization](#customization)
+    - [How to start customization](#how-to-start-customization)
+    - [BinFileConverterCluster](#bin-file-converter-cluster)
 - [Timeline](#timeline)
 - [ToDo](#todo)
 - [Template](#template)
@@ -153,34 +155,6 @@ An array of onLogScale with boolean values.
 GoTo: [jfs](#jforests)		
 
 
-## How to start customization
-
-
-- compression
-	- util 
-	    - UtilByteArray : convert from primitive types to the byte array
-	- dataset
-	    - NumArrayFactory to create byte array for feature
-	    - numeric 
-	    - ByteSerializable
-	- input 
-	    - Feature 
-	    - FeatureAnalyzer detect FeatureStatistics from RawTxt
-	- input 
-	    - Raw2BinConverter
-	- 
-	- config
-	    - CfgJf is to capture different statistics
-- clustering
-	- application
-	- input/
-	- sample
-
-- ranking
-	- input/action/
-
-
-GoTo: [jfs](#jforests)		
 
 
 ## What is Byte ?
@@ -248,6 +222,53 @@ GoTo: [top](#table-of-contents)
 GoTo: [jfs](#jforests)	
 
 
+### How to start customization
+
+
+- compression
+	- util 
+	    - UtilByteArray : convert from primitive types to the byte array
+	- dataset
+	    - NumArrayFactory to create byte array for feature
+	    - numeric 
+	    - ByteSerializable
+	- input 
+	    - Feature 
+	    - FeatureAnalyzer detect FeatureStatistics from RawTxt
+	- input 
+	    - Raw2BinConverter
+	- 
+	- config
+	    - CfgJf is to capture different statistics
+- clustering
+	- application
+	- input/
+	- sample
+
+- ranking
+	- input/action/
+
+
+GoTo: [jfs](#jforests)		
+
+
+### Bin File Converter Cluster
+
+
+- BinFileDiscreteCluster has two static methods. 
+    - The first static method to convert an input file to binary given a static file
+    - The second static method to revert an input file given a statistic file 
+- convert
+    - in  : raw text file , feature statistics file
+    - out : discrete file 
+    - load feature statistics file
+    - Read each line from the input raw file
+- revert
+    - in : 
+    - out : 
+    - 
+
+
 ## What is a custom Dataset package?
 
 The development of a custom dataset package starts from 
@@ -308,6 +329,9 @@ GoTo: [jfs](#jforests)
 - BinFileDiscretizeCluster in jf/input/action/
 - BinFileDiscretizeClusterTst 
 - FeatureAnalyzerTst
+- BinFileDiscreteCluster has two static methods. 
+    - The first static method to convert an input file to binary given a static file
+    - The second static method to revert an input file given a statistic file 
 
 
 GoTo: [jfs](#jforests)	
@@ -326,7 +350,7 @@ GoTo: [jfs](#jforests)
 - structured learning
 - recommendation learning
 - incremental svd
-- 
+- DataInputStream and DataOutputStream is able to read/write bytearray
 
 GoTo: [jfs](#jforests)	
 

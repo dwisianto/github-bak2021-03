@@ -1,14 +1,12 @@
 # Python
 
+- [Interpreter](#interpreter)
 - [Console](#console)
-- [Environment](#environment)
+- [Language Reference](#language-reference)
 
 
 
-
-
-
-## Environment
+## Interpreter
 
 - pyenv shims
 - virtual environment
@@ -87,10 +85,12 @@ GoTo: [Top](#python)
 
 
 
+## Language Reference
 
-## Language
 
-### Python
+This section contains a Python reference documentation.
+
+### Built-in Functions
 
 | column | column | column | column |
 |--------|--------|--------|--------|
@@ -99,4 +99,10 @@ GoTo: [Top](#python)
 | locals | | |
 | globals | | | 
 
+### Files
 
+### String
+
+### List
+
+### Keywords

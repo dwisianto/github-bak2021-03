@@ -1,5 +1,7 @@
 # Git
 
+- [Git Configuration](#git-configuration)
+- [Routine](#routine)
 - basic
 - undoing changes
 - branches
@@ -38,24 +40,21 @@
 - git config --global color.ui auto
     - enables helpful colorization of command line output
     
-## First Local Repository
-
-- git init <projectName>
-    - create a new local repository with the specific name
-- git clone 
-
-## First Remote repository
 
 
-
-
-### Git init
 
 
  
 
 
 ## Routine
+
+### Local and remote Repository
+
+- git init <projectName>
+    - create a new local repository with the specific name
+- git clone <githhubProject>
+    - clone a remote github project 
 
 ### Routine1 : add-reset-commit
 - git status
@@ -81,9 +80,6 @@
 - git rm --cached [file] # removes the file from version control but perserves the file locally
 - git mv "file-original" "file-renamed" # changes the file name and prepares it for commit
 
-- 
--
-- 
 
 ## git status
 

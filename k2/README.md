@@ -9,7 +9,7 @@
 | [Qa](kXX/kQa) | Coding Question Answer | 
 | [Jv](kXX/kJv) | Maven Gradle Ant |
 | [Py](kXX/kPy) | PyDev |
-| [Eclipse] | Installation Workspace RemoteSystem PyDev |
+| [Eclipse](kXX/kEclipse) | Installation Workspace RemoteSystem PyDev |
 | [Gt](kXX/kGt) | SmartGit  |
 | [Db](kXX/kDb) | Database  | 
 
@@ -32,7 +32,23 @@
 | | | https://github.com/shancarter |
 | | | http://kpq.github.io/ |
 
-## JaxRS
+
+
+## Archive
+
+### Projects
+
+
+| column | column |
+|--------|--------|
+| [mlpr](wk18/wk18core/src/ml/) | machine-learning |
+| [isl17](wk18/wk18core/src/ml/isl17/) | illinois-structured-prediction |
+
+
+### Tools
+
+
+### JaxRS
 
 optional path parameter
 http://www.nakov.com/blog/2009/07/15/jax-rs-path-pathparam-and-optional-parameters/
@@ -52,19 +68,3 @@ WebTarget target = client.target("http://localhost:8080")
 RespostaExpedient response = target.request(MediaType.APPLICATION_JSON)
                                    .post(Entity.json(data)), RespostaExpedient.class);
 ````
-
-
-## Archive
-
-### Projects
-
-
-| column | column |
-|--------|--------|
-| [mlpr](wk18/wk18core/src/ml/) | machine-learning |
-| [isl17](wk18/wk18core/src/ml/isl17/) | illinois-structured-prediction |
-
-
-### Tools
-
-
