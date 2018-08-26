@@ -11,7 +11,8 @@
 
 ### PyDev
 
-
+- http://www.pydev.org/manual_101_install.html
+- 
 
 ### CDT
 

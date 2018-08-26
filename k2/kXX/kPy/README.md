@@ -1,17 +1,25 @@
 # Python
 
+- 
 - [Interpreter](#interpreter)
-- [Console](#console)
 - [Language Reference](#language-reference)
-
+- [Package Module Extension](#package-module-extension)
 
 
 ## Interpreter
 
+- PYTHONPATH
+- setup.py
+- pip 
 - pyenv shims
 - virtual environment
 
 GoTo: [Top](#python)
+
+### PYTHONPATH
+
+
+
 
 ### Pyenv
 
@@ -35,13 +43,19 @@ GoTo: [Top](#python)
 - brew install pyenv-virtualenvwrapper # to work on different projects
 
 - add the following to ~/.bash_profile
+    - export WORKON_HOME="$HOME/.pyenv.ve"
     - export PYENV_ROOT="$HOME/.pyenv"
     - export PATH="$PYENV_ROOT/bin:$PATH"
     - eval "$(pyenv init -)"
     - eval "$(pyenv virtualenv-init -)"
-    - export WORKON_HOME=~/.pyenv.ve
+    
+    
+    
+Reference
+- [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
 
-[pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+
+GoTo: [Top](#python)
 
     
 #### List of available python
@@ -64,8 +78,9 @@ GoTo: [Top](#python)
 - [Tutorial1](https://medium.com/@henriquebastos/the-definitive-guide-to-setup-my-python-workspace-628d68552e14)
 - pyenv which python3base
 - pyenv which python2base
+- pyenv version
 
-[Tutorial2](https://medium.com/@jordanthomasg/python-development-on-macos-with-pyenv-virtualenv-ec583b92934c)
+
 
 
 ### pyenv-virtualenv
@@ -81,7 +96,32 @@ GoTo: [Top](#python)
 - pyenv shell venv364a
 - pyenv shell venv364a --unset
 
-## Console
+
+- [Ref1](https://medium.com/@jordanthomasg/python-development-on-macos-with-pyenv-virtualenv-ec583b92934c)
+- [Ref2](https://pybee.org/contributing/how/first-time/setup/)
+ 
+
+
+
+## Package Module Extension
+
+- 
+
+
+### setup.py
+
+- python setup.py sdist
+- python setup.py develop
+- [ref1](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/quickstart.html)
+
+
+### pip
+
+
+GoTo: [Top](#python)
+
+
+
 
 
 

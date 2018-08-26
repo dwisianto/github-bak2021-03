@@ -10,16 +10,10 @@
 
 - git accounts
 - git commands
-
-
 - ide
     - smartgit
     - githubDesktop : 
     - egit : eclipse git
-- cheatsheet
-    - [github](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
-    - [bitbucket]()
-- https://stackoverflow.com/questions/52704/how-do-i-discard-unstaged-changes-in-git
 
 
 
@@ -41,28 +35,42 @@
     - enables helpful colorization of command line output
     
 
-
-
-
- 
-
-
 ## Routine
 
 ### Local and remote Repository
 
 - git init <projectName>
     - create a new local repository with the specific name
+- git init --raw <projectName>
+    - create a raw local repository
 - git clone <githhubProject>
     - clone a remote github project 
+    
+GoTo [Top](#git)
 
-### Routine1 : add-reset-commit
+### status add all
+
+- git status 
+- git add -A . # approved all modified files but not untracked file 
+- git status
+- git reset HEAD <file> # to unstage but keep the modification
+- git checkout -- <file> # to discard changes in the local repository
+- git commit -m <message>
+
+GoTo [Top](#git)
+
+###  add-reset-commit
+
+
 - git status
 - git diff  # show file differences not yet staged
-- git add [file] # snapshots the file in preparation for versioning
+- git add <file> # to update what will be committed
+- git checkout -- <file> # to discard changes in the working directory
 - git diff --staged # show file differences between staging and the last file version
 - git reset [file] # unstages the file but preserve its contents
-- git commit -m "[descriptive message]" # records file pearmanently in version history
+- git commit -m "[descriptive message]" # records file pe	rmanently in version history
+
+GoTo [Top](#git)
  
 ### Routine2 : Branches
 
@@ -244,13 +252,13 @@ git clone ssh://git@github.com/<user>/<repository name>.git
 
 Verbatim code
 ```
-#activehacker account
+ # activehacker account
 Host github.com-user1
 	HostName github.com
 	User git
 	IdentityFile ~/.ssh/id_rsa_activehacker
 
-#jexchan account
+ # jexchan account
 Host github.com-user2
 	HostName github.com
 	User git
@@ -290,7 +298,31 @@ Host *
      IdentitiesOnly yes
 ```
 
+## Glossary
+
+- 
+- remote
+- origin
+- master
+- https://www.quora.com/What-does-git-remote-and-origin-mean
+- branch
+- merge
+- stash
+- 
+
 
 ## ToDo
 
+### Urgent
+
+### Important
+
+### Idealist
+
 - difference between remote and origin
+- cheatsheet
+    - [github](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
+    - [bitbucket]()
+- https://stackoverflow.com/questions/52704/how-do-i-discard-unstaged-changes-in-git
+
+
