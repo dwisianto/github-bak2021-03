@@ -2,6 +2,8 @@
 
 - [Git Configuration](#git-configuration)
 - [Routine](#routine)
+    - [Local and Remote Repository](#local-and-remote-repository)
+    - [status-add reset checkout](#status-add-reset-checkout)
 - basic
 - undoing changes
 - branches
@@ -37,7 +39,9 @@
 
 ## Routine
 
-### Local and remote Repository
+
+
+### Local and Remote Repository
 
 - git init <projectName>
     - create a new local repository with the specific name
@@ -48,7 +52,7 @@
     
 GoTo [Top](#git)
 
-### status add all
+### status add reset checkout
 
 - git status 
 - git add -A . # approved all modified files but not untracked file 

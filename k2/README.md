@@ -2,19 +2,18 @@
 # Coding
 
 
-## Tools
-
-| column | column |
+| Language | column |
 |--------|--------|
+| [Jv](kXX/kJv) | Gson Maven Gradle Ant |
+| [Gt](kXX/kGt) | SmartGit  |
 | [Qa](kXX/kQa) | Coding Question Answer | 
-| [Jv](kXX/kJv) | Maven Gradle Ant |
 | [Py](kXX/kPy) | PyDev |
 | [Eclipse](kXX/kEclipse) | Installation Workspace RemoteSystem PyDev |
-| [Gt](kXX/kGt) | SmartGit  |
-| [Db](kXX/kDb) | Database  | 
+| [Db](kXX/kDb) | Database  |
+ 
+ 
 
 ## ToDo
-
 
 * https://github.com/schiffner/biVar
 * https://github.com/RamonTavares/NCTEC17-WDS
