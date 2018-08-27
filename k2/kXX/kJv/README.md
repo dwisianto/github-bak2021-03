@@ -3,11 +3,32 @@
 
 - [Why use it?](#why-use-it)
 - [How to use it](#how-to-use-it)
+- [Design Pattern](#design-pattern)
+- [Template Patterns](#template-patterns)
+- [Gson](#gson)
+    - References
+        - https://github.com/google/gson
+        - http://www.studytrails.com/java/json/java-google-json-new-2-3/        
+        - [gson](https://www.tutorialspoint.com/gson/)
+        - [gson-custom](https://medium.com/@int02h/custom-deserialization-with-gson-1bab538c0bfa)
+        - [gson-custom2](https://stackoverflow.com/questions/6096940/how-do-i-write-a-custom-json-deserializer-for-gson)
+    
+    
+## Design Pattern
 
 
-- [gson](https://www.tutorialspoint.com/gson/)
-- [gson-custom](https://medium.com/@int02h/custom-deserialization-with-gson-1bab538c0bfa)
-- [gson-custom2](https://stackoverflow.com/questions/6096940/how-do-i-write-a-custom-json-deserializer-for-gson)
+### Template Patterns
+Template pattern is a behavioral pattern that allows part of an algorithm to vary independent of the rest of the algorithm. 
+In other words, the bulk of the algorithm logic is defined in a base class (could be abstract) and the part that can change is defined in a derived class. 
+Each derived class can then define its own logic for the changing part. 
+Use the template pattern when you have multiple algorithms that have mostly common logic but have minor differences. 
+The minor differences are extracted out of the base class and into its own derived class.
+
+To illustrate the template pattern we use the example of a car manufacturing algorithm.    
+
+## Gson
+
+GoTo: [Top](#java)
 
 
 
