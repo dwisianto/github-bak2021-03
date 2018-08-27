@@ -6,7 +6,8 @@
 
 
 - [gson](https://www.tutorialspoint.com/gson/)
-
+- [gson-custom](https://medium.com/@int02h/custom-deserialization-with-gson-1bab538c0bfa)
+- [gson-custom2](https://stackoverflow.com/questions/6096940/how-do-i-write-a-custom-json-deserializer-for-gson)
 
 
 
