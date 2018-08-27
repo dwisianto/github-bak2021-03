@@ -39,10 +39,10 @@ To illustrate the template pattern we use the example of a car manufacturing alg
 ## Gson
 
 Gson is an open source java api for parsing and building json. 
-
-    - It has extensive support for java generics. 
-    - It also provides support for converting third party classes to json. 
-    - It can be used to serialize and deserialize complex objects with deep hierarchies that may contain generic classes
+- It has extensive support for java generics. 
+- It also provides support for converting third party classes to json. 
+- It can be used to serialize and deserialize complex objects with deep hierarchies that may contain generic classes.
+    
     
 - Data Binding
     - In this example we look at how to bind a Json to a java object. 
@@ -116,13 +116,14 @@ GoTo: [Top](#java))
 
 
 In This tutorial we see how to parse json and obtain individual tokens. 
-    - Although this may seem like a cumbersome way to build java object from json, however it is extremely powerful and may be a good choice if you need a very high level of control over the parsing. 
-    - We use the JsonReader class to read the json as a stream of tokens. 
-    - The beginning of an object or an array is also a token. Here’s a detailed example.
+
+
+- Although this may seem like a cumbersome way to build java object from json, however it is extremely powerful and may be a good choice if you need a very high level of control over the parsing. 
+- We use the JsonReader class to read the json as a stream of tokens. 
+- The beginning of an object or an array is also a token. Here’s a detailed example.
+
 
 ````
-package com.studytrails.json.gson;
- 
 import java.io.IOException;
 import java.io.StringReader;
 import java.net.MalformedURLException;
@@ -141,21 +142,22 @@ public class ParseTokenExample7
         String json = IOUtils.toString(new URL(url));
         // use the reader to read the json to a stream of tokens
         JsonReader reader = new JsonReader(new StringReader(json));
-        // we call the handle object method to handle the full json object. This
-        // implies that the first token in JsonToken.BEGIN_OBJECT, which is
-        // always true.
+        // we call the handle object method to handle the full json object. 
+        // This implies that the first token in JsonToken.BEGIN_OBJECT, which is always true.
         handleObject(reader);
     }
- 
-    /**
-     * Handle an Object. Consume the first token which is BEGIN_OBJECT. Within
-     * the Object there could be array or non array tokens. We write handler
-     * methods for both. Noe the peek() method. It is used to find out the type
-     * of the next token without actually consuming it.
-     *
-     * @param reader
-     * @throws IOException
-     */
+ }
+ ```
+
+
+Handle an Object. 
+
+- Consume the first token which is BEGIN_OBJECT.
+- Within the Object there could be array or non array tokens.
+- We write handler methods for both.
+- Note the peek() method is used to find out the type of the next token without actually consuming it.  
+     
+ ````
     private static void handleObject(JsonReader reader) throws IOException
     {
         reader.beginObject();
@@ -171,16 +173,17 @@ public class ParseTokenExample7
         }
  
     }
+````
  
-    /**
-     * Handle a json array. The first token would be JsonToken.BEGIN_ARRAY.
-     * Arrays may contain objects or primitives.
-     *
-     * @param reader
-     * @throws IOException
-     */
-    public static void handleArray(JsonReader reader) throws IOException
-    {
+ 
+Handle a json array.
+ 
+- The first token would be JsonToken.BEGIN_ARRAY.
+- Arrays may contain objects or primitives.
+ 
+ 
+````     
+    public static void handleArray(JsonReader reader) throws IOException {     
         reader.beginArray();
         while (true) {
             JsonToken token = reader.peek();
@@ -195,16 +198,14 @@ public class ParseTokenExample7
                 handleNonArrayToken(reader, token);
         }
     }
+```` 
  
-    /**
-     * Handle non array non object tokens
-     *
-     * @param reader
-     * @param token
-     * @throws IOException
-     */
-    public static void handleNonArrayToken(JsonReader reader, JsonToken token) throws IOException
-    {
+
+Handle non array non object tokens
+
+
+````          
+    public static void handleNonArrayToken(JsonReader reader, JsonToken token) throws IOException { 
         if (token.equals(JsonToken.NAME))
             System.out.println(reader.nextName());
         else if (token.equals(JsonToken.STRING))
@@ -216,14 +217,23 @@ public class ParseTokenExample7
     }
 }
 ````
+
+
+
         
 ### Tree Representation
 
-In this tutorial, we build a tree of com.google.gson.JsonElement from the json string. 
-    - The tree can then be traversed to build java objects. 
-    - JsonElement has methods such as isJsonObject(), isJsonNull(), etc that can be used to figure out the type of JsonElement. 
-    - Then to get the actual object use the getAsJsonObject(), getAsJsonPrimitive() etc methods. 
-    - We parse the response from the free music archive json API. Here’s the class
+
+In this tutorial, we build a tree of com.google.gson.JsonElement from the json string.
+
+ 
+- The tree can then be traversed to build java objects. 
+- JsonElement has methods such as isJsonObject(), isJsonNull(), etc that can be used to figure out the type of JsonElement. 
+- Then to get the actual object use the getAsJsonObject(), getAsJsonPrimitive() etc methods. 
+- We parse the response from the free music archive json API. 
+
+Here’s the class
+
 
 ````
 package com.studytrails.json.gson;
@@ -238,17 +248,20 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
- 
+
 public class ParseTreeExample6 {
+
     public static void main(String[] args) throws MalformedURLException, IOException {
+    
         String url = "http://freemusicarchive.org/api/get/albums.json?api_key=60BLHNQCAOUFPIBZ&limit=5";
         String json = IOUtils.toString(new URL(url));
         JsonParser parser = new JsonParser();
         // The JsonElement is the root node. It can be an object, array, null or
         // java primitive.
         JsonElement element = parser.parse(json);
-        // use the isxxx methods to find out the type of jsonelement. In our
-        // example we know that the root object is the Albums object and
+        // use the isxxx methods to find out the type of jsonelement. 
+        
+        // In our example we know that the root object is the Albums object and
         // contains an array of dataset objects
         if (element.isJsonObject()) {
             JsonObject albums = element.getAsJsonObject();
@@ -262,6 +275,7 @@ public class ParseTreeExample6 {
  
     }
 }
+ 
 ````
 
 
@@ -523,13 +537,17 @@ public class Dataset {
 
 GoTo: [Top](#java)
 
+
+
 ### Custom Serialization And Deserialization
 
 Register 
-    - a custom serializer with the GsonBuilder if you need you own way to convert a java object to json; and 
-    - you a custom deserializer if you don't like Gson’s way of converting json to the java object. 
-    - The first example below shows a custom serializer; and 
-    - The second example shows a custom deserializer.
+
+- a custom serializer with the GsonBuilder if you need you own way to convert a java object to json; and 
+- you a custom deserializer if you don't like Gson’s way of converting json to the java object. 
+- The first example below shows a custom serializer; and 
+- The second example shows a custom deserializer.
+
 
 #### Custom Serializer
 
@@ -621,7 +639,9 @@ public class Dog {
 }
 ````
 
+
 #### Custom Deserialization
+
 
 ````
 package com.studytrails.json.gson;
