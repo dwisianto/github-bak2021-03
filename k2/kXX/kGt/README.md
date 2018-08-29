@@ -56,11 +56,12 @@ GoTo [Top](#git)
 ### status add reset checkout
 
 - git status 
+- git log 
 - git add -A . # approved all modified files but not untracked file 
-- git status
-- git reset HEAD <file> # to unstage but keep the modification
-- git checkout -- <file> # to discard changes in the local repository
-- git commit -m <message>
+- git status            # all changes files are staged 
+- git reset HEAD specificFileName # to unstage but keep the modification
+- git checkout -- specificFileName # to discard changes in the local repository
+- git commit -m commitMessage
 
 GoTo [Top](#git)
 
@@ -76,6 +77,21 @@ GoTo [Top](#git)
 - git commit -m "[descriptive message]" # records file pe	rmanently in version history
 
 GoTo [Top](#git)
+
+### revert 1 : 
+
+- git add -A . # add all 
+- git commit -m "commitMessages"
+- git log # remember the hashCode of the commit
+- git show hasCode #
+- git revert #
+
+### revert 2 : reset --hard
+
+- Forget everything: Don't want to keep track of anything
+- git log
+- git reset --hard 
+
  
 ### Routine2 : Branches
 
@@ -204,9 +220,6 @@ Now unstage everything, but leave the files as they are now:
 
 ## git add
 
-## git revert
-
-- git revert
 
 
 
