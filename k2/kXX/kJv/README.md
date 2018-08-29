@@ -38,12 +38,14 @@ To illustrate the template pattern we use the example of a car manufacturing alg
 
 ## Gson
 
-Gson is an open source java api for parsing and building json. 
-- It has extensive support for java generics. 
-- It also provides support for converting third party classes to json. 
-- It can be used to serialize and deserialize complex objects with deep hierarchies that may contain generic classes.
-    
-    
+- Gson is an open source java api for parsing and building json. 
+    - It has extensive support for java generics. 
+    - It also provides support for converting third party classes to json. 
+    - It can be used to serialize and deserialize complex objects with deep hierarchies that may contain generic classes. 
+- Overview
+    - Three Way to parse json string : Data Binding, Streaming, Tree
+    - Java Specific Features: Collections, Generics, InnerClass, Null 
+    - TypeAdapter and Serialization/Deserialization
 - Data Binding
     - In this example we look at how to bind a Json to a java object. 
     - Gson is quite powerful when it comes to binding a json to Java since it has a lot of built in serializers and deserializers. 
@@ -106,22 +108,22 @@ Gson is an open source java api for parsing and building json.
         - Using custom Exclusion Strategies
         - Using @Expose annotation
 
-GoTo: [Top](#java))
+GoTo: [Top](#java)
 
 ### Data Binding 
 
-GoTo: [Top](#java))
+GoTo: [Top](#java)
 
 ### Streaming
 
 
-In This tutorial we see how to parse json and obtain individual tokens. 
-
+In this tutorial we see how to parse json and obtain individual tokens. 
 
 - Although this may seem like a cumbersome way to build java object from json, however it is extremely powerful and may be a good choice if you need a very high level of control over the parsing. 
 - We use the JsonReader class to read the json as a stream of tokens. 
-- The beginning of an object or an array is also a token. Here’s a detailed example.
+- The beginning of an object or an array is also a token. 
 
+Here’s a detailed example.
 
 ````
 import java.io.IOException;
@@ -680,8 +682,16 @@ public class DogDeserialiser implements JsonDeserializer<Dog> {
 
 GoTo: [Top](#java)
 
+### Glossary
 
 
+````
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+````
 
 
 ## Template

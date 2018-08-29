@@ -2,11 +2,10 @@
 
 - [Git Configuration](#git-configuration)
 - [Routine](#routine)
-    - [Local and Remote Repository](#local-and-remote-repository)
+    - [Setup Local and Remote Repository](#setup-local-and-remote-repository)
     - [status-add reset checkout](#status-add-reset-checkout)
-- basic
+- [Git Branch](#git-branch)
 - undoing changes
-- branches
 - rewriting git history
 - remote reposistory
 
@@ -39,9 +38,11 @@
 
 ## Routine
 
+- git pull is essentially "git fetch" and "git merge"
+[git_fetch_and_merge](https://longair.net/blog/2009/04/16/git-fetch-and-merge/)
 
 
-### Local and Remote Repository
+### Setup Local and Remote Repository
 
 - git init <projectName>
     - create a new local repository with the specific name
@@ -84,7 +85,7 @@ GoTo [Top](#git)
 - git merge [branch] # combine the specified branch history into the current branch
 - git branch -d [branch-name] # delete the specified branch
 
-### 
+
 
 ### Refactor FileNames
 
@@ -113,7 +114,7 @@ GoTo [Top](#git)
 
 ## git push
 
-## git pull
+
 
 
 ## git clean
