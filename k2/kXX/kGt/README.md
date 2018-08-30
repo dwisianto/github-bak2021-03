@@ -4,13 +4,16 @@
 - [Routine](#routine)
     - [Setup Local and Remote Repository](#setup-local-and-remote-repository)
     - [status-add reset checkout](#status-add-reset-checkout)
-- [Git Branch](#git-branch)
-- undoing changes
-- rewriting git history
-- remote reposistory
+- [Clean](#git-clean)    
+- [Stash](#git-stash)    
+- [Branch](#git-branch)
 
 - git accounts
+    - ssh keys
 - git commands
+    - undoing changes
+    - rewriting git history
+    - remote reposistory
 - ide
     - smartgit
     - githubDesktop : 
@@ -150,18 +153,14 @@ GoTo [Top](#git)
 
 ## git stash
 
-
 - git stash list
+- git stash --keep-index
+- git stash --include-untracked
 - git stash save <myMessage>
 - git stash pop stash@\{1\}
     - "git stash pop" is basically "git statsh apply" and "git stash drop"
 - git stash apply
 - git stash drop
-
-### git stash --keep-index
-
-### git stash --include-untracked
-
 
 
 ### git stash pop error
@@ -189,25 +188,21 @@ Now unstage everything, but leave the files as they are now:
 git reset
  
 
-## git reset
-
-- git reset
-- git revert
 
 
 ## git branch
 
 - git branch
     - list all available branches
-- git branch <newBranchName>
-    - create a new branch with the name <newBranchName>
-- git checkout branchName
-    - asdf
+- git branch aNewBranchName
+    - create a new branch with the name aNewBranchName
+- git checkout anExistingBranchName    
 - git checkout -b <branchName>
-    - asdf
 - git merge <branch>
     - merge <branch> into the current branch
+    - ToDo: Still don't quite understand merge branch
 - git delete    
+    - ToDo: don't undersand 
     
 ### git branch errors
 
@@ -218,7 +213,7 @@ Now unstage everything, but leave the files as they are now:
 - git reset
 
 
-## git add
+
 
 
 
@@ -318,7 +313,13 @@ Host *
 
 ## Glossary
 
-- 
+- git add
+- git status
+- git log
+- git diff
+- git add
+- git reset
+- git revert
 - remote
 - origin
 - master

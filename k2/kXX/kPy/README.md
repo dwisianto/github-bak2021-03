@@ -109,9 +109,8 @@ GoTo: [Top](#python)
 
 ## Package Module Extension
 
-There are (at least) three possible ways to install a python package in your $HOME directory. All of them have to be followed by a configuration of your environment, more specifically the PYTHONPATH.
-
-
+There are (at least) three possible ways to install a python package in your $HOME directory. 
+All of them have to be followed by a configuration of your PYTHONPATH environment.
 
 
 ### package template
@@ -146,7 +145,6 @@ GoTo: [Top](#python)
 
 ### Install from source
 
-
 - python setup.py sdist
 - python setup.py develop
 - python setup.py install --prefix=$HOME/.local
@@ -155,6 +153,12 @@ GoTo: [Top](#python)
 After you installed a python pacakge to your home directory or any other custom location, you need to add that location to your PYTHONPATH. This only has to be done once. The exact path depends on the python version it was installed with. If you followed the instructions above, this path is ~/.local/lib/pythonX.Y/site-packages, where X and Y are the major and minor version of the python you are using (e.g. 2.7 or 3.4). You can check it with python --version. The command to add this location to your environment is
 
 GoTo: [Top](#python)
+
+### Routine
+
+#### Routine 1
+
+#### Routine 2
 
 
 ## Language Reference
