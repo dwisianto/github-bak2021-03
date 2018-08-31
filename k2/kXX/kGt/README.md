@@ -1,13 +1,14 @@
 # Git
 
 - [Git Configuration](#git-configuration)
+    - [ssh-key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-mac)
 - [Routine](#routine)
     - [Setup Local and Remote Repository](#setup-local-and-remote-repository)
     - [status-add reset checkout](#status-add-reset-checkout)
+    
 - [Clean](#git-clean)    
 - [Stash](#git-stash)    
 - [Branch](#git-branch)
-
 - git accounts
     - ssh keys
 - git commands
@@ -113,10 +114,6 @@ GoTo [Top](#git)
 - git mv "file-original" "file-renamed" # changes the file name and prepares it for commit
 
 
-## git status
-
-## git reset [#git-reset]
-
 
 ## git add
 
@@ -125,31 +122,20 @@ GoTo [Top](#git)
 - git add -A 
     - It will also update, remove previously tracked files, but it will also add new files. As this command doesn't have the explicit pathspec of :/ that your update command does, depending on your version of git, this may be for all files in the entire working tree, or it may be for the current directory and all subfolders and files.
     
-## git rm
-
-## git commit
-
-- git commit -m "myMessage"
-
-## git push
-
-
-
 
 ## git clean
 
--- git help clean
--- git clean --dry-run
--- git clean -force 
--- git clean -f -d 
+- git help clean
+- git clean --dry-run
+- git clean -force 
+- git clean -f -d 
     - to remove directory
     - git clean -fd 
--- git clean -f -X
+- git clean -f -X
     - to remove ignored files
     - git clean -fX
--- git clean -f -x 
+- git clean -f -x 
     - to remove ignored and non-ignored files 
--- git 
 
 ## git stash
 
