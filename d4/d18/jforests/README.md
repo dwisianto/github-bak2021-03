@@ -10,15 +10,14 @@
 - [What is FeatureAnalyzer?](#what-is-featureanalyzer)
 - [What is the purpose of the Input Package?](#what-is-the-purpose-of-the-input-package)
 
-- [What is Byte](#what-is-byte) 
-    - [What is Byte Array?](#what-is-byte-array) 
-    - [What is Byte Buffer?](#what-is-byte-buffer) 
-- [What is a custom input package?](#what-is-a-custom-input-package)
-- [What is a custom dataset package?](#what-is-a-custom-dataset-package)
-
 - [Customization](#customization)
     - [How to start customization](#how-to-start-customization)
     - [BinFileConverterCluster](#bin-file-converter-cluster)
+    - [What is Byte](#what-is-byte) 
+        - [What is Byte Array?](#what-is-byte-array) 
+        - [What is Byte Buffer?](#what-is-byte-buffer)
+    - [What is a custom input package?](#what-is-a-custom-input-package)
+    - [What is a custom dataset package?](#what-is-a-custom-dataset-package)             
 - [Timeline](#timeline)
 - [ToDo](#todo)
 - [Template](#template)
@@ -146,15 +145,13 @@ GoTo: [Top](#jforests)
 - It represents each feature by a fid in a HashMap<Integer,String> fid2name.
 - It represents each feature statistics in a HashMap<Integer,FeatureStatistics> fid2statistics.
 - The maximum number of feature value is an integer MAX_FEATURE_VALUE = Short.MAX_VALUE - 1;
+- A feature is discretized using a log scale when the max-min range of the feature value is beyond MAX_FEATURE_VALUE. 
+if the onLogScale boolean value is set to true	
 
-An array of min;
-An array of max; 
-An array of factor
-An array of onLogScale with boolean values.
-	
+- It keeps tracks of the maximum and minimum values of the features
+- The factor of a specific feature equals the MAX_FEATURE_VALUE over a specific range;
+
 GoTo: [jfs](#jforests)		
-
-
 
 
 ## What is Byte ?
@@ -332,7 +329,20 @@ GoTo: [jfs](#jforests)
 - BinFileDiscreteCluster has two static methods. 
     - The first static method to convert an input file to binary given a static file
     - The second static method to revert an input file given a statistic file 
-
+    - The third static method is to verify the original feature value with the discrete file
+- **BinFileConverterCluster**  & **Raw2BinConverter**
+    - FeatureAnalyzer and FeatureDiscrete to generate byte representation
+    - BinFileDiscretizer to discretize 
+    - BinFileGenerator to convert
+    - BinFileIOWriterCluster : to save the input feature in a binary representation
+    - BinFileIOReader : to load into dataset object  
+- **BinFileIOWriterCluster    
+    - Construct the object using the name of the output file, feature array and target array.
+    - The constructor initializes a BufferedOutputStream to write the content
+    - The constructor keep the feature array and the target array for writing
+    - The write method includes three steps to writeHeader, writeContent, and the close method.
+    - The writeHeader method
+    - The close method close the BufferedOutputStream
 
 GoTo: [jfs](#jforests)	
 
