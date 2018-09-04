@@ -57,6 +57,18 @@
     
 GoTo [Top](#git)
 
+### clean local and untracked files from the current working tree
+
+- git clean --dry-run # it is a dry run to show what will be deleted
+- git clean
+- git clean --f -d # to clean directory
+    - git clean -fd
+    - git clean --force  
+- git clean -f -X  # to clean ignored files
+    - git clean -fX
+- git clean -f -x # to clean ignored and non-ignored files
+    - git clean -fx
+
 ### status add reset checkout
 
 - git status 
@@ -140,9 +152,10 @@ GoTo [Top](#git)
 ## git stash
 
 - git stash list
+    - git stash list --date=relative # sort by date
 - git stash --keep-index
 - git stash --include-untracked
-- git stash save <myMessage>
+ sta- git stash save <myMessage>
 - git stash pop stash@\{1\}
     - "git stash pop" is basically "git statsh apply" and "git stash drop"
 - git stash apply

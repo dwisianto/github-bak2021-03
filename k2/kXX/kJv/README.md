@@ -1,6 +1,7 @@
 
 # Java
 
+- stream
 - [Design Pattern](#design-pattern)
 - [Template Patterns](#template-patterns)
 - [Gson](#gson)
@@ -20,7 +21,12 @@
           
           
     
-    
+## Stream
+
+### FAQ
+
+- Reuse a stream in Java?
+-      
     
     
 ## Design Pattern
