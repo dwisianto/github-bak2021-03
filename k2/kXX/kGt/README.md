@@ -126,6 +126,16 @@ GoTo [Top](#git)
 - git mv "file-original" "file-renamed" # changes the file name and prepares it for commit
 
 
+### Stash pop and reset
+
+- git stash list --date=relative
+- git stash pop stash@{0}
+- git reset --hard
+
+
+### git rebase vs git merge
+
+
 
 ## git add
 
@@ -162,6 +172,10 @@ GoTo [Top](#git)
 - git stash drop
 
 
+### git stash pop conflict
+
+
+
 ### git stash pop error
 
 - git stash pop stash@\{1\}
@@ -191,8 +205,10 @@ git reset
 
 ## git branch
 
-- git branch
+- git branch --all
     - list all available branches
+- git branch
+    - 
 - git branch aNewBranchName
     - create a new branch with the name aNewBranchName
 - git checkout anExistingBranchName    
@@ -296,15 +312,15 @@ Host bitbucket-accountB
 
 
 ```
-Host github.com-dwisianto
+Host github.com-userName1
      HostName github.com
-     User dwisianto
+     User username1
      IdentityFile ~/.ssh/id_rsa
      PreferredAuthentications publickey
      IdentitiesOnly yes
 Host *
      HostName github.com
-     User yuanyuanli66
+     User userName2
      IdentityFile ~/.ssh/id_rsa_yyl66
      PreferredAuthentications publickey
      IdentitiesOnly yes
