@@ -135,6 +135,13 @@ GoTo [Top](#git)
 
 ### git rebase vs git merge
 
+- git rebase # accept other's changes and try to mix the changes together
+- git merge # accept others' changes and continue with me
+- git pull --rebase --autostash
+- git stash show 
+- git stash show -p
+    - If there is a conflict then we can show the difference
+- git mergetool
 
 
 ## git add
