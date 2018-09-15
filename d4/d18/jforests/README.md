@@ -266,7 +266,7 @@ GoTo: [jfs](#jforests)
     - 
 
 
-## What is a custom Dataset package?
+### What is a custom Dataset package?
 
 The development of a custom dataset package starts from 
 
@@ -284,7 +284,7 @@ The development of a custom dataset package starts from
 GoTo: [jfs](#jforests)	
 
 	
-## What is a custom Input package?
+### What is a custom Input package?
 
 
 Input Package deals with the extraction of raw text into a data structure that is appropriate for different actions; such as compression, clustering, and ranking operation.
@@ -316,6 +316,20 @@ The input action can be grouped into two different purposes, i.e., Cluster and R
 GoTo: [jfs](#jforests)	
 
 
+### Feature Dataset Sample Prediction Configuration
+
+- Feature    - Aspect
+- Dataset    - Evidence
+- Sample     - Specimen
+- Prediction - Forecast
+
+Configuration
+- ConfigHolder :
+- 
+
+GoTo: [jfs](#jforests)	
+
+
 ## Timeline
 
 - FeatureAnalyzer
@@ -343,6 +357,15 @@ GoTo: [jfs](#jforests)
     - The write method includes three steps to writeHeader, writeContent, and the close method.
     - The writeHeader method
     - The close method close the BufferedOutputStream
+- jf8/j8a.bytes/src/test/java/d/pr/util/IrisData.java
+    - convert iris dataset into a sparse format 
+    - Some heuristics are introduced for the query id
+- d/pr/jf/input/feature/FeatureAnalyzerTry.java
+    - uses iris dataset instead of sample-rank-data  
+- Aspect AspectListBean
+- GBeans and GBeans Util
+- [todo] GBeanUtil:AspectBeanDeserializer deserializing AspectBean based on bins type 
+-    
 
 GoTo: [jfs](#jforests)	
 
