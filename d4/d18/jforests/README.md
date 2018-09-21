@@ -365,7 +365,8 @@ GoTo: [jfs](#jforests)
 - Aspect AspectListBean
 - GBeans and GBeans Util
 - [todo] GBeanUtil:AspectBeanDeserializer deserializing AspectBean based on bins type 
--    
+    - FeatureAnalyzerTry     
+- 
 
 GoTo: [jfs](#jforests)	
 
