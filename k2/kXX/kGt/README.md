@@ -4,8 +4,8 @@
     - [ssh-key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-mac)
 - [Routine](#routine)
     - [Setup Local and Remote Repository](#setup-local-and-remote-repository)
-    - [status-add reset checkout](#status-add-reset-checkout)
-    
+    - [Fetch Pull Rebase Autostash](#fetch-pull-rebase-autostash)
+    - [status-add reset checkout](#status-add-reset-checkout)    
 - [Clean](#git-clean)    
 - [Stash](#git-stash)    
 - [Branch](#git-branch)
@@ -57,6 +57,17 @@
     
 GoTo [Top](#git)
 
+### Fetch Pull Rebase Autostash
+
+We want to update the sandbox with the latest changes from others. 
+The current changes will be stashed away.  
+
+- git fetch
+- git pull --rebase --autostash
+- git stash list
+
+GoTo [Top](#git)    
+
 ### clean local and untracked files from the current working tree
 
 - git clean --dry-run # it is a dry run to show what will be deleted
@@ -68,6 +79,8 @@ GoTo [Top](#git)
     - git clean -fX
 - git clean -f -x # to clean ignored and non-ignored files
     - git clean -fx
+    
+GoTo [Top](#git)    
 
 ### status add reset checkout
 

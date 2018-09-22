@@ -10,12 +10,14 @@
 | [Py](kXX/kPy) | PyDev |
 | [Eclipse](kXX/kEclipse) | Installation Workspace RemoteSystem PyDev |
 | [Db](kXX/kDb) | Database  |
-
+| [Dk](kXX/kDocker) | | 
+| [curl](kXX/kCurl) | | 
 
 | Projects |  |
 |--------|--------|
-| [JForests](../d4/d18/jforests) |  |
-| [JLibFM](k18/jlibfm) |   |
+| [k18](k18) | uima - uimafit - cleartk | 
+| [JForests](../d4/d18/jforests) | art4ml |
+| [JLibFM](k18/jlibfm) |  |
 | [LVG](k18/lvg) |   |
 
 
@@ -25,12 +27,9 @@
 | Language |  |
 |--------|--------|
 | [StudyTrails](http://www.studytrails.com/) |  |
- 
+| [biVar](https://github.com/schiffner/biVar) | | 
+| [nctec17](https://github.com/RamonTavares/NCTEC17-WDS) | | 
 
-
-
-* https://github.com/schiffner/biVar
-* https://github.com/RamonTavares/NCTEC17-WDS
 
 
 ## Journal
