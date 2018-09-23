@@ -1,10 +1,14 @@
 # Python
 
 - [Interpreter](#interpreter)
-     - [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) 
-     - [Tutorial1](https://medium.com/@henriquebastos/the-definitive-guide-to-setup-my-python-workspace-628d68552e14)
+     - pythonpath
+     - pyenv
+         - installation
+         - routine1
      - [Ref1](https://medium.com/@jordanthomasg/python-development-on-macos-with-pyenv-virtualenv-ec583b92934c)
      - [Ref2](https://pybee.org/contributing/how/first-time/setup/)     
+     - [Ref3-pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) 
+     - [Ref4-Tutorial1](https://medium.com/@henriquebastos/the-definitive-guide-to-setup-my-python-workspace-628d68552e14)
 - [Language Reference](#language-reference)
 - [Package Module Extension](#package-module-extension)
      - [the-hitchhikers-guide-to-packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/quickstart.html)
@@ -25,6 +29,7 @@ GoTo: [Top](#python)
 
 
 
+GoTo: [Top](#python)
 
 ### Pyenv
 
@@ -36,7 +41,33 @@ GoTo: [Top](#python)
 - pyenv global 2.7.8
 - pyenv local 2.7.8
 
+GoTo: [Top](#python)
 
+#### Routine 1
+
+- pyenv version
+- pyenv versions
+- pyenv virtualenvs 
+
+GoTo: [Top](#python)
+
+#### Routine 21 : install uninstal virtual environment
+
+- pyenv version
+- pyenv versions
+- pyenv virtualenvs
+- pyenv virtualenv activate myEnv 
+- pyenv virtualenv deactivate myEnv
+
+GoTo: [Top](#python)
+
+#### Routine 22 : activate deactivate virtual environment
+
+- pyenv version
+- pyenv versions
+- pyenv virtualenvs
+- pyenv virtualenv activate myEnv 
+- pyenv virtualenv deactivate myEnv
 
 GoTo: [Top](#python)
 
@@ -48,6 +79,7 @@ GoTo: [Top](#python)
 - brew install pyenv-virtualenvwrapper # to work on different projects
 
 - add the following to ~/.bash_profile
+    - export PYENV_VIRTUALENV_DISABLE_PROMPT=1    
     - export WORKON_HOME="$HOME/.pyenv.ve"
     - export PYENV_ROOT="$HOME/.pyenv"
     - export PATH="$PYENV_ROOT/bin:$PATH"
@@ -72,6 +104,7 @@ GoTo: [Top](#python)
 - pyenv virtualenv 2.7 python2base
 - pyenv activate python3base
 - pyenv deactivate
+- pyenv uninstall python3base
 
 
 - pyenv global 3.6.0 2.71.13 python3base python2base
@@ -83,13 +116,12 @@ GoTo: [Top](#python)
 
 
 
-### pyenv-virtualenv
+#### pyenv-virtualenv
 
 - pyenv 
 - pyenv versions
 - pyenv virtualenv 3.6.4 venv364a
 - pyenv virtualenvs
-
 - pyenv activate venv364
 - pyenv deactivate
 
@@ -99,7 +131,7 @@ GoTo: [Top](#python)
 
  
 
-### pyenv local vs pyenv global
+#### pyenv local vs pyenv global
 
 
 - pyenv gobal 
@@ -182,3 +214,16 @@ This section contains a Python reference documentation.
 ### List
 
 ### Keywords
+
+
+## Deep Learning
+
+
+- [install-numpy](https://www.quora.com/How-do-I-install-NumPy-into-Python)
+- scipy
+- theano 
+- https://shawnwun.github.io/talks/DL4NLG_20160906.pdf
+
+
+
+
