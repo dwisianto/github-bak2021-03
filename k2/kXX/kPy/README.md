@@ -1,5 +1,6 @@
 # Python
 
+- [Python With Non Root](#python-with-non-root)
 - [Interpreter](#interpreter)
      - pythonpath
      - pyenv
@@ -13,6 +14,73 @@
 - [Package Module Extension](#package-module-extension)
      - [the-hitchhikers-guide-to-packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/quickstart.html)
      - [package-in-python](http://zetcode.com/articles/packageinpython/)
+     
+## Python With Non Root
+
+### Python Bin
+
+
+- mkdir ~/py27a
+- mkdir ~/py27b
+- wget https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz
+- tar zxfv Python-2.7.11.tgz
+- find ~/python -type d | xargs chmod 0755
+- cd Python-2.7.11
+- ./configure --prefix=~/py27b
+- make && make install
+Notice the prefix option, it is mandatory for this to work. The value of prefix option is to specify where to put the related output of make command, by default it is in the /usr/local/ and we don't want that so we use our own customized directory.
+
+
+ 
+Here comes another important step. By the default, if we type python command, it will use the default python of the system. We are going to update the environment variables to force the shell to use our new python. Edit ~/.bashrc_profile and add the following lines:
+
+````bash
+export PATH=$HOME/python/Python-2.7.11/:$PATH
+export PYTHONPATH=$HOME/python/Python-2.7.11
+````
+
+Finally, refresh the current session by running the command:
+
+````bash
+source ~/.bashrc_profile
+````
+You might need to logout and login again for the environment to update properly. At this point, you should be able to see a new python. To check, run this command:
+
+````bash
+which python
+````
+
+it should show you the path to the python binary file, which is located in your home directory: ~/python/Python-2.7.11/python
+
+
+### Pip
+
+
+Pip is a program used to help us easily install python packages, it is similar to rubygems in Ruby world. After installing python locally as described in the first step, it is very easy to install pip.
+
+Run the following command to install pip as a local user
+
+````bash
+wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py -O - | python - --user
+````
+
+After finishing the installation, we need to update our PATH variable. Open ~/.bashrc_profile and add the following line:
+
+````bash
+export PATH=$HOME/.local/bin:$PATH
+````
+
+Again, reload the session by the command source ~/.bashrc_profile or logout and login. Then, check if pip command is available:
+
+````bash
+which pip
+````
+
+It should show a path pointing to your local directory: ~/.local/bin
+
+Having both python and pip installed as a local user, you can install any other packages you want without worrying about other parts of the whole system. This is extremely useful in case you want to experiment with new things.
+
+
 
 
 ## Interpreter
