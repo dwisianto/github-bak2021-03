@@ -99,6 +99,16 @@ GoTo: [Top](#python)
 
 GoTo: [Top](#python)
 
+### Anancoda
+
+- export ANANCONDA_DIR=~/ananconda2
+- export PYHONNOUSERSITE=True
+- wget http://repo.continuum.io/archive/Anaconda2-4.3.0-Linux-x86_64.sh
+- bash Anaconda2-4.3.0-Linux-x86_64.sh
+- ANANCONDA_DIR/conda create --name venv273a
+- source ANANCONDA_DIR/bin/activate venv273a
+- 
+
 ### Pyenv
 
 - pyenv
