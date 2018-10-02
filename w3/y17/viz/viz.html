@@ -2,21 +2,27 @@
 <html>
 <head>
 
-<title>Dwi Sianto Mansjur - Viz</title>
+	<title>Dwi Sianto Mansjur - Viz</title>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- -->
+	<!-- 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	-->
 
-<script src="../../../w3/l17/jquery/1.12.2/jquery.min.js"></script>
-<script src="../../../w3/l17/bs/bs3/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="../../../w3/l17/bs/bs3/css/bootstrap.min.css">
+	<script src="../../../w3/l17/jquery/1.12.2/jquery.min.js"></script>
+	<script src="../../../w3/l17/bs/bs3/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../../w3/l17/bs/bs3/css/bootstrap.min.css">
+	
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">	
 
+	<!-- <link rel="stylesheet" href="pages/index/index.css"> -->  	
+	<script src="viz1.js"></script>		
+	
 
 <style>
 body {
@@ -42,9 +48,9 @@ body {
 			<div>				 				
 				<div class="collapse navbar-collapse navbar-right" id="myNavbar2">
 					<ul class="nav navbar-nav">
-						<li><a href="#section1">Section 1</a></li>
-						<li><a href="#section2">Section 2</a></li>
-						<li><a href="#section3">Section 3</a></li>
+						<li><a href="#section1">Text</a></li>
+						<li><a href="#section2">Annotation</a></li>
+						<li><a href="#section3">Parsing</a></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -59,63 +65,66 @@ body {
 	</nav>
 
 	<div id="section1" class="container-fluid">
+		<h1>Corpus</h1>        
+		<div id="crpsDivId"></div>       		
+		<div id="crpsModalId" class="modal fade" role="dialog"></div>					    		                         									    		                         		
+	</div> <!--  section1 -->
 	
-		<h1>Section 1</h1>
-		<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 	
-        <div class="row">
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-        	
-	</div>
 	<div id="section2" class="container-fluid">
-		<h1>Section 2</h1>
-		<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-
-        <div class="row">
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
+	
+        <h1>Annotation</h1>
+            
+		<div class="row">
+			<div class="col-sm-1"></div>		
+			<div class="col-sm-10">
+				<div class="form-group">
+					<label>Text:</label>	
+					<textarea id="annoTxtAreaId" class="form-control" rows="5"></textarea>					
+				</div>			
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		<div id="annoModalFocusId" class="modal fade" role="dialog"></div>					    		                         									    		                         		
+		<div id="annoModalParseId" class="modal fade" role="dialog"></div>					    		                         									    		                         		
+		<div class="row">
+			<div class="col-sm-1"></div>		
+			<div class="col-sm-10">
+				<button id="annoTxtBtnSampleId"   type="submit" class="btn btn-primary">Sample  </button>
+				<button id="annoTxtBtnClearId"    type="submit" class="btn btn-primary">Clear   </button>    
+   				<button id="annoTxtBtnAnnotateId" type="submit" class="btn btn-primary">Annotate</button>  
+   				<button id="annoTxtBtnParseId"    type="submit" class="btn btn-primary">Parse   </button>     				
+			</div>
+		<div class="col-sm-1"></div>
+		</div>
+	
 
 	</div>
 	<div id="section3" class="container-fluid">
-		<h1>Section 3</h1>
-        <div class="row">
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-		
+	
+        		<h1>ParseTree</h1>
+        		<p>Try to scroll this section and look at the navigation list while scrolling!</p> 
+			<div class="row">
+				<div class="col-sm-1"></div>		
+				<div class="col-sm-10">
+					<div class="form-group">
+						<label>Text:</label>	
+						<textarea id="parsingTxtAreaId" class="form-control" rows="5"></textarea>					
+					</div>			
+				</div>
+				<div class="col-sm-1"></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-1"></div>		
+				<div class="col-sm-10">
+					<button id="parsingTxtBtnSampleId"   type="submit" class="btn btn-primary">Sample  </button>
+					<button id="parsingTxtBtnClearId"    type="submit" class="btn btn-primary">Clear   </button>    
+	   				<button id="parsingTxtBtnAnnotateId" type="submit" class="btn btn-primary">Annotate</button>  
+	   				<button id="parsingTxtBtnParseId"    type="submit" class="btn btn-primary">Parse   </button>     				
+				</div>
+				<div class="col-sm-1"></div>
+			</div>	
+	
 	</div>
 	<div id="section41" class="container-fluid">
 		<h1>Section 4 Submenu 1</h1>
