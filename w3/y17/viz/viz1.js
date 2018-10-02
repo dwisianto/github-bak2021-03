@@ -10,9 +10,9 @@ $(document).ready(function() {
 
 
 // [] base
-var baseUrl = "dwisianto.com/"
+var baseUrl = "http://dwisianto.com/"
 	/// [] Corpus
-var crpsSourceJsn="data/MTSamples.mini.json";
+var crpsSourceJsn="w3/y17/viz/MTSamples.mini.json";
 var crpsDocs; // corpus document
 var crpsDivIdStr="crpsDivId";
 var crpsDivId="#"+crpsDivIdStr;
