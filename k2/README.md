@@ -12,6 +12,7 @@
 | [Db](kXX/kDb) | Database  |
 | [Dk](kXX/kDocker) | | 
 | [curl](kXX/kCurl) | | 
+| [webApp](kXX/wApp) | | 
 
 | Projects |  |
 |--------|--------|
