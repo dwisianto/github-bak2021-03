@@ -2,16 +2,10 @@
 <html>
 <head>
 
-	<title>Dwi Sianto Mansjur - Viz</title>
+	<title>Dwi Sianto Mansjur - VizMT</title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 	-->
 
 	<script src="../../../w3/l17/jquery/1.12.2/jquery.min.js"></script>
 	<script src="../../../w3/l17/bs/bs3/js/bootstrap.min.js"></script>
@@ -19,19 +13,19 @@
 	
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">	
-
-	<!-- <link rel="stylesheet" href="pages/index/index.css"> -->  	
-	<script src="viz1.js"></script>		
 	
+	
+	<!-- <link rel="stylesheet" href="pages/index/index.css"> -->  	
+	<script src="vizMT.js"></script>		
 
-<style>
-body {	position: relative; }
-#section1 { padding-top: 50px; height: 700px; color: #7d7d7d; background-color: #e7e7e7; } 
-#section2 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
-#section3 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
-#section41 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
-#section42 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
-</style>
+	<style>
+		body {	position: relative; }
+		#section1 { padding-top: 50px; height: 700px; color: #7d7d7d; background-color: #e7e7e7; } 
+		#section2 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
+		#section3 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
+		#section41 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
+		#section42 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
+	</style>
 
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -41,13 +35,13 @@ body {	position: relative; }
 
 			<div class="navbar-header">
 				<a class="navbar-brand" href="../../../index.html"> Dwi Sianto Mansjur</a>					
-			</div> <!--  navbar-header -->			
+			</div> 
 
 			<div>				 				
 				<div class="collapse navbar-collapse navbar-right" id="myNavbar2">
 					<ul class="nav navbar-nav">
-						<li><a href="#section1">Text</a></li>
-						<li><a href="#section2">Annotation</a></li>
+						<li><a href="#section1">Source Text</a></li>
+						<li><a href="#section2">Translation</a></li>
 						<li><a href="#section3">Parsing</a></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
@@ -62,8 +56,9 @@ body {	position: relative; }
 
 	</nav>
 
+
 	<div id="section1" class="container-fluid">
-		<h1>Corpus</h1>        
+		<h3>Source Text</h3>        
 		<div id="crpsDivId"></div>       		
 		<div id="crpsModalId" class="modal fade" role="dialog"></div>					    		                         									    		                         		
 	</div> 
@@ -71,7 +66,7 @@ body {	position: relative; }
 	
 	<div id="section2" class="container-fluid">
 	
-        <h1>Annotation</h1>
+        <h3>Translation</h3>
             
 		<div class="row">
 			<div class="col-sm-1"></div>		
