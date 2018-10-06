@@ -13,7 +13,7 @@ help:
 #
 #
 WK=/Users/dsm/DDb/europarl
-DB=/Users/dsm/DDb/europarl/training
+DB=${WK}/training
 DB2=$(DB)/tmp2
 DB3=$(DB)/tmp3
 DB4=$(DB)/tmp4
@@ -94,7 +94,7 @@ scpt_lower_complete:
 #
 #
 #
-GZ_HOME=/Users/dsm/DDb/europarl/giza-pp
+GZ_HOME=${WK}/giza-pp
 GZ_BIN_GIZAPP=$(GZ_HOME)/GIZA++-v2/GIZA++ 
 GZ_BIN_SNT2COOC=$(GZ_HOME)/GIZA++-v2/snt2cooc.out 
 GZ_BIN_SNT2PLAIN=$(GZ_HOME)/GIZA++-v2/snt2plain.out 
@@ -104,19 +104,14 @@ GZ_BIN_MKCLS=$(GZ_HOME)/mkcls-v2/mkcls
 gz_clone:
 	git clone git@github.com:moses-smt/giza-pp.git
 
-
-gz_install_linux:
-
-
-gz_install_macos:
-	cd giza-pp; perl -pi -w -e 's/<tr1\//</g;' GIZA++-v2/* mkcls-v2/*
-	cd giza-pp; perl -pi -w -e 's/using namespace std::tr1;//g;' GIZA++-v2/* mkcls-v2/*
-	cd giza-pp; perl -pi -w -e 's/std::tr1:://g;' GIZA++-v2/* mkcls-v2/*
-	cd giza-pp; sed '36d' mkcls-v2/mystl.h > mkcls-v2/mystl.h.tmp
-	cd giza-pp; sed '50d' mkcls-v2/mystl.h.tmp > mkcls-v2/mystl.h
-	cd giza-pp; rm mkcls-v2/mystl.h.tmp
-	cd giza-pp; make
-
+gz_install:
+	cd ${GZ_HOME}; perl -pi -w -e 's/<tr1\//</g;' GIZA++-v2/* mkcls-v2/*
+	cd ${GZ_HOME}; perl -pi -w -e 's/using namespace std::tr1;//g;' GIZA++-v2/* mkcls-v2/*
+	cd ${GZ_HOME}; perl -pi -w -e 's/std::tr1:://g;' GIZA++-v2/* mkcls-v2/*
+	cd ${GZ_HOME}; sed '36d' mkcls-v2/mystl.h > mkcls-v2/mystl.h.tmp
+	cd ${GZ_HOME}; sed '50d' mkcls-v2/mystl.h.tmp > mkcls-v2/mystl.h
+	cd ${GZ_HOME}; rm mkcls-v2/mystl.h.tmp
+	cd ${GZ_HOME}; make
 
 gz_check:
 	@if [ -e ${GZ_BIN_GIZAPP} ]; then du ${GZ_BIN_GIZAPP} ; fi
