@@ -12,7 +12,8 @@ help:
 #
 #
 #
-WK=/Users/dsm/DDb/europarl
+HM=/Users/dsm
+WK=${HM}/DDb/europarl
 DB=${WK}/training
 DB2=$(DB)/tmp2
 DB3=$(DB)/tmp3
@@ -20,7 +21,7 @@ DB4=$(DB)/tmp4
 
 SRC=es
 TGT=en
-ID=europarl-v5.es-en
+ID=europarl-v5.es-en-10k
 TXT=${DB}/${ID}
 TXT_SRC=$(DB)/${ID}.$(SRC)
 TXT_TGT=$(DB)/${ID}.$(TGT)
@@ -45,12 +46,12 @@ SCPT=$(WK)/scripts
 #
 #
 SCPT_TOKEN=$(SCPT)/tokenizer.perl 
-TXT_SRC_TOK=$(DB2)/europarl-v5.es-en.$(SRC)
-TXT_TGT_TOK=$(DB2)/europarl-v5.es-en.$(TGT)
-scpt_token:
-	$(SCPT_TOKEN) -l $(SRC) < $(TXT_SRC) > $(TXT_SRC_TOK)
-	$(SCPT_TOKEN) -l $(TGT) < $(TXT_TGT) > $(TXT_TGT_TOK)
-	@echo "done" 
+TXT_SRC_TOK=$(DB2)/${ID}.$(SRC)
+TXT_TGT_TOK=$(DB2)/${ID}.$(TGT)
+
+scpt_token_setup:
+	@if [ -d ${DB2} ]; then rm -rf ${DB2} ; fi
+	mkdir ${DB2}
 
 scpt_token_str:
 	@echo
@@ -66,26 +67,28 @@ scpt_token_str:
 	@echo $(SCPT_TOKEN)
 	@echo
 
-scpt_token_setup:
-	@if [ -d ${DB2} ]; then rm -rf ${DB2} ; fi
-	mkdir ${DB2}
+scpt_token:
+	$(SCPT_TOKEN) -l $(SRC) < $(TXT_SRC) > $(TXT_SRC_TOK)
+	$(SCPT_TOKEN) -l $(TGT) < $(TXT_TGT) > $(TXT_TGT_TOK)
+	@echo "done" 
 
+
+#
+# [] 
+#
 SCPT_LOWER=$(SCPT)/lowercase.perl 
-
-TXT_SRC_LOWER=$(DB3)/europarl-v5.es-en.$(SRC)
-TXT_TGT_LOWER=$(DB3)/europarl-v5.es-en.$(TGT)
-scpt_lower:
-	$(SCPT_LOWER) < $(TXT_SRC_TOK) > $(TXT_SRC_LOWER)
-	$(SCPT_LOWER) <  $(TXT_TGT_TOK) > $(TXT_TGT_LOWER)
+TXT_SRC_LOWER=$(DB3)/${ID}.$(SRC)
+TXT_TGT_LOWER=$(DB3)/${ID}.$(TGT)
 
 scpt_lower_setup:
+	@echo "help"
+	$(SCPT_LOWER) -help
 	@if [ -d ${DB3} ]; then rm -rf ${DB3} ; fi
 	mkdir ${DB3}
 
-
-help_scpt:
-	@echo "help"
-	$(SCPT_LOWER) -help
+scpt_lower:
+	$(SCPT_LOWER) < $(TXT_SRC_TOK) > $(TXT_SRC_LOWER)
+	$(SCPT_LOWER) <  $(TXT_TGT_TOK) > $(TXT_TGT_LOWER)
 
 scpt_lower_complete:
 	wc $(TXT_SRC_LOWER)
@@ -96,9 +99,9 @@ scpt_lower_complete:
 #
 GZ_HOME=${WK}/giza-pp
 GZ_BIN_GIZAPP=$(GZ_HOME)/GIZA++-v2/GIZA++ 
-GZ_BIN_SNT2COOC=$(GZ_HOME)/GIZA++-v2/snt2cooc.out 
 GZ_BIN_SNT2PLAIN=$(GZ_HOME)/GIZA++-v2/snt2plain.out 
 GZ_BIN_PLAIN2SNT=$(GZ_HOME)/GIZA++-v2/plain2snt.out 
+GZ_BIN_SNT2COOC=$(GZ_HOME)/GIZA++-v2/snt2cooc.out 
 GZ_BIN_MKCLS=$(GZ_HOME)/mkcls-v2/mkcls
 
 gz_clone:
@@ -169,13 +172,49 @@ gz_s2_run:
 
 
 
+# SNT2COOC
+# BIN:
+#   GZ_BIN_SNT2COOC=$(GZ_HOME)/GIZA++-v2/snt2cooc.out 
+# IN:
+#   GZ_S1_SRC_VCB=${ID}.${SRC}.vcb
+#   GZ_S1_TGT_VCB=${ID}.${TGT}.vcb
+#   GZ_S1_SRC_TGT=${ID}.${SRC}_${ID}.${TGT}.snt
+#   GZ_S1_TGT_SRC=${ID}.${TGT}_${ID}.${SRC}.snt
+# OUT:
+#   GZ_S3_SRC_COOC=${ID}.${SRC}
+#   GZ_S3_TGT_COOC=${ID}.${TGT}
+GZ_S3_LOC=${DB4}
+GZ_S3_COOC_SRC_TGT=${ID}.${SRC}.${TGT}.cooc
+GZ_S3_COOC_TGT_SRC=${ID}.${TGT}.${SRC}.cooc
+giza_s3cooc_setup:
+	@echo IN
+	@echo ${GZ_S1_SRC_VCB}
+	@echo ${GZ_S1_TGT_VCB}
+	@echo ${GZ_S1_SRC_TGT}
+	@echo ${GZ_S1_TGT_SRC}
+	@echo 
+	@echo ${GZ_S3_LOC}
+	@echo ${GZ_BIN_SNT2COOC}
+	@echo ${GZ_S3_COOC_SRC_TGT}
+	@echo ${GZ_S3_COOC_TGT_SRC}
+
+giza_s3cooc_run:
+	${GZ_BIN_SNT2COOC} ${GZ_S1_SRC_VCB} ${GZ_S1_TGT_VCB}
+	${GZ_BIN_SNT2COOC} ${GZ_S1_TGT_VCB} ${GZ_S1_SRC_VCB} 
+
+
+
+
+
+
+
 
 #./GIZA++ -S [target_language_corpus].vcb 
 #         -T [source_language_corpus].vcb 
 #         -C [target_language_corpus]_[source_language_corpus].snt 
 #         -o [prefix] 
 #         -outputpath [output_folder]
-gz_s3_run:
+gz_s4_run:
 	${GZ_BIN_GIZAPP} \
 	-S ${GZ_S1_LOC}/${GZ_S1_SRC_VCB} \
 	-T ${GZ_S1_LOC}/${GZ_S1_TGT_VCB} \
@@ -185,26 +224,36 @@ gz_s3_run:
 
 
 
+
+
+
+
+
 #
 #
 #
-SRILM_HOME=/Users/dsm/DGitBee/d.nlg.xnn/srilm/s170b/bin/macosx
+SRILM_HOME=${HM}/DGitBee/d.nlg.xnn/srilm/s170b/bin/macosx
 SRILM_EXE=$(SRILM_HOME)
 lm_help:
 	@echo $(SRILM_EXE)/ngram-count
 
-OUT_LM=ngram2
-COUNT=ngram.count
-ORDER=2
-TEXT=/Users/dsm/DDb/europarl/training/europarl-v5.es-en.es
-SRILM=/Users/dsm/DGitBee/d.nlg.xnn/srilm/s170b/bin/macosx/ngram-count
+
+
+
+ORDER=3
+TXT_SRC_LM=$(DB3)/${ID}.$(SRC).lm
+TXT_TGT_LM=$(DB3)/${ID}.$(TGT).lm
+TXT_SRC_CNT=$(DB3)/${ID}.$(SRC).cnt
+TXT_TGT_CNT=$(DB3)/${ID}.$(TGT).cnt
+SRILM=${SRILM_HOME}/ngram-count
 lm_cnt:
-	rm -f $(COUNT)
-	$(SRILM) -text $(TEXT) -order $(ORDER) -write $(COUNT)
+	$(SRILM) -text ${TXT_SRC_LOWER} -order $(ORDER) -write ${TXT_SRC_CNT}
+	$(SRILM) -text ${TXT_TGT_LOWER} -order $(ORDER) -write ${TXT_TGT_CNT}
 
 lm_trn:
-	rm -f $(OUT_LM)
-	$(SRILM) -text $(TEXT) -order $(ORDER) -addsmooth 0 -lm $(OUT_LM)
+	$(SRILM) -text ${TXT_SRC_LOWER} -order $(ORDER) -addsmooth 0 -lm $(TXT_SRC_LM).${ORDER}
+	$(SRILM) -text ${TXT_TGT_LOWER} -order $(ORDER) -addsmooth 0 -lm $(TXT_TGT_LM).${ORDER}
+
 
 help_lm:
 	@echo ${COUNT}
