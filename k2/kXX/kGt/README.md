@@ -225,19 +225,17 @@ git reset
 
 ## git branch
 
-- git branch --all
-    - list all available branches
-- git branch
-    - 
-- git branch aNewBranchName
-    - create a new branch with the name aNewBranchName
-- git checkout anExistingBranchName    
-- git checkout -b <branchName>
-- git merge <branch>
-    - merge <branch> into the current branch
-    - ToDo: Still don't quite understand merge branch
-- git delete    
-    - ToDo: don't undersand 
+| | | 
+|-|-|
+| list branches in the sandbox | git branch |  
+| list all available branches  | git branch --all |  
+| create a new local branch  | git branch aNewBranchName |  
+| checkout an existing branch | git checkout anExistingBranchName |   
+| checkout an existing branch | git checkout -b <branchName> |  
+| | git delete |
+| push local branch to remote origin | - git push -u origin myLocalBranchName |    
+| ToDo: Still don't quite understand merge branch| git merge <branch> | 
+|  |  merge <branch> into the current branch | 
     
 ### git branch errors
 
