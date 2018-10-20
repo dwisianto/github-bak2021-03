@@ -24,11 +24,14 @@
 		button.linky { background:none;border:none; }
 		body { position: relative; }
 
-		#section1 { padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; } 
+		#section1 { padding-top: 50px; height: 300px; color: #7d7d7d; background-color: #e7e7e7; } 
 		#section2 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
 		#section3 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
 		#section41 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
 		#section42 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
+		
+		#sectionBeginning { padding-top: 50px; height: 300px; color: #7d7d7d; background-color: #e7e7e7; } 
+		#sectionConclusion {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
 	</style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -43,16 +46,17 @@
 			<div>				 				
 				<div class="collapse navbar-collapse navbar-right" id="myNavbar2">
 					<ul class="nav navbar-nav">
-						<li><a href="#section1">Research</a></li>
-						<li><a href="#section2">Natural Language</a></li>
-						<li><a href="#section3">Machine Learning</a></li>
+						<li><a href="#sectionBeginning">Research</a></li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>							
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Communities<span class="caret"></span></a>							
 							<ul class="dropdown-menu">
-								<li><a href="#section41">Section 4-1</a></li>
-								<li><a href="#section42">Section 4-2</a></li>
+								<li><a href="#section41">Academia</a></li>
+								<li><a href="#section42">Industry</a></li>
 							</ul>
 						</li>
+						<li><a href="#section2">Natural Language Processing</a></li>
+						<li><a href="#section3">Machine Learning</a></li>						
+						<li><a href="#sectionConclusion">Closure</a></li>						
 					</ul>
 				</div>
 			</div>
@@ -60,11 +64,24 @@
 
 	</nav>
 
-	<div id="section1" class="container-fluid">
+	<div id="sectionBeginning" class="container-fluid">
 	
         <div class="row">
+          <div class="col-lg-2"></div>          
+          <div class="col-lg-8">
+            <div id="rschDivId"></div>       		
+          </div>
+          <div class="col-lg-2"></div>
+        </div>
+        	
+	</div>
+	
+	
+	<div id="section41" class="container-fluid">
+		<h1>Academia</h1>
+        <div class="row">
           <div class="col-lg-4">
-            <h3>Academia</h3>
+            <h2>Heading</h2>
             <p></p>
             <ul>
             		<li><a href="https://academicjobsonline.org/">Academia</a></li>            		
@@ -74,26 +91,46 @@
             		<li><a href="http://karlstratos.com/notes/notes.html">karlstratos</a></li>            		
             		<li><a href="http://karlstratos.com/notes/notes.html"></a>ssli</li>            		
             		<li><a href="http://melodi.ee.washington.edu/people/bilmes/pgs/index.html"></a>jeff Bilmes</li>            		            		
-            </ul>            
+            </ul>                        
           </div>
           <div class="col-lg-4">
-            <div id="rschDivId"></div>       		
+            <h2>Heading</h2>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+            <p></p>
+          </div>
+        </div>		
+	</div>
+	
+	<div id="section42" class="container-fluid">
+		<h1>Industry</h1>
+        <div class="row">
+          <div class="col-lg-4">
+            <h3>Trends</h3>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h3>Commercial</h3>
+            <p></p>
           </div>
           <div class="col-lg-4">
             <h3>Industry</h3>
-            	<p> </p>
+            	<p></p>
+            	<ul>
             	<li> <a href="https://lidengsite.wordpress.com/">Li Deng</a>
             		> <a href="http://sonyis.me/">Yang Song</a>
             		> <a href="http://lunadong.com/">Luna Dong</a>
             		> <a href="http://qwone.com/~jason/">Json Rennie</a>
             		> <a href="http://scottyih.org/">Scott Yih</a>
-            	</li>                        	
-            	<ul>
+            	</li>                        	            	
             </ul>                        
           </div>
         </div>
-        	
+		        
 	</div>
+	
 	
 	<div id="section2" class="container-fluid">
 		<h3>Natural Language</h3>
@@ -175,59 +212,35 @@
         </div><!-- /.row -->
 
 	</div>
+	
 	<div id="section3" class="container-fluid">
-		<h3>Section 3</h3>
+		<h3>Machine Learning</h3>
         <div class="row">
           <div class="col-lg-4">
             <h4>Heading</h4>
             <p></p>
-          </div><!-- /.col-lg-4 -->
+          </div>
           <div class="col-lg-4">
-            <h4>Heading</h4>
+            <h4>Stump, Tree, Forest</h4>
             <p></p>
-          </div><!-- /.col-lg-4 -->
+          </div>
           <div class="col-lg-4">
-            <h4>Heading</h4>
+            <h4>Neural Network</h4>
             <p></p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-		
+          </div>
+        </div>		
 	</div>
-	<div id="section41" class="container-fluid">
-		<h1>Section 4 Submenu 1</h1>
+
+	
+	<div id="sectionConclusion" class="container-fluid">
         <div class="row">
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-		
-	</div>
-	<div id="section42" class="container-fluid">
-		<h1>Section 4 Submenu 2</h1>
-        <div class="row">
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-	</div>
+          <div class="col-lg-2"></div>          
+          <div class="col-lg-8">
+            <div id="closureDivId"></div>       		
+          </div>
+          <div class="col-lg-4"></div>          
+        </div>		
+	</div>	
 
 </body>
 </html>
