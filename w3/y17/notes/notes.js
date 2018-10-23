@@ -14,10 +14,6 @@ $(document).ready(function() { 	// [] Code to run when the document is ready.
  * O: 
  * conclusionDivId
  * 
- * 
- * 
- * 
-
  */
 function closureSetup() {
 	console.log("conclusionSetup");

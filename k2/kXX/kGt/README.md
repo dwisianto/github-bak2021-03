@@ -236,6 +236,29 @@ git reset
 | push local branch to remote origin | - git push -u origin myLocalBranchName |    
 | ToDo: Still don't quite understand merge branch| git merge <branch> | 
 |  |  merge <branch> into the current branch | 
+
+### Merging MasterBranch and LocalBranch
+
+Merge from the MasterBranch to the LocalBranch
+
+````bash
+git checkout master
+git pull
+git checkout myLocalBranch
+git merge master
+````
+
+Merge from the LocalBranch to the MasterBranch
+
+```bash
+git checkout master
+git merge myLocalBranch
+git push origin master
+```
+### Change the remote a branch is tracking
+
+[how-to-change-the-remote-a-branch-is-tracking](https://stackoverflow.com/questions/4878249/how-to-change-the-remote-a-branch-is-tracking)
+
     
 ### git branch errors
 
