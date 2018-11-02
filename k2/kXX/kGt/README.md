@@ -167,17 +167,19 @@ GoTo [Top](#git)
 
 ## git clean
 
-- git help clean
-- git clean --dry-run
-- git clean -force 
-- git clean -f -d 
-    - to remove directory
-    - git clean -fd 
-- git clean -f -X
-    - to remove ignored files
-    - git clean -fX
-- git clean -f -x 
-    - to remove ignored and non-ignored files 
+| | | 
+|-|-|
+| git help clean | |  
+| git clean --dry-run | | 
+| git clean -n | dry run | 
+| git clean -force | | 
+| git clean -f -d | remove a directory | 
+| git clean -fd  | to remove directory |  
+| git clean -f -X | to remove ignored files | 
+| git clean -fX | | 
+| git clean -f -x | to remove ignored and non-ignored files | 
+
+ 
 
 ## git stash
 
@@ -225,17 +227,22 @@ git reset
 
 ## git branch
 
-| | | 
+
+| Command | Description | 
 |-|-|
-| list branches in the sandbox | git branch |  
-| list all available branches  | git branch --all |  
-| create a new local branch  | git branch aNewBranchName |  
-| checkout an existing branch | git checkout anExistingBranchName |   
-| checkout an existing branch | git checkout -b <branchName> |  
+| git branch | list branches in the sandbox |   
+| git branch -all | list all available branches |  
+| git checkout anExistingBranchName | checkout an existing branch |
+| git checkout -b <branchName> | checkout an existing branch |
+| git branch <myNewBranchName> | create a new local branch |
+| git push -u origin <myNewBranchName> | push local branch to remote origin |
+| | |      
 | | git delete |
-| push local branch to remote origin | - git push -u origin myLocalBranchName |    
 | ToDo: Still don't quite understand merge branch| git merge <branch> | 
-|  |  merge <branch> into the current branch | 
+|  |  merge <branch> into the current branch |
+
+### Rebase MasterBranch and LocalBranch 
+     
 
 ### Merging MasterBranch and LocalBranch
 
@@ -255,6 +262,7 @@ git checkout master
 git merge myLocalBranch
 git push origin master
 ```
+
 ### Change the remote a branch is tracking
 
 [how-to-change-the-remote-a-branch-is-tracking](https://stackoverflow.com/questions/4878249/how-to-change-the-remote-a-branch-is-tracking)

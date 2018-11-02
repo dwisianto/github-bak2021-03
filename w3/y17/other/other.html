@@ -23,11 +23,11 @@ body {
 	position: relative;
 }
 
-#section1 { padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; } 
-#section2 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
-#section3 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
-#section41 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
-#section42 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
+#section1 { padding-top: 40px; height: 300px; color: #7d7d7d; background-color: #e7e7e7; } 
+#section2 {	padding-top: 7px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
+#section3 {	padding-top: 7px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
+#section41 {	padding-top: 7px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
+#section42 {	padding-top: 7px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
 
 </style>
 </head>
@@ -44,14 +44,14 @@ body {
 				<div class="collapse navbar-collapse navbar-right" id="myNavbar2">
 					<ul class="nav navbar-nav">
 						<li><a href="#section1">Machine Learning</a></li>
-						<li><a href="#section2">Natural Language</a></li>
-						<li><a href="#section3">Machine Translation</a></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="#section41">Section 4-1</a></li>
 								<li><a href="#section42">Section 4-2</a></li>
 							</ul></li>
+						<li><a href="#section2">Natural Language</a></li>
+						<li><a href="#section3">Machine Translation</a></li>							
 					</ul>
 				</div>
 			</div>
@@ -61,46 +61,70 @@ body {
 
 	<div id="section1" class="container-fluid">
 	
-		<h1>Machine Learning</h1>
-		<p>Linear Algebra, Statistics, Neural Network, Decision Tree, Graphical Models</p>
-	
         <div class="row">
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p></p>            
-            <ul>
-            		<li><a href="http://karlstratos.com/notes/notes.html">karlstratos</a></li>
-            		<li><a href="https://lidengsite.wordpress.com/">li deng</a></li>
-            </ul>
-            
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <h4>Heading</h4>
+          </div>
+          <div class="col-lg-2"></div>          
+        </div>
         	
 	</div>
 	
+	<div id="section41" class="container-fluid">
+		<h1>Section 4 Submenu 1</h1>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+            <ul></ul>
+            <p></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+            <p></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+            <p></p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->		
+	</div>
+	
+	<div id="section42" class="container-fluid">
+		<h3>Section 4 Submenu 2</h3>
+        <div class="row">
+          <div class="col-lg-4">
+            <h4>Heading</h4>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h4>Heading</h4>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h4>Heading</h4>
+            <p></p>
+          </div>
+        </div>
+	</div>
+	
+	
+	
 	<div id="section2" class="container-fluid">
-		<h1>Natural Language</h1>
+		<h3>Natural Language</h3>
 		<p>Theory of Computation, Parsing, Logic</p>
 
         <div class="row">
           <div class="col-lg-4">
-            <h2>Heading</h2>
+            <h4>Heading</h4>
             <p></p>
           </div>
           <div class="col-lg-4">
-            <h2>Heading</h2>
+            <h4>Heading</h4>
             <p></p>
           </div>
           <div class="col-lg-4">
-            <h2>Heading</h2>
+            <h4>Heading</h4>
             <p></p>
           </div>
         </div>
@@ -110,73 +134,16 @@ body {
 	<div id="section3" class="container-fluid">
 		<h1>Machine Translation</h1>
         <div class="row">
-          <div class="col-lg-4">
-            <h2>System</h2>
-            <ul> 
-            		<li> <a href="http://www.statmt.org/">STATMT</a>             		     
-            			 > <a href="http://www.statmt.org/europarl/">europarl</a>
-            		</li>
-	            <li> <a href="https://sourceforge.net/projects/cunei/">Cunei</a>             	 		
-            	 		> <a href="http://www.aclweb.org/anthology/W10-1721">pdf</a>
-          			> <a href="http://www.statmt.org/wmt10/">wmt10</a>
-            			> <a href="http://www.statmt.org/wmt10/translation-task.html/">translation task</a>            			             	 		            	 		
-            		</li>                        
-	            <li> Cambridge SMT <a href="http://ucam-smt.github.io/">ucam-smt</a>    	        	 
-            		</li>                        
-            </ul>            
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <ul>
-            <li>http://desilinguist.org/</li>
-			<li>http://nlp.stanford.edu:8080/corenlp/process</li>          
-            </ul>
-            <p></p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-	
-	</div> <!--  section3 -->
-	
-	<div id="section41" class="container-fluid">
-		<h1>Section 4 Submenu 1</h1>
-        <div class="row">
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <ul></ul>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-		
-	</div>
-	<div id="section42" class="container-fluid">
-		<h1>Section 4 Submenu 2</h1>
-        <div class="row">
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
+          <div class="col-lg-2"></div>          
+          <div class="col-lg-8">
             <h2>Heading</h2>
             <p></p>
           </div>
+          <div class="col-lg-2"></div>
         </div>
-	</div>
+	
+	</div> <!--  section3 -->
+	
 
 </body>
 </html>
