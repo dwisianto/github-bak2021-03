@@ -233,15 +233,26 @@ git reset
 | git branch | list branches in the sandbox |   
 | git branch -all | list all available branches |  
 | git checkout anExistingBranchName | checkout an existing branch |
-| git checkout -b <branchName> | checkout an existing branch |
-| git branch <myNewBranchName> | create a new local branch |
-| git push -u origin <myNewBranchName> | push local branch to remote origin |
+| git checkout -b **branchName** | checkout an existing branch |
+| git branch **myNewBranchName** | create a new local branch |
+| git push -u origin **myNewBranchName** | push local branch to remote origin |
 | | |      
 | | git delete |
 | ToDo: Still don't quite understand merge branch| git merge <branch> | 
 |  |  merge <branch> into the current branch |
 
-### Rebase MasterBranch and LocalBranch 
+### Merge and Rebase 
+
+- **merge**  : all changes in one branch and merges them into another branch in one commit.
+    - Let's say you have created a branch for the purpose of developing a single feature.
+    - When you want to bring those changes back to master, you probably want to merge. 
+    - You don't care about maintaining all of the interim commits
+- **rebase** : I want the point at which I branch to move to a new starting point
+    - You start doing some development. Another developer made an unrelated change.
+    - You want to pull and rebase to base your changes from the current version from the repo. 
+- **rebase interactive** : 
+
+
      
 
 ### Merging MasterBranch and LocalBranch
@@ -262,6 +273,10 @@ git checkout master
 git merge myLocalBranch
 git push origin master
 ```
+
+### Rebase MasterBranch and LocalBranch 
+
+
 
 ### Change the remote a branch is tracking
 
