@@ -17,7 +17,7 @@
     - remote reposistory
 - ide
     - smartgit
-    - githubDesktop : 
+    - githubDesktop :
     - egit : eclipse git
 
 
@@ -26,7 +26,7 @@
 
 ### git help
 
-- git help 
+- git help
 - git help init
 - git help add
 
@@ -38,7 +38,7 @@
     - set the email you want attached to your commit transactions
 - git config --global color.ui auto
     - enables helpful colorization of command line output
-    
+
 
 ## Routine
 
@@ -53,13 +53,13 @@
 - git init --raw <projectName>
     - create a raw local repository
 - git clone <githhubProject>
-    - clone a remote github project 
-    
+    - clone a remote github project
+
 GoTo [Top](#git)
 
 ### Fetch Pull Rebase Autostash
 
-We want to update the sandbox with the latest changes from others. 
+We want to update the sandbox with the latest changes from others.
 The current changes will be stashed away.  
 
 - git fetch
@@ -79,15 +79,15 @@ GoTo [Top](#git)
     - git clean -fX
 - git clean -f -x # to clean ignored and non-ignored files
     - git clean -fx
-    
+
 GoTo [Top](#git)    
 
 ### status add reset checkout
 
-- git status 
-- git log 
-- git add -A . # approved all modified files but not untracked file 
-- git status            # all changes files are staged 
+- git status
+- git log
+- git add -A . # approved all modified files but not untracked file
+- git status            # all changes files are staged
 - git reset HEAD specificFileName # to unstage but keep the modification
 - git checkout -- specificFileName # to discard changes in the local repository
 - git commit -m commitMessage
@@ -107,9 +107,9 @@ GoTo [Top](#git)
 
 GoTo [Top](#git)
 
-### revert 1 : 
+### revert 1 :
 
-- git add -A . # add all 
+- git add -A . # add all
 - git commit -m "commitMessages"
 - git log # remember the hashCode of the commit
 - git show hasCode #
@@ -119,14 +119,14 @@ GoTo [Top](#git)
 
 - Forget everything: Don't want to keep track of anything
 - git log
-- git reset --hard 
+- git reset --hard
 
- 
+
 ### Routine2 : Branches
 
 - git branch
 - git branch [branch-name] # create a new branch
-- git checkout [branch-name] # 
+- git checkout [branch-name] #
 - git merge [branch] # combine the specified branch history into the current branch
 - git branch -d [branch-name] # delete the specified branch
 
@@ -151,7 +151,7 @@ GoTo [Top](#git)
 - git rebase # accept other's changes and try to mix the changes together
 - git merge # accept others' changes and continue with me
 - git pull --rebase --autostash
-- git stash show 
+- git stash show
 - git stash show -p
     - If there is a conflict then we can show the difference
 - git mergetool
@@ -161,25 +161,25 @@ GoTo [Top](#git)
 
 - git add --update :/
     - will update or remove previously tracked files from the entire working tree. It will not add new files.    
-- git add -A 
+- git add -A
     - It will also update, remove previously tracked files, but it will also add new files. As this command doesn't have the explicit pathspec of :/ that your update command does, depending on your version of git, this may be for all files in the entire working tree, or it may be for the current directory and all subfolders and files.
-    
+
 
 ## git clean
 
-| | | 
+| | |
 |-|-|
 | git help clean | |  
-| git clean --dry-run | | 
-| git clean -n | dry run | 
-| git clean -force | | 
-| git clean -f -d | remove a directory | 
+| git clean --dry-run | |
+| git clean -n | dry run |
+| git clean -force | |
+| git clean -f -d | remove a directory |
 | git clean -fd  | to remove directory |  
-| git clean -f -X | to remove ignored files | 
-| git clean -fX | | 
-| git clean -f -x | to remove ignored and non-ignored files | 
+| git clean -f -X | to remove ignored files |
+| git clean -fX | |
+| git clean -f -x | to remove ignored and non-ignored files |
 
- 
+
 
 ## git stash
 
@@ -221,14 +221,14 @@ git stash pop
 Now unstage everything, but leave the files as they are now:
 
 git reset
- 
+
 
 
 
 ## git branch
 
 
-| Command | Description | 
+| Command | Description |
 |-|-|
 | git branch | list branches in the sandbox |   
 | git branch -all | list all available branches |  
@@ -238,22 +238,22 @@ git reset
 | git push -u origin **myNewBranchName** | push local branch to remote origin |
 | | |      
 | | git delete |
-| ToDo: Still don't quite understand merge branch| git merge <branch> | 
+| ToDo: Still don't quite understand merge branch| git merge <branch> |
 |  |  merge <branch> into the current branch |
 
-### Merge and Rebase 
+### Merge and Rebase
 
 - **merge**  : all changes in one branch and merges them into another branch in one commit.
     - Let's say you have created a branch for the purpose of developing a single feature.
-    - When you want to bring those changes back to master, you probably want to merge. 
+    - When you want to bring those changes back to master, you probably want to merge.
     - You don't care about maintaining all of the interim commits
 - **rebase** : I want the point at which I branch to move to a new starting point
     - You start doing some development. Another developer made an unrelated change.
-    - You want to pull and rebase to base your changes from the current version from the repo. 
-- **rebase interactive** : 
+    - You want to pull and rebase to base your changes from the current version from the repo.
+- **rebase interactive** :
 
 
-     
+
 
 ### Merging MasterBranch and LocalBranch
 
@@ -274,15 +274,43 @@ git merge myLocalBranch
 git push origin master
 ```
 
-### Rebase MasterBranch and LocalBranch 
+### [Rebase](https://stackoverflow.com/questions/804115/when-do-you-use-git-rebase-instead-of-git-merge)
 
+Rebase means you use another branch as the new base for your work.
+If you have a branch *master*, and you create a branch to implement a new feature *myBranch*.
+Of course the master branch is the base of your new feature.
 
+At certain point, you want to add new feature into the *master* branch.
+You can swtich to the master branch and merge *myBranch* branch:
+
+```bash
+git checkout master
+git merge myBranch
+```
+
+The drawback is that a new dummy commit is added. Spaghetti-history also occurs.
+The solution is to do **rebase**.
+
+```javascript
+git checkout myBranche
+git rebase master
+```
+
+and then merge it in **master**
+
+```javascript
+git checkout master
+git merge myBranch
+```
+
+This time, since the *myBranch* branch has the same commits of the master plus the commits with the new feature.
+The merge will be just a fast-forward.
 
 ### Change the remote a branch is tracking
 
 [how-to-change-the-remote-a-branch-is-tracking](https://stackoverflow.com/questions/4878249/how-to-change-the-remote-a-branch-is-tracking)
 
-    
+
 ### git branch errors
 
 - git add -u .
@@ -322,7 +350,7 @@ git init
 
 ```
 ssh-add
-ssh-add 
+ssh-add
 ```
 
 
@@ -406,7 +434,7 @@ Host *
 - branch
 - merge
 - stash
-- 
+-
 
 
 ## ToDo
@@ -422,5 +450,3 @@ Host *
     - [github](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
     - [bitbucket]()
 - https://stackoverflow.com/questions/52704/how-do-i-discard-unstaged-changes-in-git
-
-
