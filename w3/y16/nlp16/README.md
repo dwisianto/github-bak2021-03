@@ -2,14 +2,21 @@
 # NLP 2016
 
 
+- [Overview](#overview)
+- [Schedules](#schedules)
+- [Textbook](#textbook)
+- [Software Packages](#software-packages)
+- [Literatures](#literatures)
+
+
 ## Overview
 
-Natural language processing (NLP) enables computers to use and understand human languages.
-Recently, NLP techniques have been widely used in many applications including machine translation, question answering, and extracting information from text.
-In this course, we will cover the fundamental elements and recent research trends in NLP.
+Natural language processing (NLP) enables computers to process and to "understand" human languages.
+Typical applications include extracting information from unstructured text, machine translation, and question answering.
+
+
+This course covers the fundamental elements and recent research advances in NLP.
 Tentative topics include syntactic analysis, semantic analysis, and NLP applications as well as the underlying machine learning methods that widely used in modeling NLP systems.
-
-
 The activities of the course include lectures, paper presentations, quizzes, a critical review report, and a final project. Tentative topics include:
 - Machine learning background: linear classification models, basic structured prediction models
 - Syntactic analysis: part-of-speech tagging, chunking, dependency parsing, constituency parsing.
@@ -21,7 +28,8 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 | | | |
 |-|-|-|
 | Overview | | |
-| Language Model | N-gram | |
+| Language Model | | |
+|                | FlexGram | |
 |                | Smoothing | |
 |                | DiscriminativeLM, Perplexity | |
 | Word Representation | | |
@@ -44,7 +52,7 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 |              | Named Entity Recognition | |
 |              | Relation Extraction | |
 | | Word Alignment |
-| | Paraphrasing | 
+| | Paraphrasing |
 | | Machine Translation |
 | | Question Answering |
 
