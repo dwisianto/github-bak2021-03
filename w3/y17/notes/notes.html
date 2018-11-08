@@ -7,9 +7,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+	<!--
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  	-->
 
@@ -17,23 +17,25 @@
 	<script src="../../../w3/l17/bs/bs3/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="../../../w3/l17/bs/bs3/css/bootstrap.min.css">
 
-	<!-- <link rel="stylesheet" href="pages/index/index.css"> -->  	
-	<script src="notes.js"></script>		
+	<!-- <link rel="stylesheet" href="pages/index/index.css"> -->
+	<script src="notes.js"></script>
 
 	<style>
 		button.linky { background:none;border:none; }
 		body { position: relative; }
 
-		#section1 { padding-top: 7px; height: 300px; color: #7d7d7d; background-color: #e7e7e7; } 
-		#section2 {	padding-top: 7px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
-		#section3 {	padding-top: 7px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
-		#section41 {	padding-top: 14px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
-		#section42 {	padding-top: 14px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
-		
-		#sectionBeginning  {padding-top: 50px; height: 300px; color: #7d7d7d; background-color: #e7e7e7; } 		
-		#sectionAcademy    {	padding-top: 14px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
-		#sectionIndustry   {	padding-top: 14px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
-		#sectionConclusion {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
+		#section1 { padding-top: 30px; height: 300px; color: #7d7d7d; background-color: #e7e7e7; }
+		#section2 {	padding-top: 30px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
+		#section3 {	padding-top: 30px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
+		#section41 {	padding-top: 30px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
+		#section42 {	padding-top: 30px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
+
+		#sectionBeginning  {padding-top: 50px; height: 300px; color: #7d7d7d; background-color: #e7e7e7; }
+		#sectionAcademy    {	padding-top: 30px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
+		#sectionIndustry   {	padding-top: 30px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
+		#sectionLanguage {	padding-top: 30px; height: 600px; color: #7d7d7d; background-color: #ffffff; }
+		#sectionLearning {	padding-top: 30px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
+		#sectionClosure {	padding-top: 30px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
 	</style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -42,23 +44,23 @@
 		<div class="container-fluid">
 
 			<div class="navbar-header">
-				<a class="navbar-brand" href="../../../index.html"> Dwi Sianto Mansjur</a>					
-			</div> <!--  navbar-header -->			
+				<a class="navbar-brand" href="../../../index.html"> Dwi Sianto Mansjur</a>
+			</div> <!--  navbar-header -->
 
-			<div>				 				
+			<div>
 				<div class="collapse navbar-collapse navbar-right" id="myNavbar2">
 					<ul class="nav navbar-nav">
 						<li><a href="#sectionBeginning">Journey</a></li>
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Communities<span class="caret"></span></a>							
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Communities<span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="#sectionAcademy">Academia</a></li>
 								<li><a href="#sectionIndustry">Industry</a></li>
 							</ul>
 						</li>
-						<li><a href="#section2">Natural Language Processing</a></li>
-						<li><a href="#section3">Machine Learning</a></li>						
-						<li><a href="#sectionConclusion">Closure</a></li>						
+						<li><a href="#sectionLanguage">Natural Language Processing</a></li>
+						<li><a href="#sectionLearning">Machine Learning</a></li>
+						<li><a href="#sectionClosure">Closure</a></li>
 					</ul>
 				</div>
 			</div>
@@ -66,76 +68,86 @@
 
 	</nav>
 
-	<div id="sectionBeginning" class="container-fluid">	
+	<div id="sectionBeginning" class="container-fluid">
         <div class="row">
-          <div class="col-lg-2"></div>          
+          <div class="col-lg-2"></div>
           <div class="col-lg-8">
-            <div id="rschDivId"></div>       		
+            <div id="rschDivId"></div>
           </div>
           <div class="col-lg-2"></div>
-        </div>        	
-	</div>	
-	
+        </div>
+	</div>
+
 	<div id="sectionAcademy" class="container-fluid">
 		<h3>Academia</h3>
         <div class="row">
-          <div class="col-lg-4">
-            <h2>Heading</h2>
+          <div class="col-lg-3">
+            <h4>Groups</h4>
             <p></p>
-            <ul>
-            		<li><a href="https://academicjobsonline.org/">Academia</a></li>            		
-            		<li><a href="http://web.cs.ucla.edu/~yzsun/Research.htm">yzsun</a>            		
-            		> <a href="https://madduri.org/">Madduri</a>   
-            		> <a href="http://www.cs.unc.edu/~mbansal/">MBansal</a></li>   
+						<ul>
+            		<li><a href="http://web.cs.ucla.edu/~yzsun/Research.htm">yzsun</a>
+            		> <a href="https://madduri.org/">Madduri</a>
+            		> <a href="http://www.cs.unc.edu/~mbansal/">MBansal</a></li>
             		<li><a href="../../../d4/d18/template/README.html">template</a></li>
-            		<li><a href="http://karlstratos.com/notes/notes.html">karlstratos</a></li>            		
-            		<li><a href="http://karlstratos.com/notes/notes.html"></a>ssli</li>            		
-            		<li><a href="http://melodi.ee.washington.edu/people/bilmes/pgs/index.html">Jeff Bilmes</a></li>     
-            		<li><a href="http://www.iesl.cs.umass.edu/">Andrew McCallum</a></li> 
-            		<li><a href="http://activeintelligence.org/">ActiveIntelligent</a></li>      
+            		<li><a href="http://karlstratos.com/notes/notes.html">karlstratos</a></li>
+            		<li><a href="http://karlstratos.com/notes/notes.html"></a>ssli</li>
+            		<li><a href="http://melodi.ee.washington.edu/people/bilmes/pgs/index.html">Jeff Bilmes</a></li>
+            		<li><a href="http://www.iesl.cs.umass.edu/">Andrew McCallum</a></li>
+            		<li><a href="http://activeintelligence.org/">ActiveIntelligent</a></li>
             		<li><a href="http://infosense.cs.georgetown.edu/">DynamicInformationRetrieval</a>
             		<a href="http://infosense.cs.georgetown.edu/publication/jiyun_phd_dissertation.pdf">DynamicSearchModel</a>
-            		</li>                  		
-            </ul>                        
+            		<li><a href="http://web.cs.ucla.edu/~kwchang/">Kai-Wei Chang</a>
+            		</li>
+            </ul>
           </div>
-          <div class="col-lg-4">
-            <h2>Workshops</h2>
+          <div class="col-lg-3">
+            <h4>Workshops</h4>
             <p></p>
             <ul>
-            		<li><a href="http://environmentalhealthcollaborative.org/">Academia</a></li>            		
-            </ul>            
+            		<li><a href="http://environmentalhealthcollaborative.org/">Academia</a></li>
+            </ul>
           </div>
-          <div class="col-lg-4">
-            <h2>Survey</h2>            
+					<div class="col-lg-3">
+            <h4>Survey</h4>
             <ul>
-            		<li><a href="https://arxiv.org/abs/1611.06792">Neural Information Retrieval</a></li>            		
-            		<li><a href="https://arxiv.org/abs/1611.06792">Neural Information Retr</a></li>            		
-            </ul>                                    
+            		<li><a href="https://arxiv.org/abs/1611.06792">Neural Information Retrieval</a></li>
+            		<li><a href="https://arxiv.org/abs/1611.06792">Neural Information Retr</a></li>
+            </ul>
           </div>
-        </div>		
+					<div class="col-lg-3">
+            <h4>Openings</h4>
+						<ul>
+								<li><a href="https://academicjobsonline.org/">AcademicJobsOnline</a>
+								> <a href="https://www.academickeys.com/">AcademicKeys</a>
+								</li>
+
+            		<li></li>
+            </ul>
+          </div>
+        </div>
 	</div>
-	
+
 	<div id="sectionIndustry" class="container-fluid">
 		<h3>Industry</h3>
         <div class="row">
-          <div class="col-lg-4">
-            <h3>Trends</h3>
+          <div class="col-lg-3">
+            <h4>Trends</h4>
             	<ul>
             	<li> <a href="https://dzone.com/">DZone</a>
             	> <a href="https://www.ycombinator.com/">YCombinator</a>
-            	</li>                        	            	
+            	</li>
             	<li> <a href="http://kavita-ganesan.com/">kavita-ganesan</a>
-            	> <a>rxnlp</a>             	 
-            	</li>                        	            	
-            	
-            </ul>                        
+            	> <a>rxnlp</a>
+            	</li>
+
+            </ul>
           </div>
-          <div class="col-lg-4">
-            <h3>Commercial</h3>
+					<div class="col-lg-3">
+            <h4>Commercial</h4>
             <p></p>
           </div>
-          <div class="col-lg-4">
-            <h3>Toolbox</h3>            	
+          <div class="col-lg-3">
+            <h4>Toolbox</h4>
             	<ul>
             		<li> <a href="https://lidengsite.wordpress.com/">Li Deng</a>
             		> <a href="http://sonyis.me/">Yang Song</a>
@@ -146,27 +158,55 @@
             		> <a href="https://www.hongliangje.com/">Hong, LiangJe</a>
             		<a href="https://github.com/joe4k/">Joe4k</a>
             		<a href="https://github.com/fabiopetroni/">Fabio Petroni</a>
-            		
-            	</li>                        	            	
-            </ul>                        
+
+            	</li>
+            </ul>
+          </div>
+					<div class="col-lg-3">
+            <h4>Commercial</h4>
+            <p></p>
           </div>
         </div>
-		        
+
+				<div class="row">
+					<div class="col-lg-3">
+					<h4>Template</h4>
+						<p></p>
+						<ul>
+							<li></li>
+						</ul>
+					</div>
+					<div class="col-lg-3">
+						<h4>Template</h4>
+						<p></p>
+					</div>
+					<div class="col-lg-3">
+						<h4>Template</h4>
+						<p></p>
+					</div>
+					<div class="col-lg-3">
+						<h4>Template</h4>
+						<p></p>
+					</div>
+				</div>
+
+
 	</div>
-	
-	
-	<div id="section2" class="container-fluid">
+
+
+	<div id="sectionLanguage" class="container-fluid">
 		<h3>
 		<a href="https://en.wikipedia.org/wiki/Outline_of_artificial_intelligence">Artificial Intelligent</a>
-		> <a href="https://en.wikipedia.org/wiki/Natural_language_processing">Natural Language Processing</a>		
+		> <a href="https://en.wikipedia.org/wiki/Natural_language_processing">Natural Language Processing</a>
 		</h3>
 		<p></p>
-		 
-		
-		
+
+
+
+
         <div class="row">
           <div class="col-lg-3">
-          <h4><a href="https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning">Information Representation-Reasoning</a></h4>                        
+          <h4><a href="https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning">Information Representation-Reasoning</a></h4>
             <p></p>
             <!--  https://en.wikipedia.org/wiki/Automated_reasoning  -->
             <ul>
@@ -181,104 +221,110 @@
     		        	<a href="http://www.cs.bilkent.edu.tr/~guvenir/courses/CS550/Seminar/freitag2000-ml.pdf">Informal Domain</a>
 	            > <a href="http://www.cs.bilkent.edu.tr/~guvenir/courses/CS550/Seminar/freitag2000-ml.pdf">Informal Domain</a>
             </li></ul>
-          </div>                    
+          </div>
           <div class="col-lg-3">
             <h4><a href="https://en.wikipedia.org/wiki/Information_retrieval">Information Retrieval</a></h4>
-            <p></p>            
+            <p></p>
             	<ul>
-            		<li><a href="https://en.wikipedia.org/wiki/Query_expansion">QueryExpansion</a></li>                        	            	            		            		
-            </ul>                                    
+            		<li><a href="https://en.wikipedia.org/wiki/Query_expansion">QueryExpansion</a></li>
+            </ul>
           </div>
           <div class="col-lg-3">
             <h4>Information Exploration</h4>
             <p></p>
             	<ul>
-            		<li> <a href="http://www.cs.nott.ac.uk/~pszmw/pubs/FnTWebSci-Wilson.pdf">Exploration</a></li>                        	            	            		            		
-            </ul>                                                                      
+            		<li> <a href="http://www.cs.nott.ac.uk/~pszmw/pubs/FnTWebSci-Wilson.pdf">Exploration</a></li>
+            </ul>
           </div>
         </div>
-		  
+
 
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             <h4>Information Extraction</h4>
             <ul>
             		<li> <a href="http://nlp.stanford.edu:8080/corenlp/process/">CoreNlp</a> </li>
             		<li> <a href="https://textprocessing.org/">TextProcessing</a> </li>
             		<li> <a href="http://nlp.cs.berkeley.edu/">BerkeleyNlp</a> </li>
-            		<li> <a href="http://nlp.cs.berkeley.edu/">BerkeleyNlp</a> 
-            		> <a href="https://people.eecs.berkeley.edu/~klein/cs288/fa14/">BerkeleyNlp</a> </li>            		
+            		<li> <a href="http://nlp.cs.berkeley.edu/">BerkeleyNlp</a>
+            		> <a href="https://people.eecs.berkeley.edu/~klein/cs288/fa14/">BerkeleyNlp</a> </li>
             </ul>
              <ul>
             		<li> <a href="">US20110066620A1</a> </li>
-            </ul>                                               
+            </ul>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             <h4>Machine Translation</h4>
             <p></p>
-			<ul> 
+			<ul>
 				<li> <a href="http://www.statmt.org/wmt17/">WMT17</a>
 					> <a href="http://www.statmt.org/wmt17/">WMT17</a>
-					> <a href="http://www.statmt.org/wmt18/">WMT18</a>				
-				</li>          
+					> <a href="http://www.statmt.org/wmt18/">WMT18</a>
+				</li>
 				<li> <a href="https://en.wikipedia.org/wiki/List_of_text_corpora">Wikipedia_List_of_text_corpora</a>
 				> <a href="http://opus.nlpl.eu/">opus</a>
-				> <a href="http://temu.bsc.es/mespen/">mespen</a>				
-				</li>          				
-            		<li> <a href="http://www.statmt.org/">STATMT</a>                         			 
+				> <a href="http://temu.bsc.es/mespen/">mespen</a>
+				</li>
+            		<li> <a href="http://www.statmt.org/">STATMT</a>
             			 > <a href="http://www.statmt.org/europarl/">europarl</a>
             			 > <a href="http://www.cs.jhu.edu/~phi/">philipp koehn</a>
-            			 > <a href="http://www.statmt.org/jhu/">pk-jhu</a>            		    
-            			 > <a href="http://homepages.inf.ed.ac.uk/pkoehn/">pk-edinburgh</a> 
+            			 > <a href="http://www.statmt.org/jhu/">pk-jhu</a>
+            			 > <a href="http://homepages.inf.ed.ac.uk/pkoehn/">pk-edinburgh</a>
             			 > <a href="http://homepages.inf.ed.ac.uk/pkoehn/publications/pharaoh-amta2004.pdf"> pk-pharaoh</a>
             		</li>
-            		<li> <a href="http://www.statmt.org/moses/">moses</a>   
+            		<li> <a href="http://www.statmt.org/moses/">moses</a>
             		> <a href="https://www.cse.iitb.ac.in/~anoopk/pages/softwares.html">moses</a>
             		</li>
-            		<li> 
-            		<a href="http://www.statmt.org/moses/giza/GIZA++.html/">Giza</a>            		
+            		<li>
+            		<a href="http://www.statmt.org/moses/giza/GIZA++.html/">Giza</a>
             		<a href="http://www.statmt.org/moses/?n=FactoredTraining.RunGIZA/">RunGizaMoses2</a>
             		> <a href="http://masatohagiwara.net/using-giza-to-obtain-word-alignment-between-bilingual-sentences.html">GizaError</a>
             		> <a href="https://okapiframework.org/wiki/index.php?title=GIZA%2B%2B_Installation_and_Running_Tutorial"> GizeStep</a>
             		> <a href="https://medium.com/@weGotlieb/using-giza-for-bilingual-sentence-alignment-8b2dc828a04d"> GizeStep</a>
             		</li>
-            		<li>             		
-            			<a href="http://www.speech.sri.com/projects/srilm/">srilm</a>  
-            			> <a href="https://github.com/a37950456/SRILM-on-mac-osx">MacOs Installation</a>              			
-            			> <a href="http://idiom.ucsd.edu/~rlevy/teaching/2015winter/lign165/lectures/lecture13/lecture13_ngrams_with_SRILM.pdf">Tutorial1</a>            			
-            			> <a href="http://ssli.ee.washington.edu/courses/ee517/srilm.html">Tutorial</a>            			
-            		</li>            		            		                                    		
-	            <li> <a href="https://sourceforge.net/projects/cunei/">Cunei</a>             	 		
+            		<li>
+            			<a href="http://www.speech.sri.com/projects/srilm/">srilm</a>
+            			> <a href="https://github.com/a37950456/SRILM-on-mac-osx">MacOs Installation</a>
+            			> <a href="http://idiom.ucsd.edu/~rlevy/teaching/2015winter/lign165/lectures/lecture13/lecture13_ngrams_with_SRILM.pdf">Tutorial1</a>
+            			> <a href="http://ssli.ee.washington.edu/courses/ee517/srilm.html">Tutorial</a>
+            		</li>
+	            <li> <a href="https://sourceforge.net/projects/cunei/">Cunei</a>
             	 		> <a href="http://www.aclweb.org/anthology/W10-1721">pdf</a>
             	 		> <a href="http://www.cs.cmu.edu/~aphillip/publications/cunei-mtjournal-11.pdf">pdf-mtjournal</a>
             	 		> <a href="https://sourceforge.net/p/cunei/mailman/cunei-support/?viewmonth=201008">MailingList</a>
           			> <a href="http://www.statmt.org/wmt10/">wmt10</a>
             			> <a href="http://www.statmt.org/wmt10/translation-task.html">wmt10 - translation task</a>
-            			> <a href="http://www.statmt.org/wmt10/baseline.html">wmt10 - Baseline</a>            			
-            		</li>                        
-            		
+            			> <a href="http://www.statmt.org/wmt10/baseline.html">wmt10 - Baseline</a>
+            		</li>
+
             		<li> Alignment Model <a href="http://jasonriesa.github.io/nile/">nile</a></li>
             		 <a href="https://github.com/jasonriesa">jasonriesa</a></li>
-            		
             		<li> Cambridge SMT <a href="http://ucam-smt.github.io/">ucam-smt</a></li>
-            		<li> Cambridge SMT <a href="http://www.cs.cmu.edu/~lingwang/">ucam-smt</a></li>            		
-            </ul>               
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
+            		<li> Cambridge SMT <a href="http://www.cs.cmu.edu/~lingwang/">lingwang</a></li>
+            </ul>
+          </div>
+					<div class="col-lg-3">
             <h4>Semantic Web</h4>
             <p></p>
             <ul>
 	            <li> <a href="#">Rdf</a> </li>
-            		<li> <a href="#">Dbpedia</a> </li>            
-            		<li> <a href="https://permid.org/">PermId</a> </li>            
+            		<li> <a href="#">Dbpedia</a> </li>
+            		<li> <a href="https://permid.org/">PermId</a> </li>
             		<li> <a href="http://paraphrase.org/">Paraphrase</a> </li>
             </ul>
-          </div><!-- /.col-lg-4 -->
+          </div>
+					<div class="col-lg-3">
+            <h4>Social Network</h4>
+            <p></p>
+            <ul>
+	            <li> <a href="#">Rdf</a> </li>
+            </ul>
+          </div>
         </div><!-- /.row -->
 
 	</div>
-	
-	<div id="section3" class="container-fluid">
+
+	<div id="sectionLearning" class="container-fluid">
 		<h3>Machine Learning</h3>
         <div class="row">
           <div class="col-lg-4">
@@ -287,44 +333,44 @@
             <ul>
 	            <li> <a href="https://en.wikipedia.org/wiki/Dynamic_programming">Dyanamic Programming</a>
 	            > <a href="http://www.stokastik.in/dynamic-programming-in-natural-language-processing-skip-grams/">SkipGram</a>
-	            > <a href="ftp://ftp.cse.buffalo.edu/users/azhang/disc/disc01/cd1/out/papers/sigir/p310-baek.pdf">LSI Logic</a>	
-	            > <a href="https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/">LSI Logic</a>	
-	            > <a href="https://chauff.github.io/documents/publications/thesis.pdf">Pre-and-Post Predictor</a>	
-	            > <a href="http://www.iro.umontreal.ca/~nie/IFT6255/Books/QueryDifficulty.pdf">QueryDifficulty</a>		            
+	            > <a href="ftp://ftp.cse.buffalo.edu/users/azhang/disc/disc01/cd1/out/papers/sigir/p310-baek.pdf">LSI Logic</a>
+	            > <a href="https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/">LSI Logic</a>
+	            > <a href="https://chauff.github.io/documents/publications/thesis.pdf">Pre-and-Post Predictor</a>
+	            > <a href="http://www.iro.umontreal.ca/~nie/IFT6255/Books/QueryDifficulty.pdf">QueryDifficulty</a>
 	            </li>
 	            <li> <a href="https://github.com/rockanjan/hmm">HMM</a> </li>
-	            <li> <a href="https://github.com/NLPchina/Word2VEC_java">W2Vec</a> </li>	  
-	            <a href="http://ruder.io/word-embeddings-1/">W2Vec</a> </li>	  
+	            <li> <a href="https://github.com/NLPchina/Word2VEC_java">W2Vec</a> </li>
+	            <a href="http://ruder.io/word-embeddings-1/">W2Vec</a> </li>
             </ul>
           </div>
           <div class="col-lg-4">
             <h4>Estimation</h4>
             <ul>
 	            <li> <a href="https://en.wikipedia.org/wiki/Dynamic_programming">Neural Network</a> </li>
-	            <li> <a href="https://en.wikipedia.org/wiki/Dynamic_programming">Stump, Tree, Forest</a> </li>	            
-            </ul>            
+	            <li> <a href="https://en.wikipedia.org/wiki/Dynamic_programming">Stump, Tree, Forest</a> </li>
+            </ul>
           </div>
           <div class="col-lg-4">
             <h4>Structure</h4>
             <p></p>
             <ul>
 	            <li> <a href="https://en.wikipedia.org/wiki/Dynamic_programming">Neural Network</a> </li>
-	            <li> <a href="https://en.wikipedia.org/wiki/Dynamic_programming">Stump, Tree, Forest</a> </li>	            
-            </ul>            
+	            <li> <a href="https://en.wikipedia.org/wiki/Dynamic_programming">Stump, Tree, Forest</a> </li>
+            </ul>
           </div>
-        </div>		
+        </div>
 	</div>
 
-	
-	<div id="sectionConclusion" class="container-fluid">
+
+	<div id="sectionClosure" class="container-fluid">
         <div class="row">
-          <div class="col-lg-2"></div>          
+          <div class="col-lg-2"></div>
           <div class="col-lg-8">
-            <div id="closureDivId"></div>       		
+            <div id="closureDivId"></div>
           </div>
-          <div class="col-lg-4"></div>          
-        </div>		
-	</div>	
+          <div class="col-lg-4"></div>
+        </div>
+	</div>
 
 </body>
 </html>

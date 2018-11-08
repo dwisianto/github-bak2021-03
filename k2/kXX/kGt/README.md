@@ -294,9 +294,10 @@ The solution is to do **rebase**.
 ```javascript
 git checkout myBranche
 git rebase master
+git push # optional
 ```
 
-and then merge it in **master**
+you may update the origin/myBranch by doing "git push". and then merge it in **master**
 
 ```javascript
 git checkout master
