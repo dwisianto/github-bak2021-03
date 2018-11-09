@@ -28,8 +28,8 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 | | | |
 |-|-|-|
 | Overview | | |
-| Language Model | | |
-|                | FlexGram | |
+| [Language Model](slides/s103lm/LanguageModel.pdf) | | |
+|                | XGram | |
 |                | Smoothing | |
 |                | DiscriminativeLM, Perplexity | |
 | Word Representation | | |
