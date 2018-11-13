@@ -7,9 +7,10 @@
 - [Textbook](#textbook)
 - [Software Packages](#software-packages)
 - [Literatures](#literatures)
-  - [Language Modeling](#language-modeling)
+  - [Language Modeling](#language-modeling) 
   - [Parsing](#parsing)
   - [Information Extraction](#information-extraction)
+  - [Word Embedding](#word-embedding)
 
 
 ## Overview
@@ -38,7 +39,7 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 | Word Representation | | |
 |                     | Morphology | |
 |                     | Vector Space Models | |
-|                     | Word Embeddings | |
+|                     | Word Embedding | |
 |                     | Word Clustering | |
 |                     | Part-of-Speech Tagging | |
 |                     | Hidden Markov Model | |
@@ -80,7 +81,8 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Brian Roark, Murat Saraclar, Michael Collins, Mark Johnson, "Discriminative Language Modeling with Conditional Random Fields and the Perceptron Algorithm". ACL 2004 (PDF).
 - Yee Whye Teh, "A hierarchical Bayesian language model based on Pitman-Yor processes." ACL 2006 (PDF).
 
-- [Top](#nlp-2016)
+[Top](#nlp-2016)  
+[Wiki](https://en.wikipedia.org/wiki/Language_model)
 
 ### Parsing
 
@@ -89,6 +91,8 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Andre F. T. Martins, Noah A. Smith, Eric P. Xing. "Turbo Parsers: Dependency Parsing by Approximate Variational Inference" EMNLP 2010. (PDF)
 - Yoav Goldberg, Michael Elhadad, "An Efficient Algorithm for Easy-First Non-Directional Dependency Parsing." NAACL 2010 (PDF)
 - Dan Klein, Christopher D. Manning, "Accurate Unlexicalized Parsing." ACL 2003 (PDF)
+
+[Top](#nlp-2016)  
 
 ### Information Extraction
 
@@ -99,6 +103,8 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Mike Mintz, Steven Bills, Rion Snow, Dan Jurafsky. "Distant supervision for relation extraction without labeled data." ACL 2009. (PDF)
 - Panupong Pasupat, Percy Liang. "Zero-shot entity extraction from web pages." ACL 2014. (PDF)
 
+[Top](#nlp-2016)  
+
 ###  Semantic Parsing
 
 - Jonathan Berant, Vivek Srikumar, Pei-Chun Chen, Abby Vander Linden, Brittany Harding, Brad Huang, Peter Clark and Christopher D. Manning. "Modeling Biological Processes for Reading Comprehension." EMNLP 14 (PDF)
@@ -106,11 +112,15 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Percy Liang, Michael I. Jordan, Dan Klein, "Learning dependency-based compositional semantics." ACL 2011. (PDF)
 - Jonathan Berant, Percy Liang. "Imitation learning of agenda-based semantic parsers." TACL 2015 (PDF)
 
+[Top](#nlp-2016)  
+
 ### Question Answering 
 
-- Building Watson: An Overview of the deepQA Project, David Ferruci, et al
-[pdf](https://rockstarresearch.com/wp-content/uploads/2014/05/Building-Watson.pdf)
-- 
+- David Ferruci, et al. "Building Watson: An Overview of the deepQA Project" 
+( [pdf](https://rockstarresearch.com/wp-content/uploads/2014/05/Building-Watson.pdf) )
+
+
+[Top](#nlp-2016)  
 
 ### Semantic Role Labeling
 
@@ -118,6 +128,8 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Vivek Srikumar, Dan Roth "A Joint Model for Extended Semantic Role Labeling". ACL 2011(PDF)
 - Daniel Gildea, Daniel Jurafsky, "Automatic Labeling of Semantic Roles". ACL 2000(PDF)
 
+
+[Top](#nlp-2016)  
 
 ### Coreference Resolution
 
@@ -128,6 +140,8 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Sam Wiseman, Alexander M. Rush, and Stuart M. Shieber. "Learning Global Features for Coreference Resolution" NAACL 2016. (PDF)
 
 
+[Top](#nlp-2016)  
+
 ### Named Entity Recognition / Entity Linking
 
 - Alan Ritter, Sam Clark, Mausam and Oren Etzioni. "Named Entity Recognition in Tweets: An Experimental Study". EMNLP 2011 (PDF)
@@ -137,7 +151,13 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Xiao Ling, Sameer Singh, and Daniel S. Weld. "Design Challenges for Entity Linking". TACL 2015 (PDF)
 - Parag Singla and Pedro Domingos. "Entity Resolution with Markov Logic". ICDM 2006 (PDF)
 
-### Word Embeddings
+### Word Embedding
+
+-
+
+
+
+[Top](#nlp-2016) - [Wiki](https://en.wikipedia.org/wiki/Word_embedding)
 
 ### Machine Translation
 
@@ -145,14 +165,20 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Ilya Sutskever, Oriol Vinyals, Quoc V. Le. "Sequence to Sequence Learning with Neural Networks". NIPS 2014.
 - Dzmitry Bahdanau, KyungHyun Cho and Yoshua Bengio. "Neural machine translation by jointly learning to align and translate". ICLR 2015. (PDF)
 
+[Top](#nlp-2016)  
+
 ### Word Alignment / Paragraph
 
 - Regina Barzilay and Lillian Lee. "Learning to Paraphrase: An Unsupervised Approach Using Multiple-Sequence Alignment". NAACL 2003. (PDF)
 - Colin Bannard and Chris Callison-Burch. "Paraphrasing with Bilingual Parallel Corpora.". ACL 2005. (PDF)
 - Socher, R. and Huang, E.H., and Pennington, J. and Ng, A.Y., and Manning, C.D. " Dynamic pooling and unfolding recursive autoencoders for paraphrase detection". NIPS 2011 (PDF)
 
+[Top](#nlp-2016)  
+
 ### Others
 
 - P. Liang, H. Daume, and D. Klein. "Structure Compilation: Trading Structure for Features". ICML 2008. (PDF)
 - Nate Kushman, Yoav Artzi, Luke Zettlemoyer, and Regina Barzilay. "Learning to Automatically Solve Algebra Word Problems". ACL 2014 (PDF)
 - Pedro Domingos, Matthew Richardson. "Markov Logic: A Unifying Framework for Statistical Relational Learning"
+
+[Top](#nlp-2016)  
