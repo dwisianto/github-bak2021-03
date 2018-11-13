@@ -7,6 +7,9 @@
 - [Textbook](#textbook)
 - [Software Packages](#software-packages)
 - [Literatures](#literatures)
+  - [Language Modeling](#language-modeling)
+  - [Parsing](#parsing)
+  - [Information Extraction](#information-extraction)
 
 
 ## Overview
@@ -60,16 +63,22 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 
 ## Software Packages
 
+### OpenNLP
+
+### NLP4J
+
+
 ## Literatures
 
 - [ACL Ontology](https://aclanthology.coli.uni-saarland.de/)
 
-### Language Models
+### Language Modeling
 
-- Yee Whye Teh, "A hierarchical Bayesian language model based on Pitman-Yor processes." ACL 2006 (PDF).
+
 - Yoshua Bengio, Rejean Ducharme, Pascal Vincent, Christian Jauvin, "A Neural Probability Language Model." JMLR 2003 (PDF).
 - Yoom Kim, Yacine Jernite, David Sontag, Alexander M. Rush, "Character-Aware Neural Language Models". AAAI 2015 (PDF).
 - Brian Roark, Murat Saraclar, Michael Collins, Mark Johnson, "Discriminative Language Modeling with Conditional Random Fields and the Perceptron Algorithm". ACL 2004 (PDF).
+- Yee Whye Teh, "A hierarchical Bayesian language model based on Pitman-Yor processes." ACL 2006 (PDF).
 
 ### Parsing
 
@@ -88,13 +97,18 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Mike Mintz, Steven Bills, Rion Snow, Dan Jurafsky. "Distant supervision for relation extraction without labeled data." ACL 2009. (PDF)
 - Panupong Pasupat, Percy Liang. "Zero-shot entity extraction from web pages." ACL 2014. (PDF)
 
-### Question Answering / Semantic Parsing
+###  Semantic Parsing
 
 - Jonathan Berant, Vivek Srikumar, Pei-Chun Chen, Abby Vander Linden, Brittany Harding, Brad Huang, Peter Clark and Christopher D. Manning. "Modeling Biological Processes for Reading Comprehension." EMNLP 14 (PDF)
 - Scott Wen-tau Yih, Ming-Wei Chang, Xiaodong He, Jianfeng Gao, "Semantic Parsing via Staged Query Graph Generation: Question Answering with Knowledge Base". ACL 2015 (PDF)
 - Percy Liang, Michael I. Jordan, Dan Klein, "Learning dependency-based compositional semantics." ACL 2011. (PDF)
 - Jonathan Berant, Percy Liang. "Imitation learning of agenda-based semantic parsers." TACL 2015 (PDF)
 
+### Question Answering 
+
+- Building Watson: An Overview of the deepQA Project, David Ferruci, et al
+[pdf](https://rockstarresearch.com/wp-content/uploads/2014/05/Building-Watson.pdf)
+- 
 
 ### Semantic Role Labeling
 
