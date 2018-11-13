@@ -80,6 +80,8 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Brian Roark, Murat Saraclar, Michael Collins, Mark Johnson, "Discriminative Language Modeling with Conditional Random Fields and the Perceptron Algorithm". ACL 2004 (PDF).
 - Yee Whye Teh, "A hierarchical Bayesian language model based on Pitman-Yor processes." ACL 2006 (PDF).
 
+- [Top](#nlp-2016)
+
 ### Parsing
 
 - Yoav Goldberg, Joakim Nivre, "Training Deterministic Parsers with Non-Deterministic Oracles." TACL 2013 (PDF)
