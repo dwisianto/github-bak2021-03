@@ -12,12 +12,13 @@
   - [Grammar](#grammar) 
   - [Parsing](#parsing)
   - [Information Extraction](#information-extraction)
-  - [Word Embedding](#word-embedding)
+  - [Word Embedding](#word-embedding)  
+- [Coding Exercises](#coding-exercises)
 
 
 ## Overview
 
-Natural language processing (NLP) enables computers to process and to "understand" human languages.
+Natural Language Processing (NLP) enables computing devices to "understand" human languages. 
 Typical applications include extracting information from unstructured text, machine translation, and question answering.
 
 
@@ -29,10 +30,18 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Semantics: brown clusters, vector-space semantics, semantic role labeling.
 - NLP Applications: name entity recognition, machine translation, information extraction.
 
-Similar Cources
+Similar courses are 
 
 - [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/)
-- []()
+- [nyu](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/)
+- https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf
+- 
+
+Communities are as follows.
+- ACL
+- NAACL
+- ICML
+- NIPS
 
 
 ## Schedules
@@ -72,6 +81,10 @@ Similar Cources
 
 ## Textbook
 
+- Jurafsky and Martin, Speech and Language Processing, [third Edition](http://web.stanford.edu/~jurafsky/slp3/)
+- Manning and Schuetze, Foundations of Statistical Natural Language Processing
+
+
 ## Software Packages
 
 - [YaraParser](https://github.com/yahoo/YaraParser)
@@ -84,6 +97,7 @@ Similar Cources
 
 ## Literatures
 
+- Prakash M Nadkarni, et. al. Natural Language Processing: an Introduction ( [pdf]( https://pdfs.semanticscholar.org/b97e/3bd95b22fb87bd14615f4aeea6711c5a0be3.pdf ) )
 - [ACL Ontology](https://aclanthology.coli.uni-saarland.de/)
 
 ### Formal Language 
@@ -207,3 +221,12 @@ Similar Cources
 - Pedro Domingos, Matthew Richardson. "Markov Logic: A Unifying Framework for Statistical Relational Learning"
 
 [Top](#nlp-2016)  
+
+## Coding Exercises
+
+- [Graham Neubig](http://www.phontron.com/) - [slides](http://www.phontron.com/teaching.php) - [github](https://github.com/neubig/nlptutorial)
+- 
+
+
+
+

@@ -183,15 +183,19 @@ GoTo [Top](#git)
 
 ## git stash
 
-- git stash list
-    - git stash list --date=relative # sort by date
-- git stash --keep-index
-- git stash --include-untracked
- sta- git stash save <myMessage>
-- git stash pop stash@\{1\}
-    - "git stash pop" is basically "git statsh apply" and "git stash drop"
-- git stash apply
-- git stash drop
+Suppose you are implementing a new feature for your product. Your code is in progress and suddenly a customer escalation comes. Because of this, you have to keep aside your new feature work for a few hours. You cannot commit your partial code and also cannot throw away your changes. So you need some temporary space, where you can store your partial changes and later on commit it.
+
+| | | 
+|-|-|
+| git stash list | | 
+| git stash list --date=relative # sort by date | | 
+| git stash --keep-index | | 
+| git stash --include-untracked | | 
+| git stash save <myMessage> | | 
+| git stash pop stash@\{1\} | | 
+| "git stash pop" is basically "git statsh apply" and "git stash drop" | | 
+| git stash apply | | 
+| git stash drop  | | 
 
 
 ### git stash pop conflict
