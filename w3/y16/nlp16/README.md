@@ -7,7 +7,9 @@
 - [Textbook](#textbook)
 - [Software Packages](#software-packages)
 - [Literatures](#literatures)
-  - [Language Modeling](#language-modeling) 
+  - [Formal Language](#formal-language)  
+  - [Language Modeling](#language-modeling)
+  - [Grammar](#grammar) 
   - [Parsing](#parsing)
   - [Information Extraction](#information-extraction)
   - [Word Embedding](#word-embedding)
@@ -26,6 +28,12 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Syntactic analysis: part-of-speech tagging, chunking, dependency parsing, constituency parsing.
 - Semantics: brown clusters, vector-space semantics, semantic role labeling.
 - NLP Applications: name entity recognition, machine translation, information extraction.
+
+Similar Cources
+
+- [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/)
+- []()
+
 
 ## Schedules
 
@@ -64,6 +72,8 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 
 ## Software Packages
 
+- [YaraParser](https://github.com/yahoo/YaraParser)
+
 ### OpenNLP
 
 ### NLP4J
@@ -72,6 +82,13 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 ## Literatures
 
 - [ACL Ontology](https://aclanthology.coli.uni-saarland.de/)
+
+### Formal Language 
+
+
+
+[Top](#nlp-2016)  
+[Wiki](https://en.wikipedia.org/wiki/Formal_language)
 
 ### Language Modeling
 
@@ -83,6 +100,11 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 
 [Top](#nlp-2016)  
 [Wiki](https://en.wikipedia.org/wiki/Language_model)
+
+### Grammar
+
+- 
+[Chomsky_hierarchy](https://en.wikipedia.org/wiki/Chomsky_hierarchy)
 
 ### Parsing
 
@@ -118,7 +140,7 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 
 - David Ferruci, et al. "Building Watson: An Overview of the deepQA Project" 
 ( [pdf](https://rockstarresearch.com/wp-content/uploads/2014/05/Building-Watson.pdf) )
-
+- 
 
 [Top](#nlp-2016)  
 
