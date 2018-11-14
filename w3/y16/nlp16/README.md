@@ -58,21 +58,24 @@ Similar Cources
 |        | Dependency Parsing | |
 |        | constituency Parsing | |
 |        | Statistical Parsing with PCFG | |
-|        | Semantic Parsing | |
+|        | Semantic Parsing | [Wiki](https://en.wikipedia.org/wiki/Semantic_parsing) |
 | Applications | | |
 |              | Information Extraction | |
 |              | Named Entity Recognition | |
 |              | Relation Extraction | |
-| | Word Alignment |
-| | Paraphrasing |
-| | Machine Translation |
-| | Question Answering |
+|              | Word Alignment | |
+|              | Paraphrasing | | 
+|              | Machine Translation | | 
+|              | Question Answering | | 
+
+
 
 ## Textbook
 
 ## Software Packages
 
 - [YaraParser](https://github.com/yahoo/YaraParser)
+- 
 
 ### OpenNLP
 
