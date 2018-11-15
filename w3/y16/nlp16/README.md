@@ -49,6 +49,7 @@ Communities are as follows.
 | | | |
 |-|-|-|
 | Overview | | |
+| [Formal Language](https://en.wikipedia.org/wiki/Formal_language) | | | 
 | [Language Model](slides/s103lm/LanguageModel.pdf) | | |
 |                | XGram | |
 |                | Smoothing | |
@@ -103,9 +104,34 @@ Communities are as follows.
 ### Formal Language 
 
 
+  
 
-[Top](#nlp-2016)  
-[Wiki](https://en.wikipedia.org/wiki/Formal_language)
+#### Terminology
+
+
+- Letter : 
+- Alphabet : In logic, the alphabet is also known as the vocabulary and words are known as formulas or sentences. See Also : [Formal Language Wiki]( https://en.wikipedia.org/wiki/Formal_language)
+- Word : In logic, the alphabet is also known as the vocabulary and words are known as formulas or sentences. See Also : [Formal Language Wiki]( https://en.wikipedia.org/wiki/Formal_language)
+- Language :  See Also: [PlanetMath](https://planetmath.org/definitelanguage)
+- Formal Language : 
+- Natural Language : 
+- [Regular Language](https://en.wikipedia.org/wiki/Regular_language) : It is a formal language that can be expressed using a regular expression.  It is also called Rational Language. 
+- Context Free Language : 
+- Context Sensitive Language : 
+- Grammar : 
+- Formal Grammar : 
+-  
+
+
+
+
+#### Books
+
+#### Publications
+
+
+[Top](#nlp-2016)
+
 
 ### Language Modeling
 
@@ -226,6 +252,7 @@ Communities are as follows.
 
 - [Graham Neubig](http://www.phontron.com/) - [slides](http://www.phontron.com/teaching.php) - [github](https://github.com/neubig/nlptutorial)
 - 
+
 
 
 
