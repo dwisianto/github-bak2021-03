@@ -88,12 +88,9 @@ Communities are as follows.
 
 ## Software Packages
 
+- OpenNLP - 
+- nlp4j - [pdf](http://www.aclweb.org/anthology/P15-1038.pdf)
 - [YaraParser](https://github.com/yahoo/YaraParser)
-- 
-
-### OpenNLP
-
-### NLP4J
 
 
 ## Literatures
@@ -110,14 +107,18 @@ Communities are as follows.
 
 
 - Letter : 
-- Alphabet : In logic, the alphabet is also known as the vocabulary and words are known as formulas or sentences. See Also : [Formal Language Wiki]( https://en.wikipedia.org/wiki/Formal_language)
-- Word : In logic, the alphabet is also known as the vocabulary and words are known as formulas or sentences. See Also : [Formal Language Wiki]( https://en.wikipedia.org/wiki/Formal_language)
+- Alphabet : In logic, the words are known as formulas or sentences. See Also : [Formal Language Wiki](https://en.wikipedia.org/wiki/Formal_language)
+- Word : In logic, the words are known as formulas or sentences. See Also : [Formal Language Wiki](https://en.wikipedia.org/wiki/Formal_language)
 - Language :  See Also: [PlanetMath](https://planetmath.org/definitelanguage)
 - Formal Language : 
+- [Formal Language](https://en.wikipedia.org/wiki/Formal_language) : 
 - Natural Language : 
 - [Regular Language](https://en.wikipedia.org/wiki/Regular_language) : It is a formal language that can be expressed using a regular expression.  It is also called Rational Language. 
 - Context Free Language : 
-- Context Sensitive Language : 
+- [Indexed Language](https://en.wikipedia.org/wiki/Indexed_language) :
+- [Context Sensitive Language](https://en.wikipedia.org/wiki/Context-sensitive_language) :
+- [Recursive Language](https://en.wikipedia.org/wiki/Recursive_language) : 
+- [Recursively Enumerable Language](https://en.wikipedia.org/wiki/Recursively_enumerable_language) : 
 - Grammar : 
 - Formal Grammar : 
 -  
