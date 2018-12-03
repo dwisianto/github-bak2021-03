@@ -97,6 +97,7 @@ Similar courses are
 ## Literatures
 
 - Prakash M Nadkarni, et. al. Natural Language Processing: an Introduction ( [pdf]( https://pdfs.semanticscholar.org/b97e/3bd95b22fb87bd14615f4aeea6711c5a0be3.pdf ) )
+- Eugene Charniak, Statistical Techniques for Natural Language Processing, ( [[PDF](https://pdfs.semanticscholar.org/29fd/bbd3bb0b3c798a57e10576d318281d37dd2a.pdf) )
 
 
 ### Formal Language 
@@ -152,6 +153,8 @@ Similar courses are
 
 ### Parsing
 
+- M.C.McCord, J.W.Murdock,  B.K.Boguraev, "Deep parsing in Watson" ( [PDF](http://brenocon.com/watson_special_issue/03%20Deep%20parsing.pdf) )
+
 - Yoav Goldberg, Joakim Nivre, "Training Deterministic Parsers with Non-Deterministic Oracles." TACL 2013 (PDF)
 - Danqi Chen, Christopher D. Manning, "A Fast and Accurate Dependency Parser using Neural Networks." EMNLP 2014 (PDF)
 - Andre F. T. Martins, Noah A. Smith, Eric P. Xing. "Turbo Parsers: Dependency Parsing by Approximate Variational Inference" EMNLP 2010. (PDF)
@@ -159,6 +162,22 @@ Similar courses are
 - Dan Klein, Christopher D. Manning, "Accurate Unlexicalized Parsing." ACL 2003 (PDF)
 
 [Top](#nlp)  
+
+
+
+### Constituent Parsing
+
+#### Terminology
+
+- [Constituent](https://en.wikipedia.org/wiki/Constituent_(linguistics)) :  a word or a group of words that functions as a single unit within a hierarchical structure. 
+-
+ 
+### Dependency Parsing
+
+#### Terminology
+
+- [Catena](https://en.wikipedia.org/wiki/Catena_(linguistics)) : 
+
 
 ### Information Extraction
 
