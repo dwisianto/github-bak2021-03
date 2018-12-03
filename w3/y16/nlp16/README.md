@@ -1,5 +1,5 @@
 
-# NLP 2016
+# NLP 
 
 
 - [Overview](#overview)
@@ -35,9 +35,10 @@ Similar courses are
 - [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/)
 - [nyu](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/)
 - https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf
-- 
+- [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) 
+- [allennlp](https://allennlp.org/)
 
-Communities are as follows.
+ [ACL Ontology](https://aclanthology.coli.uni-saarland.de/) lists essential communities as follows.
 - ACL
 - NAACL
 - ICML
@@ -96,7 +97,7 @@ Communities are as follows.
 ## Literatures
 
 - Prakash M Nadkarni, et. al. Natural Language Processing: an Introduction ( [pdf]( https://pdfs.semanticscholar.org/b97e/3bd95b22fb87bd14615f4aeea6711c5a0be3.pdf ) )
-- [ACL Ontology](https://aclanthology.coli.uni-saarland.de/)
+
 
 ### Formal Language 
 
@@ -110,7 +111,6 @@ Communities are as follows.
 - Alphabet : In logic, the words are known as formulas or sentences. See Also : [Formal Language Wiki](https://en.wikipedia.org/wiki/Formal_language)
 - Word : In logic, the words are known as formulas or sentences. See Also : [Formal Language Wiki](https://en.wikipedia.org/wiki/Formal_language)
 - Language :  See Also: [PlanetMath](https://planetmath.org/definitelanguage)
-- Formal Language : 
 - [Formal Language](https://en.wikipedia.org/wiki/Formal_language) : 
 - Natural Language : 
 - [Regular Language](https://en.wikipedia.org/wiki/Regular_language) : It is a formal language that can be expressed using a regular expression.  It is also called Rational Language. 
@@ -131,7 +131,7 @@ Communities are as follows.
 #### Publications
 
 
-[Top](#nlp-2016)
+[Top](#nlp)
 
 
 ### Language Modeling
@@ -142,7 +142,7 @@ Communities are as follows.
 - Brian Roark, Murat Saraclar, Michael Collins, Mark Johnson, "Discriminative Language Modeling with Conditional Random Fields and the Perceptron Algorithm". ACL 2004 (PDF).
 - Yee Whye Teh, "A hierarchical Bayesian language model based on Pitman-Yor processes." ACL 2006 (PDF).
 
-[Top](#nlp-2016)  
+[Top](#nlp)  
 [Wiki](https://en.wikipedia.org/wiki/Language_model)
 
 ### Grammar
@@ -158,7 +158,7 @@ Communities are as follows.
 - Yoav Goldberg, Michael Elhadad, "An Efficient Algorithm for Easy-First Non-Directional Dependency Parsing." NAACL 2010 (PDF)
 - Dan Klein, Christopher D. Manning, "Accurate Unlexicalized Parsing." ACL 2003 (PDF)
 
-[Top](#nlp-2016)  
+[Top](#nlp)  
 
 ### Information Extraction
 
@@ -169,7 +169,7 @@ Communities are as follows.
 - Mike Mintz, Steven Bills, Rion Snow, Dan Jurafsky. "Distant supervision for relation extraction without labeled data." ACL 2009. (PDF)
 - Panupong Pasupat, Percy Liang. "Zero-shot entity extraction from web pages." ACL 2014. (PDF)
 
-[Top](#nlp-2016)  
+[Top](#nlp)  
 
 ###  Semantic Parsing
 
@@ -178,7 +178,7 @@ Communities are as follows.
 - Percy Liang, Michael I. Jordan, Dan Klein, "Learning dependency-based compositional semantics." ACL 2011. (PDF)
 - Jonathan Berant, Percy Liang. "Imitation learning of agenda-based semantic parsers." TACL 2015 (PDF)
 
-[Top](#nlp-2016)  
+[Top](#nlp)  
 
 ### Question Answering 
 
@@ -186,7 +186,7 @@ Communities are as follows.
 ( [pdf](https://rockstarresearch.com/wp-content/uploads/2014/05/Building-Watson.pdf) )
 - 
 
-[Top](#nlp-2016)  
+[Top](#nlp)  
 
 ### Semantic Role Labeling
 
@@ -195,7 +195,7 @@ Communities are as follows.
 - Daniel Gildea, Daniel Jurafsky, "Automatic Labeling of Semantic Roles". ACL 2000(PDF)
 
 
-[Top](#nlp-2016)  
+[Top](#nlp)  
 
 ### Coreference Resolution
 
@@ -206,7 +206,7 @@ Communities are as follows.
 - Sam Wiseman, Alexander M. Rush, and Stuart M. Shieber. "Learning Global Features for Coreference Resolution" NAACL 2016. (PDF)
 
 
-[Top](#nlp-2016)  
+[Top](#nlp)  
 
 ### Named Entity Recognition / Entity Linking
 
@@ -223,7 +223,7 @@ Communities are as follows.
 
 
 
-[Top](#nlp-2016) - [Wiki](https://en.wikipedia.org/wiki/Word_embedding)
+[Top](#nlp) - [Wiki](https://en.wikipedia.org/wiki/Word_embedding)
 
 ### Machine Translation
 
@@ -231,7 +231,7 @@ Communities are as follows.
 - Ilya Sutskever, Oriol Vinyals, Quoc V. Le. "Sequence to Sequence Learning with Neural Networks". NIPS 2014.
 - Dzmitry Bahdanau, KyungHyun Cho and Yoshua Bengio. "Neural machine translation by jointly learning to align and translate". ICLR 2015. (PDF)
 
-[Top](#nlp-2016)  
+[Top](#nlp)  
 
 ### Word Alignment / Paragraph
 
@@ -239,7 +239,7 @@ Communities are as follows.
 - Colin Bannard and Chris Callison-Burch. "Paraphrasing with Bilingual Parallel Corpora.". ACL 2005. (PDF)
 - Socher, R. and Huang, E.H., and Pennington, J. and Ng, A.Y., and Manning, C.D. " Dynamic pooling and unfolding recursive autoencoders for paraphrase detection". NIPS 2011 (PDF)
 
-[Top](#nlp-2016)  
+[Top](#nlp)  
 
 ### Others
 
@@ -247,7 +247,7 @@ Communities are as follows.
 - Nate Kushman, Yoav Artzi, Luke Zettlemoyer, and Regina Barzilay. "Learning to Automatically Solve Algebra Word Problems". ACL 2014 (PDF)
 - Pedro Domingos, Matthew Richardson. "Markov Logic: A Unifying Framework for Statistical Relational Learning"
 
-[Top](#nlp-2016)  
+[Top](#nlp)  
 
 ## Coding Exercises
 
