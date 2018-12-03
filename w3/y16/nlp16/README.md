@@ -1,11 +1,9 @@
 
 # NLP 
 
-
 - [Overview](#overview)
 - [Schedules](#schedules)
 - [Textbook](#textbook)
-- [Software Packages](#software-packages)
 - [Literatures](#literatures)
   - [Formal Language](#formal-language)  
   - [Language Modeling](#language-modeling)
@@ -14,11 +12,13 @@
   - [Information Extraction](#information-extraction)
   - [Word Embedding](#word-embedding)  
 - [Coding Exercises](#coding-exercises)
+- [Software Packages](#software-packages)
+- [Frequently Asked Questions](#frequently-asked-questions)
 
 
 ## Overview
 
-Natural Language Processing (NLP) enables computing devices to "understand" human languages. 
+Natural Language Processing (NLP) enables a computing device to "understand" human languages. 
 Typical applications include extracting information from unstructured text, machine translation, and question answering.
 
 
@@ -96,8 +96,8 @@ Similar courses are
 
 ## Literatures
 
-- Prakash M Nadkarni, et. al. Natural Language Processing: an Introduction ( [pdf]( https://pdfs.semanticscholar.org/b97e/3bd95b22fb87bd14615f4aeea6711c5a0be3.pdf ) )
-- Eugene Charniak, Statistical Techniques for Natural Language Processing, ( [[PDF](https://pdfs.semanticscholar.org/29fd/bbd3bb0b3c798a57e10576d318281d37dd2a.pdf) )
+- Prakash M Nadkarni, et. al. "Natural Language Processing: an Introduction" ([PDF]( https://pdfs.semanticscholar.org/b97e/3bd95b22fb87bd14615f4aeea6711c5a0be3.pdf ))
+- Eugene Charniak, "Statistical Techniques for Natural Language Processing" ([PDF](https://pdfs.semanticscholar.org/29fd/bbd3bb0b3c798a57e10576d318281d37dd2a.pdf))
 
 
 ### Formal Language 
@@ -169,14 +169,27 @@ Similar courses are
 
 #### Terminology
 
-- [Constituent](https://en.wikipedia.org/wiki/Constituent_(linguistics)) :  a word or a group of words that functions as a single unit within a hierarchical structure. 
--
+- [Constituent](https://en.wikipedia.org/wiki/Constituent_(linguistics)) :  a word or a group of words that functions as a single unit within a hierarchical structure.
+
+[Top](#nlp) 
  
 ### Dependency Parsing
 
 #### Terminology
 
 - [Catena](https://en.wikipedia.org/wiki/Catena_(linguistics)) : 
+
+[Top](#nlp)
+
+###  Semantic Parsing
+
+- Jonathan Berant, Vivek Srikumar, Pei-Chun Chen, Abby Vander Linden, Brittany Harding, Brad Huang, Peter Clark and Christopher D. Manning. "Modeling Biological Processes for Reading Comprehension." EMNLP 14 (PDF)
+- Scott Wen-tau Yih, Ming-Wei Chang, Xiaodong He, Jianfeng Gao, "Semantic Parsing via Staged Query Graph Generation: Question Answering with Knowledge Base". ACL 2015 (PDF)
+- Percy Liang, Michael I. Jordan, Dan Klein, "Learning dependency-based compositional semantics." ACL 2011. (PDF)
+- Jonathan Berant, Percy Liang. "Imitation learning of agenda-based semantic parsers." TACL 2015 (PDF)
+
+[Top](#nlp)  
+
 
 
 ### Information Extraction
@@ -190,14 +203,6 @@ Similar courses are
 
 [Top](#nlp)  
 
-###  Semantic Parsing
-
-- Jonathan Berant, Vivek Srikumar, Pei-Chun Chen, Abby Vander Linden, Brittany Harding, Brad Huang, Peter Clark and Christopher D. Manning. "Modeling Biological Processes for Reading Comprehension." EMNLP 14 (PDF)
-- Scott Wen-tau Yih, Ming-Wei Chang, Xiaodong He, Jianfeng Gao, "Semantic Parsing via Staged Query Graph Generation: Question Answering with Knowledge Base". ACL 2015 (PDF)
-- Percy Liang, Michael I. Jordan, Dan Klein, "Learning dependency-based compositional semantics." ACL 2011. (PDF)
-- Jonathan Berant, Percy Liang. "Imitation learning of agenda-based semantic parsers." TACL 2015 (PDF)
-
-[Top](#nlp)  
 
 ### Question Answering 
 
@@ -272,6 +277,13 @@ Similar courses are
 
 - [Graham Neubig](http://www.phontron.com/) - [slides](http://www.phontron.com/teaching.php) - [github](https://github.com/neubig/nlptutorial)
 - 
+
+
+## Frequently Asked Questions
+
+### Logistic Regression vs MaxEnt Model
+
+https://www.quora.com/What-is-the-relationship-between-Log-Linear-model-MaxEnt-model-and-Logistic-Regression
 
 
 
