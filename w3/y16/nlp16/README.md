@@ -2,8 +2,9 @@
 # NLP 
 
 - [Overview](#overview)
+  - Community
+  - [Textbook](#textbook) 
 - [Schedules](#schedules)
-- [Textbook](#textbook)
 - [Literatures](#literatures)
   - [Formal Language](#formal-language)  
   - [Language Modeling](#language-modeling)
@@ -32,13 +33,23 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 
 Similar courses are 
 
+- NYTech
 - [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/)
-- [nyu](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/)
-- https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf
+- [nyu](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/) [aparikh](https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf)
 - [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) 
 - [allennlp](https://allennlp.org/)
 
- [ACL Ontology](https://aclanthology.coli.uni-saarland.de/) lists essential communities as follows.
+
+ 
+
+### Textbook
+
+- Jurafsky and Martin, Speech and Language Processing, [third Edition](http://web.stanford.edu/~jurafsky/slp3/)
+- Manning and Schuetze, Foundations of Statistical Natural Language Processing
+
+### Community 
+
+[ACL Ontology](https://aclanthology.coli.uni-saarland.de/) lists essential communities as follows.
 - ACL
 - NAACL
 - ICML
@@ -65,7 +76,7 @@ Similar courses are
 |                     | HMM - Viterbi | |
 |                     | HMM - EM      | |
 | Syntax | | |
-|        | Formal Grammar | |
+|        | Formal Grammar | [Slp3Chp10](http://web.stanford.edu/~jurafsky/slp3/10.pdf) |
 |        | Dependency Parsing | |
 |        | constituency Parsing | |
 |        | Statistical Parsing with PCFG | |
@@ -81,10 +92,6 @@ Similar courses are
 
 
 
-## Textbook
-
-- Jurafsky and Martin, Speech and Language Processing, [third Edition](http://web.stanford.edu/~jurafsky/slp3/)
-- Manning and Schuetze, Foundations of Statistical Natural Language Processing
 
 
 ## Software Packages
@@ -177,7 +184,12 @@ Similar courses are
 
 #### Terminology
 
-- [Catena](https://en.wikipedia.org/wiki/Catena_(linguistics)) : 
+- Attachment Score : # correct deps / # deps
+- LAS : Labeled Accuracy Score
+- UAS : Unlabeled Accuracy Score
+- [Catena](https://en.wikipedia.org/wiki/Catena_(linguistics)) :
+- CYK : O(n^5)
+  
 
 [Top](#nlp)
 
