@@ -11,7 +11,8 @@
   - [Grammar](#grammar) 
   - [Parsing](#parsing)
   - [Information Extraction](#information-extraction)
-  - [Word Embedding](#word-embedding)  
+  - [Word Embedding](#word-embedding)
+  - [Structured Prediction](#structured-prediction)  
 - [Coding Exercises](#coding-exercises)
 - [Software Packages](#software-packages)
 - [Frequently Asked Questions](#frequently-asked-questions)
@@ -48,7 +49,7 @@ Relevant courses are offered thorough out the country.
 ### Textbook
 
 - Jurafsky and Martin, Speech and Language Processing, [third Edition](http://web.stanford.edu/~jurafsky/slp3/)
-- Manning and Schuetze, Foundations of Statistical Natural Language Processing
+- Chris Manning and Hinrich Schütze, Foundations of Statistical Natural Language Processing, MIT Press. Cambridge, MA: May 1999 [online](https://nlp.stanford.edu/fsnlp/)
 - Noah A. Smith, "Linguistic Structure Prediction", [online](https://www.morganclaypool.com/doi/abs/10.2200/S00361ED1V01Y201105HLT013)
 - Christopher D. Manning, Prabhakar Raghavan and Hinrich Schütze, Introduction to Information Retrieval, Cambridge University Press. 2008. [online](https://nlp.stanford.edu/IR-book/)
  
@@ -290,6 +291,14 @@ Relevant courses are offered thorough out the country.
 - P. Liang, H. Daume, and D. Klein. "Structure Compilation: Trading Structure for Features". ICML 2008. (PDF)
 - Nate Kushman, Yoav Artzi, Luke Zettlemoyer, and Regina Barzilay. "Learning to Automatically Solve Algebra Word Problems". ACL 2014 (PDF)
 - Pedro Domingos, Matthew Richardson. "Markov Logic: A Unifying Framework for Statistical Relational Learning"
+
+[Top](#nlp)  
+
+### Structured Prediction
+
+- Sebastian Nowozin and Christoph H. Lampert, "Structured Learning and Prediction in Computer Vision", [PDF](http://pub.ist.ac.at/%7Echl/papers/nowozin-fnt2011.pdf) 
+- Yossi Adi, Joseph Keshet, "StructED: Risk Minimization in Structured Prediction", [page](http://www.jmlr.org/papers/v17/15-531.html) - [code](http://adiyoss.github.io/StructED/) 
+- Andreas C. Muller, Sven Behnke , "PyStruct - Learning Structured Prediction in Python", [PDF](http://jmlr.org/papers/volume15/mueller14a/mueller14a.pdf) - [web](https://pystruct.github.io/)
 
 [Top](#nlp)  
 
