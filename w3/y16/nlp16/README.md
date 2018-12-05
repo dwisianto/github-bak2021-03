@@ -25,12 +25,15 @@ Typical applications include extracting information from unstructured text, mach
 
 This course covers the fundamental elements and recent research advances in NLP.
 Tentative topics include syntactic analysis, semantic analysis, and NLP applications as well as the underlying machine learning methods that widely used in modeling NLP systems.
-The activities of the course include lectures, paper presentations, quizzes, a critical review report, and a final project. Tentative topics include:
+The activities of the course include lectures, paper presentations, quizzes, a critical review report, and a final project. 
+Tentative topics include:
 - Machine learning background: linear classification models, basic structured prediction models
 - Syntactic analysis: part-of-speech tagging, chunking, dependency parsing, constituency parsing.
 - Semantics: brown clusters, vector-space semantics, semantic role labeling.
 - NLP Applications: name entity recognition, machine translation, information extraction.
 
+
+A few online demo of NLP tasks are available 
 Relevant courses are offered thorough out the country.   
 
 - [Yoav Artzi](https://yoavartzi.com/) 
@@ -52,11 +55,13 @@ Relevant courses are offered thorough out the country.
 
 ### Community 
 
-[ACL Ontology](https://aclanthology.coli.uni-saarland.de/) lists essential communities as follows.
+[ACL Ontology](https://aclanthology.coli.uni-saarland.de/) lists prominent NLP communities. as follows.
 - ACL
 - NAACL
 - ICML
 - NIPS
+
+[Top](#nlp)
 
 
 ## Schedules
@@ -300,7 +305,10 @@ Relevant courses are offered thorough out the country.
 
 https://www.quora.com/What-is-the-relationship-between-Log-Linear-model-MaxEnt-model-and-Logistic-Regression
 
+### What's next?
 
+NLP technology are applicable to many AI applications. 
+Examples include : Social Engineering, Knowledge Engineering. 
 
 
 
