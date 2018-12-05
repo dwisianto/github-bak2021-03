@@ -31,9 +31,9 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - Semantics: brown clusters, vector-space semantics, semantic role labeling.
 - NLP Applications: name entity recognition, machine translation, information extraction.
 
-Similar courses are 
+Relevant courses are offered thorough out the country.   
 
-- NYTech
+- [Yoav Artzi](https://yoavartzi.com/) 
 - [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/)
 - [nyu](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/) [aparikh](https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf)
 - [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) 
@@ -46,6 +46,9 @@ Similar courses are
 
 - Jurafsky and Martin, Speech and Language Processing, [third Edition](http://web.stanford.edu/~jurafsky/slp3/)
 - Manning and Schuetze, Foundations of Statistical Natural Language Processing
+- Noah A. Smith, "Linguistic Structure Prediction", [online](https://www.morganclaypool.com/doi/abs/10.2200/S00361ED1V01Y201105HLT013)
+- Christopher D. Manning, Prabhakar Raghavan and Hinrich Schütze, Introduction to Information Retrieval, Cambridge University Press. 2008. [online](https://nlp.stanford.edu/IR-book/)
+ 
 
 ### Community 
 
