@@ -13,55 +13,52 @@
   - [Information Extraction](#information-extraction)
   - [Word Embedding](#word-embedding)
   - [Structured Prediction](#structured-prediction)  
-- [Coding Exercises](#coding-exercises)
 - [Software Packages](#software-packages)
+  - [Coding Exercises](#coding-exercises)
 - [Frequently Asked Questions](#frequently-asked-questions)
 
 
 ## Overview
 
-Natural Language Processing (NLP) enables a computing device to "understand" human languages. 
+Natural Language Processing (NLP) enables a computing device to "understand" human languages.  
+In everyday life, NLP technologies have a phenomenal impact on the way people interact with computers and on the way people access the vast amount of linguistic data in an electronic format. 
+From an academic viewpoint, NLP involves fundamental questions of how to represent natural language phenomena using formal computational and statistical models. 
 Typical applications include extracting information from unstructured text, machine translation, and question answering.
-
 
 This course covers the fundamental elements and recent research advances in NLP.
 Tentative topics include syntactic analysis, semantic analysis, and NLP applications as well as the underlying machine learning methods that widely used in modeling NLP systems.
-The activities of the course include lectures, paper presentations, quizzes, a critical review report, and a final project. 
-Tentative topics include:
+
+The activities of the course include lectures, paper presentations, quizzes, a critical review report, and a final project. Tentative topics include:
 - Machine learning background: linear classification models, basic structured prediction models
 - Syntactic analysis: part-of-speech tagging, chunking, dependency parsing, constituency parsing.
 - Semantics: brown clusters, vector-space semantics, semantic role labeling.
 - NLP Applications: name entity recognition, machine translation, information extraction.
 
 
-A few online demo of NLP tasks are available 
-Relevant courses are offered thorough out the country.   
+A few online demo of NLP tasks are available such as [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) and [allennlp](https://allennlp.org/).   
+Relevant courses are offered in different institutions.   
 
+- [Umich](https://www.youtube.com/playlist?list=PLLssT5z_DsK8BdawOVCCaTCO99Ya58ryR)
 - [Yoav Artzi](https://yoavartzi.com/) 
 - [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/)
 - [nyu](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/) [aparikh](https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf)
-- [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) 
-- [allennlp](https://allennlp.org/)
 
 
- 
 
 ### Textbook
 
-- Jurafsky and Martin, Speech and Language Processing, [third Edition](http://web.stanford.edu/~jurafsky/slp3/)
-- Chris Manning and Hinrich Schütze, Foundations of Statistical Natural Language Processing, MIT Press. Cambridge, MA: May 1999 [online](https://nlp.stanford.edu/fsnlp/)
-- Noah A. Smith, "Linguistic Structure Prediction", [online](https://www.morganclaypool.com/doi/abs/10.2200/S00361ED1V01Y201105HLT013)
-- Christopher D. Manning, Prabhakar Raghavan and Hinrich Schütze, Introduction to Information Retrieval, Cambridge University Press. 2008. [online](https://nlp.stanford.edu/IR-book/)
+- Jurafsky and Martin, Speech and Language Processing, (3rd ed. draft) [[PDF](http://web.stanford.edu/~jurafsky/slp3/)]
+- Chris Manning and Hinrich Schütze, Foundations of Statistical Natural Language Processing, MIT Press. Cambridge, MA: May 1999 [[online](https://nlp.stanford.edu/fsnlp/)]
+- Christopher D. Manning, Prabhakar Raghavan and Hinrich Schütze, Introduction to Information Retrieval, Cambridge University Press. 2008. [[online](https://nlp.stanford.edu/IR-book/)]
+- Noah A. Smith, "Linguistic Structure Prediction", [[online](https://www.morganclaypool.com/doi/abs/10.2200/S00361ED1V01Y201105HLT013)]
+
+
  
 
 ### Community 
 
-[ACL Ontology](https://aclanthology.coli.uni-saarland.de/) lists prominent NLP communities. as follows.
-- ACL
-- NAACL
-- ICML
-- NIPS
-
+Many respected NLP communities are listed in the [ACL Ontology](https://aclanthology.coli.uni-saarland.de/) such as ACL, NAACL, ICML, NIPS. 
+ 
 [Top](#nlp)
 
 
@@ -99,15 +96,8 @@ Relevant courses are offered thorough out the country.
 |              | Machine Translation | | 
 |              | Question Answering | | 
 
+[Top](#nlp)
 
-
-
-
-## Software Packages
-
-- OpenNLP - 
-- nlp4j - [pdf](http://www.aclweb.org/anthology/P15-1038.pdf)
-- [YaraParser](https://github.com/yahoo/YaraParser)
 
 
 ## Literatures
@@ -264,9 +254,9 @@ Relevant courses are offered thorough out the country.
 
 ### Word Embedding
 
--
-
-
+- Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean, "Efficient Estimation of Word Representations in Vector Space", [PDF](https://arxiv.org/abs/1301.3781)
+- Bidirectional Encoder Representations from Transformers (BERT) -  [code](https://github.com/google-research/bert)
+- fastText 
 
 [Top](#nlp) - [Wiki](https://en.wikipedia.org/wiki/Word_embedding)
 
@@ -302,7 +292,14 @@ Relevant courses are offered thorough out the country.
 
 [Top](#nlp)  
 
-## Coding Exercises
+## Software Packages
+
+- OpenNLP - 
+- nlp4j - [pdf](http://www.aclweb.org/anthology/P15-1038.pdf)
+- [YaraParser](https://github.com/yahoo/YaraParser)
+
+
+### Coding Exercises
 
 - [Graham Neubig](http://www.phontron.com/) - [slides](http://www.phontron.com/teaching.php) - [github](https://github.com/neubig/nlptutorial)
 - 
@@ -314,10 +311,12 @@ Relevant courses are offered thorough out the country.
 
 https://www.quora.com/What-is-the-relationship-between-Log-Linear-model-MaxEnt-model-and-Logistic-Regression
 
+[Top](#nlp)  
+
 ### What's next?
 
 NLP technology are applicable to many AI applications. 
 Examples include : Social Engineering, Knowledge Engineering. 
 
-
+[Top](#nlp)  
 

@@ -9,6 +9,7 @@
 - [Clean](#git-clean)    
 - [Stash](#git-stash)    
 - [Branch](#git-branch)
+- [Diff](#diff)
 - git accounts
     - ssh keys
 - git commands
@@ -20,7 +21,7 @@
     - githubDesktop :
     - egit : eclipse git
 
-
+---
 
 ## Git Configuration
 
@@ -325,12 +326,21 @@ Now unstage everything, but leave the files as they are now:
 - git reset
 
 
+## Diff
 
 
+| | | 
+|-|-|
+| git diff | |
+| git diff --cached | | 
+| git diff --staged | |
+| git diff HEAD fileName | to show the diff for a specific file |
 
 
+[Top](#git) 
+ 
 
-## Git
+## Initialization
 
 
 | comment | description |
