@@ -20,20 +20,29 @@
 
 ## Tomcat
 
-- brew install tomcat
-- 
-
-
 ### Tomcat and Eclipse 
 
-
-- Tomcat installation is ready at your personal directory.
+- Reference 
+    - https://www.mulesoft.com/tcat/tomcat-wtp
+- Prerequisite: Tomcat is installed
+    - brew update
+    - brew install tomcat
+    - ls /usr/local/Cellar/tomcat
+- Install Eclipse tomcat plugin from marketplace
+    - tomcat home to /usr/local/Cellar/tomcat/versionNumber/libexec
+    - set the context declaration file to TOMCAT_HOME/conf/server.xml     
+- Eclipse Plugins - Web Tools Platform (WTP)
+    - http://download.eclipse.org/webtools/updates/ 
+    - Help > Install New Software
+    -  http://download.eclipse.org/webtools/updates
+    - Repository Software Site for Web Tools Platform (WTP)    
 - Eclipse settings
     - In the Windows > Preferences > General > Web Browser page, select the "Use external web browser" option so the external system browser will be used.​
-    - In the Windows > Preferences > Maven option "Download repository index updates on startup" is selected. Restart Eclipse.
+    - In the Windows > Preferences > Maven option "Download repository index updates on startup" is selected. 
+    - Restart Eclipse.
 - Create a server instance from your Eclipse workspace
     - You will need an Eclipse instance that has the Tomcat plug-in installed.
-    - These steps only need to be done once per version of tomcat being installed.
+    - These steps only need to be done once per version of Tomcat being installed.
     - In Eclipse > Preferences > Server > Runtime Environment. Choose "Server > Runtime Environment" and Select Add
     - Type "tomcat" in the type of runtime environment field and select "Apache tomcat9" Profile
     - Deselect the "Create a new local server" in the checkbox
@@ -89,3 +98,5 @@ GoTo [WebApp](#webapp)
 
 - Disable JSON and XML Validation
 - Eclipse > Validation > JSON Validator
+- [AWS toolkit for Eclipse](https://aws.amazon.com/eclipse/)
+- 

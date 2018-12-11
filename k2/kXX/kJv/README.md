@@ -5,21 +5,9 @@
 - [Design Pattern](#design-pattern)
 - [Template Patterns](#template-patterns)
 - [Gson](#gson)
-    - Java to Json and Back 
-        - Data Binding
-        - [Streaming](#streaming)
-        - Tree Representation 
-        - Collections Deserialization
-        - Generics Deserialization
-        - [Type Adapter](#type-adapter)
-        - [Custom Serialization And Deserialization](#custom-serialization-and-deserialization)
-            - [type adapter vs deserialization](https://stackoverflow.com/questions/30631004/gson-type-adapter-vs-custom-deseralizer)
-        - Field Exclusion
-    - References
-        - [gson-github](https://github.com/google/gson) [studyTrails](http://www.studytrails.com/java/json/java-google-json-introduction/) [tutorialPoint](https://www.tutorialspoint.com/gson/) [gson-custom](https://medium.com/@int02h/custom-deserialization-with-gson-1bab538c0bfa) [gson-custom2](https://stackoverflow.com/questions/6096940/how-do-i-write-a-custom-json-deserializer-for-gson)          
          
-          
-          
+         
+--- 
     
 ## Stream
 
@@ -41,7 +29,37 @@ The minor differences are extracted out of the base class and into its own deriv
 
 To illustrate the template pattern we use the example of a car manufacturing algorithm.    
 
+---
+
 ## Gson
+
+Java to Json and Back 
+
+
+### Reference
+
+[gson-github](https://github.com/google/gson) 
+[studyTrails](http://www.studytrails.com/java/json/java-google-json-introduction/) 
+[tutorialPoint](https://www.tutorialspoint.com/gson/) 
+[gson-custom](https://medium.com/@int02h/custom-deserialization-with-gson-1bab538c0bfa) 
+[gson-custom2](https://stackoverflow.com/questions/6096940/how-do-i-write-a-custom-json-deserializer-for-gson)          
+
+
+    - Data Binding
+    - [Streaming](#streaming)
+    - Tree Representation 
+    - Collections Deserialization
+    - Generics Deserialization
+    - [Type Adapter](#type-adapter)
+    - [Custom Serialization And Deserialization](#custom-serialization-and-deserialization)
+    - [type adapter vs deserialization](https://stackoverflow.com/questions/30631004/gson-type-adapter-vs-custom-deseralizer)
+    - Field Exclusion
+    - References
+
+
+
+
+### Overview
 
 - Gson is an open source java api for parsing and building json. 
     - It has extensive support for java generics. 
