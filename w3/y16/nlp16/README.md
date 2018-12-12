@@ -292,6 +292,24 @@ Many respected NLP communities are listed in the [ACL Ontology](https://aclantho
 
 [Top](#nlp)  
 
+### Ontology
+
+- Hohenecker, Patrick, and Thomas Lukasiewicz. "Deep Learning for Ontology Reasoning." 2017 [PDF](https://arxiv.org/pdf/1705.10342.pdf)
+- Suntisrivaraporn, Boontawee. "Polynomial-time reasoning support for design and maintenance of large-scale biomedical ontologies." (2008) [PDF](https://lat.inf.tu-dresden.de/research/phd/Sun-PhD-09.pdf)
+-  Julian Alfredo Mendez. "A Classification Algorithm For ELHIfR+", 2011 [PDF](https://lat.inf.tu-dresden.de/research/mas/Men-Mas-11.pdf) [code](https://github.com/julianmendez/jcel)  
+> Description logics are a family of knowledge representation formalisms for representing and reasoning about conceptual knowledge. Every description logic system has reasoning services that infer implicit knowledge from that explicitly given. Standard reasoning problems include concept satisfiability, concept subsumption, ABox consistency and the instance problem. This thesis focus on the concept subsumption service, which is considered to be the most common service.
+> Some years ago, a polynomial-time algorithm for the subsumption problem in the description logic EL was developed. After that, algorithms for different problems in tractable extensions of EL have been developed. These description logics are sufficient to represent many knowledge bases, e.g. a large medical ontology called SNOMED CT. However, there are ontologies requiring extensions of EL that are not tractable. In particular, GALEN, another important medical ontology, requires ELHIfR+, an extension of EL that includes role hierarchies, inverse, functional and transitive roles.
+> This thesis presents a classification algorithm for ELHIfR+. Together with this thesis there is an implementation available at http://jcel.sourceforge.net.
+
+### Terminology 
+
+- [SNOMED CT](https://en.wikipedia.org/wiki/SNOMED_CT)
+
+[Top](#nlp)  
+
+A Classification Algorithm For ELHIfR
+
+
 ## Software Packages
 
 - OpenNLP - 
