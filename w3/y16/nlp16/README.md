@@ -12,7 +12,8 @@
   - [Parsing](#parsing)
   - [Information Extraction](#information-extraction)
   - [Word Embedding](#word-embedding)
-  - [Structured Prediction](#structured-prediction)  
+  - [Structured Prediction](#structured-prediction) 
+  - [Ontology](#ontology) 
 - [Software Packages](#software-packages)
   - [Coding Exercises](#coding-exercises)
 - [Frequently Asked Questions](#frequently-asked-questions)
@@ -292,23 +293,37 @@ Many respected NLP communities are listed in the [ACL Ontology](https://aclantho
 
 [Top](#nlp)  
 
+
 ### Ontology
 
 - Hohenecker, Patrick, and Thomas Lukasiewicz. "Deep Learning for Ontology Reasoning." 2017 [PDF](https://arxiv.org/pdf/1705.10342.pdf)
 - Suntisrivaraporn, Boontawee. "Polynomial-time reasoning support for design and maintenance of large-scale biomedical ontologies." (2008) [PDF](https://lat.inf.tu-dresden.de/research/phd/Sun-PhD-09.pdf)
--  Julian Alfredo Mendez. "A Classification Algorithm For ELHIfR+", 2011 [PDF](https://lat.inf.tu-dresden.de/research/mas/Men-Mas-11.pdf) [code](https://github.com/julianmendez/jcel)  
+- Quoc Huy Vu, "Subsumption in the Description Logic ELHIfR+ w.r.t. General TBoxes.", 2008 [PDF](https://lat.inf.tu-dresden.de/research/mas/Vu-Mas-08.pdf)
+-  Julian Alfredo Mendez. "A Classification Algorithm For ELHIfR+", 2011 [PDF](https://lat.inf.tu-dresden.de/research/mas/Men-Mas-11.pdf) [code](https://github.com/julianmendez/jcel) [homepage](https://julianmendez.github.io/)  
 > Description logics are a family of knowledge representation formalisms for representing and reasoning about conceptual knowledge. Every description logic system has reasoning services that infer implicit knowledge from that explicitly given. Standard reasoning problems include concept satisfiability, concept subsumption, ABox consistency and the instance problem. This thesis focus on the concept subsumption service, which is considered to be the most common service.
 > Some years ago, a polynomial-time algorithm for the subsumption problem in the description logic EL was developed. After that, algorithms for different problems in tractable extensions of EL have been developed. These description logics are sufficient to represent many knowledge bases, e.g. a large medical ontology called SNOMED CT. However, there are ontologies requiring extensions of EL that are not tractable. In particular, GALEN, another important medical ontology, requires ELHIfR+, an extension of EL that includes role hierarchies, inverse, functional and transitive roles.
 > This thesis presents a classification algorithm for ELHIfR+. Together with this thesis there is an implementation available at http://jcel.sourceforge.net.
 
-### Terminology 
+#### Tools
 
+- [Protoge](https://protege.stanford.edu/)
+    - [Protege Tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf)
+    - [Simple Protege Tutorial](https://www.youtube.com/watch?v=R9ERlUgvgwM&list=PLea0WJq13cnAfCC0azrCyquCN_tPelJN1)    
+- [ProbLogic](https://dtai.cs.kuleuven.be/problog/publications.html)
+
+#### Terminology 
+
+- [SNOMED](https://en.wikipedia.org/wiki/Systematized_Nomenclature_of_Medicine)
 - [SNOMED CT](https://en.wikipedia.org/wiki/SNOMED_CT)
+- [MedDRA](https://en.wikipedia.org/wiki/MedDRA)
 
 [Top](#nlp)  
 
-A Classification Algorithm For ELHIfR
+### Biomedical Informatics
 
+- https://core.ac.uk/download/pdf/82380701.pdf
+
+[Top](#nlp)  
 
 ## Software Packages
 
@@ -331,10 +346,9 @@ https://www.quora.com/What-is-the-relationship-between-Log-Linear-model-MaxEnt-m
 
 [Top](#nlp)  
 
-### What's next?
+### What's next after completing this course ?
 
-NLP technology are applicable to many AI applications. 
-Examples include : Social Engineering, Knowledge Engineering. 
+NLP technology is applicable to many AI applications, such as [Semantic Web](semanticweb.org), Social Engineering, Knowledge Engineering. 
 
 [Top](#nlp)  
 
