@@ -227,8 +227,8 @@ Many respected NLP communities are listed in the [ACL Ontology](https://aclantho
 ### Semantic Role Labeling
 
 - Kristina Toutanova, Aria Haghigh, Christopher D. Manning. "Joint Learning Improves Semantic Role Labeling." ACL 2005 (PDF)
-- Vivek Srikumar, Dan Roth "A Joint Model for Extended Semantic Role Labeling". ACL 2011(PDF)
-- Daniel Gildea, Daniel Jurafsky, "Automatic Labeling of Semantic Roles". ACL 2000(PDF)
+- Vivek Srikumar, Dan Roth "A Joint Model for Extended Semantic Role Labeling". ACL 2011 (PDF)
+- Daniel Gildea, Daniel Jurafsky, "Automatic Labeling of Semantic Roles". ACL 2000 (PDF)
 
 
 [Top](#nlp)  
@@ -296,6 +296,7 @@ Many respected NLP communities are listed in the [ACL Ontology](https://aclantho
 
 ### Ontology
 
+- Haase, P. and Völker, J., 2008. "Ontology learning and reasoning—dealing with uncertainty and inconsistency". In Uncertainty reasoning for the semantic web I (pp. 366-384). Springer, Berlin, Heidelberg. ([PDF](http://syntheticsapien.com/papers/URSW_Proceedings.pdf#page=48) )
 - Hohenecker, Patrick, and Thomas Lukasiewicz. "Deep Learning for Ontology Reasoning." 2017 [PDF](https://arxiv.org/pdf/1705.10342.pdf)
 - Suntisrivaraporn, Boontawee. "Polynomial-time reasoning support for design and maintenance of large-scale biomedical ontologies." (2008) [PDF](https://lat.inf.tu-dresden.de/research/phd/Sun-PhD-09.pdf)
 - Quoc Huy Vu, "Subsumption in the Description Logic ELHIfR+ w.r.t. General TBoxes.", 2008 [PDF](https://lat.inf.tu-dresden.de/research/mas/Vu-Mas-08.pdf)
@@ -310,6 +311,7 @@ Many respected NLP communities are listed in the [ACL Ontology](https://aclantho
     - [Protege Tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf)
     - [Simple Protege Tutorial](https://www.youtube.com/watch?v=R9ERlUgvgwM&list=PLea0WJq13cnAfCC0azrCyquCN_tPelJN1)    
 - [ProbLogic](https://dtai.cs.kuleuven.be/problog/publications.html)
+- [KAON](https://en.wikipedia.org/wiki/KAON)
 
 #### Terminology 
 
@@ -319,11 +321,6 @@ Many respected NLP communities are listed in the [ACL Ontology](https://aclantho
 
 [Top](#nlp)  
 
-### Biomedical Informatics
-
-- https://core.ac.uk/download/pdf/82380701.pdf
-
-[Top](#nlp)  
 
 ## Software Packages
 
@@ -348,7 +345,7 @@ https://www.quora.com/What-is-the-relationship-between-Log-Linear-model-MaxEnt-m
 
 ### What's next after completing this course ?
 
-NLP technology is applicable to many AI applications, such as [Semantic Web](semanticweb.org), Social Engineering, Knowledge Engineering. 
+NLP technology can be applied to many AI applications, such as [Semantic Web](semanticweb.org), [Biomedical Informatics](https://core.ac.uk/download/pdf/82380701.pdf), Social Engineering, Knowledge Engineering.
 
 [Top](#nlp)  
 
