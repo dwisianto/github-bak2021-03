@@ -296,6 +296,11 @@ Many respected NLP communities are listed in the [ACL Ontology](https://aclantho
 
 ### Ontology
 
+An ontology is a formal explicit description of concepts in a domain of discourse ( **classes** (sometimes called **concepts**)), properties of each **concept** describing various **features** and **attributes** of the **concept** (**slots** (sometimes called **roles** or **properties**)), and restrictions on **slots** (**facets** (sometimes called **role restrictions**)). An ontology together with a set of individual **instances** of classes constitutes a **knowledge base**. In reality, there is a fine line where the ontology ends and the **knowledge base begins**. [PDF](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html). A practical exercise to create an ontology is available [practical exercise](../ont/) 
+
+#### Literatures
+ 
+
 - Haase, P. and Völker, J., 2008. "Ontology learning and reasoning—dealing with uncertainty and inconsistency". In Uncertainty reasoning for the semantic web I (pp. 366-384). Springer, Berlin, Heidelberg. ([PDF](http://syntheticsapien.com/papers/URSW_Proceedings.pdf#page=48) )
 - Hohenecker, Patrick, and Thomas Lukasiewicz. "Deep Learning for Ontology Reasoning." 2017 [PDF](https://arxiv.org/pdf/1705.10342.pdf)
 - Suntisrivaraporn, Boontawee. "Polynomial-time reasoning support for design and maintenance of large-scale biomedical ontologies." (2008) [PDF](https://lat.inf.tu-dresden.de/research/phd/Sun-PhD-09.pdf)

@@ -12,8 +12,11 @@
 
 ## Tutorial 
 
-- [SPARQL](https://www.youtube.com/watch?v=FvGndkpa4K0)
+- [co-ode](http://owl.cs.manchester.ac.uk/research/co-ode/)
+    - [Protege Tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf)
 - [Simple Protege Tutorial](https://www.youtube.com/watch?v=R9ERlUgvgwM&list=PLea0WJq13cnAfCC0azrCyquCN_tPelJN1)
+- [SPARQL](https://www.youtube.com/watch?v=FvGndkpa4K0)
+
 
 ## Web Resource
 
