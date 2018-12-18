@@ -24,16 +24,24 @@
 
 ## Terminology
 
+- Jena : Apache Jena is a free and open source Java framework for building Semantic Web and Linked Data applications
+- Fuseki : It provides REST-style interaction with RDF data
+- RDF  : 
+- RDFS :
 - SWRL : Semantic Web Rule Language
+- Turtle :   
+- TDB : a native high performance triple store
 - VOWL :
-- Web Ontology Language
--  
+- Web Ontology Language (OWL) : 
+
 
 ## Tools
 
 - [protoge](https://protege.stanford.edu/)
-    - [pp.gh.io](http://protegeproject.github.io/protege/getting-started/)
-- apache jena fuseki
+    - [Getting Started](http://protegeproject.github.io/protege/getting-started/)
+    - [Wiki](https://protegewiki.stanford.edu/wiki/Main_Page)
+- [Jena](https://jena.apache.org/index.html)
+    - Fuseki
 - TopBraid
 -  
 
@@ -72,27 +80,28 @@
     - Select **CSModule** class, select "disjoint with", select **MathModule**, **CSModule**, **Student**
     - Click File>Save with the format "RDF/XML"
 - Select the tab **Protege>ObjectProperties**, which describes the relationship between two instances or two individuals of classes.
+    - Every object property is a child of the topObjectProperty
     - Remember we have two modules, i.e.,  **Lecturer** - **Teaches** - **Module** and **Student** - **Studies** - **Module**
     - Create the property **teaches**
-        - add the domain ""
-        - add the range "module"
+        - add the "domains" as "ClassHierarchy>Lecturer"
+        - add the "ranges" as "ClassHierarchy>module"
     - Create the property **studies** 
-        - add the domain as 
-        - add the range as 
+        - add the "domain"s as "ClassHierarchy>Student"
+        - add the "ranges" as "ClassHierarchy>module"
 - Select the tab **Protege>DataProperties**, which describes the relationship between the instance and data value
     - The topDataProperty is the top level dataProperty  
     - Create a sub property is called "first_name"
-        - domain : person
-        - value : string
+        - add the "domain" : person
+        - add the value : string
     - Create a sub property is called "last_name"
-        - domain : person
-        - value : string
-    - Create a sub property "staffID"
-        - range :
-        - applies only to staff     
-    - Create a sub property "studentID"
-        - range :
-        - applies only to student              
+        - add the domain : person
+        - add the value : string
+    - Create a sub property "staff_id"
+        - add the domain : Lecturer
+        - add range : integer        
+    - Create a sub property "student_id"
+        - add the domain : student              
+        - range : integer        
 - Select the tab **Protege>Individuals**, create individuals and specify the type
    -
 - Query the using Jena/Fuseki server

@@ -13,7 +13,8 @@
   - [Information Extraction](#information-extraction)
   - [Word Embedding](#word-embedding)
   - [Structured Prediction](#structured-prediction) 
-  - [Ontology](#ontology) 
+  - [Ontology](#ontology)
+  - [Others](#others) 
 - [Software Packages](#software-packages)
   - [Coding Exercises](#coding-exercises)
 - [Frequently Asked Questions](#frequently-asked-questions)
@@ -21,7 +22,7 @@
 
 ## Overview
 
-Natural Language Processing (NLP) enables a computing device to "understand" human languages.  
+Natural Language Processing (NLP) is focused on enabling a computing device to "understand" human languages. 
 In everyday life, NLP technologies have a phenomenal impact on the way people interact with computers and on the way people access the vast amount of linguistic data in an electronic format. 
 From an academic viewpoint, NLP involves fundamental questions of how to represent natural language phenomena using formal computational and statistical models. 
 Typical applications include extracting information from unstructured text, machine translation, and question answering.
@@ -58,7 +59,10 @@ Relevant courses are offered in different institutions.
 
 ### Community 
 
-Many respected NLP communities are listed in the [ACL Ontology](https://aclanthology.coli.uni-saarland.de/) such as ACL, NAACL, ICML, NIPS. 
+Many respected NLP communities are listed in the [ACL Ontology](https://aclanthology.coli.uni-saarland.de/) such as ACL, NAACL, ICML, NIPS.
+This is a list of journals that may be suitable for publishing Computational Linguistics papers.
+- [Transactions of the Association for Computational Linguistics](https://www.transacl.org/ojs/index.php/tacl)
+-  
  
 [Top](#nlp)
 
@@ -103,8 +107,12 @@ Many respected NLP communities are listed in the [ACL Ontology](https://aclantho
 
 ## Literatures
 
+A short list of [nlp bibliography](nlp-bib.html) is available. 
+
 - Prakash M Nadkarni, et. al. "Natural Language Processing: an Introduction" ([PDF]( https://pdfs.semanticscholar.org/b97e/3bd95b22fb87bd14615f4aeea6711c5a0be3.pdf ))
 - Eugene Charniak, "Statistical Techniques for Natural Language Processing" ([PDF](https://pdfs.semanticscholar.org/29fd/bbd3bb0b3c798a57e10576d318281d37dd2a.pdf))
+
+
 
 
 ### Formal Language 
@@ -277,19 +285,14 @@ Many respected NLP communities are listed in the [ACL Ontology](https://aclantho
 
 [Top](#nlp)  
 
-### Others
-
-- P. Liang, H. Daume, and D. Klein. "Structure Compilation: Trading Structure for Features". ICML 2008. (PDF)
-- Nate Kushman, Yoav Artzi, Luke Zettlemoyer, and Regina Barzilay. "Learning to Automatically Solve Algebra Word Problems". ACL 2014 (PDF)
-- Pedro Domingos, Matthew Richardson. "Markov Logic: A Unifying Framework for Statistical Relational Learning"
-
-[Top](#nlp)  
 
 ### Structured Prediction
 
 - Sebastian Nowozin and Christoph H. Lampert, "Structured Learning and Prediction in Computer Vision", [PDF](http://pub.ist.ac.at/%7Echl/papers/nowozin-fnt2011.pdf) 
 - Yossi Adi, Joseph Keshet, "StructED: Risk Minimization in Structured Prediction", [page](http://www.jmlr.org/papers/v17/15-531.html) - [code](http://adiyoss.github.io/StructED/) 
 - Andreas C. Muller, Sven Behnke , "PyStruct - Learning Structured Prediction in Python", [PDF](http://jmlr.org/papers/volume15/mueller14a/mueller14a.pdf) - [web](https://pystruct.github.io/)
+- Yang, Yi, Ozan Irsoy, and Kazi Shefaet Rahman. "Collective Entity Disambiguation with Structured Gradient Tree Boosting." (2018). ([PDF](https://arxiv.org/pdf/1802.10229.pdf)) ([news](https://www.techatbloomberg.com/blog/bloombergs-advances-natural-language-processing-allow-improved-tagging-tweets-news/)) - [code](https://github.com/bloomberg/sgtb) - [yi yang's page](https://yiyangnlp.github.io/) - [shefaet's page](https://github.com/shefaet)
+
 
 [Top](#nlp)  
 
@@ -325,6 +328,16 @@ An ontology is a formal explicit description of concepts in a domain of discours
 - [MedDRA](https://en.wikipedia.org/wiki/MedDRA)
 
 [Top](#nlp)  
+
+
+### Others
+
+- P. Liang, H. Daume, and D. Klein. "Structure Compilation: Trading Structure for Features". ICML 2008. (PDF)
+- Nate Kushman, Yoav Artzi, Luke Zettlemoyer, and Regina Barzilay. "Learning to Automatically Solve Algebra Word Problems". ACL 2014 (PDF)
+- Pedro Domingos, Matthew Richardson. "Markov Logic: A Unifying Framework for Statistical Relational Learning"
+
+[Top](#nlp)  
+
 
 
 ## Software Packages
