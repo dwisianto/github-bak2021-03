@@ -50,7 +50,7 @@ Relevant courses are offered in different institutions.
 ### Textbook
 
 - Jurafsky and Martin, Speech and Language Processing, (3rd ed. draft) [[PDF](http://web.stanford.edu/~jurafsky/slp3/)]
-- Chris Manning and Hinrich Schütze, Foundations of Statistical Natural Language Processing, MIT Press. Cambridge, MA: May 1999 [[online](https://nlp.stanford.edu/fsnlp/)]
+- Christopher Manning and Hinrich Schütze, Foundations of Statistical Natural Language Processing, MIT Press. Cambridge, MA: May 1999 [[online](https://nlp.stanford.edu/fsnlp/)]
 - Christopher D. Manning, Prabhakar Raghavan and Hinrich Schütze, Introduction to Information Retrieval, Cambridge University Press. 2008. [[online](https://nlp.stanford.edu/IR-book/)]
 - Noah A. Smith, "Linguistic Structure Prediction", [[online](https://www.morganclaypool.com/doi/abs/10.2200/S00361ED1V01Y201105HLT013)]
 
@@ -343,6 +343,10 @@ An ontology is a formal explicit description of concepts in a domain of discours
 - OpenNLP - 
 - nlp4j - [pdf](http://www.aclweb.org/anthology/P15-1038.pdf)
 - [YaraParser](https://github.com/yahoo/YaraParser)
+- [KEA](http://community.nzdl.org/kea/)
+> Keywords and keyphrases (multi-word units) are widely used in large document collections. They describe the content of single documents and provide a kind of semantic metadata that is useful for a wide variety of purposes. The task of assigning keyphrases to a document is called keyphrase indexing. For example, academic papers are often accompanied by a set of keyphrases freely chosen by the author. In libraries professional indexers select keyphrases from a controlled vocabulary (also called Subject Headings) according to defined cataloguing rules. On the Internet, digital libraries, or any depositories of data (flickr, del.icio.us, blog articles etc.) also use keyphrases (or here called content tags or content labels) to organize and provide a thematic access to their data. KEA is an algorithm for extracting keyphrases from text documents. It can be either used for free indexing or for indexing with a controlled vocabulary. 
+
+
 
 
 ### Coding Exercises
@@ -357,11 +361,11 @@ An ontology is a formal explicit description of concepts in a domain of discours
 
 https://www.quora.com/What-is-the-relationship-between-Log-Linear-model-MaxEnt-model-and-Logistic-Regression
 
-[Top](#nlp)  
+GoTo [[Top](#nlp)]  
 
 ### What's next after completing this course ?
 
 NLP technology can be applied to many AI applications, such as [Semantic Web](semanticweb.org), [Biomedical Informatics](https://core.ac.uk/download/pdf/82380701.pdf), Social Engineering, Knowledge Engineering.
 
-[Top](#nlp)  
+GoTo [[Top](#nlp)]  
 
