@@ -1,7 +1,8 @@
 # AWSEB
 
+- [Java Web Application](#java-web-application)
 - [Tutorial1](https://www.javacodegeeks.com/2017/12/amazon-elastic-beanstalk-tutorial.html#sample_webapp)
-- Java Web Application
+- https://martinsdeveloperworld.wordpress.com/
 
 
 
@@ -32,9 +33,10 @@ Afterwards we have a new directory with the name **tomcat-web-service** with the
     |           `-- web.xml
 ```
 
-The archetype has already created a **web.xml** and an **index.jsp** file. Keep the JSP page because it can be used to test the first version in the cloud. The web.xml file needs some editing:
 
-	
+The archetype has already created a **web.xml** and an **index.jsp** file. Keep the JSP page because it can be used to test the first version in the cloud. The **web.xml** file needs some editing:
+
+
 ```bash
 
 <!DOCTYPE web-app PUBLIC

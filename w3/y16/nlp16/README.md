@@ -20,7 +20,7 @@
 - [Frequently Asked Questions](#frequently-asked-questions)
 
 
-## Overview
+# Overview
 
 Natural Language Processing (NLP) is focused on enabling a computing device to "understand" human languages. 
 In everyday life, NLP technologies have a phenomenal impact on the way people interact with computers and on the way people access the vast amount of linguistic data in an electronic format. 
@@ -37,7 +37,7 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - NLP Applications: name entity recognition, machine translation, information extraction.
 
 
-A few online demo of NLP tasks are available such as [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) and [allennlp](https://allennlp.org/).   
+A few online demos of NLP tasks are available such as [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) and [allennlp](https://allennlp.org/).   
 Relevant courses are offered in different institutions.   
 
 - [Umich](https://www.youtube.com/playlist?list=PLLssT5z_DsK8BdawOVCCaTCO99Ya58ryR)
@@ -77,6 +77,12 @@ This is a list of journals that may be suitable for publishing Computational Lin
 |                | XGram | |
 |                | Smoothing | |
 |                | DiscriminativeLM, Perplexity | |
+| Syntax | | |
+|        | Formal Grammar | [Slp3Chp10](http://web.stanford.edu/~jurafsky/slp3/10.pdf) |
+|        | Dependency Parsing | |
+|        | constituency Parsing | |
+|        | Statistical Parsing with PCFG | |
+|        | Semantic Parsing | [Wiki](https://en.wikipedia.org/wiki/Semantic_parsing) |
 | Word Representation | | |
 |                     | Morphology | |
 |                     | Vector Space Models | |
@@ -86,12 +92,6 @@ This is a list of journals that may be suitable for publishing Computational Lin
 |                     | Hidden Markov Model | |
 |                     | HMM - Viterbi | |
 |                     | HMM - EM      | |
-| Syntax | | |
-|        | Formal Grammar | [Slp3Chp10](http://web.stanford.edu/~jurafsky/slp3/10.pdf) |
-|        | Dependency Parsing | |
-|        | constituency Parsing | |
-|        | Statistical Parsing with PCFG | |
-|        | Semantic Parsing | [Wiki](https://en.wikipedia.org/wiki/Semantic_parsing) |
 | Applications | | |
 |              | Information Extraction | |
 |              | Named Entity Recognition | |
@@ -105,17 +105,15 @@ This is a list of journals that may be suitable for publishing Computational Lin
 
 
 
-## Literatures
+# Literatures
 
-A short list of [nlp bibliography](nlp-bib.html) is available. 
+The following section lists the essential publications for each topic and a more comprehensive list is available as a [bibliography](nlp-bib.html) file.
 
 - Prakash M Nadkarni, et. al. "Natural Language Processing: an Introduction" ([PDF]( https://pdfs.semanticscholar.org/b97e/3bd95b22fb87bd14615f4aeea6711c5a0be3.pdf ))
 - Eugene Charniak, "Statistical Techniques for Natural Language Processing" ([PDF](https://pdfs.semanticscholar.org/29fd/bbd3bb0b3c798a57e10576d318281d37dd2a.pdf))
 
 
-
-
-### Formal Language 
+## Formal Language 
 
 
   
@@ -340,7 +338,7 @@ An ontology is a formal explicit description of concepts in a domain of discours
 
 
 
-## Software Packages
+# Software Tools
 
 - OpenNLP - 
 - nlp4j - [pdf](http://www.aclweb.org/anthology/P15-1038.pdf)
@@ -353,7 +351,7 @@ An ontology is a formal explicit description of concepts in a domain of discours
 - 
 
 
-## Frequently Asked Questions
+# Frequently Asked Questions
 
 ### Logistic Regression vs MaxEnt Model
 
