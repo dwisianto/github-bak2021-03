@@ -361,11 +361,11 @@ An ontology is a formal explicit description of concepts in a domain of discours
 
 https://www.quora.com/What-is-the-relationship-between-Log-Linear-model-MaxEnt-model-and-Logistic-Regression
 
-GoTo [[Top](#nlp)]  
+GoTo: [[Top](#nlp)]  
 
 ### What's next after completing this course ?
 
 NLP technology can be applied to many AI applications, such as [Semantic Web](semanticweb.org), [Biomedical Informatics](https://core.ac.uk/download/pdf/82380701.pdf), Social Engineering, Knowledge Engineering.
 
-GoTo [[Top](#nlp)]  
+GoTo: [[Top](#nlp)]  
 

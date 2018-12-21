@@ -3,6 +3,8 @@
 - [Java Web Application](#java-web-application)
 - [Tutorial1](https://www.javacodegeeks.com/2017/12/amazon-elastic-beanstalk-tutorial.html#sample_webapp)
 - https://martinsdeveloperworld.wordpress.com/
+- [DynamoDb](dynamoDb.md)
+- [S3](s3.md)
 
 
 
