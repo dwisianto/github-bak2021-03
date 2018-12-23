@@ -1,13 +1,7 @@
-# AWSEB
+# Beanstalk
 
-
-
-- https://martinsdeveloperworld.wordpress.com/
-- [beanstalk](beanstalk.md) is [available](https://www.javacodegeeks.com/2017/12/amazon-elastic-beanstalk-tutorial.html)
-- [DynamoDb](dynamoDb.md) is [available](https://www.javacodegeeks.com/2017/10/amazon-dynamodb-tutorial.html)
-- [S3](s3.md) is [available](https://www.javacodegeeks.com/2017/03/amazon-s3-tutorial.html)
-
-
+- [Java Web Application](#java-web-application)
+- [Tutorial1](https://www.javacodegeeks.com/2017/12/amazon-elastic-beanstalk-tutorial.html#sample_webapp)
 
 
 # Java Web Application
@@ -38,11 +32,12 @@ Afterwards we have a new directory with the name **tomcat-web-service** with the
 ```
 
 
-The archetype has already created a **web.xml** and an **index.jsp** file. Keep the JSP page because it can be used to test the first version in the cloud. The **web.xml** file needs some editing:
+The archetype has already created a **web.xml** and an **index.jsp** file. 
+Keep the JSP page because it can be used to test the first version in the cloud. 
+The **web.xml** file needs some editing:
 
 
 ```bash
-
 <!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
@@ -69,9 +64,8 @@ The archetype has already created a **web.xml** and an **index.jsp** file. Keep 
 
 With the XML element **display-name** we define how the application is labeled inside the Apache Tomcat server. 
 The **servlet** and **servlet-mapping** elements define the Servlet class that is listening for requests and the URL pattern it should listen for. 
-In our case we using the pattern /tutorial-service/*, i.e. all URLs that look like http://://tutorial-service/* will be processed by this servlet.
+In our case we using the pattern /tutorial-service/*, i.e. all URLs that look like http://://tutorial-service/* will be processed by this servlet. The context name is defined through the name of the war archive that we deploy into tomcat. 
 
-The context name is defined through the name of the war archive that we deploy into tomcat. 
 The parameter **jersey.config.server.provider.packages** tells the JAX-B implementation we are going to use to implement the REST-API which Java packages it should scan for annotations. To make this work, we have to create the following directory structure in our maven project: **src/main/java/com/javacodegeeks/ultimate/aws/eb**. 
 To tell maven which version of the JAX-B implementation we want to use, 
 we copy the following block of dependency information into your **pom.xml** file:
@@ -147,7 +141,7 @@ we copy the following block of dependency information into your **pom.xml** file
 </dependencyManagement>
 ```
 
-Next to the mere API contract (javax.ws.rs-api), 
+Next to the mere API contract (**javax.ws.rs-api**), 
 we are defining to use **jersey-container-servlet** as JAX-B implementation and **jersey-hk2** for dependency injection for jersey. 
 As the Amazon SDK is using **commons-logging** we are doing the same. 
 As logging service we have chosen the classic **log4j** implementation. 
@@ -234,7 +228,7 @@ Having integration tests that can be performed locally eases development much, a
 
 The maven-compiler-plugin is used to define source and target version of the build. This is necessary because the provisioned services have a certain Java version installed and we must therefore compile an artifact that can be executed in the target environment. The **surefire** and failsafe plugin are used to executed the local junit and integration tests. Finally, the **tomcat7-maven-plugin** allows us to start and stop an embedded Apache Tomcat server in the build in order to execute the integration tests.
 
-This step shortens the round trip between development and testing as we don’t have to start or restart an externally installed server each time. As we are not going to use any Tomcat 8 specific features, the **tomcat7-maven-plugin** should be sufficient. As the configuration of the **tomcat7-maven-plugin** already indicates, we need a dedicated context.xml file for the tomcat integration tests. 
+This step shortens the round trip between development and testing as we don’t have to start or restart an externally installed server each time. As we are not going to use any Tomcat 8 specific features, the **tomcat7-maven-plugin** should be sufficient. As the configuration of the **tomcat7-maven-plugin** already indicates, we need a dedicated **context.xml** file for the tomcat integration tests. 
 The following content is therefore put into a file located at **src/test/tomcat7-maven-plugin/context.xml**:
 
 ```bash
@@ -281,7 +275,7 @@ public class TutorialResource {
 }
 ```
 
-The class is annotated with @Path to tell the JAX-RS framework that all relative URL paths used in the class itself should be prefixed with /tutorial. For the sake of simplicity we have currently only one method: listAllCourses(). Its part of the URL is denoted with another @Path annotation at method level. That an invocation of this REST resource will return a JSON string is specified with the annotation @Produces and the media type text/json.
+The class is annotated with @Path to tell the JAX-RS framework that all relative URL paths used in the class itself should be prefixed with **/tutorial**. For the sake of simplicity we have currently only one method: listAllCourses(). Its part of the URL is denoted with another @Path annotation at method level. That an invocation of this REST resource will return a JSON string is specified with the annotation @Produces and the media type **text/json**.
 
 Finally, we tell the framework that this method is a GET request by using the dedicated annotation @GET. 
 Currently we do not have any persistent storage, hence we cannot load data from a datasource. 
@@ -355,7 +349,7 @@ The getter and setter methods allow the JSON library to set the corresponding at
 In this example we also implement the methods equals() and hashCode() as we want to compare instances of Tutorial later on in our integration tests. As mentioned before, building and deploying the application now already to AWS is an option, but it will take some time until the deployment becomes available.
 
 Therefore, we just write an integration test that verifies that our implementation is working as expected to save unnecessary uploads to the AWS cloud (and to save time). 
-In the pom.xml file above we have configured that integration tests are named with IntegrationTest in their class name. Hence, we create a class under src/test/javawith the following content:
+In the pom.xml file above we have configured that integration tests are named with IntegrationTest in their class name. Hence, we create a class under src/test/java with the following content:
 
 ```java
 public class TutorialIntegrationTest {

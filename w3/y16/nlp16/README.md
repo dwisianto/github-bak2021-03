@@ -15,7 +15,7 @@
   - [Structured Prediction](#structured-prediction) 
   - [Ontology](#ontology)
   - [Others](#others) 
-- [Software Packages](#software-packages)
+- [Software Tools](#software-tools)
   - [Coding Exercises](#coding-exercises)
 - [Frequently Asked Questions](#frequently-asked-questions)
 
