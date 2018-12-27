@@ -47,24 +47,24 @@ Relevant courses are offered in different institutions.
 
 
 
-### Textbook
+## Textbook
 
 - Jurafsky and Martin, Speech and Language Processing, (3rd ed. draft) [[PDF](http://web.stanford.edu/~jurafsky/slp3/)]
 - Christopher Manning and Hinrich Schütze, Foundations of Statistical Natural Language Processing, MIT Press. Cambridge, MA: May 1999 [[online](https://nlp.stanford.edu/fsnlp/)]
 - Christopher D. Manning, Prabhakar Raghavan and Hinrich Schütze, Introduction to Information Retrieval, Cambridge University Press. 2008. [[online](https://nlp.stanford.edu/IR-book/)]
 - Noah A. Smith, "Linguistic Structure Prediction", [[online](https://www.morganclaypool.com/doi/abs/10.2200/S00361ED1V01Y201105HLT013)]
 
-
+GoTo: [Top](#nlp)
  
 
-### Community 
+## Community 
 
 Many respected NLP communities are listed in the [ACL Ontology](https://aclanthology.coli.uni-saarland.de/) such as ACL, NAACL, ICML, NIPS.
 This is a list of journals that may be suitable for publishing Computational Linguistics papers.
 - [Transactions of the Association for Computational Linguistics](https://www.transacl.org/ojs/index.php/tacl)
 -  
  
-[Top](#nlp)
+GoTo: [Top](#nlp)
 
 
 ## Schedules

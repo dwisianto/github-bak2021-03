@@ -1,7 +1,21 @@
 # Beanstalk
 
 - [Java Web Application](#java-web-application)
-- [Tutorial1](https://www.javacodegeeks.com/2017/12/amazon-elastic-beanstalk-tutorial.html#sample_webapp)
+- [Tutorial1](https://www.javacodegeeks.com/2017/12/amazon-elastic-beanstalk-tutorial.html)
+
+# Introduction
+
+Amazon Elastic Beanstalk is a service that lets you use a set of existing Amazon AWS services to host your application. In contrast to more generic services like EC2, you do not have to provide an image of a machine that is deployed into a cloud, but you only provide a ready to run application that is hosted inside a predefined environment at Amazon AWS.
+
+Amazon lets you choose between different predefined environments and sets up everything necessary to run the application on behalf of you. This service is therefore suitable for you if you want to concentrate on the application itself and not so much on the underlying operating system and server. However, as Elastic Beanstalk uses under the hood existing services like EC2, S3, CodeCommit or Route 53, you have full control over you application.
+
+# Concepts
+
+Amazon Elastic Beanstalk defines a set of terms that are used throughout the service and therefore must be understood from the beginning on. An Application is a set of components that not only encompasses different versions of your application but also configurations for environments the application is deployed to. An application version is a deployable artifact that is labeled and stored inside an Amazon S3 bucket. It can therefore be restored at a later point in time. An environment is a set of Amazon AWS resources that is used to run a specific version of the application. Different environments can be configured and a version of the application can run in different environments.
+
+Different environments can exist at the same time and can also serve different versions of the same application. An environment consists of two tiers: the web server environment and the worker environment. While the web server environment serves HTTP requests the worker environment reads messages from a queue and processes them. This way applications can use the “worker queue” pattern to decouple business logic from serving HTTP request. An environment configuration encompasses the settings of an environment. Applying this configuration will let Amazon AWS create the corresponding resources. Existing templates can be used to create configurations and are therefore called Configuration Templates.
+
+
 
 
 # Java Web Application
@@ -35,7 +49,6 @@ Afterwards we have a new directory with the name **tomcat-web-service** with the
 The archetype has already created a **web.xml** and an **index.jsp** file. 
 Keep the JSP page because it can be used to test the first version in the cloud. 
 The **web.xml** file needs some editing:
-
 
 ```bash
 <!DOCTYPE web-app PUBLIC
@@ -75,6 +88,8 @@ we copy the following block of dependency information into your **pom.xml** file
 
 <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
 	<jersey.version>2.26</jersey.version>
 	<junit.version>4.12</junit.version>
 	<commons-logging>1.1.3</commons-logging>
@@ -412,4 +427,11 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 We can see that the tomcat server is started before and after the integration tests. 
 At the end of the build the file **tomcat-web-service.war** resides inside the target directory of the our project. 
 This is the application that we are going to upload to Amazon Elastic Beanstalk now.
+
+
+# Deployment using the Web Interface
+
+If you haven’t created an Amazon AWS account yet, you should do so now by pointing your browser the following URL and clicking on the link labeled “Create an AWS account”. During the following steps you will have to provide the typical personal information plus a valid credit card. The latter is necessary to allow Amazon to bill the resources you have used. When you create a new account, you are eligible for the “Free Tier”.
+
+For the first 12 month you can use currently up to 750 hours computing power on EC2, 5 GB standard storage on S3. This is more than sufficient for our tutorial. Once you have setup a working AWS account, you can create your first application. Therefore, point your browser to the following URL and fill out the name of your application as well as the optional description:
 

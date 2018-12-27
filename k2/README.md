@@ -15,8 +15,7 @@
 | [curl](kXX/kCurl) | | |
 | [webApp](kXX/wApp) | | |
 |               | [jetty](kXX/wApp/jetty) [Tomcat](kXX/wApp/tomcat) | |  
-| [awsEB](kXX/wAwsEb) | | | 
-
+| [awsEB](kXX/wAwsEb) | [s3](kXX/wAwsEb/s3.md) [dynamoDb](kXX/wAwsEb/dynamoDb.md) [beanstalk](kXX/wAwsEb/beanstalk.md) | | 
 
 
 | Projects |  |

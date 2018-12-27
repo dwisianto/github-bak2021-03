@@ -6,8 +6,10 @@
 - [beanstalk](beanstalk.md) is [available](https://www.javacodegeeks.com/2017/12/amazon-elastic-beanstalk-tutorial.html)
 - [DynamoDb](dynamoDb.md) is [available](https://www.javacodegeeks.com/2017/10/amazon-dynamodb-tutorial.html)
 - [S3](s3.md) is [available](https://www.javacodegeeks.com/2017/03/amazon-s3-tutorial.html)
-
-
+- Kill process based on the port usage
+    - lsof -n -i4TCP:8080 
+    - kill -9 PID
+ 
 
 
 # Java Web Application
