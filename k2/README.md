@@ -3,9 +3,11 @@
 
 | Web    |        | | 
 |--------|--------| | 
-| [iam](kWs/wIam) | |
-| [beanstalk](kXX/wAwsEb/beanstalk.md) | | 
-| [awsEB](kXX/wAwsEb) |  - [s3](kXX/wAwsEb/s3.md) - [dynamoDb](kXX/wAwsEb/dynamoDb.md)  | |
+| [iam](kWs/wIam) | Identity and Access Management (IAM) |
+| [beanstalk](kXX/wAwsEb/beanstalk.md) | |
+| [s3](kXX/wAwsEb/s3.md) | Object Store |
+| [dynamoDb](kXX/wAwsEb/dynamoDb.md) | |    
+| [awsEB](kXX/wAwsEb) |   | |
  
 
 | Language |  | | 
