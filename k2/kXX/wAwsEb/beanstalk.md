@@ -435,3 +435,41 @@ If you haven’t created an Amazon AWS account yet, you should do so now by poin
 
 For the first 12 month you can use currently up to 750 hours computing power on EC2, 5 GB standard storage on S3. This is more than sufficient for our tutorial. Once you have setup a working AWS account, you can create your first application. Therefore, point your browser to the following URL and fill out the name of your application as well as the optional description:
 
+
+The next page asks us whether we are going to setup a web server environment or a worker environment. Our sample REST application fits best in the first type of environment; hence, we click on “Create web server”.
+
+
+
+For a web server environment, we must set the configuration and the type. We choose “Tomcat” as predefined configuration and “Single instance” as type. This way Amazon provides us an EC2 instance with installed Apache Tomcat server. We do not choose auto scaling at this point, because for our sample one instance is enough.
+
+
+The following page requests to specify the application version. We select therefore the second option and choose the war file our maven build has produced before.
+
+Alternatively, we could also provide a link to an artifact we have uploaded before to Amazon S3 or chose one of Amazon’s sample applications.
+
+
+
+As mentioned before, our application gets its own CNAME. The CNAME can therefore be provided using the following page. “Check availability” allows us to verify that the name is still free. If we would plan to use a relational database or a virtual private cloud network. In our simple example we do not need both resources, hence we just click on “Next”
+
+
+
+In the “Configuration Details” sections we can choose a server type. A t2.micro instance is sufficient for our experiments, but if you prefer you can choose a larger instance. The EC2 documentation describes the available instance types in more detail. The remaining input fields can be left as they are, as we do not have any specific requirements for the disc of the instances or the health reporting. A EC2 key pair is also not necessary.
+
+Environment tags can be used to identify environments in cost allocation reports or can be used to in general to manage environments and permissions. For our first sample application, tags are not necessary but you are free to provide them.
+
+The “Permissions” page allows to define an instance profile and a service role. The instance profile is the IAM role that is used by your application to communicate with other AWS services while the service role is to monitor the environment.
+
+
+
+Finally, an overview page presents all information for verification. If you are satisfied with your choices, you can click on “Launch” and let Amazon AWS create all the resources for you. Once the process has finished, you can see a new environment in your console:
+
+
+A click on this environment leads to the following dashboard:
+
+Here you can see all events of your environment, the running version and the configuration. Now that the application is up and running, we can point our browser to the following URL:
+
+
+As expected the browser displays a JSON array with three Tutorial items.
+
+
+

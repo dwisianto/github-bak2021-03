@@ -1,6 +1,13 @@
 
 # Coding
 
+| Web    |        | | 
+|--------|--------| | 
+| [iam](kWs/wIam) | |
+| [beanstalk](kXX/wAwsEb/beanstalk.md) | | 
+| [awsEB](kXX/wAwsEb) |  - [s3](kXX/wAwsEb/s3.md) - [dynamoDb](kXX/wAwsEb/dynamoDb.md)  | |
+ 
+
 | Language |  | | 
 |--------|--------| | 
 | [Jv](kXX/kJv) | Gson Maven Gradle Ant | | 
@@ -15,7 +22,7 @@
 | [curl](kXX/kCurl) | | |
 | [webApp](kXX/wApp) | | |
 |               | [jetty](kXX/wApp/jetty) [Tomcat](kXX/wApp/tomcat) | |  
-| [awsEB](kXX/wAwsEb) | [s3](kXX/wAwsEb/s3.md) [dynamoDb](kXX/wAwsEb/dynamoDb.md) [beanstalk](kXX/wAwsEb/beanstalk.md) | | 
+
 
 
 | Projects |  |
