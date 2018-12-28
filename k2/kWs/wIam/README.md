@@ -1,10 +1,11 @@
 # IAM 
 
-Identity and Access Management (IAM)
+
 
 - [Managing Users And Access](#managing-users-and-access)
 - [Step 1: Create a Group](#step-1-create-a-group)
 - [Step 2: Attach Policies to your Group](#step-2-attach-policies-to-your-group)
+    - [CodeCommit](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html)
 - [Step 3: Create a user](#step-3-create-a-user)
 - [Step 4: Add users to your group](step-4-add-users-to-your-group)
 - [Reference](https://www.chrisjmendez.com/2017/01/30/deploying-rails-5-from-aws-codecommit-to-elastic-beanstalk-part-1/)
@@ -20,7 +21,7 @@ Groups are utilities that help you establish permissions to a group of users. As
 
 ## Step 2: Attach Policies to your Group
 
-Once you've created a group, you'll need to grant access. Here are a few policies I offer to CodeCommit contributors.
+Once you've created a group, you'll need to grant access. I offer [a few policies](http://docs.aws.amazon.com/codecommit/latest/userguide/access-permissions.html#access-permissions-managed-policies) to CodeCommit contributors.
 
 - **AWSCodeCommitFullAccess** offers full access to CodeCommit.
 - **IAMSelfManageServiceSpecificCredentials** allows developers a way to authenticate using git credentials.
@@ -30,6 +31,7 @@ Once you've created a group, you'll need to grant access. Here are a few policie
 This is what your group should look like.
 
 ![group-policy](images/aws-iam-group-policy.png)
+
 
 ## Step 3: Create a user
 

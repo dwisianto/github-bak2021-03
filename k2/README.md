@@ -1,13 +1,14 @@
 
 # Coding
 
-| Web    |        | | 
-|--------|--------| | 
+| Web    |        |  
+|--------|--------| 
 | [iam](kWs/wIam) | Identity and Access Management (IAM) |
-| [beanstalk](kXX/wAwsEb/beanstalk.md) | |
+| [codeCommit](kWs/wCodeCommit) | Code Commit | 
+| [beanstalk](kXX/wAwsEb/beanstalk.md) | WebService and WebWorker|
 | [s3](kXX/wAwsEb/s3.md) | Object Store |
-| [dynamoDb](kXX/wAwsEb/dynamoDb.md) | |    
-| [awsEB](kXX/wAwsEb) |   | |
+| [dynamoDb](kXX/wAwsEb/dynamoDb.md) | NoSql |
+| [awsEB](kXX/wAwsEb) | Backup  | 
  
 
 | Language |  | | 
