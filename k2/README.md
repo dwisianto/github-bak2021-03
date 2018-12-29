@@ -3,9 +3,10 @@
 
 | Web    |        |  
 |--------|--------| 
+| [ideEclipse](kWs/wEclipse) | | 
 | [iam](kWs/wIam) | Identity and Access Management (IAM) |
 | [codeCommit](kWs/wCodeCommit) | Code Commit | 
-| [beanstalk](kXX/wAwsEb/beanstalk.md) | WebService and WebWorker|
+| [beanstalk](kWs/wBeansTalk) | WebService and WebWorker|
 | [s3](kXX/wAwsEb/s3.md) | Object Store |
 | [dynamoDb](kXX/wAwsEb/dynamoDb.md) | NoSql |
 | [awsEB](kXX/wAwsEb) | Backup  | 
