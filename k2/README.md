@@ -10,7 +10,8 @@
 | [s3](kXX/wAwsEb/s3.md) | Object Store |
 | [dynamoDb](kXX/wAwsEb/dynamoDb.md) | NoSql |
 | [awsEB](kXX/wAwsEb) | Backup  | 
- 
+| [Jersey](kWs/wJersey) | |  
+| [Jackson](kWs/wJackson) | |  
 
 | Language |  | | 
 |--------|--------| | 

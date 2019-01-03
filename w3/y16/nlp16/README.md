@@ -292,7 +292,7 @@ The following section lists the essential publications for each topic and a more
 - Yang, Yi, Ozan Irsoy, and Kazi Shefaet Rahman. "Collective Entity Disambiguation with Structured Gradient Tree Boosting." (2018). ([PDF](https://arxiv.org/pdf/1802.10229.pdf)) ([news](https://www.techatbloomberg.com/blog/bloombergs-advances-natural-language-processing-allow-improved-tagging-tweets-news/)) - [code](https://github.com/bloomberg/sgtb) - [yi yang's page](https://yiyangnlp.github.io/) - [shefaet's page](https://github.com/shefaet)
 
 
-[Top](#nlp)  
+GoTo: [Top](#nlp)
 
 
 ### Ontology
@@ -300,8 +300,8 @@ The following section lists the essential publications for each topic and a more
 An ontology is a formal explicit description of concepts in a domain of discourse ( **classes** (sometimes called **concepts**)), properties of each **concept** describing various **features** and **attributes** of the **concept** (**slots** (sometimes called **roles** or **properties**)), and restrictions on **slots** (**facets** (sometimes called **role restrictions**)). An ontology together with a set of individual **instances** of classes constitutes a **knowledge base**. In reality, there is a fine line where the ontology ends and the **knowledge base begins**. [PDF](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html). A practical exercise to create an ontology is available [practical exercise](../ont/) 
 
 #### Literatures
- 
 
+- Fabien Gandon, "A Survey of the First 20 Years of Research on Semantic Web and Linked Data", [PDF](https://hal.inria.fr/hal-01935898/) 
 - Haase, P. and Völker, J., 2008. "Ontology learning and reasoning—dealing with uncertainty and inconsistency". In Uncertainty reasoning for the semantic web I (pp. 366-384). Springer, Berlin, Heidelberg. ([PDF](http://syntheticsapien.com/papers/URSW_Proceedings.pdf#page=48) )
 - Hohenecker, Patrick, and Thomas Lukasiewicz. "Deep Learning for Ontology Reasoning." 2017 [PDF](https://arxiv.org/pdf/1705.10342.pdf)
 - Suntisrivaraporn, Boontawee. "Polynomial-time reasoning support for design and maintenance of large-scale biomedical ontologies." (2008) [PDF](https://lat.inf.tu-dresden.de/research/phd/Sun-PhD-09.pdf)
