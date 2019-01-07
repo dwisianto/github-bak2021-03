@@ -1,18 +1,27 @@
 # Tomcat
 
+- [Quick Start](#quick-start)
+- Reference
+    - [Martin Mois](https://martinsdeveloperworld.wordpress.com/)
+    - [ultimate beanstalk tutorial](https://www.javacodegeeks.com/2017/12/amazon-elastic-beanstalk-tutorial.html)
+    - http://www.yilmazhuseyin.com/blog/dev/curl-tutorial-examples-usage/
+    - [kill-lsof](https://askubuntu.com/questions/346394/how-to-write-a-shscript-to-kill-9-a-pid-which-is-found-via-lsof-i)
+- 
 
 # Quick Start
 
-
 - mvn generate a web project
-- update the pom xml
+- update the "properties"  section of the pom.xml 
 
 ```bash
 
-	<properties>
+	<properties>		
 		<javax-ws-rs-api.version>2.1</javax-ws-rs-api.version>
-		<jersey.version>2.26</jersey.version>	
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>	
+		<jersey.version>2.26</jersey.version>
+		<tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
+		<maven-surefire-plugin.version>2.12.1</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>2.12.4</maven-failsafe-plugin.version>		
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<junit.version>4.12</junit.version>
@@ -20,9 +29,10 @@
 		<log4j.version>1.2.17</log4j.version>
 	</properties>
 	
+	
 ```
 
-- update the build section
+- update the "dependencies" section of the pom.xml
  
 ```bash
 
@@ -72,17 +82,17 @@
 
 ```
 
-
-- Update the build-section of the pom.xml
+- Update the build section of the pom.xml
 
 ```bash
+
 	<build>
-		<finalName>tomcat-web-service-name</finalName>
+		<finalName>tomcat-web-service-final-name</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.2</version>
+				<artifactId>tomcat7-maven-plugin</artifactId>				
+				<version>${tomcat7-maven-plugin.version}</version>
 				<configuration>
 					<url>http://localhost:8080/manager</url>
 					<server>localhost</server>
@@ -112,7 +122,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.12.1</version>
+				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
 					<excludes>
 						<exclude>**/*IntegrationTest*</exclude>
@@ -122,7 +132,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>2.12.4</version>
+				<version>${maven-failsafe-plugin.version}</version>
 				<configuration>
 					<includes>
 						<include>**/*IntegrationTest*</include>
@@ -138,7 +148,8 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>
+	</build>	
+
 ```
 
 - Create the file context.xml in src/test/tomcat7-maven-plugin/context.xml
@@ -152,12 +163,12 @@
 
 ```
 
-- 
+- Test Cases
 
 
 ```bash
 
-package com.javacodegeeks.ultimate.aws.eb;
+package d.ws.hw;
 
 import org.glassfish.jersey.logging.LoggingFeature;
 import org.junit.Ignore;
@@ -200,3 +211,150 @@ public class TutorialIntegrationTest {
 ```
 
 
+- src/main/webapp/WEB-INF/web.xml
+
+```bash
+
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>tutorial-webapp</display-name>
+
+	<servlet>
+		<servlet-name>RestServlet</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>com.javacodegeeks.ultimate.aws.eb</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>RestServlet</servlet-name>
+		<url-pattern>/tutorial-service/*</url-pattern>
+	</servlet-mapping>
+</web-app>
+
+```
+
+
+
+
+
+- src/main/java/Hello
+
+
+```bash
+
+package d.ws.hw;
+
+public class Hello {
+
+	private String id;
+	private String name;    
+
+	public Hello() {
+
+	}
+
+	public Hello(String author, String title) {
+		this.name = author;
+		this.id = title;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Hello tutorial = (Hello) o;
+
+		if (id != null ? !id.equals(tutorial.id) : tutorial.id != null) return false;
+		if (name != null ? !name.equals(tutorial.name) : tutorial.name != null) return false;        
+
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = name != null ? name.hashCode() : 0;
+		result = 31 * result + (id != null ? id.hashCode() : 0);
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "Hello{" +
+				"id='" + id + '\'' +
+				", name='" + name + '\'' +
+				'}';
+	}
+	
+
+}
+
+```
+
+
+- src/main/resource/TutorialResource
+
+
+```bash
+
+package d.ws.hw;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
+import java.util.ArrayList;
+import java.util.List;
+
+@Path("/hello")
+public class HelloResource {
+
+    private static final Log LOGGER = LogFactory.getLog(HelloResource.class);
+
+    @GET
+    @Produces("text/json")
+    @Path("/world")
+    public Response listAllCourses() {
+    	
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("Listing all courses.");
+        }
+        
+        List<Hello> tutorials = new ArrayList<Hello>();
+        tutorials.add(new Hello("Linus Meyer", "Linux"));
+        tutorials.add(new Hello("Bill Famous", "Microsoft"));
+        tutorials.add(new Hello("Josh Hotspot", "Java"));
+        return Response.status(200).entity(tutorials).build();
+    }
+    
+}
+
+```
+
+# Simplified Version
