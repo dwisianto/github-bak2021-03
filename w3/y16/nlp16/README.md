@@ -14,7 +14,8 @@
   - [Word Embedding](#word-embedding)
   - [Structured Prediction](#structured-prediction) 
   - [Ontology](#ontology)
-  - [Others](#others) 
+  - [Biomedical Text Mining](#biomedical-text-mining)   
+  - [Others](#others)  
 - [Software Tools](#software-tools)
   - [Coding Exercises](#coding-exercises)
 - [Frequently Asked Questions](#frequently-asked-questions)
@@ -37,13 +38,11 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - NLP Applications: name entity recognition, machine translation, information extraction.
 
 
-A few online demos of NLP tasks are available such as [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) and [allennlp](https://allennlp.org/).   
-Relevant courses are offered in different institutions.   
-
-- [Umich](https://www.youtube.com/playlist?list=PLLssT5z_DsK8BdawOVCCaTCO99Ya58ryR)
+A few online demos of NLP tasks are available such as [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) and [allennlp](https://allennlp.org/). Similar courses are offered in a few academic institutions,such as [Notre Dame](https://www3.nd.edu/~dchiang/teaching/nlp/2018/), [UMich](https://www.youtube.com/playlist?list=PLLssT5z_DsK8BdawOVCCaTCO99Ya58ryR).
 - [Yoav Artzi](https://yoavartzi.com/) 
 - [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/)
 - [nyu](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/) [aparikh](https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf)
+
 
 
 
@@ -281,7 +280,9 @@ The following section lists the essential publications for each topic and a more
 - Colin Bannard and Chris Callison-Burch. "Paraphrasing with Bilingual Parallel Corpora.". ACL 2005. (PDF)
 - Socher, R. and Huang, E.H., and Pennington, J. and Ng, A.Y., and Manning, C.D. " Dynamic pooling and unfolding recursive autoencoders for paraphrase detection". NIPS 2011 (PDF)
 
-[Top](#nlp)  
+GoTo: [Top](#nlp)
+
+  
 
 
 ### Structured Prediction
@@ -295,7 +296,7 @@ The following section lists the essential publications for each topic and a more
 GoTo: [Top](#nlp)
 
 
-### Ontology
+## Ontology
 
 An ontology is a formal explicit description of concepts in a domain of discourse ( **classes** (sometimes called **concepts**)), properties of each **concept** describing various **features** and **attributes** of the **concept** (**slots** (sometimes called **roles** or **properties**)), and restrictions on **slots** (**facets** (sometimes called **role restrictions**)). An ontology together with a set of individual **instances** of classes constitutes a **knowledge base**. In reality, there is a fine line where the ontology ends and the **knowledge base begins**. [PDF](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html). A practical exercise to create an ontology is available [practical exercise](../ont/) 
 
@@ -325,18 +326,21 @@ An ontology is a formal explicit description of concepts in a domain of discours
 - [SNOMED CT](https://en.wikipedia.org/wiki/SNOMED_CT)
 - [MedDRA](https://en.wikipedia.org/wiki/MedDRA)
 
-[Top](#nlp)  
+GoTo: [Top](#nlp)
 
+## Biomedical Text Mining  
 
-### Others
+- [Wiki](https://en.wikipedia.org/wiki/Biomedical_text_mining)  
+
+GoTo: [Top](#nlp)
+
+## Others
 
 - P. Liang, H. Daume, and D. Klein. "Structure Compilation: Trading Structure for Features". ICML 2008. (PDF)
 - Nate Kushman, Yoav Artzi, Luke Zettlemoyer, and Regina Barzilay. "Learning to Automatically Solve Algebra Word Problems". ACL 2014 (PDF)
 - Pedro Domingos, Matthew Richardson. "Markov Logic: A Unifying Framework for Statistical Relational Learning"
 
-[Top](#nlp)  
-
-
+GoTo: [Top](#nlp)
 
 # Software Tools
 
