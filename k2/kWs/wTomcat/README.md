@@ -1,6 +1,9 @@
 # Tomcat
 
+
 - [Quick Start](#quick-start)
+- [Unit Test](#unit-test)
+- [JaxRs Analyzer]((#jaxrs-analyzer)
 - Reference
     - [Martin Mois](https://martinsdeveloperworld.wordpress.com/)
     - [ultimate beanstalk tutorial](https://www.javacodegeeks.com/2017/12/amazon-elastic-beanstalk-tutorial.html)
@@ -163,52 +166,7 @@
 
 ```
 
-- Test Cases
 
-
-```bash
-
-package d.ws.hw;
-
-import org.glassfish.jersey.logging.LoggingFeature;
-import org.junit.Ignore;
-import org.junit.Test;
-
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.Response;
-
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsCollectionContaining.hasItem;
-import static org.junit.Assert.assertThat;
-
-public class TutorialIntegrationTest {
-
-    private static final Logger LOGGER = Logger.getLogger(TutorialIntegrationTest.class.getName());
-
-    @Test
-    public void testListAllCourses() {
-        Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("http://localhost:8080").path("/tomcat-web-service/tutorial-service/tutorial/list-all-courses");
-        Response response = target.request().get();
-        assertThat(response.getStatus(), is(200));
-        //List<Tutorial> tutorials = response.readEntity(new GenericType<List<Tutorial>>(){});
-        //assertThat(tutorials.size(), is(3));
-        //assertThat(tutorials, hasItem(new Tutorial("Linus Meyer", "Linux")));
-        //assertThat(tutorials, hasItem(new Tutorial("Bill Famous", "Microsoft")));
-        //assertThat(tutorials, hasItem(new Tutorial("Josh Hotspot", "Java")));
-    }
-    
-}
-    
-```
 
 
 - src/main/webapp/WEB-INF/web.xml
@@ -357,4 +315,56 @@ public class HelloResource {
 
 ```
 
-# Simplified Version
+# Unit Test
+
+
+```bash
+
+package d.ws.hw;
+
+import org.glassfish.jersey.logging.LoggingFeature;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.Response;
+
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.hamcrest.core.Is;
+import org.hamcrest.core.IsCollectionContaining;
+import org.junit.Assert;
+
+public class TutorialIntegrationTest {
+
+    private static final Logger LOGGER = Logger.getLogger(TutorialIntegrationTest.class.getName());
+
+    @Test
+    public void testListAllCourses() {
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("http://localhost:8080").path("/tomcat-web-service/tutorial-service/tutorial/list-all-courses");
+        Response response = target.request().get();
+        
+        Assert.assertThat(response.getStatus(), Is.equalTo(200));
+        //List<Tutorial> tutorials = response.readEntity(new GenericType<List<Tutorial>>(){});
+        Assert.assertThat(tutorials.size(), Is.equalTo(3));
+        Assert.assertThat(tutorials, IsCollectionContaining.hasItem(new Tutorial("Linus Meyer", "Linux")));
+        Assert.assertThat(tutorials, IsCollectionContaining.hasItem(new Tutorial("Bill Famous", "Microsoft")));
+        Assert.assertThat(tutorials, IsCollectionContaining.hasItem(new Tutorial("Josh Hotspot", "Java")));
+    }
+    
+}
+   
+```
+
+
+# JaxRs Analyzer
+
+
+

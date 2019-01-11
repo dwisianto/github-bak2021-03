@@ -9,9 +9,11 @@
 | [beanstalk](kWs/wBeansTalk) | WebService and WebWorker|
 | [s3](kXX/wAwsEb/s3.md) | Object Store |
 | [dynamoDb](kXX/wAwsEb/dynamoDb.md) | NoSql |
-| [awsEB](kXX/wAwsEb) | Backup  | 
-| [Jersey](kWs/wJersey) | |  
+| [awsEB](kXX/wAwsEb) | Backup  |
 | [Jackson](kWs/wJackson) | |  
+| [Tomcat](kWs/wTomcat) | |   
+| [Jersey](kWs/wJersey) | |  
+
 
 | Language |  | | 
 |--------|--------| | 

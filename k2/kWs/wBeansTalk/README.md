@@ -3,7 +3,9 @@
 - [Introduction](#introduction)
 - [Concepts](#concepts)
 - [Java Web Application](#java-web-application)
-- [Reference](https://www.javacodegeeks.com/2017/12/amazon-elastic-beanstalk-tutorial.html)
+- Reference
+    - [ultimate](https://www.javacodegeeks.com/2017/12/amazon-elastic-beanstalk-tutorial.html)
+    - [colintoh](https://colintoh.com/aws-elastic-beanstalk-survival-guide)
 
 # Introduction
 
