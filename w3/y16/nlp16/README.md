@@ -317,6 +317,8 @@ An ontology is a formal explicit description of concepts in a domain of discours
     - A practical exercise to create an ontology is available [practical exercise](../ont/)     
 - [ProbLogic](https://dtai.cs.kuleuven.be/problog/publications.html)
 - [KAON](https://en.wikipedia.org/wiki/KAON)
+- [Open Biological and Biomedical Ontology](http://obofoundry.org/) - [robot](https://github.com/ontodev/robot)
+
 
 #### Terminology 
 
