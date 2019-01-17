@@ -1,0 +1,49 @@
+@prefix ex: <http://www.smith-family.com/familyOntology.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:alice     a ex:LivingPerson, ex:Person;
+ex:hasChild :bill, :harry;
+ex:hasHusband :andy .
+
+:andy     a ex:LivingPerson, ex:Person;
+ex:hasChild :bill, :harry;
+ex:hasWife :alice .
+
+:bill     a ex:LivingPerson, ex:Person;
+ex:hasChild :john;
+ex:hasWife :kate .
+
+:charles     a ex:LivingPerson, ex:Person .
+
+:dale     a ex:Pet .
+
+:dana     a ex:LivingPerson, ex:Person;
+ex:hasChild :charles, :robert;
+ex:hasHusband :harry .
+
+:harry     a ex:LivingPerson, ex:Person;
+ex:hasChild :charles, :robert;
+ex:hasWife :dana .
+
+:jane     a ex:LivingPerson, ex:Person;
+ex:hasChild :alice;
+ex:hasHusband :mark;
+ex:hasPet :dale .
+
+:john     a ex:LivingPerson, ex:Person;
+ex:hasPet :sparky .
+
+:kate     a ex:LivingPerson, ex:Person;
+ex:hasChild :john, :mary;
+ex:hasHusband :bill .
+
+:mark     a ex:DeadPerson, ex:Person;
+ex:hasChild :alice;
+ex:hasWife :jane .
+
+:mary     a ex:LivingPerson, ex:Person .
+
+:robert     a ex:LivingPerson, ex:Person .
+
+:sparky     a ex:Pet .
