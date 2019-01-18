@@ -1,4 +1,5 @@
 *~
+.DS_Store
 .python-version
 /bin/
 /target/
@@ -8,3 +9,8 @@
 k2/wk18/wk18core/run/pye
 k2/wk18/py18a/p8.py/.python-version
 .pydevproject
+*.bib.sav
+*.bibtex.sav
+d4/d19/template1.md/final.html
+d4/d19/template1.md/final.pdf
+d4/d19/lambda/codes/download/

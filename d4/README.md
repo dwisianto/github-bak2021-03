@@ -1,13 +1,14 @@
  
 # Credential
 
-## Coding
+## Research
 
 
-
-| [Coding]() |   |
-| ---- | ----- |
+| [Template](d19/template) | |
+| ---- | ---- |
 | [jforests](d18/jforests) | |
+| [lambda](d19/lambda) | | 
+
 
 
 
