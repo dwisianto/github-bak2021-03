@@ -3,6 +3,7 @@
 
 | Web    |        |  
 |--------|--------| 
+| [ec2](kWs/wEc2) | | 
 | [ideEclipse](kWs/wEclipse) | | 
 | [iam](kWs/wIam) | Identity and Access Management (IAM) |
 | [codeCommit](kWs/wCodeCommit) | Code Commit | 
