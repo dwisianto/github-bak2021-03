@@ -1,7 +1,10 @@
 # Ec2
 
-- 
+
+- [centos](https://gist.github.com/mikaelMortensenADI/d820435eaee92f518e12f3d92e3a0ce4)
+- https://rbgeek.wordpress.com/2012/06/26/how-to-install-vnc-server-on-centos-6/
 - [vnc-gui](https://stackoverflow.com/questions/25657596/how-to-set-up-gui-on-amazon-ec2-ubuntu-server)
+
 
 # Launch Instance
 
@@ -19,7 +22,170 @@
 Set X11Forwarding to no
 
 
-# VNC
+# EBS
+
+- Create an ebs of certain size
+- Attach it to an instance
+- Connect to the running instance
+
+```bash
+sudo -i # change to the root user
+df -TH # list available disk
+fdisk -l # list available disk
+mkfs.ext4 /dev/xxx # format the disk
+lsblk # to check if the disk is formatted
+mount /dev/source /mnt/ebs19a
+chown -R ubuntu:ubuntu /dev/ebs19a
+ls /mnt
+```
+
+```
+ls -l /mnt/
+chown -R ubuntu:ubuntu /dev/ebs19a
+```
+
+
+
+# CentOS
+
+
+
+## Update 
+
+- [epel](https://fedoraproject.org/wiki/EPEL)
+
+```bash
+yum repolist
+sudo yum -y update # Update the server using the following command.
+sudo yum -y install epel-release
+sudo yim -y install emacs
+
+```
+
+
+## VNC
+
+
+- [centOs7Vnc](https://www.youtube.com/watch?v=aiFfHYuumXU)
+- [VNC on EC2 Centos 7.2 AMI](http://devopscube.com/how-to-setup-gui-for-amazon-ec2-rhel-7-instance/)
+
+
+- Update the server using the following command.
+
+```bash
+sudo yum -y update
+sudo yum install firewalld # firewall-cmd not found
+sudo yum -y install emacs
+```
+
+```bash
+sudo yum -y groupinstall "GNOME Desktop"
+sudo yum install -y tigervnc-server
+```
+
+- Setup VNC password for you user account, this is used when you login to your EC2 Desktop The user name is centos. Update the password 
+
+```bash
+passwd centos
+```
+
+- Create SystemD the first service file in the etc folder
+
+```
+cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@1.service
+```
+- Replace the username in the file vncserver@1.service with the user centos
+
+```bash
+```
+
+- Update the firewall rules
+
+```bash
+sudo yum install firewalld # firewall-cmd not found
+$ # service firewall stop 
+$ service firewall start
+$ firewall-cmd --permanent --zone=public --add-service vnc-server
+$ firewall-cmd --reload
+```
+
+- Edit the /etc/ssh/sshd_config , change the "PasswordAuthentication no " to "PasswordAuthentication yes " 
+
+```bash
+- sudo systemctl restart network
+- sudo systemctl restart sshd
+```
+
+- Start VNC server
+
+```bash
+$ sudo systemctl daemon-reload
+$ sudo sytemctl enable vncserver@:1
+$ su - centos
+$ vncserver -geometry 1440x900
+```
+
+- Connect to cloud server with tunnel forwarding for VNC desktop :1. :2 is 5902, :3 is 5903 and so on.
+ssh -L 5901:localhost:5901 -i <your.pem> EC2-user@<public IP/DNS name>
+
+
+8. Connect to VNC server 
+Use localhost:1 as the server name
+
+9. Changing resolution of the VNC desktop (optional)
+Open xterm
+#xrandr by itself shows all available resolutions.
+xrandr -s <resultion>
+
+
+### Firewall
+
+- [fix](https://www.tecmint.com/fix-firewall-cmd-command-not-found-error/)
+
+```
+sudo systemctl start firewalld
+sudo systemctl enable firewalld
+sudo systemctl status firewalld
+```
+
+
+## Java
+
+- [java-centos7](https://linuxize.com/post/install-java-on-centos-7/)
+
+```bash
+sudo yum -y install curl 
+curl -L -b "oraclelicense=a" -O http://download.oracle.com/jdk-9.0.4_linux-x64_bin.rpm
+sudo yum localinstall  jdk-9.0.4_linux-x64_bin.rpm
+sudo emacs -nw /etc/environment
+source /etc/enviroment
+echo $JAVA_HOME
+sudo alternatives config --java
+```
+
+## Mount
+
+
+```bash
+sudo -i # change to the root user
+df -TH # list available disk
+fdisk -l # list available disk
+mkfs.ext4 /dev/xxx # format the disk
+lsblk # to check if the disk is formatted
+mount /dev/source /mnt/ebs19a
+chown -R ubuntu:ubuntu /dev/ebs19a
+ls /mnt
+```
+
+```
+ls -l /mnt/
+chown -R ubuntu:ubuntu /dev/ebs19a
+sudo emacs -nw /etc/fstab
+/dev/vdb /home2 ext4 defaults 0 0 
+```
+
+
+# Ubuntu
 
 
 ## GNOME 
@@ -89,32 +255,15 @@ ec2_u19a:
 
 
 
-# EBS
-
-```bash
-sudo -i # change to the root user
-df -TH # list available disk
-fdisk -l # list available disk
-mkfs.ext4 /dev/xxx # format the disk
-lsblk # to check if the disk is formatted
-mount /dev/source /mnt/ebs19a
-ls /mnt
-```
-
-```
-ls -l /mnt/
-chown -R ubuntu:ubuntu /dev/ebs19a
-
-```
 
 
 
-# Java
+## Java
 
 
 - [digitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04)
 
-## Oracle Java
+### Oracle Java
 
 ```bash
 sudo add-apt-repository ppa:webupd8team/java
