@@ -53,39 +53,38 @@ sudo yim -y install emacs
 passwd centos
 ```
 
-- gnome desktop
+- install the gnome desktop
 
 ```bash
 sudo yum -y groupinstall "GNOME Desktop"
 sudo yum install -y tigervnc-server
-sudo yum install firewalld # firewall-cmd not found
 ```
 
-
-- Create SystemD the first service file in the etc folder. Replace the username in the file vncserver@1.service with the user centos
+- Create SystemD the first service file in the etc folder. Replace the username in the file vncserver@1.service with the user centos. Notice the file in the etc folder has different name than the source, i.e. **vncserver@1.service**
 
 ```bash
-cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@1.service
+sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@1.service
+sudo emacs -nw /etc/systemd/system/vncserver@1.service
 ```
 
 - Update the firewall rules
 
 ```bash
-sudo yum install firewalld # firewall-cmd not found
+$ # sudo yum install firewalld # if firewall-cmd not found
 $ # service firewall stop 
-$ service firewall start
-$ firewall-cmd --permanent --zone=public --add-service vnc-server
-$ firewall-cmd --reload
+$ sudo service firewall start
+$ sudo firewall-cmd --permanent --zone=public --add-service vnc-server
+$ sudo firewall-cmd --reload
 ```
 
 - Edit the /etc/ssh/sshd_config , change the "PasswordAuthentication no " to "PasswordAuthentication yes " 
 
 ```bash
-- sudo systemctl restart network
+- sudo systemctl restart network # this command may fail
 - sudo systemctl restart sshd
 ```
 
-- Start VNC server
+- Start VNC server for the first time need the user to set password
 
 ```bash
 $ sudo systemctl daemon-reload
