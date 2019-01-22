@@ -3,6 +3,8 @@
 - [macos](#macos)
 - [centos](#centos)
     - [epel](https://fedoraproject.org/wiki/EPEL)
+    - [pyenv](https://github.com/pyenv/pyenv/wiki)
+    - [pyenv2](https://gist.github.com/clozed2u/b0421d8af60e26d97372)
 - [ubuntu](#ubuntu) 
 - References
     - [centOs7Vnc](https://www.youtube.com/watch?v=aiFfHYuumXU)
@@ -70,27 +72,44 @@ sudo emacs -nw /etc/systemd/system/vncserver@1.service
 - Update the firewall rules
 
 ```bash
-$ # sudo yum install firewalld # if firewall-cmd not found
-$ # service firewall stop 
-$ sudo service firewall start
-$ sudo firewall-cmd --permanent --zone=public --add-service vnc-server
-$ sudo firewall-cmd --reload
+ # sudo yum install firewalld # if firewall-cmd not found
+ # service firewall stop 
+ sudo service firewalld start
+ sudo firewall-cmd --permanent --zone=public --add-service vnc-server
+ sudo firewall-cmd --reload
 ```
 
-- Edit the /etc/ssh/sshd_config , change the "PasswordAuthentication no " to "PasswordAuthentication yes " 
+- Edit the **/etc/ssh/sshd_config** , change the "PasswordAuthentication no " to "PasswordAuthentication yes " (Is this optinal?) 
 
 ```bash
-- sudo systemctl restart network # this command may fail
-- sudo systemctl restart sshd
+ sudo systemctl restart network # this command may fail
+ sudo systemctl restart sshd # this could be an optional 
+ sudo systemctl daemon-reload
+ sudo systemctl enable vncserver@:1.service
 ```
 
 - Start VNC server for the first time need the user to set password
 
 ```bash
-$ sudo systemctl daemon-reload
-$ sudo sytemctl enable vncserver@:1
 $ su - centos
 $ vncserver -geometry 1440x900
+```
+
+```bash
+PID=1
+GEO=1440x900
+
+all : set
+
+del:
+        vncserver -kill :1
+
+set:
+        find ./ -name "*~" -delete
+        find ./ -name "*$(PID).log" -delete
+        find ./ -name "*$(PID).pid" -delete
+        vncserver -geometry $(GEO)
+        
 ```
 
 - Connect to VNC server and  connect to cloud server with tunnel forwarding for VNC desktop :1. :2 is 5902, :3 is 5903 and so on.
@@ -112,22 +131,7 @@ sudo systemctl enable firewalld
 sudo systemctl status firewalld
 ```
 
-## Java
-
-- [java-centos7](https://linuxize.com/post/install-java-on-centos-7/)
-
-```bash
-sudo yum -y install curl 
-curl -L -b "oraclelicense=a" -O http://download.oracle.com/jdk-9.0.4_linux-x64_bin.rpm
-sudo yum localinstall  jdk-9.0.4_linux-x64_bin.rpm
-sudo emacs -nw /etc/environment
-source /etc/enviroment
-echo $JAVA_HOME
-sudo alternatives config --java
-```
-
 ## Mount
-
 
 ```bash
 sudo -i # change to the root user
@@ -147,6 +151,40 @@ sudo emacs -nw /etc/fstab
 /dev/vdb /home2 ext4 defaults 0 0 
 ```
 
+
+## Java
+
+- [java-centos7](https://linuxize.com/post/install-java-on-centos-7/)
+
+```bash
+sudo yum -y install curl #optional
+curl -L -b "oraclelicense=a" -O http://download.oracle.com/jdk-9.0.4_linux-x64_bin.rpm # optional
+sudo yum localinstall  jdk-9.0.4_linux-x64_bin.rpm
+sudo alternatives config --java
+sudo alternatives config --javac
+sudo emacs -nw /etc/environment
+source /etc/enviroment
+
+echo $JAVA_HOME
+```
+
+## Python
+
+
+```bash
+sudo yum -y install gcc gcc-c++ 
+sudo yum -y install zlib zlib-devel
+sudo yum -y install libffi-devel 
+sudo yum -y install gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel
+
+git clone git://github.com/yyuu/pyenv.git ~/.pyenv
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> .bashrc
+echo 'eval "$(pyenv init -)"' >> .bashrc
+
+pyenv install 2.7.10
+pyenv global 2.7.10
+pyenv rehash
+```
 
 # Ubuntu
 
