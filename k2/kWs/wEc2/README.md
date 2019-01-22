@@ -1,12 +1,20 @@
 # Ec2
 
-
-- [centos](https://gist.github.com/mikaelMortensenADI/d820435eaee92f518e12f3d92e3a0ce4)
-- https://rbgeek.wordpress.com/2012/06/26/how-to-install-vnc-server-on-centos-6/
-- [vnc-gui](https://stackoverflow.com/questions/25657596/how-to-set-up-gui-on-amazon-ec2-ubuntu-server)
+- [macos](#macos)
+- [centos](#centos)
+    - [epel](https://fedoraproject.org/wiki/EPEL)
+- [ubuntu](#ubuntu) 
+- References
+    - [centOs7Vnc](https://www.youtube.com/watch?v=aiFfHYuumXU)
+    - [VNC on EC2 Centos 7.2 AMI](http://devopscube.com/how-to-setup-gui-for-amazon-ec2-rhel-7-instance/)
+    - [centos](https://gist.github.com/mikaelMortensenADI/d820435eaee92f518e12f3d92e3a0ce4)
+    - [centos6vnc](https://rbgeek.wordpress.com/2012/06/26/how-to-install-vnc-server-on-centos-6/)
+    - [vnc-gui](https://stackoverflow.com/questions/25657596/how-to-set-up-gui-on-amazon-ec2-ubuntu-server)
 
 
 # Launch Instance
+
+## Instance
 
 - image
 - size
@@ -15,6 +23,7 @@
 - security group
     - tag
 
+
 # MACOS
 
 - /etc/ssh/sshd_config
@@ -22,81 +31,41 @@
 Set X11Forwarding to no
 
 
-# EBS
-
-- Create an ebs of certain size
-- Attach it to an instance
-- Connect to the running instance
-
-```bash
-sudo -i # change to the root user
-df -TH # list available disk
-fdisk -l # list available disk
-mkfs.ext4 /dev/xxx # format the disk
-lsblk # to check if the disk is formatted
-mount /dev/source /mnt/ebs19a
-chown -R ubuntu:ubuntu /dev/ebs19a
-ls /mnt
-```
-
-```
-ls -l /mnt/
-chown -R ubuntu:ubuntu /dev/ebs19a
-```
-
-
-
 # CentOS
-
-
 
 ## Update 
 
-- [epel](https://fedoraproject.org/wiki/EPEL)
+- Update the server using the following command
 
 ```bash
 yum repolist
 sudo yum -y update # Update the server using the following command.
 sudo yum -y install epel-release
 sudo yim -y install emacs
-
 ```
 
 
 ## VNC
 
-
-- [centOs7Vnc](https://www.youtube.com/watch?v=aiFfHYuumXU)
-- [VNC on EC2 Centos 7.2 AMI](http://devopscube.com/how-to-setup-gui-for-amazon-ec2-rhel-7-instance/)
-
-
-- Update the server using the following command.
-
-```bash
-sudo yum -y update
-sudo yum install firewalld # firewall-cmd not found
-sudo yum -y install emacs
-```
-
-```bash
-sudo yum -y groupinstall "GNOME Desktop"
-sudo yum install -y tigervnc-server
-```
-
-- Setup VNC password for you user account, this is used when you login to your EC2 Desktop The user name is centos. Update the password 
+- VNC Password is usually derived from the user password. Setup VNC password for you user account, this is used when you login to your EC2 Desktop The user name is centos. Update the password 
 
 ```bash
 passwd centos
 ```
 
-- Create SystemD the first service file in the etc folder
-
-```
-cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@1.service
-```
-- Replace the username in the file vncserver@1.service with the user centos
+- gnome desktop
 
 ```bash
+sudo yum -y groupinstall "GNOME Desktop"
+sudo yum install -y tigervnc-server
+sudo yum install firewalld # firewall-cmd not found
+```
+
+
+- Create SystemD the first service file in the etc folder. Replace the username in the file vncserver@1.service with the user centos
+
+```bash
+cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@1.service
 ```
 
 - Update the firewall rules
@@ -125,29 +94,24 @@ $ su - centos
 $ vncserver -geometry 1440x900
 ```
 
-- Connect to cloud server with tunnel forwarding for VNC desktop :1. :2 is 5902, :3 is 5903 and so on.
+- Connect to VNC server and  connect to cloud server with tunnel forwarding for VNC desktop :1. :2 is 5902, :3 is 5903 and so on.
 ssh -L 5901:localhost:5901 -i <your.pem> EC2-user@<public IP/DNS name>
 
-
-8. Connect to VNC server 
 Use localhost:1 as the server name
 
-9. Changing resolution of the VNC desktop (optional)
-Open xterm
-#xrandr by itself shows all available resolutions.
+- Changing resolution of the VNC desktop (optional). Open xterm. xrandr by itself shows all available resolutions.
+
+```bash
 xrandr -s <resultion>
-
-
-### Firewall
-
-- [fix](https://www.tecmint.com/fix-firewall-cmd-command-not-found-error/)
-
 ```
+
+-  fix [firewall](https://www.tecmint.com/fix-firewall-cmd-command-not-found-error/)
+
+```bash
 sudo systemctl start firewalld
 sudo systemctl enable firewalld
 sudo systemctl status firewalld
 ```
-
 
 ## Java
 
@@ -277,6 +241,28 @@ echo $JAVA_HOME
     
 
 
+# EBS
+
+- Create an ebs of certain size in a specific region.
+- Attach it to an instance and specify the name
+
+
+```bash
+sudo -i # change to the root user
+df -TH # list available disk
+fdisk -l # list available disk
+mkfs.ext4 /dev/xxx # format the disk
+lsblk # to check if the disk is formatted
+mount /dev/source /mnt/ebs19a
+chown -R ubuntu:ubuntu /dev/ebs19a
+ls -l /mnt/
+chown -R ubuntu:ubuntu /dev/ebs19a
+sudo emacs -nw /etc/fstab
+```
+
+# EIP
+
+- Elatic IP and attach it to a specific instance
     
 
 
