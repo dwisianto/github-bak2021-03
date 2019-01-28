@@ -151,6 +151,58 @@ sudo emacs -nw /etc/fstab
 /dev/vdb /home2 ext4 defaults 0 0 
 ```
 
+## Swap Space
+
+- [swapSpace1](https://dev.to/hardiksondagar/how-to-use-aws-ebs-volume-as-a-swap-memory-5d15)
+- [swapSpace2](https://serverfault.com/questions/521790/how-can-i-create-a-swap-partition-on-amazon-ec2-with-ephemeral-storage)
+- [swapIncrease](https://www.vembu.com/blog/increase-swap-memory-centos-7/)
+
+- swap space
+
+```bash
+sudo swapon -s 
+lsblk
+sudo mkswap /dev/xvdf
+sudo swapon /dev/xvdf
+sudo swapon --show
+```
+
+- sudo nano /etc/fstab
+
+```bash
+/dev/xvdf none swap sw 0 0 df
+```
+
+### Resizing Swap space
+
+```bash
+sudo swapoff -a
+sudo emacs -nw /etc/fstab # comment out the swap partition
+fdisk /dev/sda1
+p # list the exiting partition
+new # create a new partiion
+primary # it is primary type
+l # list
+t # change partition id
+82 # for swap information
+w # write down the partition information
+partprobe /dev/sda1
+sudo mkswap /dev/xvdf
+sudo swapon /dev/xvdf
+sudo swapon --show
+```
+
+ 
+
+## Gnome
+
+- remove home folder from desktop
+```bash
+ gsettings set org.gnome.nautilus.desktop home-icon-visible false
+ gsettings set org.gnome.nautilus.desktop trash-icon-visible false
+```  
+
+
 
 ## Java
 
@@ -300,9 +352,121 @@ sudo emacs -nw /etc/fstab
 # EIP
 
 - Elatic IP and attach it to a specific instance
-    
 
 
+
+
+
+# Eclipse
+
+- /etc/environement
+- Use Marketplace to install PyDev and CDT 
+
+
+
+# Tomcat
+
+- https://hostpresto.com/community/tutorials/how-to-install-apache-tomcat-9-on-centos-7/
+- https://readlearncode.com/cloud/amazon-free-usage-tier-installing-tomcat-7-on-an-ec2-linux-instance/
+- https://www.cyberciti.biz/faq/howto-rhel-linux-open-port-using-iptables/
+- Misc
+    - https://www.rosehosting.com/blog/install-tomcat-9-on-centos-7/
+    - https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-centos-7-via-yum
+    - https://serverfault.com/questions/556752/install-tomcat7-on-ec2
+
+
+```bash
+iptables -L -n
+lsof -i :8080
+netstat -natlp
+```
+
+## Tomcat 9
+
+
+
+
+## Tomcat 7
+
+```bash
+sudo yum install tomcat
+# Most of the important Tomcat files will be located in /usr/share/tomcat. 
+# If you already have a Tomcat application that you want to run, you can place it in the /usr/share/tomcat/webapps directory, 
+sudo vi /usr/share/tomcat/conf/tomcat.conf
+# JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -Xmx512m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC"
+# 
+```
+
+## install admin packages
+
+```bash
+sudo yum install tomcat-webapps tomcat-admin-webapps
+# This adds the ROOT, examples, sample, manager, and host-manager web apps to the tomcat/webapps directory.
+```
+
+## Web Management Interface
+
+
+In order to use the manager webapp installed in the previous step, we must add a login to our Tomcat server. We will do this by editing the tomcat-users.xml file:
+
+```bash
+    sudo vi /usr/share/tomcat/conf/tomcat-users.xml
+```
+
+This file is filled with comments which describe how to configure the file. You may want to delete all the comments between the following lines, or you may leave them if you want to reference the examples:
+tomcat-users.xml excerpt
+
+```bash
+<tomcat-users>
+...
+</tomcat-users>
+```
+
+You will want to add a user who can access the manager-gui and admin-gui (the management interface that we installed earlier). You can do so by defining a user similar to the example below. Be sure to change the username and password to something secure:
+
+```bash
+tomcat-users.xml — Admin User
+
+<tomcat-users>
+    <user username="admin" password="password" roles="manager-gui,admin-gui"/>
+</tomcat-users>
+```
+
+Save and exit the tomcat-users.xml file.
+
+Now we're ready to start the Tomcat service.
+
+
+## Start Tomcat
+
+To put our changes into effect, restart the Tomcat service:
+
+```bash
+    sudo systemctl start tomcat
+```
+
+If you started the service earlier for some reason, run the restart command instead:
+
+```bash
+    sudo systemctl restart tomcat
+```    
+
+
+## Enable Tomcat Service
+
+If you want Tomcat to run every time the server is booted up, you will need to enable the service:
+
+```bash
+    sudo systemctl enable tomcat
+```    
+
+
+## Access the Web Interface
+
+
+
+
+ 
 
 
 # Bak
