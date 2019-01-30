@@ -8,9 +8,14 @@
     - [Fetch Pull Rebase Autostash](#fetch-pull-rebase-autostash)
     - [status-add reset checkout](#status-add-reset-checkout)    
 - [Clean](#git-clean)    
-- [Stash](#git-stash)    
+- [Stash](#stash)    
+    - [tutorial-stash-a](https://hackernoon.com/how-to-git-stash-your-work-the-correct-way-199af0b99cc9)
 - [Branch](#git-branch)
+    - [faq-rebase-vs-merge](https://stackoverflow.com/questions/804115/when-do-you-use-git-rebase-instead-of-git-merge)
 - [Diff](#diff)
+    - [file-diff-branches](https://stackoverflow.com/questions/4099742/how-to-compare-files-from-two-different-branches)
+- [Log](#log)
+    - [log-of-a-file](https://stackoverflow.com/questions/278192/view-the-change-history-of-a-file-using-git-versioning)    
 - git accounts
     - ssh keys
 - git commands
@@ -24,7 +29,7 @@
 
 ---
 
-## Git Configuration
+# Git Configuration
 
 ### git help
 
@@ -42,7 +47,7 @@
     - enables helpful colorization of command line output
 
 
-## Routine
+# Routine
 
 - git pull is essentially "git fetch" and "git merge"
 [git_fetch_and_merge](https://longair.net/blog/2009/04/16/git-fetch-and-merge/)
@@ -183,21 +188,47 @@ GoTo [Top](#git)
 
 
 
-## git stash
+# stash
 
-Suppose you are implementing a new feature for your product. Your code is in progress and suddenly a customer escalation comes. Because of this, you have to keep aside your new feature work for a few hours. You cannot commit your partial code and also cannot throw away your changes. So you need some temporary space, where you can store your partial changes and later on commit it.
+Suppose you are implementing a new feature for your product. 
+Your code is in progress and suddenly a customer escalation comes. 
+Because of this, you have to keep aside your new feature work for a few hours. 
+You cannot commit your partial code and also cannot throw away your changes. 
+So you need some temporary space, where you can store your partial changes and later on commit it.
+
+First, you want to save out unfinished work changes without committing them.
+ 
+```bash
+git stash
+```
+
+Your working directory is now clean and all uncommitted local changes have been saved! 
+At this point, you’re free to make new changes, create new commits, switch branches, and perform any other Git operations.
+
+
+
 
 | | | 
 |-|-|
+| git stash | | 
+| git stash save "savingMessage" | save a stash with a message |
+| git stash --include-untracked  | save untracked files | 
+| git stash --include-untracked | | 
+| | | 
 | git stash list | | 
 | git stash list --date=relative # sort by date | | 
 | git stash --keep-index | | 
-| git stash --include-untracked | | 
-| git stash save <myMessage> | | 
+| | | 
 | git stash pop stash@\{1\} | | 
 | "git stash pop" is basically "git statsh apply" and "git stash drop" | | 
 | git stash apply | | 
 | git stash drop  | | 
+| | | 
+| git stash clear | | 
+| | | 
+| git stash clear | | 
+
+
 
 
 ### git stash pop conflict
@@ -231,7 +262,7 @@ git reset
 
 
 
-## git branch
+# git branch
 
 
 | Command | Description |
@@ -280,7 +311,9 @@ git merge myLocalBranch
 git push origin master
 ```
 
-### [Rebase](https://stackoverflow.com/questions/804115/when-do-you-use-git-rebase-instead-of-git-merge)
+### Rebase 
+
+
 
 Rebase means you use another branch as the new base for your work.
 If you have a branch *master*, and you create a branch to implement a new feature *myBranch*.
@@ -327,8 +360,7 @@ Now unstage everything, but leave the files as they are now:
 - git reset
 
 
-## Diff
-
+# Diff
 
 | | | 
 |-|-|
@@ -336,13 +368,18 @@ Now unstage everything, but leave the files as they are now:
 | git diff --cached | | 
 | git diff --staged | |
 | git diff HEAD fileName | to show the diff for a specific file |
+| git diff branch1:file branch2:file | | 
+
+[Top](#git) 
+
+# Log
+
 
 
 [Top](#git) 
  
 
-## Initialization
-
+# QuickStart
 
 | comment | description |
 |--------|--------|
@@ -387,7 +424,8 @@ git clone ssh://git@github.com/<user>/<repository name>.git
 *  [multiusers](https://www.keybits.net/post/automatically-use-correct-ssh-key-for-remote-git-repo/)
 
 Verbatim code
-```
+
+```bash
  # activehacker account
 Host github.com-user1
 	HostName github.com
@@ -434,7 +472,7 @@ Host *
      IdentitiesOnly yes
 ```
 
-## Glossary
+# Glossary
 
 - git add
 - git status
@@ -453,7 +491,7 @@ Host *
 -
 
 
-## ToDo
+# ToDo
 
 ### Urgent
 

@@ -21,7 +21,7 @@
 | [Jv](kXX/kJv) | Gson Maven Gradle Ant | | 
 |               | Gson | |  
 |               | Jackson | | 
-| [Gt](kXX/kGt) | SmartGit  | | 
+| [Gt](kXX/kGt) | SmartGit, Egit  | | 
 | [Qa](kXX/kQa) | Coding Question Answer | |  
 | [Py](kXX/kPy) | PyDev | | 
 | [Eclipse](kXX/kEclipse) | Installation Workspace RemoteSystem PyDev | | 
