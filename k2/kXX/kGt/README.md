@@ -26,6 +26,8 @@
     - smartgit
     - githubDesktop :
     - egit : eclipse git
+    - [egit-rebase-interactive](https://www.instructables.com/id/How-to-Rebase-Interactive-With-Eclipse-eGit/)
+
 
 ---
 

@@ -1,5 +1,13 @@
 # Machine Learning
 
+
+
+## Textbook
+
+- Pattern Recognition and Machine Learning, Bishop; Springer, 2007.
+- Computer Age Statistical Inference, Efron and Hastie; Cambridge University Press, 2016.
+- An Introduction to Statistical Learning: , James, Witten, Hastie, Tibshirani; Springer, 2013.
+
 # Literature
 
 ## Classics
@@ -22,4 +30,6 @@
 
 # Misc
  
+ - [dbn](https://www.cs.ubc.ca/~murphyk/Thesis/thesis.html)
+ - [dsontag](https://people.csail.mit.edu/dsontag/) [inf16](https://inf16nyu.github.io/home/) [ml16](https://people.csail.mit.edu/dsontag/courses/ml16/)
  - [kwchang](http://web.cs.ucla.edu/~kwchang/teaching/SL17/resources.html)

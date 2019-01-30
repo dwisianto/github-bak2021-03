@@ -13,6 +13,7 @@
   - [Information Extraction](#information-extraction)
   - [Word Embedding](#word-embedding)
   - [Structured Prediction](#structured-prediction) 
+  - [Semantic Web](#semantic-web)
   - [Ontology](#ontology)
   - [Biomedical Text Mining](#biomedical-text-mining)   
   - [Others](#others)  
@@ -298,6 +299,7 @@ GoTo: [Top](#nlp)
 GoTo: [Top](#nlp)
 
 
+
 ## Ontology
 
 An ontology is a formal explicit description of concepts in a domain of discourse ( **classes** (sometimes called **concepts**)), properties of each **concept** describing various **features** and **attributes** of the **concept** (**slots** (sometimes called **roles** or **properties**)), and restrictions on **slots** (**facets** (sometimes called **role restrictions**)). An ontology together with a set of individual **instances** of classes constitutes a **knowledge base**. In reality, there is a fine line where the ontology ends and the **knowledge base begins**. [PDF](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html). 
@@ -328,6 +330,13 @@ An ontology is a formal explicit description of concepts in a domain of discours
 - [MedDRA](https://en.wikipedia.org/wiki/MedDRA)
 - [Network Science](https://en.wikipedia.org/wiki/Network_science) [Social Network Analysis](https://en.wikipedia.org/wiki/Social_network_analysis) 
 
+
+GoTo: [Top](#nlp)
+
+## Semantic Web
+
+- [Semantic_Web](https://en.wikipedia.org/wiki/Semantic_Web)
+- [Semantic Network](https://en.wikipedia.org/wiki/Semantic_network#History)
 
 GoTo: [Top](#nlp)
 
