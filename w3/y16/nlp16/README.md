@@ -44,7 +44,7 @@ A few online demos of NLP tasks are available such as [stanfordNlpDemo](http://n
 - [nyu](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/) [aparikh](https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf)
 
 
-
+http://www.cs.virginia.edu/~kc2wc/
 
 ## Textbook
 
@@ -52,6 +52,8 @@ A few online demos of NLP tasks are available such as [stanfordNlpDemo](http://n
 - Christopher Manning and Hinrich Schütze, Foundations of Statistical Natural Language Processing, MIT Press. Cambridge, MA: May 1999 [[online](https://nlp.stanford.edu/fsnlp/)]
 - Christopher D. Manning, Prabhakar Raghavan and Hinrich Schütze, Introduction to Information Retrieval, Cambridge University Press. 2008. [[online](https://nlp.stanford.edu/IR-book/)]
 - Noah A. Smith, "Linguistic Structure Prediction", [[online](https://www.morganclaypool.com/doi/abs/10.2200/S00361ED1V01Y201105HLT013)]
+- Yoav Goldberg, "Primer on Neural Network Models for Natural Language Processing" [[PDF](http://u.cs.biu.ac.il/~yogo/nnlp.pdf)]
+- Sebastian Nowozin and Christoph H. Lampert, "Structured Learning and Prediction in Computer Vision" [[PDF](http://www.nowozin.net/sebastian/papers/nowozin2011structured-tutorial.pdf)]
 
 GoTo: [Top](#nlp)
  
@@ -302,12 +304,11 @@ An ontology is a formal explicit description of concepts in a domain of discours
 
 #### Literatures
 
-- Fabien Gandon, "A Survey of the First 20 Years of Research on Semantic Web and Linked Data", [PDF](https://hal.inria.fr/hal-01935898/) 
+- Fabien Gandon, "A Survey of the First 20 Years of Research on Semantic Web and Linked Data", [PDF](https://hal.inria.fr/hal-01935898/)
+- Leon Bottou, "From Machine Learning to Machine Reasoning" [[PDF](https://arxiv.org/ftp/arxiv/papers/1102/1102.1808.pdf)] 
 - Haase, P. and Völker, J., 2008. "Ontology learning and reasoning—dealing with uncertainty and inconsistency". In Uncertainty reasoning for the semantic web I (pp. 366-384). Springer, Berlin, Heidelberg. ([PDF](http://syntheticsapien.com/papers/URSW_Proceedings.pdf#page=48) )
 - Hohenecker, Patrick, and Thomas Lukasiewicz. "Deep Learning for Ontology Reasoning." 2017 [PDF](https://arxiv.org/pdf/1705.10342.pdf)
 - Suntisrivaraporn, Boontawee. "Polynomial-time reasoning support for design and maintenance of large-scale biomedical ontologies." (2008) [PDF](https://lat.inf.tu-dresden.de/research/phd/Sun-PhD-09.pdf)
-
-
 
 #### Tools
 
@@ -343,6 +344,8 @@ GoTo: [Top](#nlp)
 - Pedro Domingos, Matthew Richardson. "Markov Logic: A Unifying Framework for Statistical Relational Learning"
 
 GoTo: [Top](#nlp)
+
+
 
 # Software Tools
 
