@@ -337,6 +337,7 @@ GoTo: [Top](#nlp)
 
 - [Semantic_Web](https://en.wikipedia.org/wiki/Semantic_Web)
 - [Semantic Network](https://en.wikipedia.org/wiki/Semantic_network#History)
+- [TransE](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-relational-data.pdf)
 
 GoTo: [Top](#nlp)
 
