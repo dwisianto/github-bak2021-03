@@ -26,11 +26,12 @@
 
 <style>
 body {	position: relative; }
-#section1 { padding-top: 50px; height: 700px; color: #7d7d7d; background-color: #e7e7e7; } 
-#section2 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
-#section3 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
 #section41 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
 #section42 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
+#section43 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
+#section2 {	padding-top: 50px; height: 700px; color: #7d7d7d; background-color: #e7e7e7; }
+#section1 { padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; } 
+#section3 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
 </style>
 
 </head>
@@ -45,40 +46,38 @@ body {	position: relative; }
 
 			<div>				 				
 				<div class="collapse navbar-collapse navbar-right" id="myNavbar2">
-					<ul class="nav navbar-nav">
-						<li><a href="#section1">Text</a></li>
-						<li><a href="#section2">Annotation</a></li>
-						<li><a href="#section3">Parsing</a></li>
+					<ul class="nav navbar-nav">						
 						<li class="dropdown"><a class="dropdown-toggle"
-							data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+							data-toggle="dropdown" href="#"> Comprehension <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#section41">Section 4-1</a></li>
-								<li><a href="#section42">Section 4-2</a></li>
-							</ul></li>
+								<li><a href="#section41">Text</a></li>
+								<li><a href="#section42">Sentence</a></li>
+								<li><a href="#section43">Document</a></li>
+							</ul>
+						</li>						
+						<li><a href="#section2">DocumentText</a></li>
+						<!-- 
+						<li><a href="#section3">KnowlegeGraph</a></li>
+						<li><a href="#section1">Comprehension</a></li>
+						 --> 
 					</ul>
 				</div>
 			</div>
 		</div>
 
 	</nav>
-
-	<div id="section1" class="container-fluid">
-		<h1>Corpus</h1>        
-		<div id="crpsDivId"></div>       		
-		<div id="crpsModalId" class="modal fade" role="dialog"></div>					    		                         									    		                         		
-	</div> 
 	
 	
-	<div id="section2" class="container-fluid">
 	
-        <h1>Annotation</h1>
-            
+	<div id="section41" class="container-fluid">
+		<h3>Text</h3> 
+		
 		<div class="row">
 			<div class="col-sm-1"></div>		
 			<div class="col-sm-10">
 				<div class="form-group">
-					<label>Text:</label>	
-					<textarea id="annoTxtAreaId" class="form-control" rows="5"></textarea>					
+					<!-- <label>Text:</label> -->	
+					<textarea id="annoTxtAreaId" class="form-control" rows="13"></textarea>					
 				</div>			
 			</div>
 			<div class="col-sm-1"></div>
@@ -95,12 +94,55 @@ body {	position: relative; }
 			</div>
 		<div class="col-sm-1"></div>
 		</div>
-	
-
+		
 	</div>
-	<div id="section3" class="container-fluid">
 	
-        		<h1>ParseTree</h1>
+	<div id="section42" class="container-fluid">
+		<h3>Sentence</h3>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+          	<p></p>
+          </div>
+        </div>
+	</div>
+
+	<div id="section43" class="container-fluid">
+		<h3>Document</h3>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h2>Heading</h2>
+          	<p></p>
+          </div>
+        </div>
+	</div>
+	
+	<div id="section2" class="container-fluid">
+		<h1>Corpus</h1>        
+		<div id="crpsDivId"></div>       		
+		<div id="crpsModalId" class="modal fade" role="dialog"></div>					    		                         									    		                         		
+	</div> 
+	
+	<!--         		
+	<div id="section3" class="container-fluid">
+		<h1> Section3</h1>
+		
         		<p>Try to scroll this section and look at the navigation list while scrolling!</p> 
 			<div class="row">
 				<div class="col-sm-1"></div>		
@@ -121,44 +163,17 @@ body {	position: relative; }
 	   				<button id="parsingTxtBtnParseId"    type="submit" class="btn btn-primary">Parse   </button>     				
 				</div>
 				<div class="col-sm-1"></div>
-			</div>	
+			</div>		 	
+	</div>
 	
+	
+	<div id="section1" class="container-fluid">
+	
+        <h3>Annotation</h3>
+            
 	</div>
-	<div id="section41" class="container-fluid">
-		<h1>Section 4 Submenu 1</h1>
-        <div class="row">
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p></p>            
-          </div>
-        </div>
-		
-	</div>
-	<div id="section42" class="container-fluid">
-		<h1>Section 4 Submenu 2</h1>
-        <div class="row">
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p></p>
-          </div>
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-            <p></p>
-          </div>
-          <div class="col-lg-4">
-            <h2>Heading</h2>
-          	<p></p>
-          </div>
-        </div>
-	</div>
+	-->
+	
 
 </body>
 </html>
