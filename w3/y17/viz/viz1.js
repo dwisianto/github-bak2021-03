@@ -74,8 +74,7 @@ function crpsSetup() {
     });
 	
 	
-	$.getJSON(crpsSourceJsn, function(lstDocJsn) {		
-	}); // $.getJSON(crpsSourceJsn, function(lstDocJsn) {		
+	//$.getJSON(crpsSourceJsn, function(lstDocJsn) {}); // $.getJSON(crpsSourceJsn, function(lstDocJsn) {		
 }
 
 function crpsSetupTable() {
@@ -168,36 +167,12 @@ function crpsSetupModal() {
 function crpsSetupModalFnLoad(strId) {
 	
 	console.log("loading" + strId);	
-	docCurr = crpsDocs[strId];
+	docCurr = crpsDocs[strId-1];
 	$(annoTxtAreaId).val(docCurr.content);
 
 }
 
 
-function rxnorm_ci() {
-
-	
-	var ajax_api='https://rxnav.nlm.nih.gov/REST/rxclass/class/byRxcui.json?relaSource=MEDRT&relas=CI_with&rxcui=595060';
-	$.ajax({
-        type: "GET",
-        url: ajax_api,
-        success: function ( response) {
-        		console.log( response );
-        		
-        		 $(response).find('userInput').each(function(){
-        			 //$(this).find('contact').each(function() {
-        				 	//$(this).find('id').each(function() {
-        				 		var name = $(this).relas();
-        				 		alert(name);
-        				 	//});
-                     //});
-              });
-            
-        }
-    });
-
-	
-}
 
 
 function annoSetup() {
@@ -497,3 +472,27 @@ function lzw_decode(s) {
 }
 
  
+function rxnorm_ci() {
+
+	
+	var ajax_api='https://rxnav.nlm.nih.gov/REST/rxclass/class/byRxcui.json?relaSource=MEDRT&relas=CI_with&rxcui=595060';
+	$.ajax({
+        type: "GET",
+        url: ajax_api,
+        success: function ( response) {
+        		console.log( response );
+        		
+        		 $(response).find('userInput').each(function(){
+        			 //$(this).find('contact').each(function() {
+        				 	//$(this).find('id').each(function() {
+        				 		var name = $(this).relas();
+        				 		alert(name);
+        				 	//});
+                     //});
+              });
+            
+        }
+    });
+
+	
+}

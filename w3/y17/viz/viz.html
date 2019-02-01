@@ -26,10 +26,10 @@
 
 <style>
 body {	position: relative; }
+#section2 {	padding-top: 50px; height: 700px; color: #7d7d7d; background-color: #e7e7e7; }
 #section41 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
 #section42 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
 #section43 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #ffffff; }
-#section2 {	padding-top: 50px; height: 700px; color: #7d7d7d; background-color: #e7e7e7; }
 #section1 { padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; } 
 #section3 {	padding-top: 50px; height: 500px; color: #7d7d7d; background-color: #e7e7e7; }
 </style>
@@ -46,7 +46,8 @@ body {	position: relative; }
 
 			<div>				 				
 				<div class="collapse navbar-collapse navbar-right" id="myNavbar2">
-					<ul class="nav navbar-nav">						
+					<ul class="nav navbar-nav">
+						<li><a href="#section2">Document</a></li>						
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#"> Comprehension <span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -55,17 +56,21 @@ body {	position: relative; }
 								<li><a href="#section43">Document</a></li>
 							</ul>
 						</li>						
-						<li><a href="#section2">DocumentText</a></li>
-						<!-- 
-						<li><a href="#section3">KnowlegeGraph</a></li>
-						<li><a href="#section1">Comprehension</a></li>
-						 --> 
+						<li><a href="#section1">Options</a></li>
+						<!--<li><a href="#section3">KnowlegeGraph</a></li>--> 						 
 					</ul>
 				</div>
 			</div>
 		</div>
 
 	</nav>
+	
+	<div id="section2" class="container-fluid">
+		<h1>Corpus</h1>        
+		<div id="crpsDivId"></div>       		
+		<div id="crpsModalId" class="modal fade" role="dialog"></div>					    		                         									    		                         		
+	</div> 
+	
 	
 	
 	
@@ -92,7 +97,7 @@ body {	position: relative; }
    				<button id="annoTxtBtnAnnotateId" type="submit" class="btn btn-primary">Annotate</button>  
    				<button id="annoTxtBtnParseId"    type="submit" class="btn btn-primary">Parse   </button>     				
 			</div>
-		<div class="col-sm-1"></div>
+			<div class="col-sm-1"></div>
 		</div>
 		
 	</div>
@@ -133,11 +138,12 @@ body {	position: relative; }
         </div>
 	</div>
 	
-	<div id="section2" class="container-fluid">
-		<h1>Corpus</h1>        
-		<div id="crpsDivId"></div>       		
-		<div id="crpsModalId" class="modal fade" role="dialog"></div>					    		                         									    		                         		
-	</div> 
+	<div id="section1" class="container-fluid">	
+        <h3>Options</h3>
+                    
+	</div>
+	
+	
 	
 	<!--         		
 	<div id="section3" class="container-fluid">
@@ -165,14 +171,9 @@ body {	position: relative; }
 				<div class="col-sm-1"></div>
 			</div>		 	
 	</div>
-	
-	
-	<div id="section1" class="container-fluid">
-	
-        <h3>Annotation</h3>
-            
-	</div>
 	-->
+	
+	
 	
 
 </body>
