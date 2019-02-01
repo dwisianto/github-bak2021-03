@@ -1,12 +1,27 @@
-
 # Coding
+
+- [devops](#devops)
+- [language](#language)
+
+
+
+| Projects |  |
+|--------|--------|
+| [JForests](../d4/d18/jforests) | art4ml |
+| [JLibFM](k18/jlibfm) |  |
+| [LVG](k18/lvg) |   |
+| [k18](k18) | uima - uimafit - cleartk | 
+
+
+
+# DevOps
 
 | Web    |        |  
 |--------|--------| 
 | [ec2](kWs/wEc2) | | 
 | [ideEclipse](kWs/wEclipse) | | 
-| [iam](kWs/wIam) | Identity and Access Management (IAM) |
-| [codeCommit](kWs/wCodeCommit) | Code Commit | 
+| [iam](kWs/wIam) | Identity and Access Management (IAM) | 
+| [codeCommit](kWs/wCodeCommit) | Code Commit |
 | [beanstalk](kWs/wBeansTalk) | WebService and WebWorker|
 | [s3](kXX/wAwsEb/s3.md) | Object Store |
 | [dynamoDb](kXX/wAwsEb/dynamoDb.md) | NoSql |
@@ -15,6 +30,7 @@
 | [Tomcat](kWs/wTomcat) | |   
 | [Jersey](kWs/wJersey) | |  
 
+# Language
 
 | Language |  | | 
 |--------|--------| | 
@@ -33,13 +49,10 @@
 
 
 
-| Projects |  |
-|--------|--------|
-| [JForests](../d4/d18/jforests) | art4ml |
-| [JLibFM](k18/jlibfm) |  |
-| [LVG](k18/lvg) |   |
-| [k18](k18) | uima - uimafit - cleartk | 
 
+
+
+# Archive
 
 ## ToDo
 
@@ -48,8 +61,6 @@
 | [StudyTrails](http://www.studytrails.com/) |  |
 | [biVar](https://github.com/schiffner/biVar) | | 
 | [nctec17](https://github.com/RamonTavares/NCTEC17-WDS) | | 
-
-
 
 ## Journal
 
@@ -63,9 +74,6 @@
 | | | https://github.com/shancarter |
 | | | http://kpq.github.io/ |
 
-
-
-# Archive
 
 ### Projects
 
