@@ -38,11 +38,14 @@ var annoTxtBtnAnnotateId = "#annoTxtBtnAnnotateId";
 var annoTxtBtnClearId    = "#annoTxtBtnClearId";
 var annoTxtBtnSampleId   = "#annoTxtBtnSampleId";
 
-var annoModalFocusId     = "#annoModalFocusId";
-var annoModalOptionId    = "#annoModalOptionId";
+var annoModalFocusId       = "#annoModalFocusId";
+var annoModalOptionId      = "#annoModalOptionId";
+var annoModalOptionSrvc1Id = "annoModalOptionSrvc1Id";
+var annoModalOptionSrvc2Id = "annoModalOptionSrvc2Id";
 
-var annoSrvc1UrlDefault  = " srvc 1 url";
-var annoSrvc2UrlDefault  = " srvc 2 url";
+
+var annoSrvc1UrlDefault  = "http://t19a7gcname.us-east-2.elasticbeanstalk.com";
+var annoSrvc2UrlDefault  = "http://t19a7gcname.us-east-2.elasticbeanstalk.com";
 var annoSrvc1Url         = annoSrvc1UrlDefault; 
 var annoSrvc2Url         = annoSrvc2UrlDefault;
 
@@ -339,7 +342,8 @@ function annoSetupOptionSuccess() {
 
 	var aMdlFooterStart='<div class="modal-footer">';
 	var aMdlFooterEntryBtnClose='<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
-	var aMdlFooterEntryBtnLoad='<button type="button" class="btn btn-default" data-dismiss="modal" >Load</button>';
+	var aMdlFooterEntryBtnSave='<button type="button" class="btn btn-default" data-dismiss="modal" onclick="annoSetupOptionSuccessSave()">Save</button>';
+	
 	var aMdlFooterEnd='</div>';
 
 	var aMdlBodyStart='<div class="modal-body">';
@@ -347,14 +351,16 @@ function annoSetupOptionSuccess() {
 	var aMdlBodyEntry=strContentHtml;
 	var aMdlBodyEnd='</div>';
 		
-	$(annoModalParseId).html(  aMdlDivStart+        
+	$(annoModalOptionId).html(  aMdlDivStart+        
 						 aMdlHeaderStart + aMdlHeaderEntry + aMdlHeaderEnd + 
 						 aMdlBodyStart   + aMdlBodyEntry +   aMdlBodyEnd + 
-						 aMdlFooterStart + aMdlFooterEntryBtnLoad + aMdlFooterEntryBtnClose + aMdlFooterEnd + 
+						 aMdlFooterStart + aMdlFooterEntryBtnSave + aMdlFooterEntryBtnClose + aMdlFooterEnd + 
 						 aMdlDivEnd );        
-	$(annoModalParseId).modal('show');        
+	$(annoModalOptionId).modal('show');        
 
 }
+
+
 
 
 /**
@@ -368,17 +374,29 @@ function annoSetupOptionSuccessContent() {
 	
 	strContentBr = 
 	'<form>'+
-	'Service1: <input type="text" size="100" value="'+
-	annoSrvc1UrlDefault
-	+'"><br>'+
-	'Service2: <input type="text" size="100" value="'+
-	annoSrvc2UrlDefault
-	+'"><br>'+
+	'Service1: <input type="text" size="79"'
+	+' value="'+annoSrvc1Url
+	+'" id="'+annoModalOptionSrvc1Id 
+	+'" ><br>'+
+	'Service2: <input type="text" size="79"'
+	+' value="'+annoSrvc2Url	
+	+'" id="'+annoModalOptionSrvc2Id 
+	+'" ><br>'+
 	'</form>';
 	//'<input type="submit" value="Submit">'+
 	
+	
 
 	return strContentBr;
+}
+
+function annoSetupOptionSuccessSave() {
+	console.log( "annoSetupOptionSuccessSave" );
+	annoSrvc1Url = $("#"+annoModalOptionSrvc1Id).val(); 
+	annoSrvc2Url = $("#"+annoModalOptionSrvc2Id).val(); 
+	console.log( annoSrvc1Url ); 
+	console.log( annoSrvc2Url ); 
+
 }
 
 
