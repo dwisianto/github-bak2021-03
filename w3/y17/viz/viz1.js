@@ -39,7 +39,12 @@ var annoTxtBtnClearId    = "#annoTxtBtnClearId";
 var annoTxtBtnSampleId   = "#annoTxtBtnSampleId";
 
 var annoModalFocusId     = "#annoModalFocusId";
-var annoModalParseId     = "#annoModalParseId";
+var annoModalOptionId    = "#annoModalOptionId";
+
+var annoSrvc1UrlDefault  = " srvc 1 url";
+var annoSrvc2UrlDefault  = " srvc 2 url";
+var annoSrvc1Url         = annoSrvc1UrlDefault; 
+var annoSrvc2Url         = annoSrvc2UrlDefault;
 
 
 
@@ -193,8 +198,9 @@ function annoSetup() {
 	} ); 		 
 
 	// [] annoSetup
+	annoSetupOption() 
 	annoSetupAnnotate() 
-	annoSetupParse() 
+	
 }
 
 function annoSetupAnnotate() {
@@ -286,18 +292,43 @@ function annoSetupAnnotateSuccess( lstObj ) {
 	
 }
 
-function annoSetupParse() {
+/**
+ * Get an html representation of a string
+ * @returns
+ */
+function annoSetupAnnotateSuccessContentBak() {
 	
-	$(annoTxtBtnParseId).click( function () {
+	var strContent = $(annoTxtAreaId).val();	
+	var strContentBr = strContent.replace(/(?:\r\n|\r|\n)/g, '<br>');
+	
+	var strContentArr = strContent.split(".");
+	var iCtr=0;
+	for(iCtr=0; iCtr<10; iCtr++) {
+		console.log( iCtr + " " +  strContentArr[iCtr] );
+	}
+	
+	
+	strContentBr = '<p><span class="one">Lorem ipsum <span class="two">dolor</span> sit amet,</span>consectetur adipiscing elit. <span class="one">Maecenas <span class="two"><span class="three">finibus</span></span></span><span class="two"> aliquam eros eget accumsan.Pellentesque quis <span class="three">diam lacus.</span></span></p>';
+
+	return strContentBr;
+}
+
+
+
+
+
+function annoSetupOption() {
+	
+	$(annoTxtBtnOptionId).click( function () {
 		console.log(" ... parse" );
-		annoSetupParseSuccess();
+		annoSetupOptionSuccess();
 	});
 }
 
-function annoSetupParseSuccess() {
+function annoSetupOptionSuccess() {
 	
 	var strContent = $(annoTxtAreaId).val();
-	var strContentHtml = annoSetupParseSuccessContent();
+	var strContentHtml = annoSetupOptionSuccessContent();
 	
     var aMdlDivStart='<div class="modal-dialog modal-lg"><div class="modal-content">';
 	var aMdlDivEnd='</div></div>';
@@ -330,19 +361,22 @@ function annoSetupParseSuccess() {
  * Get an html representation of a string
  * @returns
  */
-function annoSetupParseSuccessContent() {
+function annoSetupOptionSuccessContent() {
 	
 	var strContent = $(annoTxtAreaId).val();	
 	var strContentBr = strContent.replace(/(?:\r\n|\r|\n)/g, '<br>');
 	
-	var strContentArr = strContent.split(".");
-	var iCtr=0;
-	for(iCtr=0; iCtr<10; iCtr++) {
-		console.log( iCtr + " " +  strContentArr[iCtr] );
-	}
+	strContentBr = 
+	'<form>'+
+	'Service1: <input type="text" size="100" value="'+
+	annoSrvc1UrlDefault
+	+'"><br>'+
+	'Service2: <input type="text" size="100" value="'+
+	annoSrvc2UrlDefault
+	+'"><br>'+
+	'</form>';
+	//'<input type="submit" value="Submit">'+
 	
-	
-	strContentBr = '<p><span class="one">Lorem ipsum <span class="two">dolor</span> sit amet,</span>consectetur adipiscing elit. <span class="one">Maecenas <span class="two"><span class="three">finibus</span></span></span><span class="two"> aliquam eros eget accumsan.Pellentesque quis <span class="three">diam lacus.</span></span></p>';
 
 	return strContentBr;
 }
