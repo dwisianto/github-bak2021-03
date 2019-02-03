@@ -36,12 +36,15 @@ var annoTxtAreaIdStr     = "annoTxtAreaId";
 var annoTxtAreaId        = "#" + annoTxtAreaIdStr;
 var annoTxtBtnAnnotateId = "#annoTxtBtnAnnotateId";
 var annoTxtBtnClearId    = "#annoTxtBtnClearId";
-var annoTxtBtnSampleId   = "#annoTxtBtnSampleId";
+var annoTxtBtnSampleId     = "#annoTxtBtnSampleId";
+var annoBtnComprehendId = "annoBtnComprehendId";
 
-var annoModalFocusId       = "#annoModalFocusId";
-var annoModalOptionId      = "#annoModalOptionId";
-var annoModalOptionSrvc1Id = "annoModalOptionSrvc1Id";
-var annoModalOptionSrvc2Id = "annoModalOptionSrvc2Id";
+var annoModalFocusId          = "#annoModalFocusId";
+var annoModalOptionId         = "#annoModalOptionId";
+var annoModalOptionSrvc1Id    = "annoModalOptionSrvc1Id";
+var annoModalOptionSrvc2Id    = "annoModalOptionSrvc2Id";
+var annoModalOptionSrvc1BtnId = "annoModalOptionSrvc1BtnId";
+var annoModalOptionSrvc2BtnId = "annoModalOptionSrvc2BtnId";
 
 
 var annoSrvc1UrlDefault  = "http://t19a7gcname.us-east-2.elasticbeanstalk.com";
@@ -203,6 +206,7 @@ function annoSetup() {
 	// [] annoSetup
 	annoSetupOption() 
 	annoSetupAnnotate() 
+	annoInitComprehend()
 	
 }
 
@@ -323,7 +327,7 @@ function annoSetupAnnotateSuccessContentBak() {
 function annoSetupOption() {
 	
 	$(annoTxtBtnOptionId).click( function () {
-		console.log(" ... parse" );
+		console.log(" ... optionSettings " );
 		annoSetupOptionSuccess();
 	});
 }
@@ -337,7 +341,7 @@ function annoSetupOptionSuccess() {
 	var aMdlDivEnd='</div></div>';
 		
 	var aMdlHeaderStart='<div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button>';
-	var aMdlHeaderEntry='<h4 class="modal-title"> Modal </h4>';
+	var aMdlHeaderEntry='<h4 class="modal-title"> Service </h4>';
 	var aMdlHeaderEnd='</div>';
 
 	var aMdlFooterStart='<div class="modal-footer">';
@@ -364,31 +368,69 @@ function annoSetupOptionSuccess() {
 
 
 /**
- * Get an html representation of a string
+ * var strContent = $(annoTxtAreaId).val();
+ * var strContentBr = strContent.replace(/(?:\r\n|\r|\n)/g, '<br>');	
  * @returns
  */
 function annoSetupOptionSuccessContent() {
 	
-	var strContent = $(annoTxtAreaId).val();	
-	var strContentBr = strContent.replace(/(?:\r\n|\r|\n)/g, '<br>');
-	
 	strContentBr = 
-	'<form>'+
-	'Service1: <input type="text" size="79"'
+		'<label>'+'Service1:'+'</label>'	
+	+' <input type="text" size="79"'
 	+' value="'+annoSrvc1Url
 	+'" id="'+annoModalOptionSrvc1Id 
-	+'" ><br>'+
-	'Service2: <input type="text" size="79"'
+	+'" >'
+	+'<button onclick="annoSetupOptionSuccessContentFn1()"> Test</button>'
+	+'<br>'
+	+'<label>'+'Service2:'+'</label>'	
+	+' <input type="text" size="79"'
 	+' value="'+annoSrvc2Url	
 	+'" id="'+annoModalOptionSrvc2Id 
-	+'" ><br>'+
-	'</form>';
+	+'" >'
+	+'<button onclick="annoSetupOptionSuccessContentFn2()"> Test</button>'
+	+'<br>';
+	
 	//'<input type="submit" value="Submit">'+
 	
-	
-
 	return strContentBr;
 }
+
+/**
+ * 	$("#"+annoModalOptionSrvc1BtnId).click( function () {
+		
+		//alert(annoModalOptionSrvc1BtnId);
+		//annoSetupOptionSuccess();
+	});
+ * 
+ * @returns
+ */
+function annoSetupOptionSuccessContentFn1() {
+	//console.log(" ...  annoModalOptionSrvc1BtnId ");
+	
+	var sUrl=annoSrvc1Url+"/rest/feats";
+	console.log(sUrl);
+	$.ajax({
+        type: "GET",
+        url: sUrl,
+        dataType: "application/json",
+        success: function ( lstFeats ) {
+        	console.log( lstFeats);        		
+        	alert(JSON.stringify( lstFeats));        		
+        },
+        error: function ( errObj) {
+        	console.log("errors ... ");
+        	console.log( errObj);
+        }        
+    });
+	
+}
+
+function annoSetupOptionSuccessContentFn2() {
+	console.log(" ...  annoModalOptionSrvc2BtnId" );
+	alert(" ...  annoModalOptionSrvc2BtnId" );
+	
+}
+
 
 function annoSetupOptionSuccessSave() {
 	console.log( "annoSetupOptionSuccessSave" );
@@ -400,8 +442,40 @@ function annoSetupOptionSuccessSave() {
 }
 
 
+function annoInitComprehend() {
+
+	$(annoBtnComprehendId).click( function () {
+		console.log(" ... comprehend " );
+		
+		//dataType: "application/json",		
+		console.log( $(annoTxtAreaId).val() );		
+		var data4annotator=$(annoTxtAreaId).val();
+		$.ajax({
+			url: annoSrvcUrl,
+	        type: "POST",	        
+	        data: data4annotator,
+	        	contentType: "text/plain",
+	        	dataType: "json",		
+	        success: function ( strResponse ) {
+	        		console.log("Success" + strResponse.unstructured[0].data.concepts ); 
+	        		annoSetupAnnotateSuccess( strResponse.unstructured[0].data.concepts );
+	        }, error: function (strErr) {
+	        		console.log("Error" + strErr );
+			}
+	    });		
+		
+	} ); 					
+	
+}
 
 
+
+
+
+/**
+ * alert(JSON.stringify(json_obj));
+ * @returns
+ */
 function tmpl_ajax_get() {
 	
 	$.ajax({
@@ -431,7 +505,7 @@ function tmpl_ajax_post() {
 		url: annoSrvcUrl,
         type: "POST",	        
         data: data4annotator,
-        	dataType: "application/json",
+        dataType: "application/json",
         	contentType: "text/plain",
         success: function ( strResponse ) {
         		console.log( strResponse );        		
@@ -440,6 +514,37 @@ function tmpl_ajax_post() {
 		}
     });		
 
+}
+
+function tmpl_ajax_post2() {
+	
+	function annoInitComprehend() {
+
+		$(annoTxtBtnComprehendId).click( function () {
+			console.log(" ... comprehend " );
+
+			//dataType: "application/json",		
+			console.log( $(annoTxtAreaId).val() );		
+			var data4annotator=$(annoTxtAreaId).val();
+			$.ajax({
+				url: annoSrvcUrl,
+		        type: "POST",	        
+		        data: data4annotator,
+		        	contentType: "text/plain",
+		        	dataType: "json",		
+		        success: function ( strResponse ) {
+		        		console.log("Success" + strResponse.unstructured[0].data.concepts ); 
+		        		annoSetupAnnotateSuccess( strResponse.unstructured[0].data.concepts );
+		        }, error: function (strErr) {
+		        		console.log("Error" + strErr );
+				}
+		    });		
+			
+		} ); 					
+		
+	}
+
+	
 }
 
 
