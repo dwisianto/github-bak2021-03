@@ -376,14 +376,14 @@ function annoSetupOptionSuccessContent() {
 	
 	strContentBr = 
 		'<label>'+'Service1:'+'</label>'	
-	+' <input type="text" size="79"'
+	+' <input type="text" size="64"'
 	+' value="'+annoSrvc1Url
 	+'" id="'+annoModalOptionSrvc1Id 
 	+'" >'
 	+'<button onclick="annoSetupOptionSuccessContentFn1()"> Test</button>'
 	+'<br>'
 	+'<label>'+'Service2:'+'</label>'	
-	+' <input type="text" size="79"'
+	+' <input type="text" size="64"'
 	+' value="'+annoSrvc2Url	
 	+'" id="'+annoModalOptionSrvc2Id 
 	+'" >'
@@ -396,12 +396,7 @@ function annoSetupOptionSuccessContent() {
 }
 
 /**
- * 	$("#"+annoModalOptionSrvc1BtnId).click( function () {
-		
-		//alert(annoModalOptionSrvc1BtnId);
-		//annoSetupOptionSuccess();
-	});
- * 
+ * 	$("#"+annoModalOptionSrvc1BtnId).click( function () { alert(annoModalOptionSrvc1BtnId); });
  * @returns
  */
 function annoSetupOptionSuccessContentFn1() {
@@ -410,9 +405,10 @@ function annoSetupOptionSuccessContentFn1() {
 	var sUrl=annoSrvc1Url+"/rest/feats";
 	console.log(sUrl);
 	$.ajax({
-        type: "GET",
-        url: sUrl,
-        dataType: "application/json",
+		url: sUrl,
+        type: "GET",        
+        crossDomain : true,
+        dataType: "json",
         success: function ( lstFeats ) {
         	console.log( lstFeats);        		
         	alert(JSON.stringify( lstFeats));        		
@@ -479,8 +475,10 @@ function annoInitComprehend() {
 function tmpl_ajax_get() {
 	
 	$.ajax({
-        type: "GET",
         url: "http://localhost:8301/d.umls.wb/rest/contacts",
+        type: "GET",
+        crossDomain : true,
+        dataType: "json",
         success: function (xmlLstContacts) {
         		console.log(xmlLstContacts);        		
         		 $(xmlLstContacts).find('contacts').each(function(){
@@ -634,8 +632,9 @@ function rxnorm_ci() {
 	
 	var ajax_api='https://rxnav.nlm.nih.gov/REST/rxclass/class/byRxcui.json?relaSource=MEDRT&relas=CI_with&rxcui=595060';
 	$.ajax({
-        type: "GET",
-        url: ajax_api,
+		url: ajax_api,
+        type: "GET",        
+        crossDomain : true,
         success: function ( response) {
         		console.log( response );
         		
