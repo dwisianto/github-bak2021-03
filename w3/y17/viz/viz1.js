@@ -408,7 +408,7 @@ function annoSetupOptionSuccessContentFn1() {
 		url: sUrl,
         type: "GET",        
         crossDomain : true,
-        dataType: "jsonp",
+        dataType: "json",
         success: function ( lstFeats ) {
         	console.log( lstFeats);        		
         	alert(JSON.stringify( lstFeats));        		
@@ -422,8 +422,23 @@ function annoSetupOptionSuccessContentFn1() {
 }
 
 function annoSetupOptionSuccessContentFn2() {
-	console.log(" ...  annoModalOptionSrvc2BtnId" );
-	alert(" ...  annoModalOptionSrvc2BtnId" );
+	
+	var sUrl=annoSrvc2Url+"/rest/feats/jsn";
+	console.log(sUrl);
+	$.ajax({
+		url: sUrl,
+        type: "GET",        
+        crossDomain : true,
+        dataType: "json",
+        success: function ( lstFeats ) {
+        	console.log( lstFeats);        		
+        	alert(JSON.stringify( lstFeats));        		
+        },
+        error: function ( errObj) {
+        	console.log("errors ... ");
+        	console.log( errObj);
+        }        
+    });	
 	
 }
 
