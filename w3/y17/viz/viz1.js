@@ -402,7 +402,7 @@ function annoSetupOptionSuccessContent() {
 function annoSetupOptionSuccessContentFn1() {
 	//console.log(" ...  annoModalOptionSrvc1BtnId ");
 	
-	var sUrl=annoSrvc1Url+"/rest/feats";
+	var sUrl=annoSrvc1Url+"/rest/feats/jsn";
 	console.log(sUrl);
 	$.ajax({
 		url: sUrl,
