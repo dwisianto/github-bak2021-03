@@ -408,7 +408,7 @@ function annoSetupOptionSuccessContentFn1() {
 		url: sUrl,
         type: "GET",        
         crossDomain : true,
-        dataType: "json",
+        dataType: "jsonp",
         success: function ( lstFeats ) {
         	console.log( lstFeats);        		
         	alert(JSON.stringify( lstFeats));        		
