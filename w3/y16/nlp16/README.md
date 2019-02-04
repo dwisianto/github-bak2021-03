@@ -39,13 +39,8 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - NLP Applications: name entity recognition, machine translation, information extraction.
 
 
-A few online demos of NLP tasks are available such as [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) and [allennlp](https://allennlp.org/). Similar courses are offered in a few academic institutions,such as [Notre Dame](https://www3.nd.edu/~dchiang/teaching/nlp/2018/), [UMich](https://www.youtube.com/playlist?list=PLLssT5z_DsK8BdawOVCCaTCO99Ya58ryR).
-- [Yoav Artzi](https://yoavartzi.com/) 
-- [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/)
-- [nyu](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/) [aparikh](https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf)
+A few online demos of NLP tasks are available such as [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) and [allennlp](https://allennlp.org/). Similar courses are offered in a few academic institutions,such as [Notre Dame](https://www3.nd.edu/~dchiang/teaching/nlp/2018/), [UMich](https://www.youtube.com/playlist?list=PLLssT5z_DsK8BdawOVCCaTCO99Ya58ryR), [UnivVirginia](http://www.cs.virginia.edu/~kc2wc/),  [NYU](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/) [aparikh](https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf),  [Yoav Artzi](https://yoavartzi.com/),  [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/).
 
-
-http://www.cs.virginia.edu/~kc2wc/
 
 ## Textbook
 
@@ -150,7 +145,7 @@ The following section lists the essential publications for each topic and a more
 [Top](#nlp)
 
 
-### Language Modeling
+## Language Modeling
 
 
 - Yoshua Bengio, Rejean Ducharme, Pascal Vincent, Christian Jauvin, "A Neural Probability Language Model." JMLR 2003 (PDF).
@@ -161,7 +156,7 @@ The following section lists the essential publications for each topic and a more
 [Top](#nlp)  
 [Wiki](https://en.wikipedia.org/wiki/Language_model)
 
-### Grammar
+## Grammar
 
 - 
 [Chomsky_hierarchy](https://en.wikipedia.org/wiki/Chomsky_hierarchy)
@@ -224,15 +219,15 @@ The following section lists the essential publications for each topic and a more
 [Top](#nlp)  
 
 
-### Question Answering 
+## Question Answering 
 
 - David Ferruci, et al. "Building Watson: An Overview of the deepQA Project" 
-( [pdf](https://rockstarresearch.com/wp-content/uploads/2014/05/Building-Watson.pdf) )
+( [PDF](https://rockstarresearch.com/wp-content/uploads/2014/05/Building-Watson.pdf) )
 - 
 
 [Top](#nlp)  
 
-### Semantic Role Labeling
+## Semantic Role Labeling
 
 - Kristina Toutanova, Aria Haghigh, Christopher D. Manning. "Joint Learning Improves Semantic Role Labeling." ACL 2005 (PDF)
 - Vivek Srikumar, Dan Roth "A Joint Model for Extended Semantic Role Labeling". ACL 2011 (PDF)
@@ -241,7 +236,7 @@ The following section lists the essential publications for each topic and a more
 
 [Top](#nlp)  
 
-### Coreference Resolution
+## Coreference Resolution
 
 
 - Karthik Raghunathan, Heeyoung Lee, Sudarshan Rangarajan, Nathanael Chambers, Mihai Surdeanu, Dan Jurafsky, Christopher Manning. "A Multi-Pass Sieve for Coreference Resolution". EMNLP 2010 (PDF)
@@ -252,7 +247,7 @@ The following section lists the essential publications for each topic and a more
 
 [Top](#nlp)  
 
-### Named Entity Recognition / Entity Linking
+## Named Entity Recognition / Entity Linking
 
 - Alan Ritter, Sam Clark, Mausam and Oren Etzioni. "Named Entity Recognition in Tweets: An Experimental Study". EMNLP 2011 (PDF)
 - Lev Ratinov, Dan Roth. "Design Challenges and Misconceptions in Named Entity Recognition". CoNLL 2009 (PDF)
@@ -261,7 +256,7 @@ The following section lists the essential publications for each topic and a more
 - Xiao Ling, Sameer Singh, and Daniel S. Weld. "Design Challenges for Entity Linking". TACL 2015 (PDF)
 - Parag Singla and Pedro Domingos. "Entity Resolution with Markov Logic". ICDM 2006 (PDF)
 
-### Word Embedding
+## Word Embedding
 
 - Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean, "Efficient Estimation of Word Representations in Vector Space", [PDF](https://arxiv.org/abs/1301.3781)
 - Bidirectional Encoder Representations from Transformers (BERT) -  [code](https://github.com/google-research/bert)
@@ -269,7 +264,7 @@ The following section lists the essential publications for each topic and a more
 
 [Top](#nlp) - [Wiki](https://en.wikipedia.org/wiki/Word_embedding)
 
-### Machine Translation
+## Machine Translation
 
 - Philipp Koehn, Franz Josef Och, Daniel Marcu. "Statistical Phrase-Based Translation." NAACL 2003. (PDF)
 - Ilya Sutskever, Oriol Vinyals, Quoc V. Le. "Sequence to Sequence Learning with Neural Networks". NIPS 2014.
@@ -277,7 +272,7 @@ The following section lists the essential publications for each topic and a more
 
 [Top](#nlp)  
 
-### Word Alignment / Paragraph
+## Word Alignment / Paragraph
 
 - Regina Barzilay and Lillian Lee. "Learning to Paraphrase: An Unsupervised Approach Using Multiple-Sequence Alignment". NAACL 2003. (PDF)
 - Colin Bannard and Chris Callison-Burch. "Paraphrasing with Bilingual Parallel Corpora.". ACL 2005. (PDF)
@@ -288,7 +283,7 @@ GoTo: [Top](#nlp)
   
 
 
-### Structured Prediction
+## Structured Prediction
 
 - Sebastian Nowozin and Christoph H. Lampert, "Structured Learning and Prediction in Computer Vision", [PDF](http://pub.ist.ac.at/%7Echl/papers/nowozin-fnt2011.pdf) 
 - Yossi Adi, Joseph Keshet, "StructED: Risk Minimization in Structured Prediction", [page](http://www.jmlr.org/papers/v17/15-531.html) - [code](http://adiyoss.github.io/StructED/) 
@@ -304,7 +299,7 @@ GoTo: [Top](#nlp)
 
 An ontology is a formal explicit description of concepts in a domain of discourse ( **classes** (sometimes called **concepts**)), properties of each **concept** describing various **features** and **attributes** of the **concept** (**slots** (sometimes called **roles** or **properties**)), and restrictions on **slots** (**facets** (sometimes called **role restrictions**)). An ontology together with a set of individual **instances** of classes constitutes a **knowledge base**. In reality, there is a fine line where the ontology ends and the **knowledge base begins**. [PDF](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html). 
 
-#### Literatures
+### Literatures
 
 - Fabien Gandon, "A Survey of the First 20 Years of Research on Semantic Web and Linked Data", [PDF](https://hal.inria.fr/hal-01935898/)
 - Leon Bottou, "From Machine Learning to Machine Reasoning" [[PDF](https://arxiv.org/ftp/arxiv/papers/1102/1102.1808.pdf)] 
@@ -312,7 +307,7 @@ An ontology is a formal explicit description of concepts in a domain of discours
 - Hohenecker, Patrick, and Thomas Lukasiewicz. "Deep Learning for Ontology Reasoning." 2017 [PDF](https://arxiv.org/pdf/1705.10342.pdf)
 - Suntisrivaraporn, Boontawee. "Polynomial-time reasoning support for design and maintenance of large-scale biomedical ontologies." (2008) [PDF](https://lat.inf.tu-dresden.de/research/phd/Sun-PhD-09.pdf)
 
-#### Tools
+### Tools
 
 - [Protoge](https://protege.stanford.edu/)
     - [Protege Tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf)
@@ -323,7 +318,7 @@ An ontology is a formal explicit description of concepts in a domain of discours
 - [Open Biological and Biomedical Ontology](http://obofoundry.org/) - [robot](https://github.com/ontodev/robot)
 
 
-#### Terminology 
+### Terminology 
 
 - [SNOMED](https://en.wikipedia.org/wiki/Systematized_Nomenclature_of_Medicine)
 - [SNOMED CT](https://en.wikipedia.org/wiki/SNOMED_CT)

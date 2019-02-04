@@ -43,12 +43,19 @@
 
 ## Feature Reduction
 
+## Dynamic Programming
+
+## Reinforcement Learning
+
+- [RLBook](http://web.mit.edu/dimitrib/www/RLbook.html)
+
 ## Others 
  
  - Hal Daume III, John Lanford, Kai-Wei Chang, He He, and Sudha Rao, Tutorial on Hands-on Learning to Search for Structured Prediction
  - Dan Roth and Wen-tau Yih, Integer Linear Programming Inference for Conditional Random Fields, ICML 2005.
- 
  - Alexander Rush and Michael Collins, A Tutorial on Dual Decomposition and Lagrangian Relaxation for Inference in Natural Language Processing, JAIR 2012.
+ - Reinforcement Learning and Control as Probabilistic Inference: Tutorial and Review [PDF](https://arxiv.org/pdf/1805.00909.pdf)
+ 
  
 # Software Tools
 
@@ -61,6 +68,7 @@
 # Terminology
 
 
+- inference
  
 # Frequently Asked Questions 
 
