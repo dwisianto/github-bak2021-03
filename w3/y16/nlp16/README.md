@@ -64,7 +64,7 @@ This is a list of journals that may be suitable for publishing Computational Lin
 GoTo: [Top](#nlp)
 
 
-## Schedules
+# Schedules
 
 | | | |
 |-|-|-|
@@ -79,7 +79,7 @@ GoTo: [Top](#nlp)
 |        | Dependency Parsing | |
 |        | constituency Parsing | |
 |        | Statistical Parsing with PCFG | |
-|        | Semantic Parsing | [Wiki](https://en.wikipedia.org/wiki/Semantic_parsing) |
+
 | Word Representation | | |
 |                     | Morphology | |
 |                     | Vector Space Models | |
@@ -89,6 +89,9 @@ GoTo: [Top](#nlp)
 |                     | Hidden Markov Model | |
 |                     | HMM - Viterbi | |
 |                     | HMM - EM      | |
+| Semantic | | |
+|          | Semantic Parsing | [Wiki](https://en.wikipedia.org/wiki/Semantic_parsing) |
+|          |                  | [ACL10](slides/s105sempar/semantic-parsing-tutorial-acl10.pdf) | 
 | Applications | | |
 |              | Information Extraction | |
 |              | Named Entity Recognition | |
