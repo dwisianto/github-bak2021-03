@@ -41,6 +41,7 @@ var annoBtnComprehendId = "annoBtnComprehendId";
 
 var annoModalFocusId          = "#annoModalFocusId";
 var annoModalOptionId         = "#annoModalOptionId";
+var annoModalOptionTxtAreaId  = "annoModalOptionTxtAreaId";
 var annoModalOptionSrvc1Id    = "annoModalOptionSrvc1Id";
 var annoModalOptionSrvc2Id    = "annoModalOptionSrvc2Id";
 var annoModalOptionSrvc1BtnId = "annoModalOptionSrvc1BtnId";
@@ -337,7 +338,7 @@ function annoSetupOptionSuccess() {
 	var strContent = $(annoTxtAreaId).val();
 	var strContentHtml = annoSetupOptionSuccessContent();
 	
-    var aMdlDivStart='<div class="modal-dialog modal-lg"><div class="modal-content">';
+    var aMdlDivStart='<div class="modal-dialog modal-sm"><div class="modal-content">';
 	var aMdlDivEnd='</div></div>';
 		
 	var aMdlHeaderStart='<div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button>';
@@ -376,21 +377,21 @@ function annoSetupOptionSuccessContent() {
 	
 	strContentBr = 
 		'<label>'+'Service1:'+'</label>'	
-	+' <input type="text" size="64"'
-	+' value="'+annoSrvc1Url
-	+'" id="'+annoModalOptionSrvc1Id 
-	+'" >'
-	+'<button onclick="annoSetupOptionSuccessContentFn1()"> Test</button>'
-	+'<br>'
-	+'<label>'+'Service2:'+'</label>'	
-	+' <input type="text" size="64"'
-	+' value="'+annoSrvc2Url	
-	+'" id="'+annoModalOptionSrvc2Id 
-	+'" >'
-	+'<button onclick="annoSetupOptionSuccessContentFn2()"> Test</button>'
-	+'<br>';
-	
-	//'<input type="submit" value="Submit">'+
+		+' <input type="text" size="46"'
+		+' value="'+annoSrvc1Url
+		+'" id="'+annoModalOptionSrvc1Id 
+		+'" >'
+		+'<button onclick="annoSetupOptionSuccessContentFn1()"> Test</button>'
+		+'<br>'
+		+'<label>'+'Service2:'+'</label>'	
+		+' <input type="text" size="46"'
+		+' value="'+annoSrvc2Url	
+		+'" id="'+annoModalOptionSrvc2Id 
+		+'" >'
+		+'<button onclick="annoSetupOptionSuccessContentFn2()"> Test</button>'
+		+'<br><br>'
+		+'<label>'+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+'</label>'
+		+'<textarea id="'+annoModalOptionTxtAreaId+'" rows="4" cols="46"></textarea>';		
 	
 	return strContentBr;
 }
