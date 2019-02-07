@@ -46,6 +46,7 @@ var annoModalOptionSrvc1Id    = "annoModalOptionSrvc1Id";
 var annoModalOptionSrvc2Id    = "annoModalOptionSrvc2Id";
 var annoModalOptionSrvc1BtnId = "annoModalOptionSrvc1BtnId";
 var annoModalOptionSrvc2BtnId = "annoModalOptionSrvc2BtnId";
+var annoModalOptionMsgErr     = "Service is not responding";
 
 
 var annoSrvc1UrlDefault  = "http://t19a7gcname.us-east-2.elasticbeanstalk.com";
@@ -338,11 +339,11 @@ function annoSetupOptionSuccess() {
 	var strContent = $(annoTxtAreaId).val();
 	var strContentHtml = annoSetupOptionSuccessContent();
 	
-    var aMdlDivStart='<div class="modal-dialog modal-sm"><div class="modal-content">';
+    var aMdlDivStart='<div class="modal-dialog modal-md"><div class="modal-content">';
 	var aMdlDivEnd='</div></div>';
 		
 	var aMdlHeaderStart='<div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button>';
-	var aMdlHeaderEntry='<h4 class="modal-title"> Service </h4>';
+	var aMdlHeaderEntry='<h4 class="modal-title"> Services </h4>';
 	var aMdlHeaderEnd='</div>';
 
 	var aMdlFooterStart='<div class="modal-footer">';
@@ -389,10 +390,10 @@ function annoSetupOptionSuccessContent() {
 		+'" id="'+annoModalOptionSrvc2Id 
 		+'" >'
 		+'<button onclick="annoSetupOptionSuccessContentFn2()"> Test</button>'
-		+'<br><br>'
-		+'<label>'+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+'</label>'
-		+'<textarea id="'+annoModalOptionTxtAreaId+'" rows="4" cols="46"></textarea>';		
-	
+		+'<br><br><label>'+'Response:'+'</label><br>'
+		+'<textarea id="'+annoModalOptionTxtAreaId+'" rows="14" cols="54"></textarea>'
+		+'<button onclick="annoSetupOptionSuccessContentFnX()"> Clear</button>';
+
 	return strContentBr;
 }
 
@@ -412,11 +413,12 @@ function annoSetupOptionSuccessContentFn1() {
         dataType: "json",
         success: function ( lstFeats ) {
         	console.log( lstFeats);        		
-        	alert(JSON.stringify( lstFeats));        		
+        	$('#'+annoModalOptionTxtAreaId).val(JSON.stringify( lstFeats));
         },
         error: function ( errObj) {
         	console.log("errors ... ");
-        	console.log( errObj);
+        	console.log( errObj);        	
+        	$('#'+annoModalOptionTxtAreaId).val(JSON.stringify( lstFeats));
         }        
     });
 	
@@ -433,14 +435,20 @@ function annoSetupOptionSuccessContentFn2() {
         dataType: "json",
         success: function ( lstFeats ) {
         	console.log( lstFeats);        		
-        	alert(JSON.stringify( lstFeats));        		
+        	$('#'+annoModalOptionTxtAreaId).val(JSON.stringify( lstFeats));
         },
         error: function ( errObj) {
         	console.log("errors ... ");
-        	console.log( errObj);
+        	console.log( errObj);        	
+        	$('#'+annoModalOptionTxtAreaId).val(JSON.stringify( lstFeats));
         }        
     });	
 	
+}
+
+function annoSetupOptionSuccessContentFnX() {
+	      		
+   	$('#'+annoModalOptionTxtAreaId).val("");
 }
 
 
