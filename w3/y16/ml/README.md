@@ -2,18 +2,22 @@
 
 - [Overview](#overview)
   - Community
-  - [Textbook](#textbook) 
+  - [Textbook](#textbook)
+  - [Prominent Scholars](#prominent-scholars)      
 - [Literatures](#literatures)
   - [Regression](#regression)
   - [Clustering](#clustering)   
   - [Classification](#classification)   
   - [Feature Selection](#feature-selection)
   - [Feature Reduction](#feature-reduction)
-  - [Others](#others)  
+  - [Others](#others)
 - [Software Tools](#software-tools)  
+- [Terminology](#terminology)
 - [Frequently Asked Questions](#frequently-asked-questions)
 
 # Overview
+
+Machine Learning technology are derived from many fields such as statistics, information theory, optimal control, signal processing, data mining, and computer science.   
 
 ## Textbook
 
@@ -21,6 +25,28 @@
 - Pattern Recognition and Machine Learning, Bishop; Springer, 2007.
 - Computer Age Statistical Inference, Efron and Hastie; Cambridge University Press, 2016.
 - An Introduction to Statistical Learning: , James, Witten, Hastie, Tibshirani; Springer, 2013.
+- [RLBook](http://web.mit.edu/dimitrib/www/RLbook.html)
+
+## Prominent Scholars
+
+Similar to the [Math](https://www.storyofmathematics.com/mathematicians.html),
+[Machine Learning Scholars](http://www.thespermwhale.com/jaseweston/) are well-known.
+
+- [Richard E. Bellman](https://en.wikipedia.org/wiki/Richard_E._Bellman)
+- Vladimir Vapnik
+- [Geoffrey Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton)
+- Michael Jordan
+- Rich Caruana - boosting,
+- Pedro Domingos - Markov Logic Network, 
+- John C. Platt - SMO
+- Christopher J. C. Burges, Cross Entropy, LambdaMart
+
+
+# Lectures
+
+| | | |
+|-|-|-|
+| | | |
 
 # Literatures
 
@@ -47,7 +73,7 @@
 
 ## Reinforcement Learning
 
-- [RLBook](http://web.mit.edu/dimitrib/www/RLbook.html)
+
 
 ## Others 
  
@@ -67,8 +93,13 @@
 
 # Terminology
 
-
 - inference
+- [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)
+- [curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality)
+- [garbage in garbage out](https://en.wikipedia.org/wiki/Garbage_in,_garbage_out)
+- 
+
+
  
 # Frequently Asked Questions 
 

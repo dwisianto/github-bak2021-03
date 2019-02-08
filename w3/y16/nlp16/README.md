@@ -1,9 +1,9 @@
 
 # NLP 
 
-- [Overview](#overview)
-  - Community
-  - [Textbook](#textbook) 
+- [Overview](#overview)  
+  - [Textbook](#textbook)
+  - [Community](#community) 
 - [Schedules](#schedules)
 - [Literatures](#literatures)
   - [Formal Language](#formal-language)  
@@ -13,7 +13,6 @@
   - [Information Extraction](#information-extraction)
   - [Word Embedding](#word-embedding)
   - [Structured Prediction](#structured-prediction) 
-  - [Semantic Web](#semantic-web)
   - [Ontology](#ontology)
   - [Biomedical Text Mining](#biomedical-text-mining)   
   - [Others](#others)  
@@ -39,7 +38,7 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - NLP Applications: name entity recognition, machine translation, information extraction.
 
 
-A few online demos of NLP tasks are available such as [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) and [allennlp](https://allennlp.org/). Similar courses are offered in a few academic institutions,such as [Notre Dame](https://www3.nd.edu/~dchiang/teaching/nlp/2018/), [UMich](https://www.youtube.com/playlist?list=PLLssT5z_DsK8BdawOVCCaTCO99Ya58ryR), [UnivVirginia](http://www.cs.virginia.edu/~kc2wc/),  [NYU](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/) [aparikh](https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf),  [Yoav Artzi](https://yoavartzi.com/),  [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/).
+A few online demos of NLP tasks are available such as [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) and [allennlp](https://allennlp.org/). Similar courses are offered in a few academic institutions,such as [Notre Dame](https://www3.nd.edu/~dchiang/teaching/nlp/2018/), [UMich](https://www.youtube.com/playlist?list=PLLssT5z_DsK8BdawOVCCaTCO99Ya58ryR), [UnivVirginia](http://www.cs.virginia.edu/~kc2wc/),  [NYU](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/) [aparikh](https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf), [Yoav Artzi](https://yoavartzi.com/), [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/).
 
 
 ## Textbook
@@ -300,7 +299,12 @@ GoTo: [Top](#nlp)
 
 ## Ontology
 
-An ontology is a formal explicit description of concepts in a domain of discourse ( **classes** (sometimes called **concepts**)), properties of each **concept** describing various **features** and **attributes** of the **concept** (**slots** (sometimes called **roles** or **properties**)), and restrictions on **slots** (**facets** (sometimes called **role restrictions**)). An ontology together with a set of individual **instances** of classes constitutes a **knowledge base**. In reality, there is a fine line where the ontology ends and the **knowledge base begins**. [PDF](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html). 
+An ontology is a formal explicit description of concepts in a domain of discourse ( **classes** (sometimes called **concepts**)), properties of each **concept** describing various **features** and **attributes** of the **concept** (**slots** (sometimes called **roles** or **properties**)), and restrictions on **slots** (**facets** (sometimes called **role restrictions**)). An ontology together with a set of individual **instances** of classes constitutes a **knowledge base**. In reality, there is a fine line where the *ontology* ends and the *knowledge base* begins. [PDF](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html).
+
+### Communities
+
+- [askw](http://aksw.org/About.html) 
+
 
 ### Literatures
 
@@ -310,32 +314,42 @@ An ontology is a formal explicit description of concepts in a domain of discours
 - Hohenecker, Patrick, and Thomas Lukasiewicz. "Deep Learning for Ontology Reasoning." 2017 [PDF](https://arxiv.org/pdf/1705.10342.pdf)
 - Suntisrivaraporn, Boontawee. "Polynomial-time reasoning support for design and maintenance of large-scale biomedical ontologies." (2008) [PDF](https://lat.inf.tu-dresden.de/research/phd/Sun-PhD-09.pdf)
 
+#### Semantic Web
+
+- [Semantic_Web](https://en.wikipedia.org/wiki/Semantic_Web)
+- [Semantic Network](https://en.wikipedia.org/wiki/Semantic_network#History)
+- [TransE](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-relational-data.pdf)
+
+
 ### Tools
 
 - [Protoge](https://protege.stanford.edu/)
     - [Protege Tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf)
     - [Simple Protege Tutorial](https://www.youtube.com/watch?v=R9ERlUgvgwM&list=PLea0WJq13cnAfCC0azrCyquCN_tPelJN1)
     - A practical exercise to create an ontology is available [practical exercise](../ont/)     
+    - Practical exercise [owlTut2](https://medium.com/@vindulajayawardana/ontology-generation-and-visualization-with-prot%C3%A9g%C3%A9-6df0af9955e0)
 - [ProbLogic](https://dtai.cs.kuleuven.be/problog/publications.html)
 - [KAON](https://en.wikipedia.org/wiki/KAON)
 - [Open Biological and Biomedical Ontology](http://obofoundry.org/) - [robot](https://github.com/ontodev/robot)
+- https://github.com/avicomp
 
-
-### Terminology 
+### Resource
 
 - [SNOMED](https://en.wikipedia.org/wiki/Systematized_Nomenclature_of_Medicine)
 - [SNOMED CT](https://en.wikipedia.org/wiki/SNOMED_CT)
 - [MedDRA](https://en.wikipedia.org/wiki/MedDRA)
+
+### Terminology 
+
 - [Network Science](https://en.wikipedia.org/wiki/Network_science) [Social Network Analysis](https://en.wikipedia.org/wiki/Social_network_analysis) 
+- SKOS
+- RDF is a graph-based representation format. An RDF graph is a directed graph whose nodes are Resources (which can be anonymous, or identified by IRIs) and Literals, and whose edges are directed links identified by IRIs. This is amazingly simple, but because the identifiers are IRIs and can often be dereferenced, also amazingly useful. There's really not much more to say about RDF, because this is all there is to it. It's very flexible, and you can represent just about anything.
+- OWL, although designed to be used in the Semantic Web, and thus with RDF data, is really a logical language that only incidentally happens to be related to RDF. An OWL ontology consists of a set of OWL axioms, some of which declare that certain identifiers refer to individuals, some of which assert relationships between individuals (and non-individual data, such as literals), some of which express the structure of classes, and so on. The utility of OWL arises from the fact that, like RDF, it uses IRIs as identifiers, but the logical structure could exists entirely separately from RDF. In fact, though OWL ontologies can be serialized using RDF and, indeed, this is probably the most common serialization used, OWL can also be serialized in OWL/XML, the OWL Functional Syntax, the Manchester OWL Syntax, and any other serialization format that someone invents. These formats tend to focus on the OWL-level constructs, and it is clearer that an ontology is a set of axioms.
+- The Jena API is very firmly rooted in RDF. The basic concept is the Model (which is more primitive than the OntModel, which is used for doing more complicated OWL-related work) which provides a convenient API for constructing RDF graphs. Using Models, you'll create resources, add properties, and so on. Jena also includes a rules-based reasoner that is quite handy for working with RDF graphs.
+- Now, OWL can be serialized using RDF, so it's feasible to create a wrapper layer over an RDF graph so that you could say “create for me the class that is the intersection of A and B” and get back the resource identifying that class and transparently adding to the class whatever RDF triples are needed in the OWL serialization to assert that the new class is (equivalent to) the intersection of A and B. This is what the Jena OntModel API does. It does it in a generic way, which means that Jena can handle other ontology languages that can be serialized in RDF, too. Jena OntModels, at the time of writing, only support OWL1; new constructs introduced in OWL2 are not supported yet.
+- The fact that OWL-level constructs in Jena are simply wrappers over the RDF serialization means that rule-based reasoning is limited in what it can achieve. In particular, the Jena rule-based reasoners for OWL are logically incomplete (i.e., they can't infer everything that the OWL specs say should be inferred). They still do fairly well for day to day work, though. Jena does provide a Reasoner interface, which allows other (possibly non rule-based) reasoners, such as Pellet to be used. 
+- The OWL-API is OWL-centric, and you pretty much won't have to worry about RDF at all (aside from identifying things by IRIs and creating Literals as appropriate). Using the OWL API, you'll actually treat an ontology as a set of axioms rather than as a set of triples that happen to encode some axiom. If you're already familiar with the OWL specs, and are comfortable talking about things like ObjectPropertyAssertions, then you may find the OWL API a bit more natural.
 
-
-GoTo: [Top](#nlp)
-
-## Semantic Web
-
-- [Semantic_Web](https://en.wikipedia.org/wiki/Semantic_Web)
-- [Semantic Network](https://en.wikipedia.org/wiki/Semantic_network#History)
-- [TransE](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-relational-data.pdf)
 
 GoTo: [Top](#nlp)
 

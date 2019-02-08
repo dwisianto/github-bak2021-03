@@ -192,7 +192,13 @@ sudo swapon /dev/xvdf
 sudo swapon --show
 ```
 
- 
+### Resizing /dev/shm
+
+
+Updating the /etc/fstab file.
+```bash
+
+``` 
 
 ## Gnome
 
