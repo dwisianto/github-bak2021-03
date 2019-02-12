@@ -110,6 +110,8 @@ The following section lists the essential publications for each topic and a more
 
 - Prakash M Nadkarni, et. al. "Natural Language Processing: an Introduction" ([PDF]( https://pdfs.semanticscholar.org/b97e/3bd95b22fb87bd14615f4aeea6711c5a0be3.pdf ))
 - Eugene Charniak, "Statistical Techniques for Natural Language Processing" ([PDF](https://pdfs.semanticscholar.org/29fd/bbd3bb0b3c798a57e10576d318281d37dd2a.pdf))
+- Gold, E. Mark, "Language identification in the limit." Information and control 10, no. 5 (1967): 447-474. [PDF](http://www.cs.nott.ac.uk/~pszbsl/G52HPA/articles/Gold:67a.pdf) [Wiki](https://en.wikipedia.org/wiki/Language_identification_in_the_limit)
+>  This paper is as important to machine learning as the famous results by Godel on the incompleteness of logic, or the classic results by Church and Turing on the limitations of computability. Gold analyzed an extremely simple, and yet powerful, model of learning, whereby a teacher communicates with a learner, and assumes nothing in terms of the learner’s capabilities. The major result was that the set of context-free languages is not learnable in Gold’s model (which came to be known as inductive inference). This was an earth-shattering result 50 years ago, and influenced entire fields of inquiry, like linguistics. How is that children as young as 2 or 3 learn an unknown language (entirely unrelated to their ethnicity, as Indian children can learn Japanese just as easily as Japanese children can learn Hindi, if they grew up in Japan or India, respectively)? Gold’s paper is still relevant today, in the data-obsessed world of the 21st century, if only to remind us of the inherent limitations in the power of learning. If you aspire to be a data scientist, if you don't understand Gold’s theorem, it’s like being a physicist and not knowing the conservation of energy. It’s THAT important! [Quora](https://www.quora.com/What-are-some-of-the-best-machine-learning-papers-ever-published)
 
 
 ## Formal Language 
@@ -299,7 +301,21 @@ GoTo: [Top](#nlp)
 
 ## Ontology
 
-An ontology is a formal explicit description of concepts in a domain of discourse ( **classes** (sometimes called **concepts**)), properties of each **concept** describing various **features** and **attributes** of the **concept** (**slots** (sometimes called **roles** or **properties**)), and restrictions on **slots** (**facets** (sometimes called **role restrictions**)). An ontology together with a set of individual **instances** of classes constitutes a **knowledge base**. In reality, there is a fine line where the *ontology* ends and the *knowledge base* begins. [PDF](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html).
+An ontology is a formal explicit description of concepts in a domain of discourse ( **classes** (sometimes called **concepts**)), properties of each **concept** describing various **features** and **attributes** of the **concept** (**slots** (sometimes called **roles** or **properties**)), and restrictions on **slots** (**facets** (sometimes called **role restrictions**)). An ontology together with a set of individual **instances** of classes constitutes a **knowledge base**. In reality, there is a fine line where the *ontology* ends and the *knowledge base* begins. [html](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html).
+
+**Classes** are the focus of most ontologies. Classes describe concepts in the domain. For example, a class of pizzas represents all pizzas. Specific pizzas are instances of this class. The pizza in a store shelves is an instance of  the class of pizzas. A class can have subclasses that represent concepts that are more specific than the superclass. For example, we can divide the class of all pizzas into thin, and thick pizzas. Alternatively, we can divide a class of all pizzas into cheese and non-cheese pizzas. 
+
+Slots describe properties of classes and instances: cheese pizza has a full body; it is produced by the Château Lafite Rothschild winery. We have two slots describing the pizza in this example: the slot body with the value full and the slot maker with the value Château Lafite Rothschild winery. At the class level, we can say that instances of the class Pizza will have slots describing their flavor, ingredient, the maker of the pizza and so on.
+
+All instances of the class Wine, and its subclass Pauillac, have a slot maker the value of which is an instance of the class Winery (Figure 1). All instances of the class Winery have a slot produces that refers to all the wines (instances of the class Wine and its subclasses) that the winery produces.
+
+In practical terms, an ontology engineering includes:
+- defining classes in the ontology,
+- arranging the classes in a taxonomic (subclass–superclass) hierarchy,
+- defining slots and describing allowed values for these slots,
+- filling in the values for slots for instances.
+We can then create **a knowledge base** by defining individual instances of these classes filling in specific slot value information and additional slot restrictions.
+
 
 ### Communities
 
@@ -324,7 +340,7 @@ An ontology is a formal explicit description of concepts in a domain of discours
 ### Tools
 
 - [Protoge](https://protege.stanford.edu/)
-    - [Protege Tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf)
+    - [Protege Tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf) [OWLAPI quickstart](http://syllabus.cs.manchester.ac.uk/pgt/2017/COMP62342/introduction-owl-api-msc.pdf) 
     - [Simple Protege Tutorial](https://www.youtube.com/watch?v=R9ERlUgvgwM&list=PLea0WJq13cnAfCC0azrCyquCN_tPelJN1)
     - A practical exercise to create an ontology is available [practical exercise](../ont/)     
     - Practical exercise [owlTut2](https://medium.com/@vindulajayawardana/ontology-generation-and-visualization-with-prot%C3%A9g%C3%A9-6df0af9955e0)
@@ -341,17 +357,25 @@ An ontology is a formal explicit description of concepts in a domain of discours
 
 ### Terminology 
 
-- [Network Science](https://en.wikipedia.org/wiki/Network_science) [Social Network Analysis](https://en.wikipedia.org/wiki/Social_network_analysis) 
-- SKOS
 - RDF is a graph-based representation format. An RDF graph is a directed graph whose nodes are Resources (which can be anonymous, or identified by IRIs) and Literals, and whose edges are directed links identified by IRIs. This is amazingly simple, but because the identifiers are IRIs and can often be dereferenced, also amazingly useful. There's really not much more to say about RDF, because this is all there is to it. It's very flexible, and you can represent just about anything.
 - OWL, although designed to be used in the Semantic Web, and thus with RDF data, is really a logical language that only incidentally happens to be related to RDF. An OWL ontology consists of a set of OWL axioms, some of which declare that certain identifiers refer to individuals, some of which assert relationships between individuals (and non-individual data, such as literals), some of which express the structure of classes, and so on. The utility of OWL arises from the fact that, like RDF, it uses IRIs as identifiers, but the logical structure could exists entirely separately from RDF. In fact, though OWL ontologies can be serialized using RDF and, indeed, this is probably the most common serialization used, OWL can also be serialized in OWL/XML, the OWL Functional Syntax, the Manchester OWL Syntax, and any other serialization format that someone invents. These formats tend to focus on the OWL-level constructs, and it is clearer that an ontology is a set of axioms.
 - The Jena API is very firmly rooted in RDF. The basic concept is the Model (which is more primitive than the OntModel, which is used for doing more complicated OWL-related work) which provides a convenient API for constructing RDF graphs. Using Models, you'll create resources, add properties, and so on. Jena also includes a rules-based reasoner that is quite handy for working with RDF graphs.
 - Now, OWL can be serialized using RDF, so it's feasible to create a wrapper layer over an RDF graph so that you could say “create for me the class that is the intersection of A and B” and get back the resource identifying that class and transparently adding to the class whatever RDF triples are needed in the OWL serialization to assert that the new class is (equivalent to) the intersection of A and B. This is what the Jena OntModel API does. It does it in a generic way, which means that Jena can handle other ontology languages that can be serialized in RDF, too. Jena OntModels, at the time of writing, only support OWL1; new constructs introduced in OWL2 are not supported yet.
 - The fact that OWL-level constructs in Jena are simply wrappers over the RDF serialization means that rule-based reasoning is limited in what it can achieve. In particular, the Jena rule-based reasoners for OWL are logically incomplete (i.e., they can't infer everything that the OWL specs say should be inferred). They still do fairly well for day to day work, though. Jena does provide a Reasoner interface, which allows other (possibly non rule-based) reasoners, such as Pellet to be used. 
 - The OWL-API is OWL-centric, and you pretty much won't have to worry about RDF at all (aside from identifying things by IRIs and creating Literals as appropriate). Using the OWL API, you'll actually treat an ontology as a set of axioms rather than as a set of triples that happen to encode some axiom. If you're already familiar with the OWL specs, and are comfortable talking about things like ObjectPropertyAssertions, then you may find the OWL API a bit more natural.
-
+- SKOS
+- [Network Science](https://en.wikipedia.org/wiki/Network_science) -  [Social Network Analysis](https://en.wikipedia.org/wiki/Social_network_analysis) 
 
 GoTo: [Top](#nlp)
+
+
+### Ontology 101
+
+#### asdfasf
+
+#### asdfasdf
+
+
 
 ## Biomedical Text Mining  
 

@@ -47,6 +47,8 @@ Similar to the [Math](https://www.storyofmathematics.com/mathematicians.html),
 | | | |
 |-|-|-|
 | | | |
+| | | [LambdaLearn](https://docs.google.com/presentation/d/1Jsc_Y0Nr4RGvVaqt7PPOn2JfTzXfyTtf69yuqEa-MZM/edit?usp=sharing) |
+| | | |
 
 # Literatures
 
