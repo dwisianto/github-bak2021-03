@@ -5,6 +5,9 @@
     - [epel](https://fedoraproject.org/wiki/EPEL)
     - [pyenv](https://github.com/pyenv/pyenv/wiki)
     - [pyenv2](https://gist.github.com/clozed2u/b0421d8af60e26d97372)
+    - [Swap Space](#swap-space)
+    - [python](#python)
+    - [maven](#maven)
 - [ubuntu](#ubuntu) 
 - References
     - [centOs7Vnc](https://www.youtube.com/watch?v=aiFfHYuumXU)
@@ -131,7 +134,7 @@ sudo systemctl enable firewalld
 sudo systemctl status firewalld
 ```
 
-## Mount
+## Partition
 
 ```bash
 sudo -i # change to the root user
@@ -150,6 +153,20 @@ chown -R ubuntu:ubuntu /dev/ebs19a
 sudo emacs -nw /etc/fstab
 /dev/vdb /home2 ext4 defaults 0 0 
 ```
+
+### Partition Resizing
+
+```bash
+sudo emacs -nw /etc/fstab #comment out the device /dev/nvme1n1
+sudo umount /dev/sdk#umount the partition
+sudo fdisk -l /dev/nvme1n1 
+sudo fdisk /dev/nvme1n1
+#exist from fdisk
+lsblk
+sudo mkfs.ext4 /dev/nvme1n1p1
+sudo emacs -nw /etc/fstab #comment out the device /dev/nvme1n1
+```
+
 
 ## Swap Space
 
@@ -178,35 +195,26 @@ sudo swapon --show
 ```bash
 sudo swapoff -a
 sudo emacs -nw /etc/fstab # comment out the swap partition
-fdisk /dev/sda1
-p # list the exiting partition
-new # create a new partiion
+df # see existing mapping
+ls -l /dev/ # see available devices
+fdisk /dev/nvme2n1
+print # print the partition table
+new # create a new partition
 primary # it is primary type
+# accept the default values (three steps)
 l # list
 t # change partition id
 82 # for swap information
 w # write down the partition information
-partprobe /dev/sda1
-sudo mkswap /dev/xvdf
-sudo swapon /dev/xvdf
+p # print the partition 
+partprobe /dev/nvme2n1p1
+sudo mkswap /dev/nvme2n1p1
+sudo swapon /dev/nvme2n1p1
 sudo swapon --show
 ```
 
-### Resizing /dev/shm
 
 
-Updating the /etc/fstab file.
-```bash
-
-``` 
-
-## Gnome
-
-- remove home folder from desktop
-```bash
- gsettings set org.gnome.nautilus.desktop home-icon-visible false
- gsettings set org.gnome.nautilus.desktop trash-icon-visible false
-```  
 
 
 
@@ -226,6 +234,13 @@ source /etc/enviroment
 echo $JAVA_HOME
 ```
 
+### Maven
+
+```bash
+sudo yum -y install maven
+```
+
+
 ## Python
 
 
@@ -243,6 +258,17 @@ pyenv install 2.7.10
 pyenv global 2.7.10
 pyenv rehash
 ```
+
+
+## Gnome
+
+- remove home folder from desktop
+```bash
+ gsettings set org.gnome.nautilus.desktop home-icon-visible false
+ gsettings set org.gnome.nautilus.desktop trash-icon-visible false
+```  
+
+
 
 # Ubuntu
 

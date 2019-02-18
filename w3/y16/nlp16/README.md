@@ -301,20 +301,7 @@ GoTo: [Top](#nlp)
 
 ## Ontology
 
-An ontology is a formal explicit description of concepts in a domain of discourse ( **classes** (sometimes called **concepts**)), properties of each **concept** describing various **features** and **attributes** of the **concept** (**slots** (sometimes called **roles** or **properties**)), and restrictions on **slots** (**facets** (sometimes called **role restrictions**)). An ontology together with a set of individual **instances** of classes constitutes a **knowledge base**. In reality, there is a fine line where the *ontology* ends and the *knowledge base* begins. [html](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html).
 
-**Classes** are the focus of most ontologies. Classes describe concepts in the domain. For example, a class of pizzas represents all pizzas. Specific pizzas are instances of this class. The pizza in a store shelves is an instance of  the class of pizzas. A class can have subclasses that represent concepts that are more specific than the superclass. For example, we can divide the class of all pizzas into thin, and thick pizzas. Alternatively, we can divide a class of all pizzas into cheese and non-cheese pizzas. 
-
-Slots describe properties of classes and instances: cheese pizza has a full body; it is produced by the Château Lafite Rothschild winery. We have two slots describing the pizza in this example: the slot body with the value full and the slot maker with the value Château Lafite Rothschild winery. At the class level, we can say that instances of the class Pizza will have slots describing their flavor, ingredient, the maker of the pizza and so on.
-
-All instances of the class Wine, and its subclass Pauillac, have a slot maker the value of which is an instance of the class Winery (Figure 1). All instances of the class Winery have a slot produces that refers to all the wines (instances of the class Wine and its subclasses) that the winery produces.
-
-In practical terms, an ontology engineering includes:
-- defining classes in the ontology,
-- arranging the classes in a taxonomic (subclass–superclass) hierarchy,
-- defining slots and describing allowed values for these slots,
-- filling in the values for slots for instances.
-We can then create **a knowledge base** by defining individual instances of these classes filling in specific slot value information and additional slot restrictions.
 
 
 ### Communities
@@ -339,11 +326,13 @@ We can then create **a knowledge base** by defining individual instances of thes
 
 ### Tools
 
-- [Protoge](https://protege.stanford.edu/)
-    - [Protege Tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf) [OWLAPI quickstart](http://syllabus.cs.manchester.ac.uk/pgt/2017/COMP62342/introduction-owl-api-msc.pdf) 
+- [Protoge](https://protege.stanford.edu/) - [Protege Tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf) -      
     - [Simple Protege Tutorial](https://www.youtube.com/watch?v=R9ERlUgvgwM&list=PLea0WJq13cnAfCC0azrCyquCN_tPelJN1)
     - A practical exercise to create an ontology is available [practical exercise](../ont/)     
     - Practical exercise [owlTut2](https://medium.com/@vindulajayawardana/ontology-generation-and-visualization-with-prot%C3%A9g%C3%A9-6df0af9955e0)
+- Matthew Horridge and Sean Bechhofer. The OWL API: A Java API for OWL Ontologies. Semantic Web, 2(1):11–21, 2011. [owl-api](http://www.semantic-web-journal.net/sites/default/files/swj107_2.pdf)
+	- [OWLAPI quickstart](http://syllabus.cs.manchester.ac.uk/pgt/2017/COMP62342/introduction-owl-api-msc.pdf)    
+	- Birte Glimm, Ian Horrocks, Boris Motik, Giorgos Stoilos, and Zhe Wang. HermiT: An OWL 2 Reasoner. Journal of Automated Reasoning, 53(3):245–269, 2014.
 - [ProbLogic](https://dtai.cs.kuleuven.be/problog/publications.html)
 - [KAON](https://en.wikipedia.org/wiki/KAON)
 - [Open Biological and Biomedical Ontology](http://obofoundry.org/) - [robot](https://github.com/ontodev/robot)
@@ -371,9 +360,34 @@ GoTo: [Top](#nlp)
 
 ### Ontology 101
 
-#### asdfasf
+[html](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html)
 
-#### asdfasdf
+#### What is an ontology?
+
+An ontology is a formal explicit description of concepts in a domain of discourse ( **classes** (sometimes called **concepts**)), properties of each **concept** describing various **features** and **attributes** of the **concept** (**slots** (sometimes called **roles** or **properties**)), and restrictions on **slots** (**facets** (sometimes called **role restrictions**)). An ontology together with a set of individual **instances** of classes constitutes a **knowledge base**. In reality, there is a fine line where the *ontology* ends and the *knowledge base* begins. [html](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html).
+
+**Classes** are the focus of most ontologies. Classes describe concepts in the domain. For example, a class of pizzas represents all pizzas. Specific pizzas are instances of this class. The pizza in a store shelves is an instance of  the class of pizzas. A class can have subclasses that represent concepts that are more specific than the superclass. For example, we can divide the class of all pizzas into thin, and thick pizzas. Alternatively, we can divide a class of all pizzas into cheese and non-cheese pizzas. 
+
+Slots describe properties of classes and instances: cheese pizza has a full body; it is produced by the Château Lafite Rothschild winery. We have two slots describing the pizza in this example: the slot body with the value full and the slot maker with the value Château Lafite Rothschild winery. At the class level, we can say that instances of the class Pizza will have slots describing their flavor, ingredient, the maker of the pizza and so on.
+
+All instances of the class Wine, and its subclass Pauillac, have a slot maker the value of which is an instance of the class Winery (Figure 1). All instances of the class Winery have a slot produces that refers to all the wines (instances of the class Wine and its subclasses) that the winery produces.
+
+In practical terms, an ontology engineering includes:
+- defining classes in the ontology,
+- arranging the classes in a taxonomic (subclass–superclass) hierarchy,
+- defining slots and describing allowed values for these slots,
+- filling in the values for slots for instances.
+We can then create **a knowledge base** by defining individual instances of these classes filling in specific slot value information and additional slot restrictions.
+
+#### A Simple Knowledge-Engineering Methodology
+
+
+
+#### Defining classes and a class hierarchy
+
+#### Defining properties—more details
+
+#### What’s in a name?
 
 
 
