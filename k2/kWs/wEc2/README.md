@@ -134,6 +134,20 @@ sudo systemctl enable firewalld
 sudo systemctl status firewalld
 ```
 
+### vncconfig 
+
+Modify the folder .vnc/xstartup
+
+```bash
+#!/bin/sh                                                                                                                         
+
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+/etc/X11/xinit/xinitrc
+vncserver -kill $DISPLAY
+vncconfig -iconic &
+```
+
 ## Partition
 
 ```bash
@@ -239,6 +253,13 @@ echo $JAVA_HOME
 ```bash
 sudo yum -y install maven
 ```
+
+### Eclipse
+
+- /etc/environement
+- Use Marketplace to install PyDev and CDT
+- Modify startup **eclipse.ini** using the flag "-Xverify:none" 
+
 
 
 ## Python
@@ -389,10 +410,6 @@ sudo emacs -nw /etc/fstab
 
 
 
-# Eclipse
-
-- /etc/environement
-- Use Marketplace to install PyDev and CDT 
 
 
 

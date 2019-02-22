@@ -13,8 +13,7 @@
   - [Information Extraction](#information-extraction)
   - [Word Embedding](#word-embedding)
   - [Structured Prediction](#structured-prediction) 
-  - [Ontology](#ontology)
-  - [Biomedical Text Mining](#biomedical-text-mining)   
+  - [Ontology](#ontology)  
   - [Others](#others)  
 - [Software Tools](#software-tools)
   - [Coding Exercises](#coding-exercises)
@@ -38,7 +37,9 @@ The activities of the course include lectures, paper presentations, quizzes, a c
 - NLP Applications: name entity recognition, machine translation, information extraction.
 
 
-A few online demos of NLP tasks are available such as [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) and [allennlp](https://allennlp.org/). Similar courses are offered in a few academic institutions,such as [Notre Dame](https://www3.nd.edu/~dchiang/teaching/nlp/2018/), [UMich](https://www.youtube.com/playlist?list=PLLssT5z_DsK8BdawOVCCaTCO99Ya58ryR), [UnivVirginia](http://www.cs.virginia.edu/~kc2wc/),  [NYU](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/) [aparikh](https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf), [Yoav Artzi](https://yoavartzi.com/), [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/).
+A few online demos of NLP tasks are available such as [stanfordNlpDemo](http://nlp.stanford.edu:8080/corenlp/) and [allennlp](https://allennlp.org/). Similar courses are offered in a few academic institutions,such as [Notre Dame](https://www3.nd.edu/~dchiang/teaching/nlp/2018/), [UMich](https://www.youtube.com/playlist?list=PLLssT5z_DsK8BdawOVCCaTCO99Ya58ryR), [UnivVirginia](http://www.cs.virginia.edu/~kc2wc/),  [NYU](https://cs.nyu.edu/courses/fall17/CSCI-GA.3033-008/) [aparikh](https://cs.nyu.edu/~aparikh/Lecture1-2018.pdf), [Yoav Artzi](https://yoavartzi.com/), [mcollins](http://www.cs.columbia.edu/~mcollins/cs4705-fall2018/), [Joyce Y. Chai](http://www.cse.msu.edu/~cse842/).
+
+
 
 
 ## Textbook
@@ -302,13 +303,6 @@ GoTo: [Top](#nlp)
 ## Ontology
 
 
-
-
-### Communities
-
-- [askw](http://aksw.org/About.html) 
-
-
 ### Literatures
 
 - Fabien Gandon, "A Survey of the First 20 Years of Research on Semantic Web and Linked Data", [PDF](https://hal.inria.fr/hal-01935898/)
@@ -316,6 +310,9 @@ GoTo: [Top](#nlp)
 - Haase, P. and Völker, J., 2008. "Ontology learning and reasoning—dealing with uncertainty and inconsistency". In Uncertainty reasoning for the semantic web I (pp. 366-384). Springer, Berlin, Heidelberg. ([PDF](http://syntheticsapien.com/papers/URSW_Proceedings.pdf#page=48) )
 - Hohenecker, Patrick, and Thomas Lukasiewicz. "Deep Learning for Ontology Reasoning." 2017 [PDF](https://arxiv.org/pdf/1705.10342.pdf)
 - Suntisrivaraporn, Boontawee. "Polynomial-time reasoning support for design and maintenance of large-scale biomedical ontologies." (2008) [PDF](https://lat.inf.tu-dresden.de/research/phd/Sun-PhD-09.pdf)
+- Web Ontology Language [Wiki](https://www.w3.org/OWL/)
+- Research Community on Semantic Technology such as askw [askw](http://aksw.org/About.html) 
+
 
 #### Semantic Web
 
@@ -323,14 +320,13 @@ GoTo: [Top](#nlp)
 - [Semantic Network](https://en.wikipedia.org/wiki/Semantic_network#History)
 - [TransE](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-relational-data.pdf)
 
-
 ### Tools
 
 - [Protoge](https://protege.stanford.edu/) - [Protege Tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf) -      
     - [Simple Protege Tutorial](https://www.youtube.com/watch?v=R9ERlUgvgwM&list=PLea0WJq13cnAfCC0azrCyquCN_tPelJN1)
     - A practical exercise to create an ontology is available [practical exercise](../ont/)     
     - Practical exercise [owlTut2](https://medium.com/@vindulajayawardana/ontology-generation-and-visualization-with-prot%C3%A9g%C3%A9-6df0af9955e0)
-- Matthew Horridge and Sean Bechhofer. The OWL API: A Java API for OWL Ontologies. Semantic Web, 2(1):11–21, 2011. [owl-api](http://www.semantic-web-journal.net/sites/default/files/swj107_2.pdf)
+- Matthew Horridge and Sean Bechhofer. "The OWL API: A Java API for OWL Ontologies". Semantic Web, 2(1):11–21, 2011. [PDF](http://www.semantic-web-journal.net/sites/default/files/swj107_2.pdf)
 	- [OWLAPI quickstart](http://syllabus.cs.manchester.ac.uk/pgt/2017/COMP62342/introduction-owl-api-msc.pdf)    
 	- Birte Glimm, Ian Horrocks, Boris Motik, Giorgos Stoilos, and Zhe Wang. HermiT: An OWL 2 Reasoner. Journal of Automated Reasoning, 53(3):245–269, 2014.
 - [ProbLogic](https://dtai.cs.kuleuven.be/problog/publications.html)
@@ -357,8 +353,22 @@ GoTo: [Top](#nlp)
 
 GoTo: [Top](#nlp)
 
-
 ### Ontology 101
+
+Building blocks of OWL ontologies are **entities** and **axioms**.
+**Entities** (OWLEntity) can be individuals (OWLIndividual), i.e. concrete items in the domain (people, countries, genes),
+classes (OWLClass), i.e. sets of individuals (the class of students), 
+object properties ( OWLObjectProperty), i.e. relationships between individuals (loves, is part of) or 
+data properties, i.e. relationships between individuals and data values (birthdates, names).
+ 
+**Axioms** are statements about entities, for example "class Woman is a subclass of Person", 
+the "property isPartOf is transitive", 
+i.e. each element A that is part of one element B is also part of any element C that is part of element B, 
+or the "individual Robert is a member of the class Person".
+
+
+
+### Ontology 102
 
 [html](https://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html)
 
@@ -390,18 +400,12 @@ We can then create **a knowledge base** by defining individual instances of thes
 #### What’s in a name?
 
 
-
-## Biomedical Text Mining  
-
-- [Wiki](https://en.wikipedia.org/wiki/Biomedical_text_mining)  
-
-GoTo: [Top](#nlp)
-
 ## Others
 
 - P. Liang, H. Daume, and D. Klein. "Structure Compilation: Trading Structure for Features". ICML 2008. (PDF)
 - Nate Kushman, Yoav Artzi, Luke Zettlemoyer, and Regina Barzilay. "Learning to Automatically Solve Algebra Word Problems". ACL 2014 (PDF)
 - Pedro Domingos, Matthew Richardson. "Markov Logic: A Unifying Framework for Statistical Relational Learning"
+- Biomedical Text Mining [Wiki](https://en.wikipedia.org/wiki/Biomedical_text_mining)  
 
 GoTo: [Top](#nlp)
 
