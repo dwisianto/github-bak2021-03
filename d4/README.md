@@ -3,12 +3,12 @@
 
 ## Research
 
-
-| [Template](d19/template) | |
+| [d19](d19) | | 
 | ---- | ---- |
 | [jforests](d18/jforests) | |
 | [lambda](d19/lambda) | | 
-| [PI](https://www.nature.com/articles/d41586-019-00560-9) | | 
+| [PI](https://www.nature.com/articles/d41586-019-00560-9) | |
+| [Template](d19/template) | | 
 
 ## Writing
 

@@ -189,6 +189,16 @@ GoTo [Top](#git)
 | git clean -f -x | to remove ignored and non-ignored files |
 
 
+## git size
+
+Estimate size of a sandbox
+
+```bash
+git gc
+git count-objects -vH
+```
+
+
 
 # stash
 
