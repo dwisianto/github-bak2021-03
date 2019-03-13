@@ -12,8 +12,10 @@
      - [Ref4-Tutorial1](https://medium.com/@henriquebastos/the-definitive-guide-to-setup-my-python-workspace-628d68552e14)
 - [Language Reference](#language-reference)
 - [Package Module Extension](#package-module-extension)
-     - [the-hitchhikers-guide-to-packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/quickstart.html)
+     - [the-hitchhikers-guide-to-packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/index.html)
      - [package-in-python](http://zetcode.com/articles/packageinpython/)
+     - [Setup.py](https://jichu4n.com/posts/how-to-add-custom-build-steps-and-commands-to-setuppy/)
+     
      
 ## Python With Non Root
 

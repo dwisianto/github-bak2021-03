@@ -45,6 +45,7 @@
 | [Dk](kXX/kDocker) | | | 
 | [curl](kXX/kCurl) | | |
 | [tmux](kXX/kTmux) | | | 
+| [gnuScreen](kXX/kScreen) | | | 
 | [webApp](kXX/wApp) | | |
 |               | [jetty](kXX/wApp/jetty) [Tomcat](kXX/wApp/tomcat) | |  
 
