@@ -1,5 +1,11 @@
 # Python
 
+- [Standard Library](#standard-library)
+	- [py3](https://docs.python.org/3/library/index.html)
+	- [py2](https://docs.python.org/2/library/index.html)
+- [Numpy Library](#numpy-library)	
+- [Scipy Library](#scipy-library)	
+- [Language Reference](#language-reference)
 - [Python With Non Root](#python-with-non-root)
 - [Interpreter](#interpreter)
      - pythonpath
@@ -10,11 +16,23 @@
      - [Ref2](https://pybee.org/contributing/how/first-time/setup/)     
      - [Ref3-pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) 
      - [Ref4-Tutorial1](https://medium.com/@henriquebastos/the-definitive-guide-to-setup-my-python-workspace-628d68552e14)
-- [Language Reference](#language-reference)
 - [Package Module Extension](#package-module-extension)
      - [the-hitchhikers-guide-to-packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/index.html)
      - [package-in-python](http://zetcode.com/articles/packageinpython/)
      - [Setup.py](https://jichu4n.com/posts/how-to-add-custom-build-steps-and-commands-to-setuppy/)
+     
+     
+     
+# Standard Library
+
+| built-in containers | |
+|-|-|
+| set | | 
+| list | |      
+| dict | |
+| tuple | | 
+
+      
      
      
 ## Python With Non Root
@@ -305,5 +323,17 @@ This section contains a Python reference documentation.
 - https://shawnwun.github.io/talks/DL4NLG_20160906.pdf
 
 
+
+
+
+# Scipy Library
+
+# Numpy Library
+
+# Argparse Library
+
+https://docs.python.org/3/library/argparse.html
+
+# Pytest     
 
 

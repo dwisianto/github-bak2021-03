@@ -285,7 +285,10 @@ git reset
 | git checkout -b **branchName** | checkout an existing branch |
 | git branch **myNewBranchName** | create a new local branch |
 | git push -u origin **myNewBranchName** | push local branch to remote origin |
-| | |      
+| | |
+| git push origin --delete feature/login| deleting a remote branch |       
+| git branch -d feature/login | deleting a local branch | 
+| git branch -d -f feature/login | deleting a local branch that contains unmerged changes | 
 | | git delete |
 | ToDo: Still don't quite understand merge branch| git merge <branch> |
 |  |  merge <branch> into the current branch |
