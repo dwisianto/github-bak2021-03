@@ -23,5 +23,13 @@ Remap the prefix to Ctrl-Shift-6
 
 ```bash
 escape ^^^
+escape ^Jj
 ```
+
+Reloading screenrc without restarting screen
+
+```bash
+prefix : source $HOME/.screenrc
+```
+
 

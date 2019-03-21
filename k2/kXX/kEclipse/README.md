@@ -40,8 +40,23 @@ I include the variable "${BuildArtifactFilePrefix}" because CDT includes "lib" a
 - http://www.pydev.org/manual_101_install.html
 - 
 
+```bash
+from setuptools import setup, find_packages
 
-
+setup(
+   name='dproject',
+   version='0.1',
+   description='D project',
+   author='dwisianto',
+   author_email='dwisianto@gmail.com',
+   packages= find_packages(),
+   #install_requires=['bar', 'greek'], #external packages as dependencies
+   #tests
+   setup_requires=['pytest-runner'],
+   tests_require=['pytest'],
+   test_suite='py1.test'#py1.test
+)
+```
 
 
 ### Database

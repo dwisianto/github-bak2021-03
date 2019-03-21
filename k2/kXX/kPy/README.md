@@ -1,5 +1,9 @@
 # Python
 
+- [Standard Project](#standard-project)
+    - [Eclipse Dot PydevProject](#eclipse-dot-pydevproject)
+    - [Eclipse Dot Project](#eclipse-dot-project)
+    - [Python Project Setup](#python-project-setup)  
 - [Standard Library](#standard-library)
 	- [py3](https://docs.python.org/3/library/index.html)
 	- [py2](https://docs.python.org/2/library/index.html)
@@ -21,6 +25,116 @@
      - [package-in-python](http://zetcode.com/articles/packageinpython/)
      - [Setup.py](https://jichu4n.com/posts/how-to-add-custom-build-steps-and-commands-to-setuppy/)
      
+
+# Standard Project
+
+
+## Eclipse Dot PydevProject
+
+```bash
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse-pydev version="1.0"?><pydev_project>
+<pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
+<path>/${PROJECT_DIR_NAME}</path>
+</pydev_pathproperty>
+<pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">Default</pydev_property>
+<pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python interpreter</pydev_property>
+</pydev_project>
+```
+
+## Eclipse Dot Project
+
+```bash
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>pystruct120530pydev</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.python.pydev.PyDevBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.python.pydev.pythonNature</nature>
+	</natures>
+</projectDescription>
+```
+
+```bash
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>asdf</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.python.pydev.PyDevBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>				
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.python.pydev.pythonNature</nature>		
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+	</natures>
+</projectDescription>
+```
+
+## Python Project Setup
+
+```bash 
+
+from setuptools import setup, find_packages
+
+setup(
+   name='dproject',
+   version='0.1',
+   description='D project',
+   author='dwisianto',
+   author_email='dwisianto@gmail.com',
+   packages= find_packages(),
+   #install_requires=['bar', 'greek'], #external packages as dependencies
+   #tests
+   setup_requires=['pytest-runner'],
+   tests_require=['pytest'],
+   test_suite='py1.test'#py1.test
+)
+
+```
+
+
      
      
 # Standard Library
