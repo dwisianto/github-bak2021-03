@@ -1,9 +1,10 @@
 # d19
 
-- [o](#ontology)
-- [a](#aggregation)
+- [ontology](#ontology)
+- [aggregation](#aggregation)
 - [mm](MetamapLite)
-- [fm](#factorization-machine)
+- [factorization-machine](#factorization-machine)
+
 
 | | | | | 
 |-|-|-|-|
@@ -12,8 +13,6 @@
 | GraphMatch | GraphMatch | | match |
 | |   | |       | 
  
-
-# Journey
 
 
 
@@ -51,9 +50,25 @@
 
 # Ontology
 
+# Aggregation
+
+# Factorization Machine
 
 ## Diary
 
+
+- April 19, 2019 Friday
+- /mnt/sdm/ds19/gt/d.aws.nlp/a1/d.ml.raas16/raas16.lmart/pom.xml
+- April 12, 2019 Friday
+-  
+- /home/centos/ds19/db/y19data/letor4
+- /mnt/sdk/D19/gt/d.aws.nlp/a1/d.nlp.kg19/kg19.ont/kg19.ont.aml131115jpc
+- GraphMatching
+- MetamapLite
+- https://github.com/dbmi-pitt/nobletools/commits/master?after=47389ad6ee1dffe8296ebb48b6830d9c9e9d3f30+139
+- https://bitbucket.org/kvafy/java-mgrep
+- jdbm3""
+- 
 - [AML13](http://disi.unitn.it/~p2p/RelatedWork/Matching/Feriae_AgreementMakerLight13.pdf)
 - Ontology
     - OLexicon
@@ -74,7 +89,7 @@
 - 
 
 
-# Aggregation 
 
-# Factorization Machine
+
+
 
