@@ -54,11 +54,14 @@
 
 # Factorization Machine
 
-## Diary
+# Diary
+GoTo [d19](#d19)
 
-
+- python -m pip uninstall package_name
 - April 19, 2019 Friday
 - /mnt/sdm/ds19/gt/d.aws.nlp/a1/d.ml.raas16/raas16.lmart/pom.xml
+- 
+- 
 - April 12, 2019 Friday
 -  
 - /home/centos/ds19/db/y19data/letor4
