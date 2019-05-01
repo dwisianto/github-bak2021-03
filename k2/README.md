@@ -42,7 +42,7 @@
 |               | Jackson | | 
 | [Gt](kXX/kGt) | Git, SmartGit, Egit  | | 
 | [Qa](kXX/kQa) | Coding Question Answer | |  
-| [Py](kXX/kPy) | PyDev | | 
+| [Py](kXX/kPy) | PyDev  [Jupyter](kXX/kJupyter) | | 
 | [Db](kXX/kDb) | Database  | | 
 | [Dk](kXX/kDocker) | | | 
 | [curl](kXX/kCurl) | | |
