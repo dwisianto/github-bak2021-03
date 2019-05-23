@@ -54,6 +54,16 @@
 - git pull is essentially "git fetch" and "git merge"
 [git_fetch_and_merge](https://longair.net/blog/2009/04/16/git-fetch-and-merge/)
 
+## How to Keep two branch in sync
+
+```bash
+git checkout master
+git commit -am "message"
+git checkout gh-pages
+git merge --ff-only master
+```
+
+GoTo [Top](#git)
 
 ### Setup Local and Remote Repository
 
@@ -283,8 +293,10 @@ git reset
 | git branch -all | list all available branches |  
 | git checkout anExistingBranchName | checkout an existing branch |
 | git checkout -b **branchName** | checkout an existing branch |
+| | | 
 | git branch **myNewBranchName** | create a new local branch |
 | git push -u origin **myNewBranchName** | push local branch to remote origin |
+| git push --set-upstream origin **myNewBranchName** | push local branch to remote origin |
 | | |
 | git push origin --delete feature/login| deleting a remote branch |       
 | git branch -d feature/login | deleting a local branch | 

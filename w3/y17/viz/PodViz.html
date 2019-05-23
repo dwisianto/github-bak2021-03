@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+.nobr {white-space: nowrap}
+html, body {
+margin:0;
+padding:0;
+height:100%;
+}
+#container {
+position: absolute;
+width: 100%;
+height: 100%;
+left: 0;
+}
+#annotations {
+border-right: 1px solid grey;
+float: left;
+width: 25%;
+height: 100%;
+overflow-y: scroll;
+padding-left: 15px;
+}
+#textLegendContainer {
+margin-left: 25%;
+height: 100%;
+}
+#text {
+style: padding:15px;
+height: 85%;
+overflow-y: scroll;
+}
+#legend {
+bottom:0;
+border-top: 1px solid grey;
+height: 15%;
+overflow-y: scroll;
+}
+</style>
+<style>
+#type5{
+color:Blue}
+#type4{
+color:MediumBlue}
+#type3{
+color:DarkBlue}
+#type2{
+color:Navy}
+#type1{
+color:Black}
+</style>
+<body><div id="container">
+<div id="annotations">
+<h4 align="center">Annotation Features</h4>
+<br><div id="type1:0:3" style="display: none"><span class="type1">Text : <b>abc</b></span><br>Component ID: <b>0</b><br>Type : <b>type1</b><br>id = myId<br>type = myType<br><br></div><div id="type2:4:7" style="display: none"><span class="type2">Text : <b>def</b></span><br>Component ID: <b>1</b><br>Type : <b>type2</b><br>id = myId<br>type = myType<br><br></div><div id="type3:8:12" style="display: none"><span class="type3">Text : <b>ghij</b></span><br>Component ID: <b>2</b><br>Type : <b>type3</b><br>id = myId<br>type = myType<br><br></div><div id="type4:13:15" style="display: none"><span class="type4">Text : <b>kl</b></span><br>Component ID: <b>3</b><br>Type : <b>type4</b><br>id = myId<br>type = myType<br><br></div><div id="type5:16:20" style="display: none"><span class="type5">Text : <b>mnop</b></span><br>Component ID: <b>4</b><br>Type : <b>type5</b><br>id = myId<br>type = myType<br><br></div></div><div id="textLegendContainer">
+<div id="text" onClick="toggleHoldInfoFrame()">
+<span id="type1" onMouseOut="clearInfoFrame()" onMouseOver="showAnnotationInfo('type1:0:3')">abc</span> <span id="type2" onMouseOut="clearInfoFrame()" onMouseOver="showAnnotationInfo('type2:4:7')">def</span> <span id="type3" onMouseOut="clearInfoFrame()" onMouseOver="showAnnotationInfo('type3:8:12')">ghij</span> <span id="type4" onMouseOut="clearInfoFrame()" onMouseOver="showAnnotationInfo('type4:13:15')">kl</span> <span id="type5" onMouseOut="clearInfoFrame()" onMouseOver="showAnnotationInfo('type5:16:20')">mnop</span></div>
+<div id="legend">
+<form id="legendForm"><span id="type5" class="nobr"> <input id="type5"type="checkbox" checked onclick="handleTypeSelection(this)">type5</span>
+<span id="type4" class="nobr"> <input id="type4"type="checkbox" checked onclick="handleTypeSelection(this)">type4</span>
+<span id="type3" class="nobr"> <input id="type3"type="checkbox" checked onclick="handleTypeSelection(this)">type3</span>
+<span id="type2" class="nobr"> <input id="type2"type="checkbox" checked onclick="handleTypeSelection(this)">type2</span>
+<span id="type1" class="nobr"> <input id="type1"type="checkbox" checked onclick="handleTypeSelection(this)">type1</span>
+<span class="nobr"><input type="checkbox" onClick="toggle(this)"><strong>(Toggle All)</strong><br></span></form></div>
+</div>
+</div>
+<script>
+var holdInfoFrame = false;
+
+var map = {};
+map['type5'] = 'color:Blue';
+map['type4'] = 'color:MediumBlue';
+map['type3'] = 'color:DarkBlue';
+map['type2'] = 'color:Navy';
+map['type1'] = 'color:Black';
+
+function toggleHoldInfoFrame() {
+holdInfoFrame = !holdInfoFrame;
+if (!holdInfoFrame) {
+clearInfoFrame();
+}
+}
+
+function clearInfoFrame() {
+if (!holdInfoFrame) {
+elements = document.getElementById("annotations").childNodes;
+for (var j = 0; j < elements.length; j++){
+if (elements[j].nodeName != 'null' && elements[j].nodeName === 'div' || elements[j].nodeName === 'DIV') {
+elements[j].style.display = 'none';
+}
+}
+}
+}
+
+function showAnnotationInfo(idToShow) {
+if (!holdInfoFrame) {
+var element = document.getElementById(idToShow);
+element.style.display = 'block';
+}
+}
+
+function handleTypeSelection(element) {
+var newStyle = '';
+var rules = document.styleSheets[1].rules || document.styleSheets[1].cssRules;
+for (i = 0; i < rules.length; i++) {
+if (rules[i].selectorText.toLowerCase() == '#' + element.id.toLowerCase()) {
+if (!element.checked) {
+newStyle = "background:none";
+} else {
+newStyle = map[element.id];
+}
+rules[i].style.cssText = newStyle;
+}
+}
+}
+function toggle(source) {
+for(x in map) { 
+var form = document.getElementById("legendForm");
+var elements = form.getElementsByTagName("input");
+for (i = 0; i < elements.length; i++){
+if (elements[i].nodeName === "INPUT" && elements[i].checked != source.checked && elements[i].id != "toogle") {
+elements[i].click();
+}
+}
+}
+}
+</script>
+</body>
+</html>
