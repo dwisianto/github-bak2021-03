@@ -5,10 +5,10 @@ $(document).ready(function() {
 
 	crpsSetup();
 	rxnorm_ci();
-	
-	
-    //document.getElementById("section1a").innerHTML='<object type="text/html" data="PodViz.html" ></object>';	
-    $("#section42").load("PodViz.html");
+		
+    //document.getElementById("section3").innerHTML='<object type="text/html" data="PodViz.html" ></object>';	
+    $("#section3").load("PodViz.html");    
+    
 });
 
 
