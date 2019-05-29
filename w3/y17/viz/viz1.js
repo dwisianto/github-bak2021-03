@@ -481,6 +481,7 @@ function annoSetupComprehend() {
 	        data: data4annotator,
 	        	contentType: "application/json",
 	        	mimeType: "text/plain",
+	        	crossDomain : true,
 	        	error: function (strErr) { console.log("Error" + strErr ); },
 	        success: function ( strResponse ) {
 	        		console.log("Success" + strResponse );
