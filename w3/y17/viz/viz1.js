@@ -482,6 +482,11 @@ function annoSetupComprehend() {
 	        	contentType: "application/json",
 	        	mimeType: "text/plain",
 	        	crossOrigin : true,
+	        	crossDomain : true,
+	        	cors: true,
+	        	headers: {
+	        		'Acess-Control-Allow-Origin':'*',
+	        	},
 	        	error: function (strErr) { console.log("Error" + strErr ); },
 	        success: function ( strResponse ) {
 	        		console.log("Success" + strResponse );
