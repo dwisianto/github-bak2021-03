@@ -7,7 +7,7 @@ $(document).ready(function() {
 	rxnorm_ci();
 		
     //document.getElementById("section3").innerHTML='<object type="text/html" data="PodViz.html" ></object>';	
-    $("#section3").load("PodViz.html");    
+
     
 });
 
@@ -34,13 +34,13 @@ var bio2rdfSrvcUrl="http://bio2rdf.org/";
 
 
 // [] Annotation
-var annoSrvcUrl          = "analyze/general_medical_v1.0_flow";
+
 var annoTxtAreaIdStr     = "annoTxtAreaId";
 var annoTxtAreaId        = "#" + annoTxtAreaIdStr;
 var annoTxtBtnAnnotateId = "#annoTxtBtnAnnotateId";
 var annoTxtBtnClearId    = "#annoTxtBtnClearId";
 var annoTxtBtnSampleId     = "#annoTxtBtnSampleId";
-var annoBtnComprehendId = "annoBtnComprehendId";
+var annoTxtBtnComprehendId = "#annoTxtBtnComprehendId";
 
 var annoModalFocusId          = "#annoModalFocusId";
 var annoModalOptionId         = "#annoModalOptionId";
@@ -51,12 +51,13 @@ var annoModalOptionSrvc1BtnId = "annoModalOptionSrvc1BtnId";
 var annoModalOptionSrvc2BtnId = "annoModalOptionSrvc2BtnId";
 var annoModalOptionMsgErr     = "Service is not responding";
 
-
+var annoSrvcUrl          = "analyze/a_flow"; // deprecated
 var annoSrvc1UrlDefault  = "http://t19a7gcname.us-east-2.elasticbeanstalk.com";
 var annoSrvc2UrlDefault  = "http://t19a7gcname.us-east-2.elasticbeanstalk.com";
 var annoSrvc1Url         = annoSrvc1UrlDefault; 
 var annoSrvc2Url         = annoSrvc2UrlDefault;
-
+var srvc1raw             = "http://t19a7gcname.us-east-2.elasticbeanstalk.com"; // default value              
+var srvc1viz             = srvc1raw + "/rest/season/viz";
 
 
 /*
@@ -77,7 +78,7 @@ function crpsSetup() {
         url: ajax_api,
         dataType: "json",
         success: function ( lstDocJsn ) {
-        		console.log( lstDocJsn );
+        		//console.log( lstDocJsn );
         		
         		crpsDocs = lstDocJsn;
         		crpsSetupTable();
@@ -98,14 +99,14 @@ function crpsSetupTable() {
 	// [] table content
 	divTableContent="";
     $(crpsDocs).each(function() {
-		console.log( this.name + " \t " + this.category + " \t " + this.content);
+		//console.log( this.name + " \t " + this.category + " \t " + this.content);
 		divTableContent += "<tr>"+
 		"<td>"+this.docId+"</td>"+
 	    "<td>"+this.name+"</td>"+
 	    "<td>"+this.category+"</td>"+	    	    
 		"</tr>";    		
     });
-    console.log(divTableContent);
+    //console.log(divTableContent);
     
 	divTableStart="<table id=\""+crpsTableIdStr +"\" class=\"table\">";
 	divTableHead="<thead>"+"<tr>"+"<th>id</th>"+"<th>Name</th>"+"<th>Category</th>"+"</tr>"+"</thead>";
@@ -195,23 +196,24 @@ function annoSetup() {
 	console.log("annoSetup");
 
 	// Populate the 
-	$(annoTxtAreaId).val(" unstructured text ");
+	$(annoTxtAreaId).val(" natural text language  ");
 	
 	// clear the text area 
 	$(annoTxtBtnClearId).click( function () {
-		$(annoTxtAreaId).val(" ... ");
+		$(annoTxtAreaId).val("  ");
 	} );
 	
 	// load a sample document
 	$(annoTxtBtnSampleId).click(function () {
-		docCurr = crpsDocs[0];
-		$(annoTxtAreaId).val( docCurr.content );
+		//docCurr = crpsDocs[0];
+		//$(annoTxtAreaId).val( docCurr.content );		
+		$(annoTxtAreaId).val(  " Learn from yesterday , live for today , and hope for tomorrow . " );
 	} ); 		 
 
 	// [] annoSetup
 	annoSetupOption() 
 	annoSetupAnnotate() 
-	annoInitComprehend()
+	annoSetupComprehend()
 	
 }
 
@@ -245,7 +247,7 @@ function annoSetupAnnotateSuccess( lstObj ) {
 	
 	// []	
 	strContent = $(annoTxtAreaId).val(); // get the value of text area
-	console.log(strContent);
+	//console.log(strContent);
 
 	// [] 
 	prevBegin=0;
@@ -253,17 +255,17 @@ function annoSetupAnnotateSuccess( lstObj ) {
 	divContent = document.createElement('section');
 	txtContent = "";
 	var iCtr;
-	console.log(lstObj.length);
+	//console.log(lstObj.length);
 	for (iCtr = 0; iCtr < lstObj.length; iCtr++) {
-		console.log( lstObj[iCtr].cui );
+		//console.log( lstObj[iCtr].cui );
 	    currBegin = lstObj[iCtr].begin;
 	    currEnd   = lstObj[iCtr].end;
 	    prevEnd   = currBegin;
 	    
 	    if( prevEnd < prevBegin ) { continue; } 
 	    	    
-	    console.log(" ====== "+ prevBegin + " " + prevEnd + " " + strContent.substring( prevBegin, prevEnd ) );
-		console.log(" [span] "+ currBegin + " " + currEnd + " " + strContent.substring( currBegin, currEnd ) );
+	    //console.log(" ====== "+ prevBegin + " " + prevEnd + " " + strContent.substring( prevBegin, prevEnd ) );
+		//console.log(" [span] "+ currBegin + " " + currEnd + " " + strContent.substring( currBegin, currEnd ) );
 		txtContent +=  strContent.substring( prevBegin, prevEnd ).replace(/\n/g,'<br/>'); 
 		
 		
@@ -465,26 +467,26 @@ function annoSetupOptionSuccessSave() {
 }
 
 
-function annoInitComprehend() {
+function annoSetupComprehend() {
 
-	$(annoBtnComprehendId).click( function () {
+	$(annoTxtBtnComprehendId).click( function () {
 		console.log(" ... comprehend " );
 		
 		//dataType: "application/json",		
 		console.log( $(annoTxtAreaId).val() );		
-		var data4annotator=$(annoTxtAreaId).val();
+		var data4annotator=$(annoTxtAreaId).val();		
 		$.ajax({
-			url: annoSrvcUrl,
+			url: srvc1viz,
 	        type: "POST",	        
 	        data: data4annotator,
-	        	contentType: "text/plain",
-	        	dataType: "json",		
+	        	contentType: "application/json",
+	        	mimeType: "text/plain",
+	        	error: function (strErr) { console.log("Error" + strErr ); },
 	        success: function ( strResponse ) {
-	        		console.log("Success" + strResponse.unstructured[0].data.concepts ); 
-	        		annoSetupAnnotateSuccess( strResponse.unstructured[0].data.concepts );
-	        }, error: function (strErr) {
-	        		console.log("Error" + strErr );
-			}
+	        		console.log("Success" + strResponse );
+	        	    $("#section3").html(strResponse);	        		
+	        		//annoSetupAnnotateSuccess( strResponse.unstructured[0].data.concepts );
+	        }	        					
 	    });		
 		
 	} ); 					
