@@ -481,6 +481,7 @@ function annoSetupComprehend() {
 	        data: data4annotator,
 	        	contentType: "application/json",
 	        	mimeType: "text/plain",
+	        	dataType: "text/plain",
 	        	crossOrigin : true,
 	        	crossDomain : true,
 	        	cors: true,
