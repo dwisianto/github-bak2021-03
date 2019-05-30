@@ -57,7 +57,7 @@ var annoSrvc2UrlDefault  = "http://t19a7gcname.us-east-2.elasticbeanstalk.com";
 var annoSrvc1Url         = annoSrvc1UrlDefault; 
 var annoSrvc2Url         = annoSrvc2UrlDefault;
 var srvc1raw             = "http://t19a7gcname.us-east-2.elasticbeanstalk.com"; // default value              
-var srvc1viz             = srvc1raw + "/rest/season/viz";
+var srvc1viz             = srvc1raw + "/rest/season";
 
 
 /*
@@ -229,7 +229,7 @@ function annoSetupAnnotate() {
 			url: annoSrvcUrl,
 	        type: "POST",	        
 	        data: data4annotator,
-	        	contentType: "text/plain",
+	        contentType: "text/plain",
 	        	dataType: "json",		
 	        success: function ( strResponse ) {
 	        		console.log("Success" + strResponse.unstructured[0].data.concepts ); 
@@ -468,30 +468,32 @@ function annoSetupOptionSuccessSave() {
 
 
 function annoSetupComprehend() {
-
+	
 	$(annoTxtBtnComprehendId).click( function () {
 		console.log(" ... comprehend " );
-		
-		//dataType: "application/json",		
+
+        //contentType: "text/plain",		
+		//dataType: "text",		  	
 		console.log( $(annoTxtAreaId).val() );		
 		var data4annotator=$(annoTxtAreaId).val();		
 		$.ajax({
 			url: srvc1viz,
-	        type: "POST",	        
+	        type: "POST",
 	        data: data4annotator,
-	        	contentType: "application/json",
-	        	mimeType: "text/plain",
-	        	dataType: "text/plain",
-	        	crossOrigin : true,
+	        contentType: "application/json",
+	        dataType: "json",
 	        	crossDomain : true,
-	        	cors: true,
-	        	headers: {
-	        		'Acess-Control-Allow-Origin':'*',
-	        	},
-	        	error: function (strErr) { console.log("Error" + strErr ); },
-	        success: function ( strResponse ) {
-	        		console.log("Success" + strResponse );
-	        	    $("#section3").html(strResponse);	        		
+	        	error: function (errObj, errOpt, errThrown) { 
+	        		console.log("Ajax Error"); 
+	        		console.log(errObj ); 
+	        		console.log(errObj.status);
+	        		console.log(errOpt);
+	        		console.log(errThrown);
+	        	}, 
+	        	success: function ( strResponse ) {
+	        		console.log("Ajax Success");
+	        		console.log( strResponse );
+	        	    //$("#section3").html(strResponse);	        		
 	        		//annoSetupAnnotateSuccess( strResponse.unstructured[0].data.concepts );
 	        }	        					
 	    });		
@@ -537,7 +539,7 @@ function tmpl_ajax_post() {
 	var data4annotator=$(annoTxtAreaId).val();
 	$.ajax({
 		url: annoSrvcUrl,
-        type: "POST",	        
+		type: "POST",	        
         data: data4annotator,
         dataType: "application/json",
         	contentType: "text/plain",
