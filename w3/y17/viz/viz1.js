@@ -8,7 +8,8 @@ $(document).ready(function() {
 		
     //document.getElementById("section3").innerHTML='<object type="text/html" data="PodViz.html" ></object>';	
 
-    
+	// [] pod.view
+    //pvSetup();
 });
 
 

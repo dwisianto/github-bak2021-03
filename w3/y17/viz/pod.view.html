@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link href="pod.view.style1.css" rel="stylesheet" type="text/css" >
+	<link href="pod.view.style2.css" rel="stylesheet" type="text/css" >
+	<script src="pod.view.js" type="text/javascript"/></script>
+		
+</head>
+<body>
+
+<div class="idRow">
+	<div id="idMotif">
+	<br>
+		<div id="type1:0:3" style="display:none"><span class="type1">Text : <b>abc</b></span><br>start = 0<br>end = 3<br>textPattern = abc<br>id = 0<br>type = type1<br><br></div>
+		<div id="type2:4:7" style="display:none"><span class="type2">Text : <b>def</b></span><br>start = 4<br>end = 7<br>textPattern = def<br>id = 1<br>type = type2<br><br></div>
+		<div id="type3:8:12" style="display:none"><span class="type3">Text : <b>ghij</b></span><br>start = 8<br>end = 12<br>textPattern = ghij<br>id = 2<br>type = type3<br><br></div>
+		<div id="type4:13:15" style="display:none"><span class="type4">Text : <b>kl</b></span><br>start = 13<br>end = 15<br>textPattern = kl<br>id = 3<br>type = type4<br><br></div>
+		<div id="type5:16:20" style="display:none"><span class="type5">Text : <b>mnop</b></span><br>start = 16<br>end = 20<br>textPattern = mnop<br>id = 4<br>type = type5<br><br></div>
+	</div>
+
+<div id="idText" onClick="toggleHoldInfoFrame()">
+<span id="type1" onMouseOut="clearInfoFrame()" onMouseOver="showInfo('type1:0:3')">abc</span> <span id="type2" onMouseOut="clearInfoFrame()" onMouseOver="showInfo('type2:4:7')">def</span> <span id="type3" onMouseOut="clearInfoFrame()" onMouseOver="showInfo('type3:8:12')">ghij</span> <span id="type4" onMouseOut="clearInfoFrame()" onMouseOver="showInfo('type4:13:15')">kl</span> <span id="type5" onMouseOut="clearInfoFrame()" onMouseOver="showInfo('type5:16:20')">mnop</span></div>
+
+
+<div id="idCategory">
+<form id="idCategoryForm">
+<ul>
+<li><span class="nobr"><input type="checkbox" onClick="switchOnOff(this)"><strong>(All)</strong><br></span></li>
+<li><span id="type5" class="nobr"> <input id="type5"type="checkbox" checked onclick="fnCategorySelected(this)">type5</span></li>
+<li><span id="type4" class="nobr"> <input id="type4"type="checkbox" checked onclick="fnCategorySelected(this)">type4</span></li>
+<li><span id="type3" class="nobr"> <input id="type3"type="checkbox" checked onclick="fnCategorySelected(this)">type3</span></li>
+<li><span id="type2" class="nobr"> <input id="type2"type="checkbox" checked onclick="fnCategorySelected(this)">type2</span></li>
+<li><span id="type1" class="nobr"> <input id="type1"type="checkbox" checked onclick="fnCategorySelected(this)">type1</span></li>
+</ul>
+</form></div>
+</div>
+
+
+</body>
+</html>
