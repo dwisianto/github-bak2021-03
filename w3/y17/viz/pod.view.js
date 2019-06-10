@@ -35,11 +35,10 @@
 /**
  * [] pod view
  */
-var pvQryJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';
-var pvQryObj                     = JSON.parse(pvQryJson);
-var pvQryAtt1                    = "natural";
-var pvQryAtt2                    = "data";
-var pvQryAtt3                    = "motifs";	
+var pvQryObj                     = {};
+var pvQryAtt1                    = "";
+var pvQryAtt2                    = "";
+var pvQryAtt3                    = "";	
 
 var pvDatObj                     = {}; 
 var pvDatAtt1                    = "datum";
@@ -60,6 +59,27 @@ var pvTextStyleSheetBrightnessId2 = 194; // used to generate random color
  */
 $(document).ready(function() { 
 	console.log("document is ready"); 	
+		
+	//inJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';
+	//inObj                       = JSON.parse(inJson)
+	//pvInAtt1                    = "natural";
+	//pvInAtt2                    = "data";
+	//pvInAtt3                    = "motifs";		
+	//pvRun( pvInJson, pvInAtt1, pvInAtt2, pvInAtt3 );
+	
+});
+
+
+/**
+ * main function
+ */
+function pvRun( inObj, qryAtt1, qryAtt2, qryAtt3  ) {
+	
+	// []
+	pvQryObj                     = inObj;
+	pvQryAtt1                    = qryAtt1;
+	pvQryAtt2                    = qryAtt2;
+	pvQryAtt3                    = qryAtt3;	
 	
 	 // [] the input is a json json object
 	pvQueryAnalysis();	
@@ -96,10 +116,7 @@ $(document).ready(function() {
 	$(pvCategoryAreaId).html(strCategory); // console.log(strCategory);
 	$(pvTextAreaId).html(strText);         // $(pvTextAreaId).text(strText); 
 	
-});
-
-
-
+}
 
 
 /**
@@ -140,7 +157,7 @@ function pvTextStyleFnGen() {
 	strStyle = "";
 	for( var key in pvTextStyleClr ) { 
 		if( pvTextStyleClr.hasOwnProperty(key) ) {
-			console.log( key + " : " + pvTextStyleClr[key] );
+			//console.log( key + " : " + pvTextStyleClr[key] );
 			strStyle += "#"+key+"{"+ pvTextStyleClr[key] +"}";	
 		}				
 	} 
@@ -167,14 +184,14 @@ function pvTextStyleFnGen() {
  * 
  * @returns
  */
-function pvQueryAnalysis( ) {
+function pvQueryAnalysis( qryObj ) {
 	
 	
 	var useDefaultColor=true; // default color is only used once, the default color is not used afterwards		
-	for (let iCtrNat = 0; iCtrNat < pvQryObj.natural.length; iCtrNat++) {		
+	for (let iCtrNat = 0; iCtrNat < Object.keys(pvQryObj[pvQryAtt1]).length; iCtrNat++) {		
 		//console.log( "iCtrNat :"+iCtrNat +"/" + pvQryObj.natural.length );
 				
-		for (let iCtrMtf = 0; iCtrMtf < pvQryObj.natural[iCtrNat].data.motifs.length; iCtrMtf++) {			
+		for (let iCtrMtf = 0; iCtrMtf < Object.keys(pvQryObj[pvQryAtt1][iCtrNat][pvQryAtt2][pvQryAtt3]).length; iCtrMtf++) {			
 			//console.log( "iCtrMtf :"+iCtrMtf +"/" + "/"+pvQryObj.natural[iCtrNat].data.motifs.length);
 			
 			objNow = pvQryObj[pvQryAtt1][iCtrNat][pvQryAtt2][pvQryAtt3][iCtrMtf];
@@ -196,8 +213,8 @@ function pvQueryAnalysis( ) {
 						
 		}
 	} 	
-	console.log(Object.keys(pvQryObj).length);
-	console.log(Object.keys(pvDatObj).length);
+	//console.log(Object.keys(pvQryObj).length);
+	//console.log(Object.keys(pvDatObj).length);
 }
 
 /**

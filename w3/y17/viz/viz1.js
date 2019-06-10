@@ -494,6 +494,17 @@ function annoSetupComprehend() {
 	        	success: function ( strResponse ) {
 	        		console.log("Ajax Success");
 	        		console.log( strResponse );
+	        		
+	        		//pvInJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';	
+	        		//pvInAtt1                    = "natural";
+	        		//pvInAtt2                    = "data";
+	        		//pvInAtt3                    = "motifs";
+	        		pvInJson = strResponse;
+	        		pvInAtt1                    = "natural";
+	        		pvInAtt2                    = "data";
+	        		pvInAtt3                    = "moments";	        		
+	        		pvRun( pvInJson, pvInAtt1, pvInAtt2, pvInAtt3 );
+
 	        	    //$("#section3").html(strResponse);	        		
 	        		//annoSetupAnnotateSuccess( strResponse.unstructured[0].data.concepts );
 	        }	        					
