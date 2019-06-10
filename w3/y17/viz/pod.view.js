@@ -1,26 +1,33 @@
 /**
+ * ToDo : background vs foreground colors
+ * 
  *
  * pvTextAreaId
  * pvMotifAreaId
  * pvCategoryAreaId
  * pvCategoryFormId
  * 
+ * - pvDatObj captures the important aspect of pvQryObj
+ *   Query -> Data object 
  * 
- * - var pvTextStyleClr 
+ * - pvTextStyleClr 
  * It controls the text coloring schema.
  * It is set once in the query analysis
+ * 
+ * - pvTextStyleSheetBrightnessId
+ * this id is use to control the random color generator
+ * - pvTextStyleSheetBrightnessId2=
+ * This set the brac
  *  
  * - pvTextStyleSheetId=0
  * This id is automatically generated.
  * This id is important because it update the style of text area
  * 
- * - pvTextFlagKeepMotif is the flag to keep displaying motif.
+ * - pvTextFlagDiscardMotif is the flag to keep displaying motif.
  * If true, the motif description will stay although the mouse has left the word.
  * If false, the motif description will disappear as soon as the mouse left the word.
  * The default value is true.
  * 
- * - pvTextStyleSheetBrightnessId
- * this id is use to control the random color generator
  * 
  **/
 
@@ -30,6 +37,12 @@
  */
 var pvQryJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';
 var pvQryObj                     = JSON.parse(pvQryJson);
+var pvQryAtt1                    = "natural";
+var pvQryAtt2                    = "data";
+var pvQryAtt3                    = "motifs";	
+
+var pvDatObj                     = {}; 
+var pvDatAtt1                    = "datum";
 
 var pvTextAreaId                 = "#pvTextAreaId";
 var pvMotifAreaId                = "#pvMotifAreaId";
@@ -38,8 +51,9 @@ var pvCategoryFormId             = "#idCategoryForm";
 
 var pvTextStyleClr               = {};
 var pvTextStyleSheetId           = 0; // document.styleSheets
-var pvTextFlagKeepMotif          = false; //var holdInfoFrame = true;
+var pvTextFlagDiscardMotif       = false; //var holdInfoFrame = true;
 var pvTextStyleSheetBrightnessId = 49; // used to generate random color
+var pvTextStyleSheetBrightnessId2 = 194; // used to generate random color
 
 /**
  * [] Document load
@@ -57,32 +71,31 @@ $(document).ready(function() {
 	
 	// [] 
 	var strMotif    = '<br>';	
-	var strCategory = '<form id="idCategoryForm"><ul>';	
+	var strCategory = '<form id=\"'+pvCategoryFormId.replace("#","")+'\"><ul>';	
 	strCategory    += '<li><span class=\"nobr\"><input type=\"checkbox\" checked onClick=\"pvCategoryFnTurnAllOnOff(this)\"><strong>(All)</strong><br></span></li>';
 	var strText     = '<div id="idText" onClick="pvMotifFnClearInverse()">';	
-	for (let iCtrNat = 0; iCtrNat < pvQryObj.natural.length; iCtrNat++) {		
-		//console.log( "iCtrNat :"+iCtrNat +"/" + pvQryObj.natural.length );
-		
-		for (let iCtrMtf = 0; iCtrMtf < pvQryObj.natural[iCtrNat].data.motifs.length; iCtrMtf++) {
-			//console.log( "iCtrMtf :"+iCtrMtf +"/" + "/"+pvQryObj.natural[iCtrNat].data.motifs.length);			
-
-			strTxt   = pvQryObj.natural[iCtrNat].data.motifs[iCtrMtf].textPattern;			
-			strStart = pvQryObj.natural[iCtrNat].data.motifs[iCtrMtf].start;								
-			strEnd   = pvQryObj.natural[iCtrNat].data.motifs[iCtrMtf].end;
-			strId    = pvQryObj.natural[iCtrNat].data.motifs[iCtrMtf].id;						
-			strType  = pvQryObj.natural[iCtrNat].data.motifs[iCtrMtf].type;			
-			
+	for (let iCtrMtf = 0; iCtrMtf < Object.keys(pvDatObj).length; iCtrMtf++) {
+			// [] 
+			objNow   = pvDatObj[iCtrMtf];
+			// [] 
+			strTxt   = objNow.textPattern;			
+			strStart = objNow.start;								
+			strEnd   = objNow.end;
+			strId    = objNow.id;						
+			strType  = objNow.type;			
+			// [] 
 			strMotif    += pvMotifFnGen(strTxt, strStart, strEnd, strId, strType);
 			strCategory += pvCategoryFnGen(strTxt, strStart, strEnd, strId, strType);
 			strText     += pvTextFnGen(strTxt, strStart, strEnd, strId, strType);
-		}
-	} 	
+	}
 	strCategory += "</ul></form>";
 	strText +='</div>';
+	
+	// [] 
 	$(pvMotifAreaId).html(strMotif);       // console.log(strMotif);
 	$(pvCategoryAreaId).html(strCategory); // console.log(strCategory);
 	$(pvTextAreaId).html(strText);         // $(pvTextAreaId).text(strText); 
-    
+	
 });
 
 
@@ -141,9 +154,11 @@ function pvTextStyleFnGen() {
 }
 
 /**
+ * In
+ *   pvQryObj
  * Out
- *   pvTextStyleMap[strType]
- * pvText
+ *   pvTextStyleClr[strType] : color for the style
+ *   pvText
  * 
  * 	
  * console.log(pvQryJson);
@@ -153,32 +168,47 @@ function pvTextStyleFnGen() {
  * @returns
  */
 function pvQueryAnalysis( ) {
-		
+	
+	
+	var useDefaultColor=true; // default color is only used once, the default color is not used afterwards		
 	for (let iCtrNat = 0; iCtrNat < pvQryObj.natural.length; iCtrNat++) {		
 		//console.log( "iCtrNat :"+iCtrNat +"/" + pvQryObj.natural.length );
 				
 		for (let iCtrMtf = 0; iCtrMtf < pvQryObj.natural[iCtrNat].data.motifs.length; iCtrMtf++) {			
 			//console.log( "iCtrMtf :"+iCtrMtf +"/" + "/"+pvQryObj.natural[iCtrNat].data.motifs.length);
 			
-			strTxt   = pvQryObj.natural[iCtrNat].data.motifs[iCtrMtf].textPattern;			
-			strStart = pvQryObj.natural[iCtrNat].data.motifs[iCtrMtf].start;								
-			strEnd   = pvQryObj.natural[iCtrNat].data.motifs[iCtrMtf].end;
-			strId    = pvQryObj.natural[iCtrNat].data.motifs[iCtrMtf].id;						
-			strType  = pvQryObj.natural[iCtrNat].data.motifs[iCtrMtf].type;			
+			objNow = pvQryObj[pvQryAtt1][iCtrNat][pvQryAtt2][pvQryAtt3][iCtrMtf];
 			
-			pvTextStyleClr[ strType] = "color:"+pvUtlRandomColor(pvTextStyleSheetBrightnessId) ;
-			console.log( ' pvTextStyleMap [ ' +  strType  + ' ] = '+ pvTextStyleClr[strType] );
+			strTxt   = objNow.textPattern;			
+			strStart = objNow.start;								
+			strEnd   = objNow.end;
+			strId    = objNow.id;						
+			strType  = objNow.type;			
+			
+			// [] determine the color style
+			pvTextStyleClr[strType] = "background-color:"+pvUtlRandomColor(pvTextStyleSheetBrightnessId2)
+			                         +";color:"+pvUtlRandomColor(pvTextStyleSheetBrightnessId, useDefaultColor);
+			useDefaultColor = false; // default color is only used once, the default color is not used afterwards
+			//console.log( ' pvTextStyleClr [ ' +  strType  + ' ] = '+ pvTextStyleClr[strType] );
+			
+			// [] copy over to pvDatObj
+			pvDatObj[iCtrMtf] = objNow;		
+						
 		}
 	} 	
-		
+	console.log(Object.keys(pvQryObj).length);
+	console.log(Object.keys(pvDatObj).length);
 }
 
 /**
  * Generate random  color based on brightness
+ * 
+ * If useDefault = true then return a default black color
+ * If useDefault = false then generate a random color
  * @param brightness
  * @returns
  */
-function pvUtlRandomColor(brightness){
+function pvUtlRandomColor( brightness, useDefault=false ) {
 	
 	  function randomChannel(brightness){
 	    var r = 255-brightness;
@@ -187,7 +217,12 @@ function pvUtlRandomColor(brightness){
 	    return (s.length==1) ? '0'+s : s;
 	  }
 	  
-	  return '#' + randomChannel(brightness) + randomChannel(brightness) + randomChannel(brightness);
+	  var valOut = '#000000';
+	  if( useDefault == false) {
+		  valOut = '#' + randomChannel(brightness) + randomChannel(brightness) + randomChannel(brightness);  
+	  }
+	  
+	  return valOut;
 }
 
 
@@ -234,7 +269,7 @@ function pvMotifFnGen(strTxt, strStart, strEnd, strId, strType) {
 
 function pvMotifFnClear() { //function clearInfoFrame() {
 	
-	if (!pvTextFlagKeepMotif) { 
+	if (!pvTextFlagDiscardMotif) { 
 		elements = document.getElementById(pvMotifAreaId.replace('#','')).childNodes;
 		for (var j = 0; j < elements.length; j++){
 			if (elements[j].nodeName != 'null' && elements[j].nodeName === 'div' || elements[j].nodeName === 'DIV') {
@@ -249,8 +284,8 @@ function pvMotifFnClear() { //function clearInfoFrame() {
 function pvMotifFnClearInverse() {
 	
 	//holdInfoFrame = !holdInfoFrame;
-	pvTextFlagKeepMotif=!pvTextFlagKeepMotif;
-	if (!pvTextFlagKeepMotif) { // !holdInfoFrame;		
+	pvTextFlagDiscardMotif=!pvTextFlagDiscardMotif;
+	if (!pvTextFlagDiscardMotif) { // !holdInfoFrame;		
 		pvMotifFnClear();	
 	}
 	
@@ -259,7 +294,7 @@ function pvMotifFnClearInverse() {
 
 function pvMotifFnShow(idToShow) {
 	
-	if (!pvTextFlagKeepMotif) {		
+	if (!pvTextFlagDiscardMotif) {		
 		var element = document.getElementById(idToShow);
 		element.style.display = 'block';		
 	}
