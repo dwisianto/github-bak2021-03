@@ -7,6 +7,13 @@
  * pvCategoryAreaId
  * pvCategoryFormId
  * 
+ * 
+ *
+ * - pvQryTxtFlag
+ *   We want to know which character in the original text has been covered by concepts.
+ *   Use the pvQryTxtFlagChar1 where the text has been covered
+ *   Use the pvQryTxtFlagChar0 where the text has not been covered 
+ *   
  * - pvDatObj captures the important aspect of pvQryObj
  *   Query -> Data object 
  * 
@@ -36,6 +43,11 @@
  * [] pod view
  */
 var pvQryObj                     = {};
+var pvQryTxt                     = ""; // natural text we are interested in
+var pvQryTxtFlag                 = "";
+var pvQryTxtFlagChar1            = '1';
+var pvQryTxtFlagChar0            = '0';
+var pvQryTxtFlagRegex            = /[^1]/gi; // notice it is not a quote or string. It is actually 'pvQryTxtFlagChar1' 
 var pvQryAtt1                    = "";
 var pvQryAtt2                    = "";
 var pvQryAtt3                    = "";	
@@ -51,7 +63,7 @@ var pvCategoryFormId             = "#idCategoryForm";
 var pvTextStyleClr               = {};
 var pvTextStyleSheetId           = 0; // document.styleSheets
 var pvTextFlagDiscardMotif       = false; //var holdInfoFrame = true;
-var pvTextStyleSheetBrightnessId = 49; // used to generate random color
+var pvTextStyleSheetBrightnessId1 = 49; // used to generate random color
 var pvTextStyleSheetBrightnessId2 = 194; // used to generate random color
 
 /**
@@ -59,56 +71,75 @@ var pvTextStyleSheetBrightnessId2 = 194; // used to generate random color
  */
 $(document).ready(function() { 
 	console.log("document is ready"); 	
-		
-	//inJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';
-	//inObj                       = JSON.parse(inJson)
-	//pvInAtt1                    = "natural";
-	//pvInAtt2                    = "data";
-	//pvInAtt3                    = "motifs";		
-	//pvRun( pvInJson, pvInAtt1, pvInAtt2, pvInAtt3 );
+	
+	/*
+	inJson                      = '{"natural":[{"data":{"motifs":[{"id":"0","type":"cd","start":3,"end":5,"textPattern":"cd"},{"id":"1","type":"gh","start":9,"end":11,"textPattern":"gh"},{"id":"2","type":"kl","start":15,"end":17,"textPattern":"kl"},{"id":"3","type":"mn","start":18,"end":20,"textPattern":"mn"},{"id":"4","type":"op","start":21,"end":23,"textPattern":"op"}]},"text":"ab cd ef gh ij kl mn op qr st uvw xyz"}]}'; 	
+	//inJson                    = '{"natural":[{"text":"abc def ghi jk mnop ","data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';
+	inObj                       = JSON.parse(inJson)
+	pvInAtt1                    = "natural";
+	pvInAtt2                    = "data";
+	pvInAtt3                    = "motifs";		
+	pvRun( inObj, pvInAtt1, pvInAtt2, pvInAtt3 );
+	*/
 	
 });
+
+
 
 
 /**
  * main function
  */
-function pvRun( inObj, qryAtt1, qryAtt2, qryAtt3  ) {
+function pvRun( inObj, inAtt1, inAtt2, inAtt3  ) {
 	
 	// []
 	pvQryObj                     = inObj;
-	pvQryAtt1                    = qryAtt1;
-	pvQryAtt2                    = qryAtt2;
-	pvQryAtt3                    = qryAtt3;	
+	pvQryAtt1                    = inAtt1;
+	pvQryAtt2                    = inAtt2;
+	pvQryAtt3                    = inAtt3;	
+	pvQryTxt                     = pvQryObj[pvQryAtt1][0]["text"];
+	pvQryTxtFlag                 = pvQryTxt;
 	
 	 // [] the input is a json json object
 	pvQueryAnalysis();	
 	
 	// [] 
-	pvHtmlStyleFnGen(); // html style sheet
-	pvTextStyleFnGen(); // random coloring
+	pvHtmlStyleFnGen(); // style sheet for html page
+	pvTextStyleFnGen(); // style sheet for coloring and background color
 	//console.log("pvTextStyleSheetId:" + pvTextStyleSheetId); // going to be used in pvFnCategorySelected
 	
 	// [] 
+	nowStart = 0; // current starting and 
+	nowEnd   = 0;
 	var strMotif    = '<br>';	
 	var strCategory = '<form id=\"'+pvCategoryFormId.replace("#","")+'\"><ul>';	
 	strCategory    += '<li><span class=\"nobr\"><input type=\"checkbox\" checked onClick=\"pvCategoryFnTurnAllOnOff(this)\"><strong>(All)</strong><br></span></li>';
 	var strText     = '<div id="idText" onClick="pvMotifFnClearInverse()">';	
-	for (let iCtrMtf = 0; iCtrMtf < Object.keys(pvDatObj).length; iCtrMtf++) {
+	for ( let iCtrMtf = 0; iCtrMtf < Object.keys(pvDatObj).length; iCtrMtf++) {
+		
 			// [] 
-			objNow   = pvDatObj[iCtrMtf];
-			// [] 
-			strTxt   = objNow.textPattern;			
-			strStart = objNow.start;								
-			strEnd   = objNow.end;
-			strId    = objNow.id;						
-			strType  = objNow.type;			
-			// [] 
+			nowObj   = pvDatObj[iCtrMtf];
+			strTxt   = nowObj.textPattern;			
+			strStart = nowObj.start;								
+			strEnd   = nowObj.end;
+			strId    = nowObj.id;						
+			strType  = nowObj.type;
+			
+			// [] Motif and Category Update 
 			strMotif    += pvMotifFnGen(strTxt, strStart, strEnd, strId, strType);
 			strCategory += pvCategoryFnGen(strTxt, strStart, strEnd, strId, strType);
+			
+			// [] Text Update
+			strText     += pvTextFnCoverageEmptyStart(nowStart, nowObj.start);			
 			strText     += pvTextFnGen(strTxt, strStart, strEnd, strId, strType);
-	}
+			nowStart    = Number(strEnd);
+					
+	} 
 	strCategory += "</ul></form>";
+	
+	// [] append the rest of the text without concept
+	nowObj = pvDatObj[Object.keys(pvDatObj).length-1];
+	strText += pvTextFnCoverageEmptyEnd(nowStart,nowObj.end);
 	strText +='</div>';
 	
 	// [] 
@@ -187,14 +218,16 @@ function pvTextStyleFnGen() {
 function pvQueryAnalysis( qryObj ) {
 	
 	
-	var useDefaultColor=true; // default color is only used once, the default color is not used afterwards		
+	//var useDefaultColor=true; // default color is only used once, the default color is not used afterwards		
 	for (let iCtrNat = 0; iCtrNat < Object.keys(pvQryObj[pvQryAtt1]).length; iCtrNat++) {		
 		//console.log( "iCtrNat :"+iCtrNat +"/" + pvQryObj.natural.length );
 				
 		for (let iCtrMtf = 0; iCtrMtf < Object.keys(pvQryObj[pvQryAtt1][iCtrNat][pvQryAtt2][pvQryAtt3]).length; iCtrMtf++) {			
 			//console.log( "iCtrMtf :"+iCtrMtf +"/" + "/"+pvQryObj.natural[iCtrNat].data.motifs.length);
 			
+			// [] copy over to pvDatObj
 			objNow = pvQryObj[pvQryAtt1][iCtrNat][pvQryAtt2][pvQryAtt3][iCtrMtf];
+			pvDatObj[iCtrMtf] = objNow;		
 			
 			strTxt   = objNow.textPattern;			
 			strStart = objNow.start;								
@@ -204,17 +237,31 @@ function pvQueryAnalysis( qryObj ) {
 			
 			// [] determine the color style
 			pvTextStyleClr[strType] = "background-color:"+pvUtlRandomColor(pvTextStyleSheetBrightnessId2)
-			                         +";color:"+pvUtlRandomColor(pvTextStyleSheetBrightnessId, useDefaultColor);
-			useDefaultColor = false; // default color is only used once, the default color is not used afterwards
+            							+";color:"+pvUtlRandomColor(pvTextStyleSheetBrightnessId1);
+			
+			//pvTextStyleClr[strType] = "background-color:"+pvUtlRandomColor(pvTextStyleSheetBrightnessId2, backColor=true, useDefaultColor);
+            //+";color:"+pvUtlRandomColor(pvTextStyleSheetBrightnessId, backColor=false, useDefaultColor);
+			//useDefaultColor = false; // default color is only used once, the default color is not used afterwards
 			//console.log( ' pvTextStyleClr [ ' +  strType  + ' ] = '+ pvTextStyleClr[strType] );
 			
-			// [] copy over to pvDatObj
-			pvDatObj[iCtrMtf] = objNow;		
+			// [] span coverage
+			for( let iCtrCover = Number(strStart); iCtrCover< Number(strEnd); iCtrCover++) {
+				pvQryTxtFlag = pvUtlSetCharAt( pvQryTxtFlag, iCtrCover, pvQryTxtFlagChar1);	
+			} 
 						
 		}
 	} 	
 	//console.log(Object.keys(pvQryObj).length);
 	//console.log(Object.keys(pvDatObj).length);
+	
+	
+	// [] pvQryTxtFlag using pvQryTxtFlagRegex, pvQryTxtFlag1, and pvQryTxtFlag0 
+	pvQryTxtFlag = pvQryTxtFlag.replace( pvQryTxtFlagRegex , pvQryTxtFlagChar0);
+
+	// [] print out the output text
+	console.log(" text "+ pvQryTxt);
+	console.log(" flag "+ pvQryTxtFlag);
+	
 }
 
 /**
@@ -225,23 +272,43 @@ function pvQueryAnalysis( qryObj ) {
  * @param brightness
  * @returns
  */
-function pvUtlRandomColor( brightness, useDefault=false ) {
-	
-	  function randomChannel(brightness){
-	    var r = 255-brightness;
-	    var n = 0|((Math.random() * r) + brightness);
-	    var s = n.toString(16);
-	    return (s.length==1) ? '0'+s : s;
-	  }
+function pvUtlRandomColor( brightness, backColor=false, useDefault=false ) {
+			
+  function randomChannel(brightness){
+    var r = 255-brightness;
+    var n = 0|((Math.random() * r) + brightness);
+    var s = n.toString(16);
+    return (s.length==1) ? '0'+s : s;
+  }
 	  
-	  var valOut = '#000000';
-	  if( useDefault == false) {
-		  valOut = '#' + randomChannel(brightness) + randomChannel(brightness) + randomChannel(brightness);  
-	  }
+  var valOut = '#000000';
+  if( useDefault == false) {
+	  valOut = '#' + randomChannel(brightness) + randomChannel(brightness) + randomChannel(brightness);
+  } 
+	  	  	 
+  if( useDefault == true &&  backColor == true) {
+	  valOut = '#FFFFFF';
+  }
 	  
-	  return valOut;
+  //console.log( " backColor:"+ backColor + ",useDefault:" + useDefault );  
+  return valOut;
 }
 
+
+/**
+ * var str = 'Hello World';
+ * str = setCharAt(str,4,',');
+ * alert(str);
+ * 
+ * @param str
+ * @param index
+ * @param chr
+ * @returns
+ */
+function pvUtlSetCharAt(str,index,chr) {
+	if(index > str.length-1) return str;
+	return str.substr(0,index) + chr + str.substr(index+1);
+}
 
 
 
@@ -369,7 +436,7 @@ function pvCategoryFnSelected(element) {
 				newStyle = "background:none";
 			} else {				
 				newStyle = pvTextStyleClr[element.id];
-				console.log( element.id + " newStyle "+ newStyle );
+				//console.log( element.id + " newStyle "+ newStyle );
 			}
 			rules[i].style.cssText = newStyle;
 		}
@@ -412,4 +479,29 @@ function pvTextFnGen(strTxt, strStart, strEnd, strId, strType) {
 	strOut += strTxt+'</span> ';
 	
 	return strOut;	
+}
+
+
+function pvTextFnCoverageEmptyStart( _nowStart, _strStart) {
+	
+	_nowStart = Math.min( _nowStart,Number( _strStart));
+	_nowEnd   = _nowStart;
+	while( pvQryTxtFlag.charAt( _nowEnd) == pvQryTxtFlagChar0 ) {
+		_nowEnd = _nowEnd+1;				
+	} 
+
+	return pvQryTxt.substring(_nowStart, _nowEnd);
+}
+
+function pvTextFnCoverageEmptyEnd( _nowStart, _strEnd) {
+		
+	
+	//strEnd   = nowObj.end;
+	_nowStart = Math.min(_nowStart,Number(_strEnd));
+	_nowEnd   = _nowStart;
+	while( pvQryTxtFlag.charAt( _nowEnd) == pvQryTxtFlagChar0 ) {
+		_nowEnd = _nowEnd+1;				
+	} 
+
+	return pvQryTxt.substring(_nowStart, _nowEnd); 
 }
