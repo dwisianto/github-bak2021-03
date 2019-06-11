@@ -72,7 +72,7 @@ var pvTextStyleSheetBrightnessId2 = 194; // used to generate random color
 $(document).ready(function() { 
 	console.log("document is ready"); 	
 	
-	/*
+	
 	inJson                      = '{"natural":[{"data":{"motifs":[{"id":"0","type":"cd","start":3,"end":5,"textPattern":"cd"},{"id":"1","type":"gh","start":9,"end":11,"textPattern":"gh"},{"id":"2","type":"kl","start":15,"end":17,"textPattern":"kl"},{"id":"3","type":"mn","start":18,"end":20,"textPattern":"mn"},{"id":"4","type":"op","start":21,"end":23,"textPattern":"op"}]},"text":"ab cd ef gh ij kl mn op qr st uvw xyz"}]}'; 	
 	//inJson                    = '{"natural":[{"text":"abc def ghi jk mnop ","data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';
 	inObj                       = JSON.parse(inJson)
@@ -80,7 +80,7 @@ $(document).ready(function() {
 	pvInAtt2                    = "data";
 	pvInAtt3                    = "motifs";		
 	pvRun( inObj, pvInAtt1, pvInAtt2, pvInAtt3 );
-	*/
+	
 	
 });
 
@@ -103,18 +103,17 @@ function pvRun( inObj, inAtt1, inAtt2, inAtt3  ) {
 	 // [] the input is a json json object
 	pvQueryAnalysis();	
 	
-	// [] 
+	// [] style sheet
 	pvHtmlStyleFnGen(); // style sheet for html page
 	pvTextStyleFnGen(); // style sheet for coloring and background color
-	//console.log("pvTextStyleSheetId:" + pvTextStyleSheetId); // going to be used in pvFnCategorySelected
 	
 	// [] 
-	nowStart = 0; // current starting and 
-	nowEnd   = 0;
 	var strMotif    = '<br>';	
 	var strCategory = '<form id=\"'+pvCategoryFormId.replace("#","")+'\"><ul>';	
 	strCategory    += '<li><span class=\"nobr\"><input type=\"checkbox\" checked onClick=\"pvCategoryFnTurnAllOnOff(this)\"><strong>(All)</strong><br></span></li>';
-	var strText     = '<div id="idText" onClick="pvMotifFnClearInverse()">';	
+	var strText     = '<div id="idText" onClick="pvMotifFnClearInverse()">';
+	nowStart = 0; // current text starting 
+	nowEnd   = 0; // current text ending	
 	for ( let iCtrMtf = 0; iCtrMtf < Object.keys(pvDatObj).length; iCtrMtf++) {
 		
 			// [] 
@@ -132,15 +131,14 @@ function pvRun( inObj, inAtt1, inAtt2, inAtt3  ) {
 			// [] Text Update
 			strText     += pvTextFnCoverageEmptyStart(nowStart, nowObj.start);			
 			strText     += pvTextFnGen(strTxt, strStart, strEnd, strId, strType);
-			nowStart    = Number(strEnd);
-					
-	} 
-	strCategory += "</ul></form>";
-	
+			nowStart    = Number(strEnd); // nowStart is used inside pvTextFnCoverageEmptyStart 					
+	} 		
 	// [] append the rest of the text without concept
 	nowObj = pvDatObj[Object.keys(pvDatObj).length-1];
 	strText += pvTextFnCoverageEmptyEnd(nowStart,nowObj.end);
 	strText +='</div>';
+	// []
+	strCategory += "</ul></form>";
 	
 	// [] 
 	$(pvMotifAreaId).html(strMotif);       // console.log(strMotif);
@@ -199,6 +197,7 @@ function pvTextStyleFnGen() {
 	sheet.innerHTML = strStyle;
 	document.body.appendChild(sheet);		
 	pvTextStyleSheetId=document.styleSheets.length-1;	
+	//console.log("pvTextStyleSheetId:" + pvTextStyleSheetId); // going to be used in pvFnCategorySelected
 }
 
 /**

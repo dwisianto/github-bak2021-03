@@ -10,6 +10,8 @@ $(document).ready(function() {
 
 	// [] pod.view
     //pvSetup();
+	
+	
 });
 
 
@@ -58,7 +60,8 @@ var annoSrvc2UrlDefault  = "http://t19a7gcname.us-east-2.elasticbeanstalk.com";
 var annoSrvc1Url         = annoSrvc1UrlDefault; 
 var annoSrvc2Url         = annoSrvc2UrlDefault;
 var srvc1raw             = "http://t19a7gcname.us-east-2.elasticbeanstalk.com"; // default value              
-var srvc1viz             = srvc1raw + "/rest/season";
+var srvc1viz             = srvc1raw + "/rest/season/jsnp";
+var srvc1viz1            = "https://jsonplaceholder.typicode.com/todos/1";
 
 
 /*
@@ -467,50 +470,54 @@ function annoSetupOptionSuccessSave() {
 
 }
 
+	
+	
+
+
+
 
 function annoSetupComprehend() {
 	
 	$(annoTxtBtnComprehendId).click( function () {
 		console.log(" ... comprehend " );
 
-        //contentType: "text/plain",		
-		//dataType: "text",		  	
-		console.log( $(annoTxtAreaId).val() );		
-		var data4annotator=$(annoTxtAreaId).val();		
+		// [] Convert raw text into a json object and a json string.
+		datObj = {};
+		datObj.rawText =  $(annoTxtAreaId).val(); 
+		datObjStr  = JSON.stringify(datObj);
+		//console.log( datObj );
+		
 		$.ajax({
 			url: srvc1viz,
-	        type: "POST",
-	        data: data4annotator,
-	        contentType: "application/json",
+	        type: "GET",        
+	        crossDomain : true,
 	        dataType: "json",
-	        	crossDomain : true,
-	        	error: function (errObj, errOpt, errThrown) { 
-	        		console.log("Ajax Error"); 
-	        		console.log(errObj ); 
-	        		console.log(errObj.status);
-	        		console.log(errOpt);
-	        		console.log(errThrown);
-	        	}, 
-	        	success: function ( strResponse ) {
-	        		console.log("Ajax Success");
-	        		console.log( strResponse );
-	        		
-	        		//pvInJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';	
-	        		//pvInAtt1                    = "natural";
-	        		//pvInAtt2                    = "data";
-	        		//pvInAtt3                    = "motifs";
-	        		pvInJson = strResponse;
-	        		pvInAtt1                    = "natural";
-	        		pvInAtt2                    = "data";
-	        		pvInAtt3                    = "moments";	        		
-	        		pvRun( pvInJson, pvInAtt1, pvInAtt2, pvInAtt3 );
+	        data: datObj,
+	        error: function ( errObj) {
+	        		console.log("errors ... ");
+	        		console.log( errObj);        	
+	        }, success: function ( strResponse ) {
+	        		console.log( strResponse);
+	        	
+	        	//pvInJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';	
+	        	//pvInAtt1                    = "natural";
+	        	//pvInAtt2                    = "data";
+	        	//pvInAtt3                    = "motifs";
+	        	pvInJson = strResponse;
+	        	pvInAtt1                    = "natural";
+	        	pvInAtt2                    = "data";
+	        	pvInAtt3                    = "moments";	        		
+	        	pvRun( pvInJson, pvInAtt1, pvInAtt2, pvInAtt3 );
 
-	        	    //$("#section3").html(strResponse);	        		
+	            //$("#section3").html(strResponse);	        		
 	        		//annoSetupAnnotateSuccess( strResponse.unstructured[0].data.concepts );
-	        }	        					
-	    });		
+	        	
+	        	
+	        }
+	    });				
 		
-	} ); 					
+	} ); 	
+	
 	
 }
 
@@ -591,9 +598,173 @@ function tmpl_ajax_post2() {
 		} ); 					
 		
 	}
-
 	
 }
+
+function tmpl_ajax_post3() {
+	
+	$(annoTxtBtnComprehendId).click( function () {
+		console.log(" ... comprehend " );
+
+        //contentType: "text/plain",		
+		//dataType: "text",		  			
+		var data4annotator=$(annoTxtAreaId).val();
+		console.log( data4annotator );		
+		$.ajax({
+			url: srvc1viz,
+	        type: "POST",
+	        data: data4annotator,
+	        contentType: "application/json",
+	        dataType: "json",
+	        	crossDomain : true,
+	        	error: function (errObj, errOpt, errThrown) { 
+	        		console.log("Ajax Error"); 
+	        		console.log(errObj ); 
+	        		console.log(errObj.status);
+	        		console.log(errOpt);
+	        		console.log(errThrown);
+	        	}, 
+	        	success: function ( strResponse ) {
+	        		console.log("Ajax Success");
+	        		console.log( strResponse );
+	        		
+	        		//pvInJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';	
+	        		//pvInAtt1                    = "natural";
+	        		//pvInAtt2                    = "data";
+	        		//pvInAtt3                    = "motifs";
+	        		pvInJson = strResponse;
+	        		pvInAtt1                    = "natural";
+	        		pvInAtt2                    = "data";
+	        		pvInAtt3                    = "moments";	        		
+	        		pvRun( pvInJson, pvInAtt1, pvInAtt2, pvInAtt3 );
+
+	        	    //$("#section3").html(strResponse);	        		
+	        		//annoSetupAnnotateSuccess( strResponse.unstructured[0].data.concepts );
+	        }	        					
+	    });		
+		
+	} ); 		
+	
+}
+
+function tmpl_ajax_post4() {
+	
+	$(annoTxtBtnComprehendId).click( function () {
+		console.log(" ... comprehend " );
+
+        //contentType: "text/plain",		
+		//dataType: "text",		  			
+		var data4annotator=$(annoTxtAreaId).val();
+		console.log( data4annotator );		
+		$.ajax({
+			url: srvc1viz,
+	        type: "POST",
+	        data: data4annotator,
+	        contentType: "application/json",
+	        dataType: "jsonp",
+	        	error: function (errObj, errOpt, errThrown) { 
+	        		console.log("Ajax Error"); 
+	        		console.log(errObj ); 
+	        		console.log(errObj.status);
+	        		console.log(errOpt);
+	        		console.log(errThrown);
+	        	}, 
+	        	success: function ( strResponse ) {
+	        		console.log("Ajax Success");
+	        		console.log( strResponse );
+	        }	        					
+	    }).fail( function(err) { console.log(err) 
+	    	}).done(function(resp) { 
+	    		//pvInJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';	
+        		//pvInAtt1                    = "natural";
+        		//pvInAtt2                    = "data";
+        		//pvInAtt3                    = "motifs";
+        		pvInJson = strResponse;
+        		pvInAtt1                    = "natural";
+        		pvInAtt2                    = "data";
+        		pvInAtt3                    = "moments";	        		
+        		pvRun( pvInJson, pvInAtt1, pvInAtt2, pvInAtt3 );
+
+        	    //$("#section3").html(strResponse);	        		
+        		//annoSetupAnnotateSuccess( strResponse.unstructured[0].data.concepts );	    		
+	    	});		
+		
+	} ); 	
+	
+}
+
+
+function tmpl_ajax_post5() {
+	// []
+	//url: srvc1viz1,
+	$.ajax({
+		url: annoSrvc1Url+"/rest/feats/jsn",
+        data: datObjStr,
+        dataType: "jsonp",
+        	error: function (errObj, errOpt, errThrown) { 
+        		console.log("Ajax JsonP Error"); 
+        		console.log(errObj ); 
+        		console.log(errObj.status);
+        		console.log(errOpt);
+        		console.log(errThrown);
+        	}, success: function ( strResponse ) {
+        		console.log("Ajax JsonP Success");
+        		console.log( strResponse );
+        }	        					
+    }).fail( function(err) { console.log(err) 
+    	}).done(function(resp) { 
+    		console.log( "Ajax JSONP Done ");
+    		/*
+    		//pvInJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';	
+    		//pvInAtt1                    = "natural";
+    		//pvInAtt2                    = "data";
+    		//pvInAtt3                    = "motifs";
+    		pvInJson = strResponse;
+    		pvInAtt1                    = "natural";
+    		pvInAtt2                    = "data";
+    		pvInAtt3                    = "moments";	        		
+    		pvRun( pvInJson, pvInAtt1, pvInAtt2, pvInAtt3 );
+
+    	    //$("#section3").html(strResponse);	        		
+    		//annoSetupAnnotateSuccess( strResponse.unstructured[0].data.concepts );
+    		*/	    		
+    	});				
+	
+}
+
+
+function tmpl_ajax_post5() {
+	
+	// []
+	//
+	//url: annoSrvc1Url+"/rest/feats/jsn",	        
+	//
+	//data: datObjStr,
+    //jsonpCallback:"jsonpCallbackSuccess",
+	$.ajax({
+		url: srvc1viz,	
+        dataType: "jsonp",
+        jsonp: false,
+        	error: function (errObj, errOpt, errThrown) { 
+        		console.log("Ajax JsonP Error"); 
+        		console.log(errObj ); 
+        		console.log(errObj.status);
+        		console.log(errOpt);
+        		console.log(errThrown);
+        	}, success: function ( strResponse ) {
+        		console.log("Ajax JsonP Success");
+        		console.log( strResponse );
+        }	        					
+    }).fail( function(err) { console.log(err) 
+    	}).done(function(resp) { 
+    		console.log( "Ajax JSONP Done ");
+    	});				
+	
+	
+	
+}
+
+
 
 
 function tmpl_modal() {
