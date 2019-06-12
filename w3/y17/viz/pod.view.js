@@ -20,7 +20,8 @@
  *   Use the pvQryTxtFlagChar0 where the text has not been covered 
  *   
  * - pvDatObj captures the important aspect of pvQryObj
- *   Query -> Data object 
+ *   Query -> Data object
+ *   This object is reset every time we do queryAnalysis for a new query. 
  * 
  * - pvTextStyleClr 
  * It controls the text coloring schema.
@@ -106,6 +107,7 @@ function pvRun( inObj, inAtt1, inAtt2, inAtt3  ) {
 	pvQryTxtFlag                 = pvQryTxt;
 	
 	 // [] the input is a json json object
+
 	pvQueryAnalysis();	
 	
 	// [] style sheet
@@ -221,6 +223,8 @@ function pvTextStyleFnGen() {
  */
 function pvQueryAnalysis( qryObj ) {
 	
+	// [] reset the internal object
+	pvDatObj = {};
 	
 	//var useDefaultColor=true; // default color is only used once, the default color is not used afterwards		
 	for (let iCtrNat = 0; iCtrNat < Object.keys(pvQryObj[pvQryAtt1]).length; iCtrNat++) {		
