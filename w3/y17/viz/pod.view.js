@@ -7,6 +7,11 @@
  * pvCategoryAreaId
  * pvCategoryFormId
  * 
+ * document.styleSheets
+ * 
+ * - pvRun is the main function to execute the whole thing
+ * - 
+ * 
  * 
  *
  * - pvQryTxtFlag
@@ -36,7 +41,24 @@
  * The default value is true.
  * 
  * 
- **/
+ * [] Document load
+ */
+$(document).ready(function() { 
+	//console.log("document is ready"); 	
+	
+	// []
+	//inJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"cd","start":3,"end":5,"textPattern":"cd"},{"id":"1","type":"gh","start":9,"end":11,"textPattern":"gh"},{"id":"2","type":"kl","start":15,"end":17,"textPattern":"kl"},{"id":"3","type":"mn","start":18,"end":20,"textPattern":"mn"},{"id":"4","type":"op","start":21,"end":23,"textPattern":"op"}]},"text":"ab cd ef gh ij kl mn op qr st uvw xyz"}]}'; 	
+	//inJson                    = '{"natural":[{"text":"abc def ghi jk mnop ","data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';	
+	inJson                   = "{\"natural\":[{\"data\":{\"moments\":[{\"id\":\"0\",\"type\":\"dateTime\",\"start\":12,\"end\":21,\"textPattern\":\"yesterday\",\"textDate\":\"Tue Jun 11 13:43:54 EDT 2019\"},{\"id\":\"1\",\"type\":\"dateTime\",\"start\":33,\"end\":38,\"textPattern\":\"today\",\"textDate\":\"Wed Jun 12 13:43:54 EDT 2019\"},{\"id\":\"2\",\"type\":\"dateTime\",\"start\":54,\"end\":62,\"textPattern\":\"tomorrow\",\"textDate\":\"Thu Jun 13 13:43:54 EDT 2019\"}]},\"text\":\" Learn from yesterday , live for today , and hope for tomorrow . \"}]}"
+	inAtt1                    = "natural";
+	inAtt2                    = "data";
+	inAtt3                    = "moments"; //"motifs";			
+	inObj                     = JSON.parse(inJson)
+	pvRun( inObj, inAtt1, inAtt2, inAtt3 );	
+	
+});
+
+
 
 
 /**
@@ -45,9 +67,9 @@
 var pvQryObj                     = {};
 var pvQryTxt                     = ""; // natural text we are interested in
 var pvQryTxtFlag                 = "";
-var pvQryTxtFlagChar1            = '1';
+var pvQryTxtFlagChar1            = '1'; // change pvQryTxtFlagRegex if this change
 var pvQryTxtFlagChar0            = '0';
-var pvQryTxtFlagRegex            = /[^1]/gi; // notice it is not a quote or string. It is actually 'pvQryTxtFlagChar1' 
+var pvQryTxtFlagRegex            = /[^1]/gi; // notice it does not have a quote or string. It is actually 'pvQryTxtFlagChar1' 
 var pvQryAtt1                    = "";
 var pvQryAtt2                    = "";
 var pvQryAtt3                    = "";	
@@ -66,23 +88,6 @@ var pvTextFlagDiscardMotif       = false; //var holdInfoFrame = true;
 var pvTextStyleSheetBrightnessId1 = 49; // used to generate random color
 var pvTextStyleSheetBrightnessId2 = 194; // used to generate random color
 
-/**
- * [] Document load
- */
-$(document).ready(function() { 
-	console.log("document is ready"); 	
-	
-	
-	inJson                      = '{"natural":[{"data":{"motifs":[{"id":"0","type":"cd","start":3,"end":5,"textPattern":"cd"},{"id":"1","type":"gh","start":9,"end":11,"textPattern":"gh"},{"id":"2","type":"kl","start":15,"end":17,"textPattern":"kl"},{"id":"3","type":"mn","start":18,"end":20,"textPattern":"mn"},{"id":"4","type":"op","start":21,"end":23,"textPattern":"op"}]},"text":"ab cd ef gh ij kl mn op qr st uvw xyz"}]}'; 	
-	//inJson                    = '{"natural":[{"text":"abc def ghi jk mnop ","data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';
-	inObj                       = JSON.parse(inJson)
-	pvInAtt1                    = "natural";
-	pvInAtt2                    = "data";
-	pvInAtt3                    = "motifs";		
-	pvRun( inObj, pvInAtt1, pvInAtt2, pvInAtt3 );
-	
-	
-});
 
 
 
@@ -220,6 +225,11 @@ function pvQueryAnalysis( qryObj ) {
 	//var useDefaultColor=true; // default color is only used once, the default color is not used afterwards		
 	for (let iCtrNat = 0; iCtrNat < Object.keys(pvQryObj[pvQryAtt1]).length; iCtrNat++) {		
 		//console.log( "iCtrNat :"+iCtrNat +"/" + pvQryObj.natural.length );
+		
+		iCtrMtfMax = Object.keys(pvQryObj[pvQryAtt1]).length
+		iCtrMtfMax = Object.keys(pvQryObj[pvQryAtt1][iCtrNat]).length
+		iCtrMtfMax = Object.keys(pvQryObj[pvQryAtt1][iCtrNat][pvQryAtt2]).length
+		iCtrMtfMax = Object.keys(pvQryObj[pvQryAtt1][iCtrNat][pvQryAtt2][pvQryAtt3]).length
 				
 		for (let iCtrMtf = 0; iCtrMtf < Object.keys(pvQryObj[pvQryAtt1][iCtrNat][pvQryAtt2][pvQryAtt3]).length; iCtrMtf++) {			
 			//console.log( "iCtrMtf :"+iCtrMtf +"/" + "/"+pvQryObj.natural[iCtrNat].data.motifs.length);
@@ -258,9 +268,8 @@ function pvQueryAnalysis( qryObj ) {
 	pvQryTxtFlag = pvQryTxtFlag.replace( pvQryTxtFlagRegex , pvQryTxtFlagChar0);
 
 	// [] print out the output text
-	console.log(" text "+ pvQryTxt);
-	console.log(" flag "+ pvQryTxtFlag);
-	
+	//console.log(" text "+ pvQryTxt);
+	//console.log(" flag "+ pvQryTxtFlag);	
 }
 
 /**
