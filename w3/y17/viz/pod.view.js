@@ -13,7 +13,12 @@
  * - 
  * 
  * 
- *
+ * - pvCategoryDictAll 
+ *   It is a dictionary to specify whether the strType has been added to the list
+ *   It is initialized during queryAnalysis.
+ *   pvCategoryDictAll[strType]=true means it has already in the list, thus it doesn't need to be in the list
+ *   pvCategoryDictAll[strType]=false means it is not in the list and it need to be 
+ *   
  * - pvQryTxtFlag
  *   We want to know which character in the original text has been covered by concepts.
  *   Use the pvQryTxtFlagChar1 where the text has been covered
@@ -42,6 +47,13 @@
  * The default value is true.
  * 
  * 
+ * ToDo:
+ * - the motif categories are created for each concepts.
+ *   The right behavior is to create a motif entry for each category.
+ *   The category should represents for all the same concepts.  
+ * - 
+ * 
+ * 
  * [] Document load
  */
 $(document).ready(function() { 
@@ -65,31 +77,39 @@ $(document).ready(function() {
 /**
  * [] pod view
  */
-var pvQryObj                     = {};
-var pvQryTxt                     = ""; // natural text we are interested in
-var pvQryTxtFlag                 = "";
-var pvQryTxtFlagChar1            = '1'; // change pvQryTxtFlagRegex if this change
-var pvQryTxtFlagChar0            = '0';
-var pvQryTxtFlagRegex            = /[^1]/gi; // notice it does not have a quote or string. It is actually 'pvQryTxtFlagChar1' 
-var pvQryAtt1                    = "";
+// [] 
+var pvQryObj                     = {}; // query object from users
+var pvQryAtt1                    = ""; // attribute of query object
 var pvQryAtt2                    = "";
 var pvQryAtt3                    = "";	
 
+// [] 
+var pvQryTxt                     = ""; // natural text we are interested in
+var pvQryTxtFlag                 = ""; // what parts of text have been covered, and which one has not been convered 
+var pvQryTxtFlagChar1            = '1'; // change pvQryTxtFlagRegex if this change
+var pvQryTxtFlagChar0            = '0';
+var pvQryTxtFlagRegex            = /[^1]/gi; // notice it does not have a quote or string. It is actually 'pvQryTxtFlagChar1' 
+
+// [] pvDatObj is the internal representation of the pvQryObj
 var pvDatObj                     = {}; 
 var pvDatAtt1                    = "datum";
 
+// 
 var pvTextAreaId                 = "#pvTextAreaId";
 var pvMotifAreaId                = "#pvMotifAreaId";
 var pvCategoryAreaId             = "#pvCategoryAreaId";
 var pvCategoryFormId             = "#idCategoryForm";
 
+// text
 var pvTextStyleClr               = {};
 var pvTextStyleSheetId           = 0; // document.styleSheets
 var pvTextFlagDiscardMotif       = false; //var holdInfoFrame = true;
 var pvTextStyleSheetBrightnessId1 = 49; // used to generate random color
 var pvTextStyleSheetBrightnessId2 = 194; // used to generate random color
 
-
+// Category
+var pvCategoryDictAll    = {}; // all entries
+//var pvCategoryArrayUnique = []; // unique entries of pvCategoryArrayAll                
 
 
 
@@ -133,7 +153,12 @@ function pvRun( inObj, inAtt1, inAtt2, inAtt3  ) {
 			
 			// [] Motif and Category Update 
 			strMotif    += pvMotifFnGen(strTxt, strStart, strEnd, strId, strType);
-			strCategory += pvCategoryFnGen(strTxt, strStart, strEnd, strId, strType);
+			
+			// [] Category Update
+			if( pvCategoryDictAll[strType]==false) { // false means it is not in the final list yet
+				strCategory += pvCategoryFnGen(strTxt, strStart, strEnd, strId, strType);
+				pvCategoryDictAll[strType]=true;
+			}
 			
 			// [] Text Update
 			strText     += pvTextFnCoverageEmptyStart(nowStart, nowObj.start);			
@@ -211,8 +236,9 @@ function pvTextStyleFnGen() {
  * In
  *   pvQryObj
  * Out
+ *   pvDatObj                : internal representation of pvQryObj
  *   pvTextStyleClr[strType] : color for the style
- *   pvText
+ *   pvCategoryDictAll       : valid entries of pvCategory 
  * 
  * 	
  * console.log(pvQryJson);
@@ -240,13 +266,15 @@ function pvQueryAnalysis( qryObj ) {
 			
 			// [] copy over to pvDatObj
 			objNow = pvQryObj[pvQryAtt1][iCtrNat][pvQryAtt2][pvQryAtt3][iCtrMtf];
-			pvDatObj[iCtrMtf] = objNow;		
+			pvDatObj[iCtrMtf] = objNow;	
 			
 			strTxt   = objNow.textPattern;			
 			strStart = objNow.start;								
 			strEnd   = objNow.end;
 			strId    = objNow.id;						
-			strType  = objNow.type;			
+			strType  = objNow.type;
+			
+			
 			
 			// [] determine the color style
 			pvTextStyleClr[strType] = "background-color:"+pvUtlRandomColor(pvTextStyleSheetBrightnessId2)
@@ -257,23 +285,24 @@ function pvQueryAnalysis( qryObj ) {
 			//useDefaultColor = false; // default color is only used once, the default color is not used afterwards
 			//console.log( ' pvTextStyleClr [ ' +  strType  + ' ] = '+ pvTextStyleClr[strType] );
 			
-			// [] span coverage
+			// [pvQryTxtFlag] span coverage
 			for( let iCtrCover = Number(strStart); iCtrCover< Number(strEnd); iCtrCover++) {
 				pvQryTxtFlag = pvUtlSetCharAt( pvQryTxtFlag, iCtrCover, pvQryTxtFlagChar1);	
 			} 
+			
+			// [pvCategoryArrayAll] 
+			pvCategoryDictAll[strType]=false; // false means it is not in the final list yet
 						
 		}
 	} 	
 	//console.log(Object.keys(pvQryObj).length);
 	//console.log(Object.keys(pvDatObj).length);
-	
-	
-	// [] pvQryTxtFlag using pvQryTxtFlagRegex, pvQryTxtFlag1, and pvQryTxtFlag0 
+		
+	// [pvQryTxtFlag] pvQryTxtFlag using pvQryTxtFlagRegex, pvQryTxtFlag1, and pvQryTxtFlag0 
 	pvQryTxtFlag = pvQryTxtFlag.replace( pvQryTxtFlagRegex , pvQryTxtFlagChar0);
-
-	// [] print out the output text
 	//console.log(" text "+ pvQryTxt);
 	//console.log(" flag "+ pvQryTxtFlag);	
+
 }
 
 /**
