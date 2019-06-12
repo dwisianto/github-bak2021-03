@@ -37,13 +37,13 @@ var bio2rdfSrvcUrl="http://bio2rdf.org/";
 
 
 // [] Annotation
-
 var annoTxtAreaIdStr     = "annoTxtAreaId";
 var annoTxtAreaId        = "#" + annoTxtAreaIdStr;
 var annoTxtBtnAnnotateId = "#annoTxtBtnAnnotateId";
 var annoTxtBtnClearId    = "#annoTxtBtnClearId";
 var annoTxtBtnSampleId     = "#annoTxtBtnSampleId";
 var annoTxtBtnComprehendId = "#annoTxtBtnComprehendId";
+var annoTxtDefaultString     = "Learn from yesterday , live for today , and hope for tomorrow .";
 
 var annoModalFocusId          = "#annoModalFocusId";
 var annoModalOptionId         = "#annoModalOptionId";
@@ -200,7 +200,7 @@ function annoSetup() {
 	console.log("annoSetup");
 
 	// Populate the 
-	$(annoTxtAreaId).val(" natural text language  ");
+	$(annoTxtAreaId).val( annoTxtDefaultString );
 	
 	// clear the text area 
 	$(annoTxtBtnClearId).click( function () {
@@ -211,7 +211,7 @@ function annoSetup() {
 	$(annoTxtBtnSampleId).click(function () {
 		//docCurr = crpsDocs[0];
 		//$(annoTxtAreaId).val( docCurr.content );		
-		$(annoTxtAreaId).val(  " Learn from yesterday , live for today , and hope for tomorrow . " );
+		$(annoTxtAreaId).val( annoTxtDefaultString );
 	} ); 		 
 
 	// [] annoSetup
