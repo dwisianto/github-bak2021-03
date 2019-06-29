@@ -9,6 +9,8 @@
  * 
  * document.styleSheets
  * 
+ * - idText
+ * 
  * - pvRun is the main function to execute the whole thing
  * - 
  * 
@@ -48,13 +50,19 @@
  * 
  * 
  * ToDo:
- * - the motif categories are created for each concepts.
+ * - each singleton may have different number of attributes 
+ * x the motif categories are created for each concepts.
  *   The right behavior is to create a motif entry for each category.
  *   The category should represents for all the same concepts.  
- * - 
  * 
  * 
+ * 
+ * 
+ */
+
+/**
  * [] Document load
+ * @returns
  */
 $(document).ready(function() { 
 	//console.log("document is ready"); 	
@@ -62,7 +70,7 @@ $(document).ready(function() {
 	// []
 	//inJson                    = '{"natural":[{"data":{"motifs":[{"id":"0","type":"cd","start":3,"end":5,"textPattern":"cd"},{"id":"1","type":"gh","start":9,"end":11,"textPattern":"gh"},{"id":"2","type":"kl","start":15,"end":17,"textPattern":"kl"},{"id":"3","type":"mn","start":18,"end":20,"textPattern":"mn"},{"id":"4","type":"op","start":21,"end":23,"textPattern":"op"}]},"text":"ab cd ef gh ij kl mn op qr st uvw xyz"}]}'; 	
 	//inJson                    = '{"natural":[{"text":"abc def ghi jk mnop ","data":{"motifs":[{"id":"0","type":"type1","start":0,"end":3,"textPattern":"abc"},{"id":"1","type":"type2","start":4,"end":7,"textPattern":"def"},{"id":"2","type":"type3","start":8,"end":12,"textPattern":"ghij"},{"id":"3","type":"type4","start":13,"end":15,"textPattern":"kl"},{"id":"4","type":"type5","start":16,"end":20,"textPattern":"mnop"}]}}]}';	
-	inJson                   = "{\"natural\":[{\"data\":{\"moments\":[{\"id\":\"0\",\"type\":\"dateTime\",\"start\":12,\"end\":21,\"textPattern\":\"yesterday\",\"textDate\":\"Tue Jun 11 13:43:54 EDT 2019\"},{\"id\":\"1\",\"type\":\"dateTime\",\"start\":33,\"end\":38,\"textPattern\":\"today\",\"textDate\":\"Wed Jun 12 13:43:54 EDT 2019\"},{\"id\":\"2\",\"type\":\"dateTime\",\"start\":54,\"end\":62,\"textPattern\":\"tomorrow\",\"textDate\":\"Thu Jun 13 13:43:54 EDT 2019\"}]},\"text\":\" Learn from yesterday , live for today , and hope for tomorrow . \"}]}"
+	inJson                   = "{\"natural\":[{\"data\":{\"moments\":[{\"id\":\"0\",\"type\":\"dateTime0\",\"start\":12,\"end\":21,\"textPattern\":\"yesterday\",\"textDate\":\"Tue Jun 11 13:43:54 EDT 2019\"},{\"id\":\"1\",\"type\":\"dateTime\",\"start\":33,\"end\":38,\"textPattern\":\"today\",\"textDate\":\"Wed Jun 12 13:43:54 EDT 2019\"},{\"id\":\"2\",\"type\":\"dateTime\",\"start\":54,\"end\":62,\"textPattern\":\"tomorrow\",\"textDate\":\"Thu Jun 13 13:43:54 EDT 2019\"}]},\"text\":\" Learn from yesterday , live for today , and hope for tomorrow . \"}]}"
 	inAtt1                    = "natural";
 	inAtt2                    = "data";
 	inAtt3                    = "moments"; //"motifs";			
