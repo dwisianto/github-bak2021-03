@@ -2,8 +2,11 @@
   "name": "viz19a",
   "version": "1.0.0",
   "description": "```bash npm init -y ```",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "killall node; node app &",
+    "stop": "killall node",
+    "un": "rm -rf node_modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

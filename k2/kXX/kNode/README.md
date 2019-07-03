@@ -55,10 +55,10 @@ There are two ways to interpolate dynamic data within our template. Assuming tha
 
 ```bash
 html
-    head
-        title= title
-    body
-        h1= message
+ head
+  title= title
+ body
+  h1= message
 ```
 
 

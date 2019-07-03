@@ -57,6 +57,11 @@
 ## How to Keep two branch in sync
 
 ```bash
+git checkout myBranch
+git rebase master
+```
+
+```bash
 git checkout master
 git commit -am "message"
 git checkout gh-pages
