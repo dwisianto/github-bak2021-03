@@ -37,6 +37,13 @@
 | [Eclipse](kXX/kEclipse) | Installation Workspace RemoteSystem | | 
 |                         | Cdt | | 
 |                         | PyDev | | 
+| [Js](kXX/kJs)           | Javascript | | 
+|                         | Node  | | 
+|                         | Cpp  | | 
+|                         | Python  | | 
+|                         | Java  | | 
+|                         | Alg   | | 
+|                         | DataStruct  | | 
 | [Jv](kXX/kJv) | Gson Maven Gradle Ant | | 
 |               | Gson | |  
 |               | Jackson | | 
