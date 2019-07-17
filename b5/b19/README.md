@@ -5,13 +5,12 @@
   - [August 20](#august-20) 
 - July
   - [July 20](#july-20) _July 30, 2019_ 
-  - [July 30](#july-30) _July 1, 2019_ 
+  - [Passage Retrieval](#july-4) _July 4, 2019_ 
   - References
-    - https://mincong-h.github.io/      
+    - [mincong-h](https://mincong-h.github.io/)      
 - Month
-  - [Monthly Update One](#monthly-update-one) _December 31, 2019_ [^java] [^node] [^python] :+1:
-  - [Monthly Update Two](#monthly-update-two) _January 1, 2019_ [^docker] [^node] [^java]  :octocat:   
-
+  - [Monthly Update One](#monthly-update-one) _December 31, 2019_ [^java] [^node] [^python] 
+  - [Monthly Update Two](#monthly-update-two) _January 1, 2019_ [^docker] [^node] [^java]  
 
 # August
 
@@ -26,9 +25,22 @@
 
 ## July 20
 
+### Problem
+
+### Solution
+
+### Reference
+
+
 GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 
-## July 30
+## July 4
+
+### Problem
+
+### Solution
+
+### Reference
 
 GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 
@@ -42,7 +54,11 @@ Header1 | Header2
 cell1   | cell2
 cell3   | cell4
 
+GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
+
 ## Monthly Update Two
+
+GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 
 ### Problem
 
@@ -54,12 +70,12 @@ GoTo > [Top](#the-journey-is-the-reward) - [Month](#month)
 
 # Tags
 
-[^docker]: Docker is runtime
+[^docker]: docker 
 
-[^java]: Java is fun
+[^java]: java 
 
-[^node]: Node is a server-side perogramming
+[^node]: node 
 
-[^python]: 
+[^python]: python
 
 GoTo > [Top](#the-journey-is-the-reward) 
