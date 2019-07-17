@@ -1,0 +1,3 @@
+
+let student = JSON.parse(rawdata);  
+console.log(student);  

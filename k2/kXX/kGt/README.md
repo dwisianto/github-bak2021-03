@@ -300,6 +300,7 @@ git reset
 | git checkout -b **branchName** | checkout an existing branch |
 | | | 
 | git branch **myNewBranchName** | create a new local branch |
+| git checkout **myNewBranchname** | modify the new local branch | 
 | git push -u origin **myNewBranchName** | push local branch to remote origin |
 | git push --set-upstream origin **myNewBranchName** | push local branch to remote origin |
 | | |

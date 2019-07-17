@@ -22,18 +22,17 @@
 ## Instance
 
 - image
+    - myAmi
+- configuration
+    - subnet us-east-2c instead of us-east-2b or us-east-2a
 - size
+    - 
 - tag
     - Name : ec2u19s    
 - security group
-    - tag
+    - tag any security ggroup
 
 
-# MACOS
-
-- /etc/ssh/sshd_config
-- edit the file etc/ssd/sshd_config by 
-Set X11Forwarding to no
 
 
 # CentOS
@@ -228,8 +227,16 @@ sudo swapon --show
 ```
 
 
+## Docker
 
 
+- [centos7docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-centos-7)
+
+
+docker build -t group-name/image-name .
+docker image save -o image-name.tar group-name/image-name
+docker load < image-name.tar
+docker run -d --name mage-name --expose 8080 -p 8080:8080 --restart always -t  group-name/image-name
 
 
 ## Java
@@ -289,6 +296,11 @@ pyenv rehash
  gsettings set org.gnome.nautilus.desktop trash-icon-visible false
 ```  
 
+# MACOS
+
+- /etc/ssh/sshd_config
+- edit the file etc/ssd/sshd_config by 
+Set X11Forwarding to no
 
 
 # Ubuntu

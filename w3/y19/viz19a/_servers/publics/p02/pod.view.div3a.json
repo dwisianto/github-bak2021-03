@@ -1,0 +1,625 @@
+{
+  "unstructured": [
+    {
+      "text": "Mr. is a 53-year-old male. He has a previous medical history significant for right cortical cerebral vascular accident.\n",
+      "data": {
+        "concepts": [
+          {
+            "cui": "C2347167",
+            "preferredName": "Mr. - Title",
+            "semanticType": "cnce",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.ConceptualEntity",
+            "begin": 0,
+            "end": 3,
+            "coveredText": "Mr.",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C69166",
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "vocabs": "MTH,NCI"
+          },
+          {
+            "cui": "C1292718",
+            "preferredName": "Is a",
+            "semanticType": "ftcn",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.FunctionalConcept",
+            "begin": 4,
+            "end": 8,
+            "coveredText": "is a",
+            "negated": false,
+            "hypothetical": false,
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "snomedConceptId": "116680003",
+            "vocabs": "SNOMEDCT_US"
+          },
+          {
+            "cui": "C0439234",
+            "preferredName": "year",
+            "semanticType": "tmco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.TemporalConcept",
+            "begin": 12,
+            "end": 16,
+            "coveredText": "year",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C29848",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "snomedConceptId": "258707000",
+            "vocabs": "CHV,NCI_UCUM,MTH,NCI_CDISC,NCI,SNOMEDCT_US,NCI_NCPDP,HL7V3.0"
+          },
+          {
+            "cui": "C1561543",
+            "preferredName": "Transaction counts and value totals - year",
+            "semanticType": "inpr",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.IntellectualProduct",
+            "begin": 12,
+            "end": 16,
+            "coveredText": "year",
+            "negated": false,
+            "hypothetical": false,
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "vocabs": "MTH,HL7V3.0"
+          },
+          {
+            "cui": "C1561544",
+            "preferredName": "Precision - year",
+            "semanticType": "idcn",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.IdeaOrConcept",
+            "begin": 12,
+            "end": 16,
+            "coveredText": "year",
+            "negated": false,
+            "hypothetical": false,
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "vocabs": "MTH,HL7V2.5"
+          },
+          {
+            "cui": "C0580836",
+            "preferredName": "Old",
+            "semanticType": "tmco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.TemporalConcept",
+            "begin": 17,
+            "end": 20,
+            "coveredText": "old",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C65010",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "snomedConceptId": "70753007",
+            "vocabs": "MTH,CHV,NCI,SNOMEDCT_US"
+          },
+          {
+            "cui": "C0677546",
+            "preferredName": "Old episode",
+            "semanticType": "tmco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.TemporalConcept",
+            "begin": 17,
+            "end": 20,
+            "coveredText": "old",
+            "negated": false,
+            "hypothetical": false,
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "snomedConceptId": "272131007",
+            "vocabs": "MTH,SNOMEDCT_US"
+          },
+          {
+            "cui": "C0086582",
+            "preferredName": "Males",
+            "semanticType": "orga",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.OrganismAttribute",
+            "begin": 21,
+            "end": 25,
+            "coveredText": "male",
+            "negated": false,
+            "hypothetical": false,
+            "uid": 3,
+            "loincId": "LA2-8",
+            "nciCode": "C20197",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "snomedConceptId": "10052007,248153007",
+            "meshId": "M0012923",
+            "vocabs": "MTH,NCI_NICHD,LNC,CSP,MSH,HL7V2.5,HL7V3.0,LCH,CHV,NCI_CDISC,NCI_FDA,NCI,AOD,QMR,NDFRT,SNOMEDCT_US,DXP"
+          },
+          {
+            "cui": "C1706180",
+            "preferredName": "Male Gender, Self Report",
+            "semanticType": "qlco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.QualitativeConcept",
+            "begin": 21,
+            "end": 25,
+            "coveredText": "male",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C46109",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "vocabs": "MTH,NCI"
+          },
+          {
+            "cui": "C1706428",
+            "preferredName": "Male Phenotype",
+            "semanticType": "qlco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.QualitativeConcept",
+            "begin": 21,
+            "end": 25,
+            "coveredText": "male",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C46112",
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "vocabs": "MTH,NCI_CDISC,NCI"
+          },
+          {
+            "cui": "C1706429",
+            "preferredName": "Male, Self-Reported",
+            "semanticType": "orga",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.OrganismAttribute",
+            "begin": 21,
+            "end": 25,
+            "coveredText": "male",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C46107",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "vocabs": "MTH,NCI"
+          },
+          {
+            "cui": "C3539897",
+            "preferredName": "Have",
+            "semanticType": "qlco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.QualitativeConcept",
+            "begin": 30,
+            "end": 33,
+            "coveredText": "has",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C101282",
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "vocabs": "MTH,NCI"
+          },
+          {
+            "cui": "C0205156",
+            "preferredName": "Previous",
+            "semanticType": "tmco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.TemporalConcept",
+            "begin": 36,
+            "end": 44,
+            "coveredText": "previous",
+            "negated": false,
+            "hypothetical": false,
+            "loincId": "LP21061-4",
+            "nciCode": "C25627",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "snomedConceptId": "9130008",
+            "vocabs": "LNC,MTH,CHV,NCI_CDISC,NCI,SNOMEDCT_US"
+          },
+          {
+            "cui": "C1552607",
+            "preferredName": "Act Relationship Subset - previous",
+            "semanticType": "tmco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.TemporalConcept",
+            "begin": 36,
+            "end": 44,
+            "coveredText": "previous",
+            "negated": false,
+            "hypothetical": false,
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "vocabs": "MTH,HL7V3.0"
+          },
+          {
+            "cui": "C1704706",
+            "preferredName": "Medical History Domain",
+            "semanticType": "idcn",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.IdeaOrConcept",
+            "begin": 45,
+            "end": 60,
+            "coveredText": "medical history",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C49603",
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "vocabs": "MTH,NCI_CDISC,NCI"
+          },
+          {
+            "cui": "C0262926",
+            "preferredName": "Medical History",
+            "semanticType": "fndg",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.Finding",
+            "begin": 45,
+            "end": 60,
+            "coveredText": "medical history",
+            "negated": false,
+            "hypothetical": false,
+            "loincId": "MTHU000077,LP7800-8,LP128548-7,MTHU040244,LP91302-7",
+            "nciCode": "C18772",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "snomedConceptId": "392521001",
+            "vocabs": "MTH,LNC,CHV,NCI_NICHD,NCI,AOD,SNOMEDCT_US,AIR,NCI_NCI-GLOSS"
+          },
+          {
+            "cui": "C0237881",
+            "preferredName": "Statistical Significance",
+            "semanticType": "qnco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.QuantitativeConcept",
+            "begin": 61,
+            "end": 72,
+            "coveredText": "significant",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C61040",
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "vocabs": "MTH,CHV,NCI,NCI_NCI-GLOSS"
+          },
+          {
+            "cui": "C0750502",
+            "preferredName": "Significant",
+            "semanticType": "idcn",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.IdeaOrConcept",
+            "begin": 61,
+            "end": 72,
+            "coveredText": "significant",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C41130",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "snomedConceptId": "386134007",
+            "vocabs": "MTH,CHV,NCI,SNOMEDCT_US"
+          },
+          {
+            "cui": "C1546944",
+            "preferredName": "Event Seriousness - Significant",
+            "semanticType": "qlco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.QualitativeConcept",
+            "begin": 61,
+            "end": 72,
+            "coveredText": "significant",
+            "negated": false,
+            "hypothetical": false,
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "vocabs": "MTH,HL7V2.5"
+          },
+          {
+            "cui": "C0521125",
+            "preferredName": "Preposition For",
+            "semanticType": "qlco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.QualitativeConcept",
+            "begin": 73,
+            "end": 76,
+            "coveredText": "for",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C64956",
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "snomedConceptId": "86495002",
+            "vocabs": "MTH,NCI,SNOMEDCT_US"
+          },
+          {
+            "cui": "C0035621",
+            "preferredName": "rights",
+            "semanticType": "qlco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.QualitativeConcept",
+            "begin": 77,
+            "end": 82,
+            "coveredText": "right",
+            "negated": false,
+            "hypothetical": false,
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "vocabs": "CHV"
+          },
+          {
+            "cui": "C0205090",
+            "preferredName": "Right",
+            "semanticType": "spco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.SpatialConcept",
+            "begin": 77,
+            "end": 82,
+            "coveredText": "right",
+            "negated": false,
+            "hypothetical": false,
+            "loincId": "LA4306-2,LP35055-0,LP199953-3",
+            "nciCode": "C25228",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "snomedConceptId": "24028007",
+            "vocabs": "LNC,MTH,CHV,NCI_CDISC,NCI,UWDA,HL7V2.5,SNOMEDCT_US"
+          },
+          {
+            "cui": "C0444532",
+            "preferredName": "Right sided",
+            "semanticType": "spco",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.SpatialConcept",
+            "begin": 77,
+            "end": 82,
+            "coveredText": "right",
+            "negated": false,
+            "hypothetical": false,
+            "nciCode": "C124581",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "snomedConceptId": "264180000",
+            "vocabs": "MTH,CHV,NCI_CDISC,NCI,HPO,SNOMEDCT_US"
+          },
+          {
+            "cui": "C1552823",
+            "preferredName": "Table Cell Horizontal Align - right",
+            "semanticType": "ftcn",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.FunctionalConcept",
+            "begin": 77,
+            "end": 82,
+            "coveredText": "right",
+            "negated": false,
+            "hypothetical": false,
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "vocabs": "MTH,HL7V3.0"
+          },
+          {
+            "cui": "C0001613",
+            "preferredName": "Adrenal Cortex",
+            "semanticType": "bpoc",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.BodyPartOrganOrOrganComponent",
+            "begin": 83,
+            "end": 91,
+            "coveredText": "cortical",
+            "negated": false,
+            "hypothetical": false,
+            "loincId": "LP16667-5",
+            "nciCode": "C12396",
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "snomedConceptId": "68594002",
+            "meshId": "M0000476",
+            "vocabs": "MTH,LCH,LNC,CHV,MSH,NCI,LCH_NW,AOD,UWDA,SNOMEDCT_US,FMA,NCI_NCI-GLOSS"
+          },
+          {
+            "cui": "C0007776",
+            "preferredName": "Cerebral cortex",
+            "semanticType": "bpoc",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.BodyPartOrganOrOrganComponent",
+            "begin": 83,
+            "end": 91,
+            "coveredText": "cortical",
+            "negated": false,
+            "hypothetical": false,
+            "loincId": "MTHU050131,LP101929-0",
+            "nciCode": "C12443",
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "snomedConceptId": "40146001",
+            "meshId": "M0003878",
+            "vocabs": "LCH,LNC,MTH,CHV,NCI_CDISC,CSP,MSH,LCH_NW,NCI,AOD,SNOMEDCT_US,FMA"
+          },
+          {
+            "cui": "C0022655",
+            "preferredName": "Structure of cortex of kidney",
+            "semanticType": "bpoc",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.BodyPartOrganOrOrganComponent",
+            "begin": 83,
+            "end": 91,
+            "coveredText": "cortical",
+            "negated": false,
+            "hypothetical": false,
+            "loincId": "LP213638-2",
+            "nciCode": "C12739",
+            "disambiguationData": {
+              "validity": "INVALID"
+            },
+            "snomedConceptId": "50403003",
+            "meshId": "M0012012",
+            "vocabs": "MTH,CHV,LNC,NCI_CDISC,CSP,MSH,LCH_NW,NCI,AOD,UWDA,SNOMEDCT_US,FMA"
+          },
+          {
+            "cui": "C0038454",
+            "preferredName": "Cerebrovascular accident",
+            "semanticType": "dsyn",
+            "source": "umls",
+            "sourceVersion": "2018AA",
+            "type": "umls.DiseaseOrSyndrome",
+            "begin": 92,
+            "end": 118,
+            "coveredText": "cerebral vascular accident",
+            "negated": false,
+            "hypothetical": false,
+            "uid": 4,
+            "icd9Code": "434.91",
+            "loincId": "LA22099-8,MTHU020801",
+            "icd10Code": "I63.9",
+            "nciCode": "C3390",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "snomedConceptId": "230690007",
+            "meshId": "M0328070",
+            "vocabs": "LNC,MTH,NCI_NICHD,CSP,MSH,CST,HPO,OMIM,NCI_CTCAE,COSTAR,NCI_NCI-GLOSS,ICPC,CHV,NCI_CDISC,NCI_FDA,MEDLINEPLUS,NCI,AOD,NDFRT,SNOMEDCT_US,DXP"
+          }
+        ],
+        "conceptValues": [
+          {
+            "cui": "C0001779",
+            "preferredName": "age",
+            "unit": "years",
+            "value": "53",
+            "type": "ConceptValue",
+            "begin": 9,
+            "end": 20,
+            "coveredText": "53-year-old",
+            "negated": false,
+            "hypothetical": false,
+            "uid": 2
+          }
+        ],
+        "attributeValues": [
+          {
+            "preferredName": "age",
+            "values": [
+              {
+                "value": "53",
+                "unit": "years"
+              }
+            ],
+            "source": "General Medical",
+            "conceptValue": {
+              "uid": 2
+            },
+            "begin": 9,
+            "end": 20,
+            "coveredText": "53-year-old",
+            "negated": false,
+            "hypothetical": false,
+            "name": "PatientAge"
+          },
+          {
+            "preferredName": "Males",
+            "values": [
+              {
+                "value": "male"
+              }
+            ],
+            "source": "General Medical",
+            "concept": {
+              "uid": 3
+            },
+            "begin": 21,
+            "end": 25,
+            "coveredText": "male",
+            "negated": false,
+            "hypothetical": false,
+            "loincId": "LA2-8",
+            "nciCode": "C20197",
+            "name": "Gender",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "snomedConceptId": "10052007,248153007",
+            "meshId": "M0012923"
+          },
+          {
+            "preferredName": "Cerebrovascular accident",
+            "values": [
+              {
+                "value": "true"
+              }
+            ],
+            "source": "General Medical",
+            "concept": {
+              "uid": 4
+            },
+            "begin": 92,
+            "end": 118,
+            "coveredText": "cerebral vascular accident",
+            "hypothetical": false,
+            "icd9Code": "434.91",
+            "loincId": "LA22099-8,MTHU020801",
+            "icd10Code": "I63.9",
+            "nciCode": "C3390",
+            "name": "Disease",
+            "disambiguationData": {
+              "validity": "VALID"
+            },
+            "snomedConceptId": "230690007",
+            "meshId": "M0328070"
+          }
+        ]
+      }
+    }
+  ]

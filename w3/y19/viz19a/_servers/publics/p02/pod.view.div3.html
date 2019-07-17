@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<!-- 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	-->
+	<script src="../../../../w3/l17/jquery/1.12.2/jquery.min.js"></script>
+	<script src="../../../../w3/l17/bs/bs3/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../../../w3/l17/bs/bs3/css/bootstrap.min.css">
+	
+	
+		
+</head>
+<body>
+
+	<table width = "100%" border = "0">
+	         
+		<tr valign = "top">
+			<td width="10%" ></td>	
+			<td width="80%" ></td>	
+			<td width="10%" ></td>	
+		</tr>
+	
+         <tr valign = "top" > <!--  height = "200" -->
+            <td id="pvCategoryAreaId" width = "10%" ></td>	
+            <td id="pvTextAreaId" width = "80%" ></td>
+            <td id="pvMotifAreaId" width = "10%"></td>                                                
+         </tr>
+         
+      </table>
+      
+</body>
+
+<script>
+
+
+$(document).ready(function() {
+	
+	strBuf = {};
+	strBuf["1"]="a";
+	strBuf["2"]="b";		
+	strBuf["3"]="c";
+	strBuf["4"]="d";
+	strBuf["5"]="e";
+	strBuf["6"]="";
+	strBuf["7"]="f";
+	strBuf["8"]="g";
+	strBuf["9"]="h";
+	strBuf["10"]="";
+	
+	strBuf[ ObjKeyRnd( strBuf, "2" ) ]="<span>";
+	strBuf[ ObjKeyRnd( strBuf, "3" ) ]="</span>";
+	strBuf[ ObjKeyRnd( strBuf, "7" ) ]="<span>";
+	strBuf[ ObjKeyRnd( strBuf, "8" ) ]="</span>";
+	console.log( strBuf );
+	
+		
+	// sort an object
+	// convert a dictionary into array of array
+	var items = Object.keys(strBuf).map( function(key) {
+		return [key, strBuf[key]];
+	});
+	items.sort( function(first,second) {
+		return Number(first[0]) - Number(second[0]) ;
+	});	
+	console.log(items);
+	console.log( Object.values(items).join() );
+	
+	// [] joining
+	strOut = "";
+	items.forEach(function(itemVal,itemIdx) {
+		console.log(itemIdx + " : " + " k: "+ itemVal[0] + " v: "+ itemVal[1]);
+		strOut +=itemVal[1];
+	});
+	console.log(strOut);
+	
+	
+})
+
+
+/**
+ * _value is an integer lower bound
+ * check if the dictionary contains the _value or not
+ * append a random number to the _value
+ * response with a new real number that can be used as a key
+ */
+function ObjKeyRnd( _dict, _value ) {
+	
+	keyNew = _value;
+	while( _dict.hasOwnProperty(keyNew) ) {
+		keyNew = Number(_value)+Number(Math.random());	
+		//console.log(keyNew);
+	}
+	
+	// [] console.log(keyNew);	
+	return keyNew;
+}
+
+
+</script>
+<script src="SortedList.js" type="text/javascript"/></script>
+<script src="IntervalTree.js" type="text/javascript"/></script>
+<!-- 
+<script>
+
+$(document).ready(function() { 
+	//console.log("document is ready");
+
+	 // sort number
+    var list = SortedList.create();
+    list.insert(13, 2, 9, 8, 0);
+    list.insert(37,36,35,23,24,25);
+    console.log(list.toArray()); // [0,2,8,9,13]
+
+    // sort string
+    var arr = ["foo", "bar", "hoge"];
+    var strList = SortedList.create(arr, {
+      compare: "string"
+    });
+    console.log(strList.toArray()); // ["bar", "foo", "hoge"]
+
+    // SortedList is not Array
+    console.assert(!Array.isArray(list));
+
+    // SortedList is instanceof Array
+    console.assert(list instanceof Array);
+
+    // SortedList extends Array
+    console.assert(list[2], 8);
+    console.assert(list.length, 5);
+    console.assert(list.pop(), 13);
+
+    // register an already filtered array
+    var list = SortedList.create([0,1,2,3,4], { resume: true });
+    console.log(list.toArray());
+
+});
+</script>
+ -->
+<!-- 
+<script>
+
+$(document).ready(function() { 
+	//console.log("document is ready");
+	//var IntervalTree = require('intervalTree');
+
+	// add interval data
+	var itree = new IntervalTree(300); // 300 : the center of the tree
+	itree.add([22, 56,  'foo']);
+	itree.add([44, 199, 'main']);
+	itree.add([100,200, 'overlap-right']);
+	itree.add([40,50, 'overlap-left']);
+
+	// search 1: get overlapped regions from one point
+	var results = itree.search(103);
+	results.forEach(function(result) {
+  		console.log(result.data); // overlapped range data
+  		console.log(result.id);   // id of the overlapped range
+	});
+
+	// search 2: get overlapped regions from a range
+	var results2 = itree.search(103, 400);
+	results2.forEach(function(result) {
+  		console.log(result.data);  // overlapped range data
+  		console.log(result.id);    // id of the overlapped range
+  		console.log(result.rate1); // overlapped rate to the given range
+  		console.log(result.rate2); // overlapped rate to the range of this result
+	});
+
+});
+</script>
+ -->
+</html>

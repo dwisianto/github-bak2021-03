@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+ head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")  
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")  
+  title=title
+  script(src='/public1/homepage.js' type='text/javascript')
+ body
+  h1 Document Corpus !
+  table(style='width:100%', border='0')
+   tr(halign="center" valgin="top")
+    td(id="tableC1" width="10%" ) 001
+    td(id="tableC2" width="80%" ) Adam
+    td(id="tableC3" width="10%" ) 25
+  button(onclick='crpsSelect()') select
+  
+  p Hi there, #{user}!
+  textarea(id="idQuery" rows="6", cols="66" ) 
+   | Hello
+   | Sun
+   | Hello
+   | Moon
+  button(onclick='click1()') b1
+ 
+
+  h1 Annotation !
+  table(style='width:100%', border='0')
+   tr(halign="center" valgin="top")
+    td( width="3%" ) 
+    td(id="pvMotifAreaId" width="10%" ) 001
+    td( width="2%" )
+    td(id="pvTextAreaId" width="70%" ) Adam
+    td( width="2%" )
+    td(id="pvCategoryAreaId" width="10%" ) 25
+    td( width="3%" ) 
+  
+  h1 Response
+   p Hello #{user}!
+  textarea(id="idResponse" rows="6", cols="66" )   
+  button(onclick='click2()') b2
+  

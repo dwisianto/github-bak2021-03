@@ -1,0 +1,63 @@
+<html>
+<!-- p { width:150px; line-height:2em; } -->
+<head>
+	<meta charset="utf-8"/>
+	<style>
+
+	p {line-height:2; }
+
+	span.annotation { border-bottom:1px solid; }
+	span.annotation span.annotation { padding-bottom:2px; }
+	span.annotation span.annotation span.annotation { padding-bottom:4px; }
+	span.annotation span.annotation span.annotation span.annotation { padding-bottom:6px; }
+
+	span[dt-id="001"] { border-color:orange; }
+	span[dt-id="002"] { border-color:blue; }
+	span[dt-id="003"] { border-color:red; }
+	span[dt-id="004"] { border-color:green; }
+
+	</style>
+
+</head>
+<body>
+
+<p>
+Lorem 
+<span class="annotation" dt-id="004">
+	ipsum dolor 
+	<span class="annotation" dt-id="001">
+		sit amet, 
+		<span class="annotation" dt-id="002">
+		consectetuer adipiscing
+		</span> 
+		elit.
+	</span> 
+	Aenean commodo ligula eget dolor. Aenean massa. 
+	<span class="annotation" dt-id="002">
+		Cum sociis 
+		<span class="annotation" dt-id="001">
+			natoque penatibus et 
+			<span class="annotation" dt-id="003">
+				magnis
+			</span> 
+			dis parturient montes, nascetur
+			</span> ridiculus mus.
+		</span> 
+	Donec quam felis, ultricies nec, 
+	<span class="annotation" dt-id="002">
+	pellentesque eu, 
+	</span>
+
+	<span class="annotation" dt-id="001">
+		<span class="annotation" dt-id="002">
+			pretium
+		</span>
+		 quis, sem
+	</span> 
+	Donec pede justo, fringilla vel, aliquet nec,
+</span> 
+vulputate eget, arcu.
+</p>
+
+</body>
+</html>
