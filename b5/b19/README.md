@@ -58,16 +58,26 @@ GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 
 - "Learning to Rank Documents by Learning to Rank Passages" [PDF](https://web.iem.technion.ac.il/images/user-files/orenk/IE_IS_2018_03.pdf)
 
+```bash
 @article{sheetrit2018learning,
   title={Learning to Rank Documents by Learning to Rank Passages},
   author={Sheetrit, Eilon and Shtok, Anna and Kurland, Oren},
   year={2018}
 }
+```
+
+
 - https://github.com/castorini/birch
 
 
-
 GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
+
+Art by Morfina
+<pre class="">     __
+ .--()°'.'
+'|, . ,'
+ !_-(_\
+</pre>
 
 
 # Month
