@@ -7,10 +7,18 @@
   - [July 20](#july-20) _July 30, 2019_ 
   - [Passage Retrieval](#july-4) _July 4, 2019_ 
   - References
-    - [mincong-h](https://mincong-h.github.io/)      
+    - [paper with codes](https://paperswithcode.com/)   
+    - https://webis.de/downloads/publications/papers/stein_2013l.pdf
+    - https://ecommons.cornell.edu/bitstream/handle/1813/6100/93-1334.pdf
+    - W._Bruce_Croft [Wiki](https://en.wikipedia.org/wiki/W._Bruce_Croft)
+    - https://paperswithcode.com/task/learning-to-rank/codeless
+    - https://github.com/castorini/anserini    
 - Month
   - [Monthly Update One](#monthly-update-one) _December 31, 2019_ [^java] [^node] [^python] 
   - [Monthly Update Two](#monthly-update-two) _January 1, 2019_ [^docker] [^node] [^java]  
+  - References
+    - [mincong-h](https://mincong-h.github.io/)   
+  
 
 # August
 
@@ -41,6 +49,17 @@ GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 ### Solution
 
 ### Reference
+
+- "Learning to Rank Documents by Learning to Rank Passages" [PDF](https://web.iem.technion.ac.il/images/user-files/orenk/IE_IS_2018_03.pdf)
+
+@article{sheetrit2018learning,
+  title={Learning to Rank Documents by Learning to Rank Passages},
+  author={Sheetrit, Eilon and Shtok, Anna and Kurland, Oren},
+  year={2018}
+}
+- https://github.com/castorini/birch
+
+
 
 GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 
