@@ -1,5 +1,4 @@
-# The Journey is the reward
-
+## The Journey is the reward
 
 - August
   - [August 30](#august-30) 
@@ -7,18 +6,13 @@
 - July
   - [Reproducable Retrieval](#july-13 "Reproducible Experiment") _July 13, 2019_   
   - [Passage-based Document Retrieval](#july-4 "Passage Relevance" ) _July 4, 2019_ 
-  - References
-    - [paper with codes](https://paperswithcode.com/)   
-    - https://webis.de/downloads/publications/papers/stein_2013l.pdf
-    - https://ecommons.cornell.edu/bitstream/handle/1813/6100/93-1334.pdf
-    - W._Bruce_Croft [Wiki](https://en.wikipedia.org/wiki/W._Bruce_Croft)
-    - https://paperswithcode.com/task/learning-to-rank/codeless 
+
 - Month
   - [Monthly Update One](#monthly-update-one) _December 31, 2019_ [^java] [^node] [^python] 
   - [Monthly Update Two](#monthly-update-two) _January 1, 2019_ [^docker] [^node] [^java]  
   - References
     - [mincong-h](https://mincong-h.github.io/)   
-  
+
 
 # August
 
@@ -36,15 +30,27 @@
 
 # July
 
-## July 13
+### References
+    - [paper with codes](https://paperswithcode.com/)   
+    - [zenodo](https://about.zenodo.org/)
+    - https://webis.de/downloads/publications/papers/stein_2013l.pdf
+    - https://ecommons.cornell.edu/bitstream/handle/1813/6100/93-1334.pdf
+    - W._Bruce_Croft [Wiki](https://en.wikipedia.org/wiki/W._Bruce_Croft)
+    - https://paperswithcode.com/task/learning-to-rank/codeless 
 
+## July 21
+
+
+
+
+## July 13
 
 
 ### Problem
 
 ### Solution
 
-### Reference
+### References
 
 - [anserini](https://github.com/castorini/anserini)
 
@@ -57,14 +63,15 @@ GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 Art by Morfina
 </pre>
 
+
 ## July 4
 
 
 ### Passage-based Document Retrieval 
 
 
-a document can be deemed relevant to a
-query even if it contains a very short passage of text with pertinent information
+A document can be deemed relevant to a
+query even if it contains a very short passage of text with pertinent information.
 This fact has motivated work on passage-based document retrieval:  
 document ranking methods that induce information from the document’s passages.
 However, the main source of passage-based information utilized was passage-query similarities.  
@@ -74,9 +81,10 @@ that utilize a highly effective ranking of passages produced in response to the 
 passage ranking is also induced using a learning-to-rank approach.  
 Empirical evaluation attests to the clear merits of our methods with respect to strong baselines.
 
+
 ### Solution
 
-### Reference
+### References
 
 - "Learning to Rank Documents by Learning to Rank Passages" [PDF](https://web.iem.technion.ac.il/images/user-files/orenk/IE_IS_2018_03.pdf)
 
@@ -88,7 +96,18 @@ Empirical evaluation attests to the clear merits of our methods with respect to 
 }
 ```
 
-- https://github.com/castorini/birch
+- Document ranking via sentence modeling using BERT [github](https://github.com/castorini/birch)
+
+
+```bash
+@article{yang2019simple,
+  title={Simple Applications of BERT for Ad Hoc Document Retrieval},
+  author={Yang, Wei and Zhang, Haotian and Lin, Jimmy},
+  journal={arXiv preprint arXiv:1903.10972},
+  year={2019}
+}
+
+```
 
 
 GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
