@@ -5,9 +5,8 @@
   - [August 30](#august-30) 
   - [August 20](#august-20) 
 - July
-  - [Reproducable Retrieval](#july-13 "Reproducible Experiment") _July 13, 2019_ 
-    
-  - [Passage Relevance](#july-4) _July 4, 2019_ 
+  - [Reproducable Retrieval](#july-13 "Reproducible Experiment") _July 13, 2019_   
+  - [Passage-based Document Retrieval](#july-4 "Passage Relevance" ) _July 4, 2019_ 
   - References
     - [paper with codes](https://paperswithcode.com/)   
     - https://webis.de/downloads/publications/papers/stein_2013l.pdf
@@ -39,12 +38,7 @@
 
 ## July 13
 
-<pre class="">
- .--()°'.'
-'|, . ,'
- !_-(_\
-Art by Morfina
-</pre>
+
 
 ### Problem
 
@@ -56,9 +50,6 @@ Art by Morfina
 
 GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 
-
-## July 4
-
 <pre class="">
  .--()°'.'
 '|, . ,'
@@ -66,7 +57,22 @@ GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 Art by Morfina
 </pre>
 
-### Problem
+## July 4
+
+
+### Passage-based Document Retrieval 
+
+
+a document can be deemed relevant to a
+query even if it contains a very short passage of text with pertinent information
+This fact has motivated work on passage-based document retrieval:  
+document ranking methods that induce information from the document’s passages.
+However, the main source of passage-based information utilized was passage-query similarities.  
+We address the challenge of utilizing richer sources of passage-based information to improve document retrieval effectiveness.  
+Specifically,  we devise a suite of learning-to-rank-based document retrieval methods 
+that utilize a highly effective ranking of passages produced in response to the query; 
+passage ranking is also induced using a learning-to-rank approach.  
+Empirical evaluation attests to the clear merits of our methods with respect to strong baselines.
 
 ### Solution
 
@@ -87,7 +93,12 @@ Art by Morfina
 
 GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 
-
+<pre class="">
+ .--()°'.'
+'|, . ,'
+ !_-(_\
+Art by Morfina
+</pre>
 
 
 
@@ -105,7 +116,26 @@ cell3   | cell4
 
 GoTo > [Top](#the-journey-is-the-reward) - [Month](#month)
 
+<pre class="">
+ .--()°'.'
+'|, . ,'
+ !_-(_\
+Art by Morfina
+</pre>
+
+
 ## Monthly Update Two
+
+
+### Problem
+
+### Solution
+
+### Reference
+
+- [asciiart](https://www.asciiart.eu/)
+
+GoTo > [Top](#the-journey-is-the-reward) - [Month](#month)
 
 <pre class="">
  .--()°'.'
@@ -114,13 +144,6 @@ GoTo > [Top](#the-journey-is-the-reward) - [Month](#month)
 Art by Morfina
 </pre>
 
-### Problem
-
-### Solution
-
-### Reference
-
-GoTo > [Top](#the-journey-is-the-reward) - [Month](#month)
 
 # Tags
 
