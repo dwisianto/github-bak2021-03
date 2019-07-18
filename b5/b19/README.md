@@ -5,15 +5,15 @@
   - [August 30](#august-30) 
   - [August 20](#august-20) 
 - July
-  - [July 13](#july-13) _July 30, 2019_ 
-  - [Passage Retrieval](#july-4) _July 4, 2019_ 
+  - [Reproducable Retrieval](#july-13 "Reproducible Experiment") _July 13, 2019_ 
+    - https://github.com/castorini/anserini
+  - [Passage Relevance](#july-4) _July 4, 2019_ 
   - References
     - [paper with codes](https://paperswithcode.com/)   
     - https://webis.de/downloads/publications/papers/stein_2013l.pdf
     - https://ecommons.cornell.edu/bitstream/handle/1813/6100/93-1334.pdf
     - W._Bruce_Croft [Wiki](https://en.wikipedia.org/wiki/W._Bruce_Croft)
-    - https://paperswithcode.com/task/learning-to-rank/codeless
-    - https://github.com/castorini/anserini    
+    - https://paperswithcode.com/task/learning-to-rank/codeless 
 - Month
   - [Monthly Update One](#monthly-update-one) _December 31, 2019_ [^java] [^node] [^python] 
   - [Monthly Update Two](#monthly-update-two) _January 1, 2019_ [^docker] [^node] [^java]  
