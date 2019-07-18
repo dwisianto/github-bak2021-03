@@ -1,10 +1,11 @@
 # The Journey is the reward
 
+
 - August
   - [August 30](#august-30) 
   - [August 20](#august-20) 
 - July
-  - [July 20](#july-20) _July 30, 2019_ 
+  - [July 13](#july-13) _July 30, 2019_ 
   - [Passage Retrieval](#july-4) _July 4, 2019_ 
   - References
     - [paper with codes](https://paperswithcode.com/)   
@@ -26,12 +27,17 @@
 
 ## August 30 
 
+### Problem
+
+### Solution
+
+### Reference
 
 
 
 # July
 
-## July 20
+## July 13
 
 ### Problem
 
@@ -65,6 +71,9 @@ GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 
 
 # Month
+
+![picture alt](http://www.brightlightpictures.com/assets/images/portfolio/thethaw_header.jpg "Title is optional")
+
 
 ## Monthly Update One
 
