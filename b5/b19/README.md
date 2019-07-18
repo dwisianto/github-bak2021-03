@@ -6,7 +6,7 @@
   - [August 20](#august-20) 
 - July
   - [Reproducable Retrieval](#july-13 "Reproducible Experiment") _July 13, 2019_ 
-    - https://github.com/castorini/anserini
+    
   - [Passage Relevance](#july-4) _July 4, 2019_ 
   - References
     - [paper with codes](https://paperswithcode.com/)   
@@ -39,16 +39,32 @@
 
 ## July 13
 
+<pre class="">
+ .--()°'.'
+'|, . ,'
+ !_-(_\
+Art by Morfina
+</pre>
+
 ### Problem
 
 ### Solution
 
 ### Reference
 
+- [anserini](https://github.com/castorini/anserini)
 
 GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 
+
 ## July 4
+
+<pre class="">
+ .--()°'.'
+'|, . ,'
+ !_-(_\
+Art by Morfina
+</pre>
 
 ### Problem
 
@@ -66,18 +82,13 @@ GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 }
 ```
 
-
 - https://github.com/castorini/birch
 
 
 GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
 
-Art by Morfina
-<pre class="">     __
- .--()°'.'
-'|, . ,'
- !_-(_\
-</pre>
+
+
 
 
 # Month
@@ -92,11 +103,16 @@ Header1 | Header2
 cell1   | cell2
 cell3   | cell4
 
-GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
+GoTo > [Top](#the-journey-is-the-reward) - [Month](#month)
 
 ## Monthly Update Two
 
-GoTo > [Top](#the-journey-is-the-reward) - [July](#july)
+<pre class="">
+ .--()°'.'
+'|, . ,'
+ !_-(_\
+Art by Morfina
+</pre>
 
 ### Problem
 
