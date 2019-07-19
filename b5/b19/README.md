@@ -13,15 +13,9 @@
 # July
 
 
-## July 21
-
 
 ## July 13
 
-
-### Problem
-
-### Solution
 
 ### References
 
@@ -50,7 +44,10 @@ This work addresses the challenge of utilizing richer sources of passage-based i
 Specifically, a suite of learning-to-rank-based document retrieval methods is devised
 to utilize a highly effective ranking of passages produced in response to the query; 
 passage ranking is also induced using a learning-to-rank approach.  
+
+
 [//]: # (Empirical evaluation attests to the clear merits of our methods with respect to strong baselines)
+
 
 ### Problem Formulation
 
@@ -107,12 +104,10 @@ To simplify notation, we use G_{LTR} to refer to the ranked passage list attaine
 
 
 GoTo > [Top](#the-journey-is-the-reward) > [July](#july)
-
-<pre class="">
- .--()°'.'
-'|, . ,'
- !_-(_\    ~ Elephant Art by Morfina
+<pre class=""> 
+C|_| ~ A Cup of Coffee 
 </pre>
+
 
 ## July References
     - [paper with codes](https://paperswithcode.com/)   
