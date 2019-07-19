@@ -40,26 +40,35 @@ GoTo > [Top](#the-journey-is-the-reward) > [July](#july)
 
 
 ## Passage Based Document Retrieval 
+
 _July 4, 2019_
 
 A document can be deemed relevant to a query even if it contains a very short passage of text with pertinent information.
 This fact has motivated work on passage-based document retrieval: document ranking methods that induce information from the document’s passages.
 However, the main source of passage-based information utilized was passage-query similarities. 
-We address the challenge of utilizing richer sources of passage-based information to improve document retrieval effectiveness.  
-Specifically,  we devise a suite of learning-to-rank-based document retrieval methods 
-that utilize a highly effective ranking of passages produced in response to the query; 
+This work addresses the challenge of utilizing richer sources of passage-based information to improve document retrieval effectiveness.  
+Specifically, a suite of learning-to-rank-based document retrieval methods is devised
+to utilize a highly effective ranking of passages produced in response to the query; 
 passage ranking is also induced using a learning-to-rank approach.  
-Empirical evaluation attests to the clear merits of our methods with respect to strong baselines.
+[//]: # (Empirical evaluation attests to the clear merits of our methods with respect to strong baselines)
 
-### Formulation
+### Problem Formulation
 
 Our goal is to rank documents in corpus D with respect to query q. 
 
 Suppose some learning-to-rank (LTR) method was used to rank the documents in the corpus. 
-Let D_{LTR} denote the list of the documents most highly ranked. The only assumption we
-make about the LTR method is that it uses — for both training and ranking — a feature-based
-representation. Specifically, a pair of document d and query q is represented by a feature vector
-\hat{v}(d,q).
+Let D_{LTR} denote the list of the documents most highly ranked. 
+The assumption is that the LTR method uses a feature-based representation for both training and ranking.
+Specifically, a pair of document d and query q is represented by a feature vector v(d,q).
+
+We set out to devise document ranking methods that re-rank D_{LTR} using information induced from the set G of all passages in documents in D_{LTR}. 
+More specifically, we address the question of whether, and how, using an effective ranking of G with respect to q can help in improving document (re-)ranking effectiveness.
+Herein, we write g ∈ d to indicate that passage g is part of document d. 
+
+Some of the approaches we present do not depend on the ranking method used to rank the passages in G. 
+Others are based on the premise that the ranking is produced using an LTR
+approach applied to passages; a pair of passage g and query q is represented in this approach using the feature vector v(g,q). 
+To simplify notation, we use G_{LTR} to refer to the ranked passage list attained from G regardless of whether an LTR method was indeed used to rank it.
 
 
 ### Solution
@@ -120,7 +129,7 @@ GoTo > [Top](#the-journey-is-the-reward) > [July](#july)
 ![picture alt](http://www.brightlightpictures.com/assets/images/portfolio/thethaw_header.jpg "Title is optional")
 
 
-## Monthly Update One
+## Monthly Update 
 
 ### Problem
 
@@ -147,7 +156,6 @@ GoTo > [Top](#the-journey-is-the-reward) > [Month](#monthly)
 
 
 # Tags
-
 
 
 [^docker]: docker 
