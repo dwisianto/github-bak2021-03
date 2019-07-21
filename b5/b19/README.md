@@ -21,6 +21,7 @@
 
 - [anserini](https://github.com/castorini/anserini)
 - [hical](https://hical.github.io/) [github](https://github.com/hical/HiCAL)
+
 [//]: # https://github.com/castorini/anserini/commits/anserini-0.1.0?after=cbb815e68c4c7cac34ff0e7098a62530aa442590+295
 
 
@@ -80,15 +81,18 @@ with the highest query similarity (score) of a passage in the docuement.
   - The first is the original ranking of D_{LTR} 
   - The second is the ranking attained based on the highest rank in the G_{LTR} of a document's passage.  
   
+[//]: # (This actually is the most platform independent comment)
+[//]: # (git log --graph --decorate --pretty=oneline --abbrev-commit)
 
 The final retrieval score of document d \in D_{LTR} is:
 <pre>
-	score(d;q) := \alpha score_{D_{LTR}}(d) + (1-\alpha) max_{g \in d) score_{G_{LTR}}(g)
+    score(d;q) := \alpha \, score_{D_{LTR}}(d) + (1-\alpha) \, \max_{g \in d} score_{G_{LTR}}(g)
 </pre>
 where \alpha is a free parameter. 
 Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least of one of its passages was ranked high in G_{LTR}. 
 
 
+![picture alt](m07/CodeCogsEqn.svg "RRF Formula")
 
 
 #### Multiple Passages Per Document (MPPD)
@@ -96,11 +100,6 @@ Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least 
 #### Joint Document Passage Representation (JDPR)
 
 #### Two Stage Retrieval : First Passage Then Document (FPTD)
-
-
-
-
-
 
 
 
@@ -116,17 +115,6 @@ Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least 
 }
 ```
 
-- Document ranking via sentence modeling using BERT [github](https://github.com/castorini/birch)
-
-```bash
-@article{yang2019simple,
-  title={Simple Applications of BERT for Ad Hoc Document Retrieval},
-  author={Yang, Wei and Zhang, Haotian and Lin, Jimmy},
-  journal={arXiv preprint arXiv:1903.10972},
-  year={2019}
-}
-
-```
 
 GoTo > [Top](#the-journey-is-the-reward) > [July](#july)
 <pre class=""> 
@@ -141,7 +129,17 @@ GoTo > [Top](#the-journey-is-the-reward) > [July](#july)
     - https://ecommons.cornell.edu/bitstream/handle/1813/6100/93-1334.pdf
     - W._Bruce_Croft [Wiki](https://en.wikipedia.org/wiki/W._Bruce_Croft)
     - https://paperswithcode.com/task/learning-to-rank/codeless 
+    - Document ranking via sentence modeling using BERT [github](https://github.com/castorini/birch)
 
+```bash
+@article{yang2019simple,
+  title={Simple Applications of BERT for Ad Hoc Document Retrieval},
+  author={Yang, Wei and Zhang, Haotian and Lin, Jimmy},
+  journal={arXiv preprint arXiv:1903.10972},
+  year={2019}
+}
+
+```
 
 
 
@@ -187,6 +185,8 @@ GoTo > [Top](#the-journey-is-the-reward) > [Engineering](#engineering) > [Docker
 
 ### Problem
 
+Latex equation can be included as an svg picture.
+
 ### Solution
 
 Header1 | Header2
@@ -196,6 +196,7 @@ cell3   | cell4
 
 ### References
 
+- [codecogs](https://www.codecogs.com/latex/eqneditor.php)
 - [asciiart](https://www.asciiart.eu/)
 - [mincong-h](https://mincong-h.github.io/)   
 
