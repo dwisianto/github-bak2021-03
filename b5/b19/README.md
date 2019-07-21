@@ -86,16 +86,14 @@ with the highest query similarity (score) of a passage in the docuement.
   
 [//]: # (This actually is the most platform independent comment)
 [//]: # (git log --graph --decorate --pretty=oneline --abbrev-commit)
+[//]: # (score(d;q) := \alpha \, score_{D_{LTR}}(d) + (1-\alpha) \, \max_{g \in d} score_{G_{LTR}}(g))
 
 The final retrieval score of document d \in D_{LTR} is:
-<pre>
-    score(d;q) := \alpha \, score_{D_{LTR}}(d) + (1-\alpha) \, \max_{g \in d} score_{G_{LTR}}(g)
-</pre>
+<img src="m07rrf/CodeCogsEqn.svg" width="200">
 where \alpha is a free parameter. 
 Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least of one of its passages was ranked high in G_{LTR}. 
 
 
-![picture alt](m07rrf/CodeCogsEqn.svg "RRF Formula")
 
 
 #### Multiple Passages Per Document (MPPD)
