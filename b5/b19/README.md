@@ -4,6 +4,9 @@
 - July
   - [Reproducible Retrieval](#july-13 "Reproducible Experiment") _July 13, 2019_   
   - [Passage-based Document Retrieval](#passage-based-document-retrieval "Passage Relevance" ) _July 4, 2019_ 
+- Engineering
+  - [Docker](#docker) 
+  - [Git](#git)
 - Monthly
   - [Monthly Update One](#monthly-update-one) _December 31, 2019_ [^java] [^node] [^python] [^docker] 
 
@@ -92,7 +95,7 @@ where \alpha is a free parameter.
 Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least of one of its passages was ranked high in G_{LTR}. 
 
 
-![picture alt](m07/CodeCogsEqn.svg "RRF Formula")
+![picture alt](m07rrf/CodeCogsEqn.svg "RRF Formula")
 
 
 #### Multiple Passages Per Document (MPPD)
