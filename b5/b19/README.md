@@ -69,10 +69,12 @@ approach applied to passages; a pair of passage g and query q is represented in 
 To simplify notation, we use G_{LTR} to refer to the ranked passage list attained from G regardless of whether an LTR method was indeed used to rank it.
 
 
-### Solutions
+### Approaches
 
-In what follows we describe four passage-based document retrieval methods that we use to re-rank D_{LTR}. 
+
+Four passage-based document retrieval methods are presented to re-rank D_{LTR}. 
 The methods differ by the way they utilize information about the ranking of passages in G_{LTR}.
+
 
 #### Reciprocal Rank Fusion (RRF)
 
@@ -84,15 +86,14 @@ with the highest query similarity (score) of a passage in the docuement.
   - The first is the original ranking of D_{LTR} 
   - The second is the ranking attained based on the highest rank in the G_{LTR} of a document's passage.  
   
-[//]: # (This actually is the most platform independent comment)
-[//]: # (git log --graph --decorate --pretty=oneline --abbrev-commit)
-[//]: # (score(d;q) := \alpha \, score_{D_{LTR}}(d) + (1-\alpha) \, \max_{g \in d} score_{G_{LTR}}(g))
 
 The final retrieval score of document d \in D_{LTR} is:
 
+<pre>
+score(d;q) := \alpha \, score_{D_{LTR}}(d) + (1-\alpha) \, \max_{g \in d} score_{G_{LTR}}(g)
+</pre>
 
-<center><img src="m07rrf/CodeCogsEqn.svg" width="79%"></center>
-
+[//]: # (<center><img src="m07rrf/CodeCogsEqn.svg" width="79%"></center>)
 
 where \alpha is a free parameter. 
 Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least of one of its passages was ranked high in G_{LTR}. 
@@ -101,33 +102,54 @@ Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least 
 
 #### Multiple Passage-Ranking Statistics (MPRS)
 
-Both RRF and MPRS are based on the same LTR approach, which is used to induce $D_{LTR}$.
-For $G_{LTR}$, the previous RRF method utilizes only the highest ranked passage of a document to assign its final retrieval score. 
-The MPRS utilizes various statistics regarding the ranking of the document's passages in $G_{LTR}$. 
+
+- Both RRF and MPRS are based on the same LTR approach, which is used to induce $D_{LTR}$.
+  - For $G_{LTR}$, the previous RRF method utilizes only the highest ranked passage of a document to assign its final retrieval score. 
+  - The MPRS utilizes various statistics regarding the ranking of the document's passages in $G_{LTR}$. 
 
 
 The feature vector used to represent a query-document pair is:
-
 <pre>
 v(d,q) = v_{(d,q)} \oplus v'_{(d,q)}
 </pre>
 
 [//]: # ( <center><img src="m07rrf/CodeCogsEqn.svg" width="79%"></center> )
 
-The $v(d,q)$ is the concatenation of $v(d,q)$ and $v'(d,q)$. 
-the original feature vector used to learn and apply the ranking function that served to induce $D_{LTR}$. 
-$v'(d,q)$ is a vector composed of passage-based estimates.
-The estimates are the (i) maximum, (ii) minimum, (iii) average, (iv) standard devision of score_{G_{LTR}}(g) for $g \in d$ (vii) the number of passages in d.
+- The $v(d,q)$ is the concatenation of $v(d,q)$ and $v'(d,q)$. 
+  - the original feature vector used to learn and apply the ranking function that served to induce $D_{LTR}$. 
+  - $v'(d,q)$ is a vector composed of passage-based estimates.
+    - The estimates are the (i) maximum, (ii) minimum, (iii) average, (iv) standard devision of score_{G_{LTR}}(g) for $g \in d$ (v) the percentage of passages in $d$ that are among the 50, (vi) 100 highest ranked passages in G_{LTR}, (vii) the number of passages in d.
 
 
 The rationale behind the MPRS method is 
-to augment the document-based relevance estimates used in 
-the original LTR-based document retrieval method with passage-based relevance estimates. 
-We note that while MPRS is based on the fact that the original document ranking was induced using an LTR approach. 
-It is not dependent on the method used to produce the passage ranking in $G_{LTR}$
+to augment the document-based relevance estimates 
+used in the original LTR-based document retrieval method with passage-based relevance estimates. 
+The MPRS approach is not dependent on the method used to produce the passage ranking in $G_{LTR}$ 
+although the original document ranking was induced using an LTR approach in the MPRS approach.
 
  
 #### Joint Document Passage Representation (JDPR)
+
+The JDPR approach is based on the premise that 
+both D_{LTR} and G_{LTR} are induced using an LTR approach.
+
+Similar to the RRF method, 
+the JPDR method uses d's passage g that is the hightest ranked in G_{LTR}.
+However, we don't rely on g's rank in G_{LTR}.
+
+Rather the feature vector $v(d,q)$ -- used in the document-based LTR method that produced $D_{LTR}$ -- 
+is concatenated with the feature vector $v'(d,q)$ -- used in the passage-based LTR method that produce $G_{LTR}$. 
+
+The resultant feature vector is used in the typical LTR approach and is used to create D_{LTR}.
+<pre>
+v(d,q) = v_{(d,q)} \oplus v'_{(d,q)}
+</pre>
+
+The underlying design principle of the JDPR is to avoid __metric divergence__ . 
+That is the features used to estimate the relevance of the document's passage
+that is presumably the most relevant -- by the ranking of G_{LTR} -- ase used directly along with the 
+document-query features to learn a document ranking function. 
+
 
 #### Two Stage Retrieval : First Passage Then Document (FPTD)
 
