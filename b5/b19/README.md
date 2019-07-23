@@ -108,10 +108,23 @@ The MPRS utilizes various statistics regarding the ranking of the document's pas
 
 The feature vector used to represent a query-document pair is:
 
-<center><img src="https://quicklatex.com/cache3/d1/ql_297403f5b8a8cab297a7b738d34ee6d1_l3.png" width="79%"></center>
+<pre>
+v(d,q) = v_{(d,q)} \oplus v'_{(d,q)}
+</pre>
 
-[//]: # ( v(d,q) = v_{(d,q)} \oplus v'_{(d,q)} )
+[//]: # ( <center><img src="m07rrf/CodeCogsEqn.svg" width="79%"></center> )
 
+The $v(d,q)$ is the concatenation of $v(d,q)$ and $v'(d,q)$. 
+the original feature vector used to learn and apply the ranking function that served to induce $D_{LTR}$. 
+$v'(d,q)$ is a vector composed of passage-based estimates.
+The estimates are the (i) maximum, (ii) minimum, (iii) average, (iv) standard devision of score_{G_{LTR}}(g) for $g \in d$ (vii) the number of passages in d.
+
+
+The rationale behind the MPRS method is 
+to augment the document-based relevance estimates used in 
+the original LTR-based document retrieval method with passage-based relevance estimates. 
+We note that while MPRS is based on the fact that the original document ranking was induced using an LTR approach. 
+It is not dependent on the method used to produce the passage ranking in $G_{LTR}$
 
  
 #### Joint Document Passage Representation (JDPR)
@@ -221,9 +234,10 @@ cell3   | cell4
 
 - [asciiart](https://www.asciiart.eu/)
 - [mincong-h](https://mincong-h.github.io/)   
-- [asd](https://quicklatex.com/)
+- [quicklatex](https://quicklatex.com/)
 - [codecogs2](https://latex.codecogs.com/eqneditor/editor.php)
 - [codecogs](https://www.codecogs.com/latex/eqneditor.php)
+- [mathjax for chrome](https://chrome.google.com/webstore/detail/mathjax-for-chrome/elbbpgnifnallkilnkofjcgjeallfcfa?hl=en-GB)
 
 
 GoTo > [Top](#the-journey-is-the-reward) > [Month](#monthly)
