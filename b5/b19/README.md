@@ -91,7 +91,9 @@ with the highest query similarity (score) of a passage in the docuement.
 The final retrieval score of document d \in D_{LTR} is:
 
 
+<center>
 <img src="m07rrf/CodeCogsEqn.svg" width="50%">
+</center>
 
 
 where \alpha is a free parameter. 
@@ -99,9 +101,18 @@ Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least 
 
 
 
+#### Multiple Passage-Ranking Statistics (MPRS)
 
-#### Multiple Passages Per Document (MPPD)
+The MPRS ranks a document by utilizing various statistics regarding the ranking of the document's passages in G_{LTR}. 
+The RRF method utilizes only the highest ranked passage of a document to assign its final retrieval score. 
 
+The feature vector used to represent a query-document pair is:
+you can use an inline formula $$\forall x \in R$$ like this one
+[//]: # ( v(d,q) = v_{(d,q)} \oplus v'_{(d,q)} )
+
+
+
+ 
 #### Joint Document Passage Representation (JDPR)
 
 #### Two Stage Retrieval : First Passage Then Document (FPTD)
@@ -122,19 +133,20 @@ Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least 
 
 
 GoTo > [Top](#the-journey-is-the-reward) > [July](#july)
-<pre class=""> 
- ~ Fueled by Coffee C|_| ~
-</pre>
+<pre class=""> ~ Fueled by Coffee C|_| ~ </pre>
 
 
 ## July References
-    - [paper with codes](https://paperswithcode.com/)   
-    - [zenodo](https://about.zenodo.org/) [Wiki](https://en.wikipedia.org/wiki/Zenodo)
-    - https://webis.de/downloads/publications/papers/stein_2013l.pdf
-    - https://ecommons.cornell.edu/bitstream/handle/1813/6100/93-1334.pdf
-    - W._Bruce_Croft [Wiki](https://en.wikipedia.org/wiki/W._Bruce_Croft)
-    - https://paperswithcode.com/task/learning-to-rank/codeless 
-    - Document ranking via sentence modeling using BERT [github](https://github.com/castorini/birch)
+
+  - [knowledgeInduction](https://researcher.watson.ibm.com/researcher/view_group_pubs.php?grp=7140)
+  - A Study on Passage Re-ranking in Embedding based Unsupervised Semantic Search [PDF](https://arxiv.org/pdf/1804.08057.pdf)
+  - [paper with codes](https://paperswithcode.com/)   
+  - [zenodo](https://about.zenodo.org/) [Wiki](https://en.wikipedia.org/wiki/Zenodo)
+  - https://webis.de/downloads/publications/papers/stein_2013l.pdf
+  - https://ecommons.cornell.edu/bitstream/handle/1813/6100/93-1334.pdf
+  - W._Bruce_Croft [Wiki](https://en.wikipedia.org/wiki/W._Bruce_Croft)
+  - https://paperswithcode.com/task/learning-to-rank/codeless 
+  - Document ranking via sentence modeling using BERT [github](https://github.com/castorini/birch)
 
 ```bash
 @article{yang2019simple,
@@ -145,6 +157,7 @@ GoTo > [Top](#the-journey-is-the-reward) > [July](#july)
 }
 
 ```
+    
 
 
 
