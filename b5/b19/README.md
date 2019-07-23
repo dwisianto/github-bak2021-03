@@ -91,7 +91,7 @@ with the highest query similarity (score) of a passage in the docuement.
 The final retrieval score of document d \in D_{LTR} is:
 
 
-<center><img src="m07rrf/CodeCogsEqn.svg" width="79"></center>
+<center><img src="m07rrf/CodeCogsEqn.svg" width="79%"></center>
 
 
 where \alpha is a free parameter. 
@@ -106,13 +106,17 @@ The RRF method utilizes only the highest ranked passage of a document to assign 
 
 The feature vector used to represent a query-document pair is:
 
-<center><img src="m07rrf/CodeCogsEqn.svg" width="79"></center>
+<center><img src="m07rrf/CodeCogsEqn.svg" width="79%"></center>
 
 [//]: # ( v(d,q) = v_{(d,q)} \oplus v'_{(d,q)} )
 
 
 
 you can use an inline formula $$\forall x \in R$$ like this one
+
+
+![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?x%3D%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D)
+
 
  
 #### Joint Document Passage Representation (JDPR)
@@ -135,7 +139,7 @@ you can use an inline formula $$\forall x \in R$$ like this one
 
 
 GoTo > [Top](#the-journey-is-the-reward) > [July](#july)
-<pre class=""> ~ Fueled by Coffee C|_| ~ </pre>
+<pre class=""> ~  Fueled by Coffee C|_| ~ </pre>
 
 
 ## July References
