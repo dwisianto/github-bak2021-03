@@ -101,21 +101,16 @@ Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least 
 
 #### Multiple Passage-Ranking Statistics (MPRS)
 
-The MPRS ranks a document by utilizing various statistics regarding the ranking of the document's passages in G_{LTR}. 
-The RRF method utilizes only the highest ranked passage of a document to assign its final retrieval score. 
+Both RRF and MPRS are based on the same LTR approach, which is used to induce $D_{LTR}$.
+For $G_{LTR}$, the previous RRF method utilizes only the highest ranked passage of a document to assign its final retrieval score. 
+The MPRS utilizes various statistics regarding the ranking of the document's passages in $G_{LTR}$. 
+
 
 The feature vector used to represent a query-document pair is:
 
-<center><img src="m07rrf/CodeCogsEqn.svg" width="79%"></center>
+<center><img src="https://quicklatex.com/cache3/d1/ql_297403f5b8a8cab297a7b738d34ee6d1_l3.png" width="79%"></center>
 
 [//]: # ( v(d,q) = v_{(d,q)} \oplus v'_{(d,q)} )
-
-
-
-you can use an inline formula $$\forall x \in R$$ like this one
-
-
-![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?x%3D%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D)
 
 
  
@@ -209,7 +204,11 @@ GoTo > [Top](#the-journey-is-the-reward) > [Engineering](#engineering) > [Docker
 
 ### Problem
 
-Latex equation can be included as an svg picture.
+Latex equation can be included as an svg picture. Alternatively one can use codecogs
+
+![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?x%3D%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D)
+
+
 
 ### Solution
 
@@ -220,9 +219,11 @@ cell3   | cell4
 
 ### References
 
-- [codecogs](https://www.codecogs.com/latex/eqneditor.php)
 - [asciiart](https://www.asciiart.eu/)
 - [mincong-h](https://mincong-h.github.io/)   
+- [asd](https://quicklatex.com/)
+- [codecogs2](https://latex.codecogs.com/eqneditor/editor.php)
+- [codecogs](https://www.codecogs.com/latex/eqneditor.php)
 
 
 GoTo > [Top](#the-journey-is-the-reward) > [Month](#monthly)
