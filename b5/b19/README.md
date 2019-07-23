@@ -91,9 +91,7 @@ with the highest query similarity (score) of a passage in the docuement.
 The final retrieval score of document d \in D_{LTR} is:
 
 
-<center>
-<img src="m07rrf/CodeCogsEqn.svg" width="50%">
-</center>
+<center><img src="m07rrf/CodeCogsEqn.svg" width="79"></center>
 
 
 where \alpha is a free parameter. 
@@ -107,10 +105,14 @@ The MPRS ranks a document by utilizing various statistics regarding the ranking 
 The RRF method utilizes only the highest ranked passage of a document to assign its final retrieval score. 
 
 The feature vector used to represent a query-document pair is:
-you can use an inline formula $$\forall x \in R$$ like this one
+
+<center><img src="m07rrf/CodeCogsEqn.svg" width="79"></center>
+
 [//]: # ( v(d,q) = v_{(d,q)} \oplus v'_{(d,q)} )
 
 
+
+you can use an inline formula $$\forall x \in R$$ like this one
 
  
 #### Joint Document Passage Representation (JDPR)
