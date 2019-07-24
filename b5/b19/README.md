@@ -6,7 +6,7 @@
   - [Passage-based Document Retrieval](#passage-based-document-retrieval "Passage Relevance" ) _July 4, 2019_ 
 - Engineering
   - [Docker](#docker) 
-  - [Git](#git)
+  - [Git](#git) [notes](../../k2/kXX/kGt)
 - Monthly
   - [Monthly Update One](#monthly-update-one) _December 31, 2019_ [^java] [^node] [^python] [^docker] 
 
@@ -255,18 +255,18 @@ cell3   | cell4
 ### References
 
 - [asciiart](https://www.asciiart.eu/)
-- [mincong-h](https://mincong-h.github.io/)   
-- [quicklatex](https://quicklatex.com/)
-- [codecogs2](https://latex.codecogs.com/eqneditor/editor.php)
-- [codecogs](https://www.codecogs.com/latex/eqneditor.php)
-- [mathjax for chrome](https://chrome.google.com/webstore/detail/mathjax-for-chrome/elbbpgnifnallkilnkofjcgjeallfcfa?hl=en-GB)
+- Bloggers
+  - [leimao](https://leimao.github.io/blog/)
+  - [mincong-h](https://mincong-h.github.io/)
+- Equations     
+  - [quicklatex](https://quicklatex.com/)
+  - [codecogs2](https://latex.codecogs.com/eqneditor/editor.php)
+  - [codecogs](https://www.codecogs.com/latex/eqneditor.php)
+  - [mathjax for chrome](https://chrome.google.com/webstore/detail/mathjax-for-chrome/elbbpgnifnallkilnkofjcgjeallfcfa?hl=en-GB)
 
 
 GoTo > [Top](#the-journey-is-the-reward) > [Month](#monthly)
-<pre class=""> 
- ~ Fueled by Coffee C|_| ~
-</pre>
-
+<pre class=""> ~ Fueled by Coffee C|_| ~ </pre>
 
 
 
