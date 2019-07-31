@@ -1,37 +1,111 @@
 ## The Journey is the reward
 
 
+- August
+  - [How to limit a thread execution time](#how-to-limit-a-thread-execution-time "Java thread with timeout") _August 3, 2019_
 - July
-  - [Reproducible Retrieval](#july-13 "Reproducible Experiment") _July 13, 2019_   
   - [Passage-based Document Retrieval](#passage-based-document-retrieval "Passage Relevance" ) _July 4, 2019_ 
 - Engineering
-  - [Docker](#docker) 
-  - [Git](#git) [notes](../../k2/kXX/kGt)
+  - [Docker](../../k2/kXX/kDocker) 
+  - [Git](../../k2/kXX/kGt)
 - Monthly
   - [Monthly Update One](#monthly-update-one) _December 31, 2019_ [^java] [^node] [^python] [^docker] 
+  - [Reproducible Retrieval](#july-13 "Reproducible Experiment") _July 13, 2019_   
+
+
+# August
+
+## How to limit a thread execution time
+
+_August 3, 2019_
+
+
+```bash
+import java.time.Duration;
+import java.time.Instant;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 
 
+public class chp03a {	
+		
+	static int _THREAD_POOL_SIZE     = 2;
+	
+	static int _THREAD_TASK_TIMEOUT  = 3;
+	
+	static int _THREAD_TASK_DURATION = 5; 
 
-# July
+	static ExecutorService _executorService = Executors.newFixedThreadPool(_THREAD_POOL_SIZE);
+	
+	
+	static class MyTask implements Callable<String> {
+		
+		@Override
+		public String call() throws Exception {
+			
+			TimeUnit.SECONDS.sleep(_THREAD_TASK_DURATION ); 
+			System.out.println(MyTimer.getDuration() + " - mytask.ends");		
+			
+			return "mytask.end";
+		}
+		
+	}	
+	
+	
+	
+	static class MyTimer {
+		
+		public static Instant _timeStart = Instant.now();
+		
+		public static String getDuration() {
+			return Duration.between(_timeStart, Instant.now()).getSeconds()+"s ";
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) throws Exception {
+		
+		System.out.println( MyTimer.getDuration() + " - main.starts");
+		Future<String> future = _executorService.submit(new MyTask());
+		
+		try {			
+			System.out.println( MyTimer.getDuration() + " - future.get." + future.get( _THREAD_TASK_TIMEOUT , TimeUnit.SECONDS)); 
+		} catch (TimeoutException e) {
+			System.out.println( MyTimer.getDuration() + " - future.timeout.exception");
+			System.out.println( MyTimer.getDuration() + " - future.cancel." + future.cancel(true) );				
+		} 
+		
+		System.out.println( MyTimer.getDuration() + " - main.ends ");		
+		//_executorService.shutdownNow();
+		
+	}
 
+```
 
+After submitting the task, we get a Future object back. 
+Next we try to get the result from this object using the get method. This method throws a few types of exceptions.
 
-## July 13
+- **InterruptedException** means the current thread was interrupted while waiting.
+- **ExecutionException** means the computation threw an exception.
+- **TimeoutException** means the computation did not complete within our time limit.
 
 
 ### References
 
-- [anserini](https://github.com/castorini/anserini)
-- [hical](https://hical.github.io/) [github](https://github.com/hical/HiCAL)
+- [timeout-support-using-executorservice-and-futures](https://www.deadcoderising.com/timeout-support-using-executorservice-and-futures/)
+- 
 
-[//]: # https://github.com/castorini/anserini/commits/anserini-0.1.0?after=cbb815e68c4c7cac34ff0e7098a62530aa442590+295
+GoTo > [Top](#the-journey-is-the-reward) > [August](#august)
+<pre class="">  ~ All I need is Coffee C|_| ~ </pre>
 
 
-GoTo > [Top](#the-journey-is-the-reward) > [July](#july)
-<pre class=""> 
- ~ Fueled by Coffee C|_| ~
-</pre>
+# July
 
 ## Passage Based Document Retrieval 
 
@@ -268,7 +342,21 @@ cell3   | cell4
 GoTo > [Top](#the-journey-is-the-reward) > [Month](#monthly)
 <pre class=""> ~ Fueled by Coffee C|_| ~ </pre>
 
+## July 13
 
+
+### References
+
+- [anserini](https://github.com/castorini/anserini)
+- [hical](https://hical.github.io/) [github](https://github.com/hical/HiCAL)
+
+[//]: # https://github.com/castorini/anserini/commits/anserini-0.1.0?after=cbb815e68c4c7cac34ff0e7098a62530aa442590+295
+
+
+GoTo > [Top](#the-journey-is-the-reward) > [July](#july)
+<pre class=""> 
+ ~ Fueled by Coffee C|_| ~
+</pre>
 
 # Tags
 

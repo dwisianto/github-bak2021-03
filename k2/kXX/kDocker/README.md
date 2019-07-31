@@ -14,14 +14,44 @@
     - asfd
 
 
-## Quick Start
 
-- 
--
+# Quick Start
+
+- docker ps # a list of running container
+- docker image ls
+- docker container ls 
+- docker container ls --all
+
+List Docker commands
+- docker 
+- docker container --help
+- docker image --help
+
+Display Docker version and info
+- docker --version
+- docker version
+- docker info
+
+Execute docker image
+- docker run hello world
+
+List Docker containers (running, all, all in quite mode)
+- docker container ls
+- docker container ls --all
+- docker container ls -aq
+
+
+
 
 GoTo [Top](#docker)
 
-## Installation
+# Installation CentOs
+
+
+GoTo [Top](#docker)
+
+
+# Installation
 
 - installation
     - brew install docker 
@@ -64,33 +94,6 @@ GoTo [Top](#docker)
 GoTo [Top](#docker)
 
 
-## Hello World
-
-- docker ps # a list of running container
-- docker --version
-- docker version
-- docker info
-- docker image ls
-- docker container ls 
-- docker container ls --all
-
-List Docker commands
-- docker 
-- docker container --help
-- docker image --help
-
-Display Docker version and info
-- docker --version
-- docker version
-- docker info
-
-Execute docker image
-- docker run hello world
-
-List Docker containers (running, all, all in quite mode)
-- docker container ls
-- docker container ls --all
-- docker container ls -aq
 
 ### Containers
 
