@@ -19,26 +19,22 @@
 
 _August 3, 2019_
 
+I am presented with a situation that I need to create a java thread inside a method
+and the method shall return immediately without waiting for the java thread to complete.
+The created thread may continue to run within a pre-specfied time duration.
+I would like the Java thread to automatically timing out if its execution is longer than the pre-specified time duration. 
+My solution is to use an ExecuterService within a thread.
+ 
 
-```bash
-import java.time.Duration;
-import java.time.Instant;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+```java
 
-
-
-public class chp03a {	
+public class ThreadTimeout {	
 		
-	static int _THREAD_POOL_SIZE     = 2;
+	static int _THREAD_POOL_SIZE     = 2; // size of java thread pool
 	
-	static int _THREAD_TASK_TIMEOUT  = 3;
+	static int _THREAD_TASK_TIMEOUT  = 3; // the pre-specified time duration in seconds
 	
-	static int _THREAD_TASK_DURATION = 5; 
+	static int _THREAD_TASK_DURATION = 5; // the actual time need to complete the task in seconds
 
 	static ExecutorService _executorService = Executors.newFixedThreadPool(_THREAD_POOL_SIZE);
 	
@@ -49,20 +45,19 @@ public class chp03a {
 		public String call() throws Exception {
 			
 			TimeUnit.SECONDS.sleep(_THREAD_TASK_DURATION ); 
-			System.out.println(MyTimer.getDuration() + " - mytask.ends");		
+			System.out.println(MyTimer.getAlarm() + " - mytask.ends");		
 			
-			return "mytask.end";
+			return "mytask.ends";
 		}
 		
 	}	
-	
 	
 	
 	static class MyTimer {
 		
 		public static Instant _timeStart = Instant.now();
 		
-		public static String getDuration() {
+		public static String getAlarm() {
 			return Duration.between(_timeStart, Instant.now()).getSeconds()+"s ";
 		}
 		
@@ -71,22 +66,66 @@ public class chp03a {
 	
 	public static void main(String[] args) throws Exception {
 		
-		System.out.println( MyTimer.getDuration() + " - main.starts");
+		System.out.println( MyTimer.getAlarm() + " - main.starts");
 		Future<String> future = _executorService.submit(new MyTask());
 		
 		try {			
-			System.out.println( MyTimer.getDuration() + " - future.get." + future.get( _THREAD_TASK_TIMEOUT , TimeUnit.SECONDS)); 
+			System.out.println( MyTimer.getAlarm() + " - future.get." + future.get( _THREAD_TASK_TIMEOUT , TimeUnit.SECONDS)); 
 		} catch (TimeoutException e) {
-			System.out.println( MyTimer.getDuration() + " - future.timeout.exception");
-			System.out.println( MyTimer.getDuration() + " - future.cancel." + future.cancel(true) );				
+			System.out.println( MyTimer.getAlarm() + " - future.timeout.exception");
+			System.out.println( MyTimer.getAlarm() + " - future.cancel." + future.cancel(true) );				
 		} 
 		
-		System.out.println( MyTimer.getDuration() + " - main.ends ");		
+		System.out.println( MyTimer.getAlarm() + " - main.ends ");		
 		//_executorService.shutdownNow();
 		
 	}
 
+}
 ```
+
+The best case scenario is when 
+the actual time needed to complete the task (_THREAD_TASK_DURATION) is shorter than 
+the pre-specified time limit for the thread (_THREAD_TASK_TIMEOUT )  
+then the thread will runs to completion and no exception got thrown. 
+The console output below shows execution time and execution state. 
+
+```bash
+0s  - main.starts
+3s  - mytask.ends
+0s  - future.get.mytask.ends
+3s  - main.ends 
+```
+
+On the other scenario when 
+the actual time needed to complete the task (_THREAD_TASK_DURATION) is longer than 
+the pre-specified time limit for the thread (_THREAD_TASK_TIMEOUT ) 
+then a timeout exception got thrown. 
+The task is never completed because the future.cancel is se to be __true__. 
+The console output below shows execution time and execution state.
+
+```bash
+0s  - main.starts
+3s  - future.timeout.exception
+3s  - future.cancel.true
+3s  - main.ends 
+```
+
+Using the same scenario as above, the thread task completes 
+when the future.cancel is set to be __false__.
+The console output below shows execution time and execution state.
+
+```bash
+0s  - main.starts
+3s  - future.timeout.exception
+3s  - future.cancel.true
+3s  - main.ends 
+5s  - mytask.ends
+```
+
+### Detail Explanation
+
+The key concepts is __future.get__ and __future.cancel__. 
 
 After submitting the task, we get a Future object back. 
 Next we try to get the result from this object using the get method. This method throws a few types of exceptions.
@@ -99,7 +138,7 @@ Next we try to get the result from this object using the get method. This method
 ### References
 
 - [timeout-support-using-executorservice-and-futures](https://www.deadcoderising.com/timeout-support-using-executorservice-and-futures/)
-- 
+- [How to timeout at Java Thread after the creating thread has already returned](https://stackoverflow.com/questions/54332954)
 
 GoTo > [Top](#the-journey-is-the-reward) > [August](#august)
 <pre class="">  ~ All I need is Coffee C|_| ~ </pre>
