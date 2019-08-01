@@ -2,7 +2,7 @@
 
 
 - August
-  - [How to limit a thread execution time](#how-to-limit-a-thread-execution-time "Java thread with timeout") _August 3, 2019_
+  - [How to limit execution time of a java thread](#how-to-limit-execution-time-of-a-java-thread "Java thread with timeout") [^java] _August 3, 2019_
 - July
   - [Passage-based Document Retrieval](#passage-based-document-retrieval "Passage Relevance" ) _July 4, 2019_ 
 - Engineering
@@ -13,9 +13,11 @@
   - [Reproducible Retrieval](#july-13 "Reproducible Experiment") _July 13, 2019_   
 
 
+
+
 # August
 
-## How to limit a thread execution time
+## How to limit execution time of a java thread
 
 _August 3, 2019_
 
@@ -23,7 +25,7 @@ I am presented with a situation that I need to create a java thread inside a met
 and the method shall return immediately without waiting for the java thread to complete.
 The created thread may continue to run within a pre-specfied time duration.
 I would like the Java thread to automatically timing out if its execution is longer than the pre-specified time duration. 
-My solution is to use an ExecuterService within a thread.
+My solution is to use an ExecuterService with future.get along with Future.cancel.
  
 
 ```java
@@ -85,8 +87,8 @@ public class ThreadTimeout {
 ```
 
 The best case scenario is when 
-the actual time needed to complete the task (_THREAD_TASK_DURATION) is shorter than 
-the pre-specified time limit for the thread (_THREAD_TASK_TIMEOUT )  
+the actual time needed to complete the task (_THREAD_TASK_DURATION) is _shorter_ than 
+the pre-specified time limit for the thread (_THREAD_TASK_TIMEOUT ) 
 then the thread will runs to completion and no exception got thrown. 
 The console output below shows execution time and execution state. 
 
@@ -98,7 +100,7 @@ The console output below shows execution time and execution state.
 ```
 
 On the other scenario when 
-the actual time needed to complete the task (_THREAD_TASK_DURATION) is longer than 
+the actual time needed to complete the task (_THREAD_TASK_DURATION) is _longer_ than 
 the pre-specified time limit for the thread (_THREAD_TASK_TIMEOUT ) 
 then a timeout exception got thrown. 
 The task is never completed because the future.cancel is se to be __true__. 
@@ -133,6 +135,8 @@ Next we try to get the result from this object using the get method. This method
 - **InterruptedException** means the current thread was interrupted while waiting.
 - **ExecutionException** means the computation threw an exception.
 - **TimeoutException** means the computation did not complete within our time limit.
+
+
 
 
 ### References
