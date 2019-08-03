@@ -2,14 +2,11 @@
 
 
 - August
-  - [How to limit execution time of a java thread](#how-to-limit-execution-time-of-a-java-thread "Java thread with timeout") [^java] _August 3, 2019_
+  - [How to limit execution time of a Java thread](#how-to-limit-execution-time-of-a-java-thread "Java thread with timeout") [^java] _August 3, 2019_
 - July
   - [Passage-based Document Retrieval](#passage-based-document-retrieval "Passage Relevance" ) _July 4, 2019_ 
-- Engineering
-  - [Docker](../../k2/kXX/kDocker) 
-  - [Git](../../k2/kXX/kGt)
 - Monthly
-  - [Monthly Update One](#monthly-update-one) _December 31, 2019_ [^java] [^node] [^python] [^docker] 
+  - [Monthly Update One](#monthly-update-one)  [^java] [^node] [^python] [^docker] [^git] _December 31, 2019_
   - [Reproducible Retrieval](#july-13 "Reproducible Experiment") _July 13, 2019_   
 
 
@@ -17,7 +14,7 @@
 
 # August
 
-## How to limit execution time of a java thread
+## How to limit execution time of a Java thread
 
 _August 3, 2019_
 
@@ -29,31 +26,40 @@ My solution is to use an ExecuterService with future.get along with Future.cance
  
 
 ```java
+import java.time.Duration;
+import java.time.Instant;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
-public class ThreadTimeout {	
-		
-	static int _THREAD_POOL_SIZE     = 2; // size of java thread pool
+public class chp03a {	
 	
-	static int _THREAD_TASK_TIMEOUT  = 3; // the pre-specified time duration in seconds
-	
-	static int _THREAD_TASK_DURATION = 5; // the actual time need to complete the task in seconds
-
-	static ExecutorService _executorService = Executors.newFixedThreadPool(_THREAD_POOL_SIZE);
+	static ExecutorService _executorService = Executors.newSingleThreadExecutor();
 	
 	
 	static class MyTask implements Callable<String> {
 		
+		int __iActualThreshold = 5;
+		
+		public MyTask(int _iActualThreshold) {			
+			__iActualThreshold = _iActualThreshold;			
+		}
+		
 		@Override
 		public String call() throws Exception {
 			
-			TimeUnit.SECONDS.sleep(_THREAD_TASK_DURATION ); 
+			TimeUnit.SECONDS.sleep( __iActualThreshold ); 
 			System.out.println(MyTimer.getAlarm() + " - mytask.ends");		
 			
 			return "mytask.ends";
 		}
 		
 	}	
-	
+		
 	
 	static class MyTimer {
 		
@@ -65,25 +71,63 @@ public class ThreadTimeout {
 		
 	}
 	
+	static class MyExecutor {
+
+		// _iActualDuration        : the pre-specified time duration in seconds
+		// _iPrespecifiedThreshold : the actual time need to complete the task in seconds
+		// _bMayInterruptIfRunning : interrupt the task if it is still running
+		public static void execute(int _iActualDuration, int _iPrespecifiedThreshold, boolean _bMayInterruptIfRunning ) {			
+						
+			Future<String> future = _executorService.submit(new MyTask(_iActualDuration));
+			
+			try {			
+				System.out.println( MyTimer.getAlarm() + " - future.get." + future.get( _iPrespecifiedThreshold , TimeUnit.SECONDS)); 
+			} catch (TimeoutException | InterruptedException | ExecutionException e) {
+				System.out.println( MyTimer.getAlarm() + " - future.timeout.exception");				
+				System.out.println( MyTimer.getAlarm() + " - future.cancel." + future.cancel(_bMayInterruptIfRunning) );				
+			}
+			//_executorService.shutdownNow();
+		}
+	}
 	
+	enum Scenario { actualDurationIsWithinThreshold, 
+		actualDurationExceedThresholdAndInterrupt, 
+		actualDurationExceedThresholdDontInterrupt ; 
+		}		
 	public static void main(String[] args) throws Exception {
 		
 		System.out.println( MyTimer.getAlarm() + " - main.starts");
-		Future<String> future = _executorService.submit(new MyTask());
 		
-		try {			
-			System.out.println( MyTimer.getAlarm() + " - future.get." + future.get( _THREAD_TASK_TIMEOUT , TimeUnit.SECONDS)); 
-		} catch (TimeoutException e) {
-			System.out.println( MyTimer.getAlarm() + " - future.timeout.exception");
-			System.out.println( MyTimer.getAlarm() + " - future.cancel." + future.cancel(true) );				
-		} 
+		int iPrespecifiedThreshold = 0;
+		int iActualDuration = 0;
+		boolean bMayInterruptIfRunning = false;
+		Scenario scenario = Scenario.actualDurationExceedThresholdAndInterrupt;
+		switch( scenario ) {
+			case actualDurationIsWithinThreshold:
+				iPrespecifiedThreshold = 5;
+				iActualDuration = 3;				
+				break;
+			case actualDurationExceedThresholdAndInterrupt:
+				iPrespecifiedThreshold = 5;
+				iActualDuration = 10;			
+				bMayInterruptIfRunning = true;
+				break;
+			case actualDurationExceedThresholdDontInterrupt:
+				iPrespecifiedThreshold = 5;
+				iActualDuration = 10;			
+				bMayInterruptIfRunning = false;
+				break;
+				
+		}
+		System.out.println(MyTimer.getAlarm() + " - main.scenario." + scenario.toString() );		
+		MyExecutor.execute( iActualDuration, iPrespecifiedThreshold, bMayInterruptIfRunning );
 		
 		System.out.println( MyTimer.getAlarm() + " - main.ends ");		
-		//_executorService.shutdownNow();
 		
 	}
 
 }
+
 ```
 
 The best case scenario is when 
@@ -94,6 +138,7 @@ The console output below shows execution time and execution state.
 
 ```bash
 0s  - main.starts
+0s  - main.scenario.actualDurationIsWithinThreshold
 3s  - mytask.ends
 0s  - future.get.mytask.ends
 3s  - main.ends 
@@ -108,9 +153,10 @@ The console output below shows execution time and execution state.
 
 ```bash
 0s  - main.starts
-3s  - future.timeout.exception
-3s  - future.cancel.true
-3s  - main.ends 
+0s  - main.scenario.actualDurationExceedThresholdAndInterrupt
+5s  - future.timeout.exception
+5s  - future.cancel.true
+5s  - main.ends
 ```
 
 Using the same scenario as above, the thread task completes 
@@ -119,10 +165,11 @@ The console output below shows execution time and execution state.
 
 ```bash
 0s  - main.starts
-3s  - future.timeout.exception
-3s  - future.cancel.true
-3s  - main.ends 
-5s  - mytask.ends
+0s  - main.scenario.actualDurationExceedThresholdDontInterrupt
+5s  - future.timeout.exception
+5s  - future.cancel.true
+5s  - main.ends 
+10s  - mytask.ends
 ```
 
 ### Detail Explanation
@@ -403,15 +450,14 @@ GoTo > [Top](#the-journey-is-the-reward) > [July](#july)
 
 # Tags
 
+[^git]: [Git](../../k2/kXX/kGt)
 
-[^docker]: docker 
+[^docker]: [Docker](../../k2/kXX/kDocker)
 
 [^java]: java 
 
 [^node]: node 
 
 [^python]: python
-
-
 
 GoTo > [Top](#the-journey-is-the-reward) 
