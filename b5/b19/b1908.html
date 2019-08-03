@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="b1908.css" type="text/css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h2 id="the-journey-is-the-reward">The Journey is the reward</h2>
+<ul>
+<li>August
+<ul>
+<li><a href="#how-to-limit-execution-time-of-a-java-thread" title="Java thread with timeout">How to limit execution time of a Java thread</a> [^java] <em>August 3, 2019</em></li>
+</ul></li>
+<li>July
+<ul>
+<li><a href="#passage-based-document-retrieval" title="Passage Relevance">Passage-based Document Retrieval</a> <em>July 4, 2019</em></li>
+</ul></li>
+<li>Monthly
+<ul>
+<li><a href="#monthly-update-one">Monthly Update One</a> [^java] [^node] [^python] [^docker] [^git] <em>December 31, 2019</em></li>
+<li><a href="#july-13" title="Reproducible Experiment">Reproducible Retrieval</a> <em>July 13, 2019</em><br /></li>
+<li>ThreadLocal, InheritableThreadLocal, InheritableThreadLocalAlternative <em>August 17, 2019</em></li>
+</ul></li>
+</ul>
+<h2 id="how-to-limit-execution-time-of-a-java-thread">How to limit execution time of a Java thread</h2>
+<p><em>August 3, 2019</em></p>
+<p>I am presented with a situation that I need to create a java thread inside a method and the method shall return immediately without waiting for the java thread to complete. The created thread may continue to run within a pre-specfied time duration. I would like the Java thread to automatically timing out if its execution is longer than the pre-specified time duration. My solution is to use an ExecuterService with future.get along with Future.cancel.</p>
+<pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.time.Duration;</span>
+<span class="kw">import java.time.Instant;</span>
+<span class="kw">import java.util.concurrent.Callable;</span>
+<span class="kw">import java.util.concurrent.ExecutionException;</span>
+<span class="kw">import java.util.concurrent.ExecutorService;</span>
+<span class="kw">import java.util.concurrent.Executors;</span>
+<span class="kw">import java.util.concurrent.Future;</span>
+<span class="kw">import java.util.concurrent.TimeUnit;</span>
+<span class="kw">import java.util.concurrent.TimeoutException;</span>
+
+
+<span class="kw">public</span> <span class="kw">class</span> chp03a {   
+        
+    <span class="dt">static</span> <span class="kw">class</span> MyExecutor {
+        
+        <span class="dt">static</span> ExecutorService _executorService = Executors.<span class="fu">newSingleThreadExecutor</span>();      
+
+        <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">execute</span>(<span class="dt">int</span> _iActualDuration, <span class="dt">int</span> _iPrespecifiedThreshold, <span class="dt">boolean</span> _bMayInterruptIfRunning ) {           
+                        
+            Future&lt;String&gt; future = _executorService.<span class="fu">submit</span>(<span class="kw">new</span> <span class="fu">MyTask</span>(_iActualDuration));
+            
+            <span class="kw">try</span> {           
+                System.<span class="fu">out</span>.<span class="fu">println</span>( MyTimer.<span class="fu">getAlarm</span>() + <span class="st">&quot; - future.get.&quot;</span> + future.<span class="fu">get</span>( _iPrespecifiedThreshold , TimeUnit.<span class="fu">SECONDS</span>)); 
+            } <span class="kw">catch</span> (TimeoutException | InterruptedException | ExecutionException e) {
+                System.<span class="fu">out</span>.<span class="fu">println</span>( MyTimer.<span class="fu">getAlarm</span>() + <span class="st">&quot; - future.timeout.exception&quot;</span>);                
+                System.<span class="fu">out</span>.<span class="fu">println</span>( MyTimer.<span class="fu">getAlarm</span>() + <span class="st">&quot; - future.cancel.&quot;</span> + future.<span class="fu">cancel</span>(_bMayInterruptIfRunning) );                
+            }
+            <span class="co">//_executorService.shutdownNow();</span>
+        }
+    }
+    
+    
+    <span class="dt">static</span> <span class="kw">class</span> MyTask <span class="kw">implements</span> Callable&lt;String&gt; {
+        
+        <span class="dt">int</span> __iActualThreshold = <span class="dv">5</span>;
+        
+        <span class="kw">public</span> <span class="fu">MyTask</span>(<span class="dt">int</span> _iActualThreshold) {          
+            __iActualThreshold = _iActualThreshold;         
+        }
+        
+        <span class="fu">@Override</span>
+        <span class="kw">public</span> String <span class="fu">call</span>() <span class="kw">throws</span> Exception {
+            
+            TimeUnit.<span class="fu">SECONDS</span>.<span class="fu">sleep</span>( __iActualThreshold ); 
+            System.<span class="fu">out</span>.<span class="fu">println</span>(MyTimer.<span class="fu">getAlarm</span>() + <span class="st">&quot; - mytask.ends&quot;</span>);      
+            
+            <span class="kw">return</span> <span class="st">&quot;mytask.ends&quot;</span>;
+        }       
+    }   
+        
+    
+    <span class="dt">static</span> <span class="kw">class</span> MyTimer {
+        
+        <span class="kw">public</span> <span class="dt">static</span> Instant _timeStart = Instant.<span class="fu">now</span>();
+        
+        <span class="kw">public</span> <span class="dt">static</span> String <span class="fu">getAlarm</span>() {
+            <span class="kw">return</span> Duration.<span class="fu">between</span>(_timeStart, Instant.<span class="fu">now</span>()).<span class="fu">getSeconds</span>()+<span class="st">&quot;s &quot;</span>;
+        }       
+    }
+    
+    
+    
+    <span class="kw">enum</span> Scenario { actualDurationIsWithinTheThreshold, 
+        actualDurationExceedsTheThresholdAndInterrupt, 
+        actualDurationExceedsTheThresholdDontInterrupt ; 
+        }       
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(String[] args) <span class="kw">throws</span> Exception {
+        
+        System.<span class="fu">out</span>.<span class="fu">println</span>( MyTimer.<span class="fu">getAlarm</span>() + <span class="st">&quot; - main.starts&quot;</span>);
+        
+        Scenario scenario = Scenario.<span class="fu">actualDurationIsWithinTheThreshold</span>;
+        <span class="dt">int</span> iPrespecifiedThreshold = <span class="dv">5</span>;                 <span class="co">// the actual time need to complete the task in seconds</span>
+        <span class="dt">int</span> iActualDuration = <span class="dv">3</span>;                        <span class="co">// the pre-specified time duration in seconds</span>
+        <span class="dt">boolean</span> bMayInterruptIfRunning = <span class="kw">false</span>;         <span class="co">// interrupt the task if it is still running        </span>
+        <span class="kw">switch</span>( scenario ) {
+            <span class="kw">case</span> actualDurationExceedsTheThresholdAndInterrupt:
+                iActualDuration = <span class="dv">10</span>;           
+                bMayInterruptIfRunning = <span class="kw">true</span>;
+                <span class="kw">break</span>;
+            <span class="kw">case</span> actualDurationExceedsTheThresholdDontInterrupt:
+                iActualDuration = <span class="dv">10</span>;           
+                bMayInterruptIfRunning = <span class="kw">false</span>;
+                <span class="kw">break</span>;
+                
+        }
+        System.<span class="fu">out</span>.<span class="fu">println</span>(MyTimer.<span class="fu">getAlarm</span>() + <span class="st">&quot; - main.scenario.&quot;</span> + scenario.<span class="fu">toString</span>() );        
+        MyExecutor.<span class="fu">execute</span>( iActualDuration, iPrespecifiedThreshold, bMayInterruptIfRunning );
+        
+        System.<span class="fu">out</span>.<span class="fu">println</span>( MyTimer.<span class="fu">getAlarm</span>() + <span class="st">&quot; - main.ends &quot;</span>);  
+    }
+}</code></pre>
+<p>The best case scenario is when the actual time needed to complete the task (<em>THREAD</em>TASK_DURATION) is <em>shorter</em> than the pre-specified time limit for the thread (<em>THREAD</em>TASK_TIMEOUT ) then the thread will runs to completion and no exception got thrown. The console output below shows execution time and execution state.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">0s</span>  - main.starts
+<span class="kw">0s</span>  - main.scenario.actualDurationIsWithinThreshold
+<span class="kw">3s</span>  - mytask.ends
+<span class="kw">0s</span>  - future.get.mytask.ends
+<span class="kw">3s</span>  - main.ends </code></pre>
+<p>On the other scenario when the actual time needed to complete the task (<em>THREAD</em>TASK_DURATION) is <em>longer</em> than the pre-specified time limit for the thread (<em>THREAD</em>TASK_TIMEOUT ) then a timeout exception got thrown. The task is never completed because the future.cancel is se to be <strong>true</strong>. The console output below shows execution time and execution state.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">0s</span>  - main.starts
+<span class="kw">0s</span>  - main.scenario.actualDurationExceedThresholdAndInterrupt
+<span class="kw">5s</span>  - future.timeout.exception
+<span class="kw">5s</span>  - future.cancel.true
+<span class="kw">5s</span>  - main.ends</code></pre>
+<p>Using the same scenario as above, the thread task completes when the future.cancel is set to be <strong>false</strong>. The console output below shows execution time and execution state.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">0s</span>  - main.starts
+<span class="kw">0s</span>  - main.scenario.actualDurationExceedThresholdDontInterrupt
+<span class="kw">5s</span>  - future.timeout.exception
+<span class="kw">5s</span>  - future.cancel.true
+<span class="kw">5s</span>  - main.ends 
+<span class="kw">10s</span>  - mytask.ends</code></pre>
+<h3 id="detail-explanation">Detail Explanation</h3>
+<p>The key concepts is <strong>future.get</strong> and <strong>future.cancel</strong>.</p>
+<p>After submitting the task, we get a Future object back. Next we try to get the result from this object using the get method. This method throws a few types of exceptions.</p>
+<ul>
+<li><strong>InterruptedException</strong> means the current thread was interrupted while waiting.</li>
+<li><strong>ExecutionException</strong> means the computation threw an exception.</li>
+<li><strong>TimeoutException</strong> means the computation did not complete within our time limit.</li>
+</ul>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://www.deadcoderising.com/timeout-support-using-executorservice-and-futures/">timeout-support-using-executorservice-and-futures</a></li>
+<li><a href="https://stackoverflow.com/questions/54332954">How to timeout at Java Thread after the creating thread has already returned</a></li>
+</ul>
+GoTo &gt; <a href="#the-journey-is-the-reward">Top</a> &gt; <a href="#august">August</a>
+<pre class="">  ~ All I need is Coffee C|_| ~ </pre>
+
+
+<h1 id="july">July</h1>
+<h2 id="passage-based-document-retrieval">Passage Based Document Retrieval</h2>
+<p><em>July 4, 2019</em></p>
+<p>A document can be deemed relevant to a query even if it contains a very short passage of text with pertinent information. This fact has motivated work on passage-based document retrieval: document ranking methods that induce information from the document’s passages. However, the main source of passage-based information utilized was passage-query similarities. This work addresses the challenge of utilizing richer sources of passage-based information to improve document retrieval effectiveness.<br />Specifically, a suite of learning-to-rank-based document retrieval methods is devised to utilize a highly effective ranking of passages produced in response to the query; passage ranking is also induced using a learning-to-rank approach.</p>
+<h3 id="problem-formulation">Problem Formulation</h3>
+<p>Our goal is to rank documents in corpus D with respect to query q.</p>
+<p>Suppose some learning-to-rank (LTR) method was used to rank the documents in the corpus. Let D_{LTR} denote the list of the documents most highly ranked. The assumption is that the LTR method uses a feature-based representation for both training and ranking. Specifically, a pair of document d and query q is represented by a feature vector v(d,q). Herein, we write g ∈ d to indicate that passage g is part of document d.</p>
+<p>We set out to devise document ranking methods that re-rank D_{LTR} using information induced from the set G of all passages in documents in D_{LTR}. More specifically, we address the question of whether, and how, using an effective ranking of G with respect to q can help in improving document (re-)ranking effectiveness.</p>
+<p>Some of the approaches we present do not depend on the ranking method used to rank the passages in G. Others are based on the premise that the ranking is produced using an LTR approach applied to passages; a pair of passage g and query q is represented in this approach using the feature vector v(g,q). To simplify notation, we use G_{LTR} to refer to the ranked passage list attained from G regardless of whether an LTR method was indeed used to rank it.</p>
+<h3 id="approaches">Approaches</h3>
+<p>Four passage-based document retrieval methods are presented to re-rank D_{LTR}. The methods differ by the way they utilize information about the ranking of passages in G_{LTR}.</p>
+<h4 id="reciprocal-rank-fusion-rrf">Reciprocal Rank Fusion (RRF)</h4>
+<ul>
+<li>It is one of the most commonly-used passage based document retrieval approach.</li>
+<li>RRF is applicable for both the document D_{LTR} and the passage G_{LTR}.</li>
+<li>It is essentially a linearly interpolating the document-query similarity (score) with the highest query similarity (score) of a passage in the docuement.</li>
+<li>It uses RRF approach to fuse two rankings of the document.</li>
+<li>The first is the original ranking of D_{LTR}</li>
+<li>The second is the ranking attained based on the highest rank in the G_{LTR} of a document's passage.</li>
+</ul>
+<p>The final retrieval score of document d D_{LTR} is:</p>
+<pre>
+score(d;q) := \alpha \, score_{D_{LTR}}(d) + (1-\alpha) \, \max_{g \in d} score_{G_{LTR}}(g)
+</pre>
+
+<p>where is a free parameter. Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least of one of its passages was ranked high in G_{LTR}.</p>
+<h2 id="threadlocal">ThreadLocal</h2>
+<p><em>August 17, 2019</em></p>
+<p><strong>java.lang.ThreadLocal</strong> is a useful tool to determine whether a Java application is thread-safe or not.</p>
+<!--
+ is used to declare Java objects in Thread scope.
+using ThreadLocal to store a per-thread-singleton or per-thread context information has a valuable information included – by using a ThreadLocal, 
+it’s clear that the object stored in the ThreadLocal is not shared between threads, 
+ 
+
+ThreadLocal variables are used in Java to bind a variable to the current Thread – each thread will have its own, independend instance of that variable. 
+These kind of variables are normally used to hold status information like the user, that are needed in the entire application and you don’t want to have in every method signature.
+
+The lifecyle of ThreadLocal variables is directly interconnected to the lifecyle of its corespondig thread. If the thread is terminated and collected by the Garbage Collector, its coresponding ThreadLocal variables will also be good candidates for Garbage Collcetion.
+-->
+
+
+
+<h3 id="references-1">References</h3>
+<ul>
+<li>https://javarevisited.blogspot.com/2013/01/threadlocal-memory-leak-in-java-web.html</li>
+<li>ThreadLocal, InheritableThreadLocal and InheritableThreadLocalAlternative</li>
+<li>https://blog.codecentric.de/en/2008/09/a-threadlocal-memory-leak/</li>
+</ul>
+<h1 id="pandoc-with-citeproc-hs">Pandoc with citeproc-hs</h1>
+<ul>
+<li><p><span class="citation">(<span class="citeproc-not-found" data-reference-id="nonexistent"><strong>???</strong></span>)</span></p></li>
+<li><p><span class="citation">(<span class="citeproc-not-found" data-reference-id="nonexistent"><strong>???</strong></span>)</span></p></li>
+<li><p><span class="citation">Doe (2005)</span> says blah.</p></li>
+<li><p><span class="citation">Doe (2005, 30)</span> says blah.</p></li>
+<li><p><span class="citation">Doe (2005, 30, with suffix)</span> says blah.</p></li>
+<li><p><span class="citation">Doe (2005; 2006, 30; see also Doe and Roe 2007)</span> says blah.</p></li>
+<li><p>In a note.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p></li>
+<li><p>A citation group <span class="citation">(see Doe 2005, 34–35; also Doe and Roe 2007, chap. 3)</span>.</p></li>
+<li><p>Another one <span class="citation">(see Doe 2005, 34–35)</span>.</p></li>
+<li><p>And another one in a note.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p></li>
+<li><p>Citation with a suffix and locator <span class="citation">(Doe 2005, 33, 35–37, and nowhere else)</span>.</p></li>
+<li><p>Citation with suffix only <span class="citation">(Doe 2005 and nowhere else)</span>.</p></li>
+<li><p>Now some modifiers.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p></li>
+<li><p>With some markup <span class="citation">(<em>see</em> Doe 2005, 32)</span>.</p></li>
+</ul>
+<h1 id="references-2">References</h1>
+<p>% Pandoc math demos</p>
+<p><span class="math">\(a^2 + b^2 = c^2\)</span></p>
+<p><span class="math">\(v(t) = v_0 + \frac{1}{2}at^2\)</span></p>
+<p><span class="math">\(\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}\)</span></p>
+<p><span class="math">\(\exists x \forall y (Rxy \equiv Ryx)\)</span></p>
+<p><span class="math">\(p \wedge q \models p\)</span></p>
+<p><span class="math">\(\Box\diamond p\equiv\diamond p\)</span></p>
+<p><span class="math">\(\int_{0}^{1} x dx = \left[ \frac{1}{2}x^2 \right]_{0}^{1} = \frac{1}{2}\)</span></p>
+<p><span class="math">\(e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = \lim_{n\rightarrow\infty} (1+x/n)^n\)</span></p>
+<div class="references">
+<p>Doe, John. 2005. <em>First Book</em>. Cambridge: Cambridge University Press.</p>
+<p>———. 2006. “Article.” <em>Journal of Generic Studies</em> 6: 33–34.</p>
+<p>Doe, John, and Jenny Roe. 2007. “Why Water Is Wet.” In <em>Third Book</em>, edited by Sam Smith. Oxford: Oxford University Press.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>A citation without locators <span class="citation">(Doe and Roe 2007)</span>.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Some citations <span class="citation">(see Doe 2006, chap. 3; Doe and Roe 2007; Doe 2005)</span>.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Like a citation without author: <span class="citation">(2005)</span>, and now Doe with a locator <span class="citation">(2006, 44)</span>.<a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>
