@@ -25,7 +25,7 @@ code > span.al { color: #ff0000; font-weight: bold; }
 code > span.fu { color: #06287e; }
 code > span.er { color: #ff0000; font-weight: bold; }
   </style>
-  <link rel="stylesheet" href="b1908.css" type="text/css" />
+  <link rel="stylesheet" href="b19.css" type="text/css" />
   <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
@@ -33,7 +33,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <ul>
 <li>August
 <ul>
-<li><a href="#how-to-limit-execution-time-of-a-java-thread" title="Java thread with timeout">How to limit execution time of a Java thread</a> [^java] <em>August 3, 2019</em></li>
+<li><a href="#java-util-logging">Java Util Logging</a><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> <em>August 3, 2019</em></li>
+<li><a href="#how-to-limit-execution-time-of-a-java-thread" title="Java thread with timeout">How to limit execution time of a Java thread</a><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <em>August 3, 2019</em></li>
 </ul></li>
 <li>July
 <ul>
@@ -41,10 +42,66 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 <li>Monthly
 <ul>
-<li><a href="#monthly-update-one">Monthly Update One</a> [^java] [^node] [^python] [^docker] [^git] <em>December 31, 2019</em></li>
+<li><a href="#monthly-update-one">Monthly Update One</a><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a><a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a><a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> <em>December 31, 2019</em></li>
 <li><a href="#july-13" title="Reproducible Experiment">Reproducible Retrieval</a> <em>July 13, 2019</em><br /></li>
 <li>ThreadLocal, InheritableThreadLocal, InheritableThreadLocalAlternative <em>August 17, 2019</em></li>
 </ul></li>
+</ul>
+<h2 id="java-util-logging">Java Util Logging</h2>
+<p>java.util.logging</p>
+<pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package d.rl;</span>
+
+<span class="kw">import java.io.File;</span>
+<span class="kw">import java.io.FileInputStream;</span>
+<span class="kw">import java.util.logging.LogManager;</span>
+<span class="kw">import java.util.logging.Logger;</span>
+
+<span class="kw">import org.junit.Test;</span>
+
+<span class="co">/**</span>
+<span class="co"> * Unit test for simple App.</span>
+<span class="co"> */</span>
+<span class="kw">public</span> <span class="kw">class</span> AppTest {
+            
+    <span class="dt">final</span> <span class="dt">static</span> Logger logger = Logger.<span class="fu">getLogger</span>( AppTest.<span class="fu">class</span>.<span class="fu">getName</span>());
+    <span class="dt">static</span> {
+        
+        <span class="kw">try</span> { <span class="co">// java.util.logging</span>
+            String sFileName=<span class="st">&quot;logging.properties&quot;</span>;
+            ClassLoader classLoader = AppTest.<span class="fu">class</span>.<span class="fu">getClassLoader</span>();
+            File file = <span class="kw">new</span> File( classLoader.<span class="fu">getResource</span>(sFileName).<span class="fu">getFile</span>() );
+            LogManager.<span class="fu">getLogManager</span>().<span class="fu">readConfiguration</span>(<span class="kw">new</span> FileInputStream(file));
+        } <span class="kw">catch</span>(Exception ex) { ex.<span class="fu">printStackTrace</span>(); }
+    }
+    
+    <span class="fu">@Test</span>
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">LogConfig</span>() { 
+        logger.<span class="fu">info</span>(<span class="st">&quot;starts&quot;</span>);
+        logger.<span class="fu">info</span>(<span class="st">&quot;ends&quot;</span>);
+    }
+}</code></pre>
+<h2 id="threadlocal">ThreadLocal</h2>
+<p><em>August 17, 2019</em></p>
+<p><strong>java.lang.ThreadLocal</strong> is a useful tool to determine whether a Java application is thread-safe or not.</p>
+<!--
+ is used to declare Java objects in Thread scope.
+using ThreadLocal to store a per-thread-singleton or per-thread context information has a valuable information included – by using a ThreadLocal, 
+it’s clear that the object stored in the ThreadLocal is not shared between threads, 
+ 
+
+ThreadLocal variables are used in Java to bind a variable to the current Thread – each thread will have its own, independend instance of that variable. 
+These kind of variables are normally used to hold status information like the user, that are needed in the entire application and you don’t want to have in every method signature.
+
+The lifecyle of ThreadLocal variables is directly interconnected to the lifecyle of its corespondig thread. If the thread is terminated and collected by the Garbage Collector, its coresponding ThreadLocal variables will also be good candidates for Garbage Collcetion.
+-->
+
+
+
+<h3 id="references">References</h3>
+<ul>
+<li>https://javarevisited.blogspot.com/2013/01/threadlocal-memory-leak-in-java-web.html</li>
+<li>ThreadLocal, InheritableThreadLocal and InheritableThreadLocalAlternative</li>
+<li>https://blog.codecentric.de/en/2008/09/a-threadlocal-memory-leak/</li>
 </ul>
 <h2 id="how-to-limit-execution-time-of-a-java-thread">How to limit execution time of a Java thread</h2>
 <p><em>August 3, 2019</em></p>
@@ -167,7 +224,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><strong>ExecutionException</strong> means the computation threw an exception.</li>
 <li><strong>TimeoutException</strong> means the computation did not complete within our time limit.</li>
 </ul>
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li><a href="https://www.deadcoderising.com/timeout-support-using-executorservice-and-futures/">timeout-support-using-executorservice-and-futures</a></li>
 <li><a href="https://stackoverflow.com/questions/54332954">How to timeout at Java Thread after the creating thread has already returned</a></li>
@@ -202,47 +259,26 @@ score(d;q) := \alpha \, score_{D_{LTR}}(d) + (1-\alpha) \, \max_{g \in d} score_
 </pre>
 
 <p>where is a free parameter. Thus, d is ranked high if it was originally ranked high in D_{LTR} and at least of one of its passages was ranked high in G_{LTR}.</p>
-<h2 id="threadlocal">ThreadLocal</h2>
-<p><em>August 17, 2019</em></p>
-<p><strong>java.lang.ThreadLocal</strong> is a useful tool to determine whether a Java application is thread-safe or not.</p>
-<!--
- is used to declare Java objects in Thread scope.
-using ThreadLocal to store a per-thread-singleton or per-thread context information has a valuable information included – by using a ThreadLocal, 
-it’s clear that the object stored in the ThreadLocal is not shared between threads, 
- 
-
-ThreadLocal variables are used in Java to bind a variable to the current Thread – each thread will have its own, independend instance of that variable. 
-These kind of variables are normally used to hold status information like the user, that are needed in the entire application and you don’t want to have in every method signature.
-
-The lifecyle of ThreadLocal variables is directly interconnected to the lifecyle of its corespondig thread. If the thread is terminated and collected by the Garbage Collector, its coresponding ThreadLocal variables will also be good candidates for Garbage Collcetion.
--->
-
-
-
-<h3 id="references-1">References</h3>
-<ul>
-<li>https://javarevisited.blogspot.com/2013/01/threadlocal-memory-leak-in-java-web.html</li>
-<li>ThreadLocal, InheritableThreadLocal and InheritableThreadLocalAlternative</li>
-<li>https://blog.codecentric.de/en/2008/09/a-threadlocal-memory-leak/</li>
-</ul>
 <h1 id="pandoc-with-citeproc-hs">Pandoc with citeproc-hs</h1>
+<!-- -   [@nonexistent] -->
+<!-- -   @nonexistent -->
+
 <ul>
-<li><p><span class="citation">(<span class="citeproc-not-found" data-reference-id="nonexistent"><strong>???</strong></span>)</span></p></li>
-<li><p><span class="citation">(<span class="citeproc-not-found" data-reference-id="nonexistent"><strong>???</strong></span>)</span></p></li>
 <li><p><span class="citation">Doe (2005)</span> says blah.</p></li>
 <li><p><span class="citation">Doe (2005, 30)</span> says blah.</p></li>
 <li><p><span class="citation">Doe (2005, 30, with suffix)</span> says blah.</p></li>
 <li><p><span class="citation">Doe (2005; 2006, 30; see also Doe and Roe 2007)</span> says blah.</p></li>
-<li><p>In a note.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p></li>
+<li><p>In a note.<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></p></li>
 <li><p>A citation group <span class="citation">(see Doe 2005, 34–35; also Doe and Roe 2007, chap. 3)</span>.</p></li>
 <li><p>Another one <span class="citation">(see Doe 2005, 34–35)</span>.</p></li>
-<li><p>And another one in a note.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p></li>
+<li><p>And another one in a note.<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></p></li>
 <li><p>Citation with a suffix and locator <span class="citation">(Doe 2005, 33, 35–37, and nowhere else)</span>.</p></li>
 <li><p>Citation with suffix only <span class="citation">(Doe 2005 and nowhere else)</span>.</p></li>
-<li><p>Now some modifiers.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p></li>
+<li><p>Now some modifiers.<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a></p></li>
 <li><p>With some markup <span class="citation">(<em>see</em> Doe 2005, 32)</span>.</p></li>
 </ul>
 <h1 id="references-2">References</h1>
+<p>GoTo &gt; <a href="#the-journey-is-the-reward">Top</a></p>
 <p>% Pandoc math demos</p>
 <p><span class="math">\(a^2 + b^2 = c^2\)</span></p>
 <p><span class="math">\(v(t) = v_0 + \frac{1}{2}at^2\)</span></p>
@@ -260,9 +296,16 @@ The lifecyle of ThreadLocal variables is directly interconnected to the lifecyle
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>A citation without locators <span class="citation">(Doe and Roe 2007)</span>.<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>Some citations <span class="citation">(see Doe 2006, chap. 3; Doe and Roe 2007; Doe 2005)</span>.<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>Like a citation without author: <span class="citation">(2005)</span>, and now Doe with a locator <span class="citation">(2006, 44)</span>.<a href="#fnref3">↩</a></p></li>
+<li id="fn1"><p>java<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>java<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>java<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>node<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>python<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p><a href="../../k2/kXX/kDocker">Docker</a><a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p><a href="../../k2/kXX/kGt">Git</a><a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>A citation without locators <span class="citation">(Doe and Roe 2007)</span>.<a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>Some citations <span class="citation">(see Doe 2006, chap. 3; Doe and Roe 2007; Doe 2005)</span>.<a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p>Like a citation without author: <span class="citation">(2005)</span>, and now Doe with a locator <span class="citation">(2006, 44)</span>.<a href="#fnref10">↩</a></p></li>
 </ol>
 </div>
 </body>
