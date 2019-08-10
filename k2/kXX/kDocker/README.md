@@ -11,7 +11,9 @@
 - [Potential Problem](#potential-problem)
 - Tutorial
     - [docker-labs](https://github.com/docker/labs/)
-    - asfd
+    - [tomcat-in-docker-with-cron-on-aws](http://ivarprudnikov.com/tomcat-in-docker-with-cron-on-aws)
+	- https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
 
 
 
