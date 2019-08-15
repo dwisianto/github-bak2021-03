@@ -1,12 +1,8 @@
 
-## Aws Cli
+## Aws Cli Instalation
 
-# AWS CLI
 
-- https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
-- 
-
-# Installation
+### Installation
 
 
 
@@ -28,20 +24,24 @@ aws cli
 aws --version
 ```
 
-# aws cli configuration
+### aws cli configuration
 
 
 ```bash
-aws configure
-ls ~/.aws/config
+aws configure # configuration keys
+ls ~/.aws/config # 
 ls ~/.aws/credentials
 ```
 
 
-# Using aws cli
+### Using aws cli
+
+### References
+
+- https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
+- 
 
 
 
 
-
-
+GoTo > [Top](#the-journey-is-the-reward) 
