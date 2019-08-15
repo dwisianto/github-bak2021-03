@@ -13,7 +13,9 @@
     - [docker-labs](https://github.com/docker/labs/)
     - [tomcat-in-docker-with-cron-on-aws](http://ivarprudnikov.com/tomcat-in-docker-with-cron-on-aws)
 	- https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
-
+    - ivarprudnikov.com/tomcat-in-docker-with-cron-on-aws
+    - https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+    - https://dzone.com/articles/docker-x11-client-via-ssh
 
 
 

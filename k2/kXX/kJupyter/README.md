@@ -1,9 +1,18 @@
 # Jupyter
 
 - [installation](#installation)
+- [quick start](#quick-start)
 - [local](#local)
 - [aws](#aws) 
 
+# Quick Start
+
+
+```bash
+pyenv activate ve364
+jupyter --path
+jupyter notebook
+```
 
 # Installation
 

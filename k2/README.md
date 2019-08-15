@@ -4,16 +4,6 @@
 - [language](#language)
 
 
-
-| Projects |  |
-|--------|--------|
-| [JForests](../d4/d18/jforests) | art4ml |
-| [JLibFM](k18/jlibfm) |  |
-| [LVG](k18/lvg) |   |
-| [k18](k18) | uima - uimafit - cleartk | 
-
-
-
 # DevOps
 
 | Web    |        |  
@@ -26,6 +16,7 @@
 | [s3](kXX/wAwsEb/s3.md) | Object Store |
 | [dynamoDb](kXX/wAwsEb/dynamoDb.md) | NoSql |
 | [awsEB](kXX/wAwsEb) | Backup  |
+| [awsCli](kXX/wAwsCli) | AWS Command Line | 
 | [Jackson](kWs/wJackson) | |  
 | [Tomcat](kWs/wTomcat) | |   
 | [Jersey](kWs/wJersey) | |  
@@ -34,6 +25,8 @@
 
 | Language |  | | 
 |--------|--------| | 
+| [Gt](kXX/kGt) | Git, SmartGit, Egit  | | 
+| [Docker](kXX/kDocker) | Docker | |
 | [Eclipse](kXX/kEclipse) | Installation Workspace RemoteSystem | | 
 |                         | Cdt | | 
 |                         | PyDev | | 
@@ -47,12 +40,9 @@
 | [Jv](kXX/kJv) | Gson Maven Gradle Ant | | 
 |               | Gson | |  
 |               | Jackson | | 
-| [Gt](kXX/kGt) | Git, SmartGit, Egit  | | 
-| [Docker](kXX/kDocker) | Docker | |
 | [Qa](kXX/kQa) | Coding Question Answer | |  
 | [Py](kXX/kPy) | PyDev  [Jupyter](kXX/kJupyter) | | 
 | [Db](kXX/kDb) | Database  | | 
-| [Dk](kXX/kDocker) | | | 
 | [curl](kXX/kCurl) | | |
 | [tmux](kXX/kTmux) | | | 
 | [gnuScreen](kXX/kScreen) | | | 
@@ -127,6 +117,14 @@ RespostaExpedient response = target.request(MediaType.APPLICATION_JSON)
 |--------|--------|
 | [mlpr](wk18/wk18core/src/ml/) | machine-learning |
 | [isl17](wk18/wk18core/src/ml/isl17/) | illinois-structured-prediction |
+
+| Projects |  |
+|--------|--------|
+| [JForests](../d4/d18/jforests) | art4ml |
+| [JLibFM](k18/jlibfm) |  |
+| [LVG](k18/lvg) |   |
+| [k18](k18) | uima - uimafit - cleartk | 
+
 
 
 ## Tools

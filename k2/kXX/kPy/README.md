@@ -24,6 +24,9 @@
      - [the-hitchhikers-guide-to-packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/index.html)
      - [package-in-python](http://zetcode.com/articles/packageinpython/)
      - [Setup.py](https://jichu4n.com/posts/how-to-add-custom-build-steps-and-commands-to-setuppy/)
+- [Pip](#pip)
+
+
      
 
 # Standard Project
@@ -450,4 +453,10 @@ https://docs.python.org/3/library/argparse.html
 
 # Pytest     
 
+
+# Pip
+
+```bash
+pip install --upgrade --force-reinstall /home/dsm/path/to/python/packages
+```
 

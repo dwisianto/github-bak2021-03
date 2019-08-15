@@ -13,4 +13,4 @@
 - cli
     - [boto3](https://boto3.readthedocs.io/en/latest/)
     -     
-- https://medium.com/@stevo.perisic/installing-python3-pip-and-aws-cli-on-macos-sierra-ca23ff8ad651
+    - https://medium.com/@stevo.perisic/installing-python3-pip-and-aws-cli-on-macos-sierra-ca23ff8ad651
