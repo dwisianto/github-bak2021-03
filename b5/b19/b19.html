@@ -29,10 +29,11 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
-<h2 id="the-journey-is-the-reward">The Journey is the reward</h2>
+<h1 id="the-journey-is-the-reward">The Journey is the reward</h1>
 <ul>
 <li>August
 <ul>
+<li><a href="#aws-cli-installation">Aws Cli Instlation</a></li>
 <li><a href="#java-util-logging">Java Util Logging</a><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> <em>August 3, 2019</em></li>
 <li><a href="#how-to-limit-execution-time-of-a-java-thread" title="Java thread with timeout">How to limit execution time of a Java thread</a><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <em>August 3, 2019</em></li>
 </ul></li>
@@ -47,13 +48,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>ThreadLocal, InheritableThreadLocal, InheritableThreadLocalAlternative <em>August 17, 2019</em></li>
 </ul></li>
 </ul>
-<h2 id="aws-cli">Aws Cli</h2>
-<h1 id="aws-cli-1">AWS CLI</h1>
-<ul>
-<li>https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html</li>
-<li></li>
-</ul>
-<h1 id="installation">Installation</h1>
+<h2 id="aws-cli-instalation">Aws Cli Instalation</h2>
+<h3 id="installation">Installation</h3>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pyenv</span> virtualenvs
 <span class="kw">pyenv</span> versions
 <span class="kw">pyenv</span> virtualenv 2.7 ve27aws
@@ -63,11 +59,17 @@ $ <span class="kw">pip3</span> install awscli --upgrade --user
 $ <span class="kw">pip3</span> list -o</code></pre>
 <p>aws cli</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">aws</span> --version</code></pre>
-<h1 id="aws-cli-configuration">aws cli configuration</h1>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">aws</span> configure
-<span class="kw">ls</span> ~/.aws/config
+<h3 id="aws-cli-configuration">aws cli configuration</h3>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">aws</span> configure <span class="co"># configuration keys</span>
+<span class="kw">ls</span> ~/.aws/config <span class="co"># </span>
 <span class="kw">ls</span> ~/.aws/credentials</code></pre>
-<h1 id="using-aws-cli">Using aws cli</h1>
+<h3 id="using-aws-cli">Using aws cli</h3>
+<h3 id="references">References</h3>
+<ul>
+<li>https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html</li>
+<li></li>
+</ul>
+<p>GoTo &gt; <a href="#the-journey-is-the-reward">Top</a></p>
 <h2 id="java-util-logging">Java Util Logging</h2>
 <p>java.util.logging</p>
 <pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package d.rl;</span>
@@ -118,7 +120,7 @@ The lifecyle of ThreadLocal variables is directly interconnected to the lifecyle
 
 
 
-<h3 id="references">References</h3>
+<h3 id="references-1">References</h3>
 <ul>
 <li>https://javarevisited.blogspot.com/2013/01/threadlocal-memory-leak-in-java-web.html</li>
 <li>ThreadLocal, InheritableThreadLocal and InheritableThreadLocalAlternative</li>
@@ -245,7 +247,7 @@ The lifecyle of ThreadLocal variables is directly interconnected to the lifecyle
 <li><strong>ExecutionException</strong> means the computation threw an exception.</li>
 <li><strong>TimeoutException</strong> means the computation did not complete within our time limit.</li>
 </ul>
-<h3 id="references-1">References</h3>
+<h3 id="references-2">References</h3>
 <ul>
 <li><a href="https://www.deadcoderising.com/timeout-support-using-executorservice-and-futures/">timeout-support-using-executorservice-and-futures</a></li>
 <li><a href="https://stackoverflow.com/questions/54332954">How to timeout at Java Thread after the creating thread has already returned</a></li>
@@ -298,7 +300,7 @@ score(d;q) := \alpha \, score_{D_{LTR}}(d) + (1-\alpha) \, \max_{g \in d} score_
 <li><p>Now some modifiers.<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a></p></li>
 <li><p>With some markup <span class="citation">(<em>see</em> Doe 2005, 32)</span>.</p></li>
 </ul>
-<h1 id="references-2">References</h1>
+<h1 id="references-3">References</h1>
 <p>GoTo &gt; <a href="#the-journey-is-the-reward">Top</a></p>
 <p>% Pandoc math demos</p>
 <p><span class="math">\(a^2 + b^2 = c^2\)</span></p>
