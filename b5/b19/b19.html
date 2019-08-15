@@ -47,6 +47,27 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>ThreadLocal, InheritableThreadLocal, InheritableThreadLocalAlternative <em>August 17, 2019</em></li>
 </ul></li>
 </ul>
+<h2 id="aws-cli">Aws Cli</h2>
+<h1 id="aws-cli-1">AWS CLI</h1>
+<ul>
+<li>https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html</li>
+<li></li>
+</ul>
+<h1 id="installation">Installation</h1>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pyenv</span> virtualenvs
+<span class="kw">pyenv</span> versions
+<span class="kw">pyenv</span> virtualenv 2.7 ve27aws
+<span class="kw">pyenv</span> virtualenv 3.7.0 ve37aws</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pip</span> install pip --upgrade
+$ <span class="kw">pip3</span> install awscli --upgrade --user
+$ <span class="kw">pip3</span> list -o</code></pre>
+<p>aws cli</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">aws</span> --version</code></pre>
+<h1 id="aws-cli-configuration">aws cli configuration</h1>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">aws</span> configure
+<span class="kw">ls</span> ~/.aws/config
+<span class="kw">ls</span> ~/.aws/credentials</code></pre>
+<h1 id="using-aws-cli">Using aws cli</h1>
 <h2 id="java-util-logging">Java Util Logging</h2>
 <p>java.util.logging</p>
 <pre class="sourceCode java"><code class="sourceCode java"><span class="kw">package d.rl;</span>
