@@ -5,19 +5,19 @@ _August 16, 2019_
 - Creating a Project Folder
 - Setting Up Source Control
 - Configuring a Remote Repository
-- [Installing the EB CLI](#aws-elastic-beanstalk-cLI-instalation)
+- [Installing the EB CLI](#aws-elastic-beanstalk-cli-instalation)
 - [Installing the AWS CLI](#aws-cli-installation)
 
 
 ## Creating a Project Folder
 
 ```
-d.eb.apps
+d.aws.eb
   d.eb.app1
     .git
     d.eb.micro10
     d.eb.micro11
-  d.eb.app2
+  d.aws.eb.app2
     .git
     d.eb.micro20
     d.eb.micro21
@@ -35,7 +35,9 @@ Use either git or codeCommit to initilize the directory
 After you've created a remote repository for your project, attach it to your local repository with git remote add:
 
 ```bash
-~/workspace/my-first-app$ git remote add origin ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/my-repo
+cd ~/gt/d.aws.eb/
+git clone ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/my-repo
+git remote add origin ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/my-repo
 ```
 
 
