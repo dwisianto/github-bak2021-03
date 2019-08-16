@@ -33,6 +33,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <ul>
 <li>August
 <ul>
+<li><a href="#eb-local-development-environment">EB Local Development Environment</a> <em>August 16, 2019</em></li>
 <li><a href="#aws-elastic-beanstalk-cLI-instalation">Aws Elastic Beanstalk CLI Instalation</a> <em>August 9, 2019</em></li>
 <li><a href="#aws-cli-installation">Aws CLI Instalation</a> <em>August 8, 2019</em></li>
 <li><a href="#java-util-logging">Java Util Logging</a><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> <em>August 3, 2019</em></li>
@@ -49,16 +50,21 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>ThreadLocal, InheritableThreadLocal, InheritableThreadLocalAlternative <em>August 17, 2019</em></li>
 </ul></li>
 </ul>
+<h1 id="eb-local-development-environment">EB Local Development Environment</h1>
+<p><em>August 16, 2019</em></p>
 <h1 id="aws-elastic-beanstalk-cli-instalation">Aws Elastic Beanstalk CLI Instalation</h1>
 <p><em>August 9, 2019</em></p>
+<p>The EB CLI is a command line interface for Elastic Beanstalk that simplify creating, updating and monitoring environments. The EB CLI can be used as an alternative to the AWS Management Console.</p>
 <h1 id="installation">Installation</h1>
+<p>I am using pyenv to manage my python environment. Automated script to install EB CLI using the Bundler Installer won't work in the pyenv virtual environment. Manual installation of awsebcli is necessary.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">    <span class="kw">pyenv</span> activate ve37aws
     <span class="kw">git</span> clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
     <span class="kw">pip</span> install awsebcli --upgrade
     <span class="kw">eb</span> --help
     <span class="kw">which</span> eb</code></pre>
+<p>The --upgrade option tells pip to upgrade any requirements that are already installed. The --user option tells pip to install the program to a subdirectory of your user directory to avoid modifying libraries that your operating system uses.</p>
 <h1 id="configuration">Configuration</h1>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">eb</span> init</code></pre>
+<p>The EB CLI looks for the AWS credentials in a number of different places. - <strong>Command line options</strong> – Specify a named profile by using --profile to override default settings. - <strong>Environment variables</strong> – AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY. - <strong>The AWS credentials file</strong> – located at ~/.aws/credentials . It contains multiple named profiles in addition to a default profile. - <strong>The AWS CLI configuration file</strong> – located at ~/.aws/config . It contains a default profile, named profiles, and AWS CLI–specific configuration parameter.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html">eb-cli-installation</a></li>
