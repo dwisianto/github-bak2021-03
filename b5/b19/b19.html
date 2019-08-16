@@ -52,6 +52,29 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul>
 <h1 id="eb-local-development-environment">EB Local Development Environment</h1>
 <p><em>August 16, 2019</em></p>
+<ul>
+<li>Creating a Project Folder</li>
+<li>Setting Up Source Control</li>
+<li>Configuring a Remote Repository</li>
+<li><a href="#aws-elastic-beanstalk-cLI-instalation">Installing the EB CLI</a></li>
+<li><a href="#aws-cli-installation">Installing the AWS CLI</a></li>
+</ul>
+<h2 id="creating-a-project-folder">Creating a Project Folder</h2>
+<pre><code>d.eb.apps
+  d.eb.app1
+    .git
+    d.eb.micro10
+    d.eb.micro11
+  d.eb.app2
+    .git
+    d.eb.micro20
+    d.eb.micro21
+    d.eb.micro23</code></pre>
+<h2 id="setting-up-source-control">Setting Up Source Control</h2>
+<p>Use either git or codeCommit to initilize the directory</p>
+<h2 id="configuring-a-remote-repository">Configuring a Remote Repository</h2>
+<p>After you've created a remote repository for your project, attach it to your local repository with git remote add:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">~/workspace/my-first-app</span>$ <span class="kw">git</span> remote add origin ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/my-repo</code></pre>
 <h1 id="aws-elastic-beanstalk-cli-instalation">Aws Elastic Beanstalk CLI Instalation</h1>
 <p><em>August 9, 2019</em></p>
 <p>The EB CLI is a command line interface for Elastic Beanstalk that simplify creating, updating and monitoring environments. The EB CLI can be used as an alternative to the AWS Management Console.</p>
@@ -70,7 +93,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html">eb-cli-installation</a></li>
 </ul>
 <p>GoTo &gt; <a href="#the-journey-is-the-reward">Top</a></p>
-<h1 id="aws-cli-instalation">Aws Cli Instalation</h1>
+<h1 id="aws-cli-installation">Aws Cli Installation</h1>
+<p><em>August 8, 2019</em></p>
 <h2 id="installation-1">Installation</h2>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">pyenv</span> virtualenvs
 <span class="kw">pyenv</span> versions
@@ -277,8 +301,8 @@ GoTo &gt; <a href="#the-journey-is-the-reward">Top</a> &gt; <a href="#august">Au
 <pre class="">  ~ All I need is Coffee C|_| ~ </pre>
 
 
-<h1 id="july">July</h1>
-<h2 id="passage-based-document-retrieval">Passage Based Document Retrieval</h2>
+
+<h1 id="passage-based-document-retrieval">Passage Based Document Retrieval</h1>
 <p><em>July 4, 2019</em></p>
 <p>A document can be deemed relevant to a query even if it contains a very short passage of text with pertinent information. This fact has motivated work on passage-based document retrieval: document ranking methods that induce information from the document’s passages. However, the main source of passage-based information utilized was passage-query similarities. This work addresses the challenge of utilizing richer sources of passage-based information to improve document retrieval effectiveness.<br />Specifically, a suite of learning-to-rank-based document retrieval methods is devised to utilize a highly effective ranking of passages produced in response to the query; passage ranking is also induced using a learning-to-rank approach.</p>
 <h3 id="problem-formulation">Problem Formulation</h3>
