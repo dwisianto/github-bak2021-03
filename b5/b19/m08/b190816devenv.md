@@ -37,3 +37,13 @@ After you've created a remote repository for your project, attach it to your loc
 ```bash
 ~/workspace/my-first-app$ git remote add origin ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/my-repo
 ```
+
+
+## Reference
+
+[aws-eb-devenv](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/chapter-devenv.html)
+
+
+GoTo > [Top](#the-journey-is-the-reward) 
+<pre class="">  ~ All I need is Coffee C|_| ~ </pre>
+
