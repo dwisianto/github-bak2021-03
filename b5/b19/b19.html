@@ -33,8 +33,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <ul>
 <li>August
 <ul>
-<li><a href="#eb-local-development-environment">EB Local Development Environment</a> <em>August 16, 2019</em></li>
-<li><a href="#aws-elastic-beanstalk-cLI-instalation">Aws Elastic Beanstalk CLI Instalation</a> <em>August 9, 2019</em></li>
+<li><a href="#initializing-a-multi-module-maven-project">Initializing a multi-module maven project</a> <em>August 17, 2019</em></li>
+<li><a href="#eb-local-development-environment">EB Local development environment</a> <em>August 16, 2019</em></li>
+<li><a href="#aws-elastic-beanstalk-cli-instalation">Aws Elastic Beanstalk CLI Instalation</a> <em>August 9, 2019</em></li>
 <li><a href="#aws-cli-installation">Aws CLI Instalation</a> <em>August 8, 2019</em></li>
 <li><a href="#java-util-logging">Java Util Logging</a><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> <em>August 3, 2019</em></li>
 <li><a href="#how-to-limit-execution-time-of-a-java-thread" title="Java thread with timeout">How to limit execution time of a Java thread</a><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <em>August 3, 2019</em></li>
@@ -50,22 +51,101 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>ThreadLocal, InheritableThreadLocal, InheritableThreadLocalAlternative <em>August 17, 2019</em></li>
 </ul></li>
 </ul>
+<h1 id="initializing-a-multi-module-maven-project">Initializing a multi module maven project</h1>
+<p><em>August 16, 2019</em></p>
+<pre class="sourceCode bash"><code class="sourceCode bash">
+<span class="co"># ## Properties</span>
+<span class="co"># </span>
+<span class="ot">MVN_GRP_ID=</span>eb19a
+<span class="ot">MVN_PJ_NAME=</span>proj1
+<span class="ot">MVN_PJ_NAME_FULL=$(</span><span class="kw">MVN_GRP_ID</span><span class="ot">)</span>.<span class="ot">$(</span><span class="kw">MVN_PJ_NAME</span><span class="ot">)</span>
+<span class="ot">MVN_VER=</span>0.1
+<span class="kw">MVN_TOP</span> := <span class="ot">$(</span><span class="kw">D.AWS.EB.APP1.TOP</span><span class="ot">)</span>/eb19
+
+<span class="co"># www</span>
+<span class="ot">MVN_MD_NAME_W3=${MVN_PJ_NAME}</span>.w3
+<span class="ot">MVN_MD_NAME_W3TC1=${MVN_PJ_NAME}</span>.w3.tc1
+<span class="ot">MVN_MD_NAME_SUBMODULE=$(</span><span class="kw">MVN_MD_NAME_W3</span><span class="ot">)</span>
+<span class="ot">MVN_MD_NAME_JV=$(</span><span class="kw">MVN_MD_NAME_RL_THRD_POOL</span><span class="ot">)</span>
+<span class="ot">MVN_MD_NAME_WB=$(</span><span class="kw">MVN_MD_NAME_W3TC1</span><span class="ot">)</span>
+
+<span class="kw">gen_mvn_root_project</span>: 
+    <span class="kw">cd</span> <span class="ot">$(</span><span class="kw">MVN_TOP</span><span class="ot">)</span><span class="kw">;</span> <span class="kw">\</span>
+    <span class="kw">mvn</span> archetype:generate \
+    <span class="kw">-DgroupId</span>=<span class="ot">$(</span><span class="kw">MVN_GRP_ID</span><span class="ot">)</span> \
+    <span class="kw">-DartifactId</span>=<span class="ot">$(</span><span class="kw">MVN_PJ_NAME_FULL</span><span class="ot">)</span> \
+    <span class="kw">-Dversion</span>=<span class="ot">$(</span><span class="kw">MVN_VER</span><span class="ot">)</span> \
+    <span class="kw">-DarchetypeGroupId</span>=org.codehaus.mojo.archetypes \
+    <span class="kw">-DarchetypeArtifactId</span>=pom-root \
+    <span class="kw">-DarchetypeVersion</span>=RELEASE \
+    <span class="kw">-DinteractiveMode</span>=false
+
+<span class="kw">gen_mvn_root_submodule</span>:
+    <span class="kw">cd</span> <span class="ot">$(</span><span class="kw">MVN_TOP</span><span class="ot">)</span>/<span class="ot">$(</span><span class="kw">MVN_PJ_NAME_FULL</span><span class="ot">)</span>/<span class="kw">;</span> <span class="kw">\</span>
+    <span class="kw">mvn</span> archetype:generate \
+    <span class="kw">-DgroupId</span>=<span class="ot">$(</span><span class="kw">MVN_GRP_ID</span><span class="ot">)</span> \
+    <span class="kw">-DartifactId</span>=<span class="ot">$(</span><span class="kw">MVN_MD_NAME_SUBMODULE</span><span class="ot">)</span> \
+    <span class="kw">-Dversion</span>=<span class="ot">$(</span><span class="kw">MVN_VER</span><span class="ot">)</span> \
+    <span class="kw">-DarchetypeGroupId</span>=org.codehaus.mojo.archetypes \
+    <span class="kw">-DarchetypeArtifactId</span>=pom-root \
+    <span class="kw">-DarchetypeVersion</span>=RELEASE \
+    <span class="kw">-DinteractiveMode</span>=false
+
+<span class="kw">gen_mvn_module_jv</span>:
+    <span class="kw">cd</span> <span class="ot">$(</span><span class="kw">MVN_TOP</span><span class="ot">)</span>/<span class="ot">$(</span><span class="kw">MVN_PJ_NAME_FULL</span><span class="ot">)</span>/<span class="ot">$(</span><span class="kw">MVN_MD_NAME_SUBMODULE</span><span class="ot">)</span>/<span class="kw">;</span> <span class="kw">\</span>
+    <span class="kw">mvn</span> archetype:generate \
+    <span class="kw">-DgroupId</span>=<span class="ot">$(</span><span class="kw">MVN_GRP_ID</span><span class="ot">)</span> \
+    <span class="kw">-DartifactId</span>=<span class="ot">$(</span><span class="kw">MVN_MD_NAME_JV</span><span class="ot">)</span> \
+    <span class="kw">-DarchetypeArtifactId</span>=maven-archetype-quickstart \
+    <span class="kw">-DarchetypeVersion</span>=RELEASE \
+    <span class="kw">-DinteractiveMode</span>=false
+
+<span class="kw">gen_mvn_module_wb</span>:
+    <span class="kw">cd</span> <span class="ot">$(</span><span class="kw">MVN_TOP</span><span class="ot">)</span>/<span class="ot">$(</span><span class="kw">MVN_PJ_NAME_FULL</span><span class="ot">)</span>/<span class="ot">$(</span><span class="kw">MVN_MD_NAME_SUBMODULE</span><span class="ot">)</span>/<span class="kw">;</span> <span class="kw">mvn</span> archetype:generate \
+    <span class="kw">-DgroupId</span>=<span class="ot">$(</span><span class="kw">MVN_GRP_ID</span><span class="ot">)</span> \
+    <span class="kw">-DartifactId</span>=<span class="ot">$(</span><span class="kw">MVN_MD_NAME_WB</span><span class="ot">)</span> \
+    <span class="kw">-Dversion</span>=<span class="ot">$(</span><span class="kw">MVN_VER</span><span class="ot">)</span> \
+    <span class="kw">-DarchetypeArtifactId</span>=maven-archetype-webapp \
+    <span class="kw">-DarchetypeVersion</span>=RELEASE \
+    <span class="kw">-DinteractiveMode</span>=false</code></pre>
+<p>The final directory structure is as follows:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">.</span>
+└── <span class="kw">eb19</span>
+    └── <span class="kw">eb19a.proj1</span>
+        ├── <span class="kw">pom.xml</span>
+        └── <span class="kw">proj1.w3</span>
+            ├── <span class="kw">pom.xml</span>
+            └── <span class="kw">proj1.w3.tc1</span>
+                ├── <span class="kw">pom.xml</span>
+                └── <span class="kw">src</span>
+                    └── <span class="kw">main</span>
+                        └── <span class="kw">webapp</span>
+                            ├── <span class="kw">index.jsp</span>
+                            └── <span class="kw">WEB-INF</span>
+                                └── <span class="kw">web.xml</span></code></pre>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.mkyong.com/maven/maven-how-to-create-a-multi-module-project/">maven-project</a></li>
+</ul>
+GoTo &gt; <a href="#the-journey-is-the-reward">Top</a>
+<pre class="">  ~ All I need is Coffee C|_| ~ </pre>
+
 <h1 id="eb-local-development-environment">EB Local Development Environment</h1>
 <p><em>August 16, 2019</em></p>
 <ul>
 <li>Creating a Project Folder</li>
 <li>Setting Up Source Control</li>
 <li>Configuring a Remote Repository</li>
-<li><a href="#aws-elastic-beanstalk-cLI-instalation">Installing the EB CLI</a></li>
+<li><a href="#aws-elastic-beanstalk-cli-instalation">Installing the EB CLI</a></li>
 <li><a href="#aws-cli-installation">Installing the AWS CLI</a></li>
 </ul>
 <h2 id="creating-a-project-folder">Creating a Project Folder</h2>
-<pre><code>d.eb.apps
+<pre><code>d.aws.eb
   d.eb.app1
     .git
     d.eb.micro10
     d.eb.micro11
-  d.eb.app2
+  d.aws.eb.app2
     .git
     d.eb.micro20
     d.eb.micro21
@@ -74,7 +154,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <p>Use either git or codeCommit to initilize the directory</p>
 <h2 id="configuring-a-remote-repository">Configuring a Remote Repository</h2>
 <p>After you've created a remote repository for your project, attach it to your local repository with git remote add:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">~/workspace/my-first-app</span>$ <span class="kw">git</span> remote add origin ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/my-repo</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> ~/gt/d.aws.eb/
+<span class="kw">git</span> clone ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/my-repo
+<span class="kw">git</span> remote add origin ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/my-repo</code></pre>
 <h2 id="reference">Reference</h2>
 <p><a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/chapter-devenv.html">aws-eb-devenv</a></p>
 GoTo &gt; <a href="#the-journey-is-the-reward">Top</a>
@@ -94,7 +176,7 @@ GoTo &gt; <a href="#the-journey-is-the-reward">Top</a>
 <p>The --upgrade option tells pip to upgrade any requirements that are already installed. The --user option tells pip to install the program to a subdirectory of your user directory to avoid modifying libraries that your operating system uses.</p>
 <h1 id="configuration">Configuration</h1>
 <p>The EB CLI looks for the AWS credentials in a number of different places. - <strong>Command line options</strong> – Specify a named profile by using --profile to override default settings. - <strong>Environment variables</strong> – AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY. - <strong>The AWS credentials file</strong> – located at ~/.aws/credentials . It contains multiple named profiles in addition to a default profile. - <strong>The AWS CLI configuration file</strong> – located at ~/.aws/config . It contains a default profile, named profiles, and AWS CLI–specific configuration parameter.</p>
-<h2 id="references">References</h2>
+<h2 id="references-1">References</h2>
 <ul>
 <li><a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html">eb-cli-installation</a></li>
 </ul>
@@ -116,7 +198,7 @@ $ <span class="kw">pip3</span> list -o</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">aws</span> configure <span class="co"># configuration keys</span>
 <span class="kw">ls</span> ~/.aws/config <span class="co"># </span>
 <span class="kw">ls</span> ~/.aws/credentials</code></pre>
-<h2 id="references-1">References</h2>
+<h2 id="references-2">References</h2>
 <ul>
 <li><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html">aws-cli-configure-files</a></li>
 </ul>
@@ -171,7 +253,7 @@ The lifecyle of ThreadLocal variables is directly interconnected to the lifecyle
 
 
 
-<h3 id="references-2">References</h3>
+<h3 id="references-3">References</h3>
 <ul>
 <li>https://javarevisited.blogspot.com/2013/01/threadlocal-memory-leak-in-java-web.html</li>
 <li>ThreadLocal, InheritableThreadLocal and InheritableThreadLocalAlternative</li>
@@ -298,7 +380,7 @@ The lifecyle of ThreadLocal variables is directly interconnected to the lifecyle
 <li><strong>ExecutionException</strong> means the computation threw an exception.</li>
 <li><strong>TimeoutException</strong> means the computation did not complete within our time limit.</li>
 </ul>
-<h3 id="references-3">References</h3>
+<h3 id="references-4">References</h3>
 <ul>
 <li><a href="https://www.deadcoderising.com/timeout-support-using-executorservice-and-futures/">timeout-support-using-executorservice-and-futures</a></li>
 <li><a href="https://stackoverflow.com/questions/54332954">How to timeout at Java Thread after the creating thread has already returned</a></li>
@@ -351,7 +433,7 @@ score(d;q) := \alpha \, score_{D_{LTR}}(d) + (1-\alpha) \, \max_{g \in d} score_
 <li><p>Now some modifiers.<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a></p></li>
 <li><p>With some markup <span class="citation">(<em>see</em> Doe 2005, 32)</span>.</p></li>
 </ul>
-<h1 id="references-4">References</h1>
+<h1 id="references-5">References</h1>
 <p>GoTo &gt; <a href="#the-journey-is-the-reward">Top</a></p>
 <p>% Pandoc math demos</p>
 <p><span class="math">\(a^2 + b^2 = c^2\)</span></p>
