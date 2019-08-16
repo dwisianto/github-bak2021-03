@@ -1,8 +1,7 @@
 
-## Aws Cli Instalation
+# Aws Cli Instalation
 
-
-### Installation
+## Installation
 
 
 
@@ -22,9 +21,10 @@ $ pip3 list -o
 aws cli 
 ```bash
 aws --version
+aws s3 ls
 ```
 
-### aws cli configuration
+## aws cli configuration
 
 
 ```bash
@@ -33,15 +33,8 @@ ls ~/.aws/config #
 ls ~/.aws/credentials
 ```
 
+## References
 
-### Using aws cli
-
-### References
-
-- https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
-- 
-
-
-
+- [aws-cli-configure-files](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
 GoTo > [Top](#the-journey-is-the-reward) 

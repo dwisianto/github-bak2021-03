@@ -8,7 +8,7 @@ DIR07 := m07/
 DIR06 := m06/
 
 FILE09 := $(DIR09)
-FILE08 := $(DIR08)b190808awscli.md $(DIR08)b190806logging.md $(DIR08)b190817.md $(DIR08)b190803.md  
+FILE08 := $(DIR08)b190809ebcli.md $(DIR08)b190808awscli.md $(DIR08)b190806logging.md $(DIR08)b190817.md $(DIR08)b190803.md  
 FILE07 := $(DIR07)b1907cite.md
 FILE06 := $(DIR06)b1906math.md
  
