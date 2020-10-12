@@ -20,7 +20,7 @@
 		<maven.compiler.source>${version.jdk}</maven.compiler.source>
 		<maven.compiler.target>${version.jdk}</maven.compiler.target>
 		<version.log4j>1.2.17</version.log4j>
-		<version.junit>4.11</version.junit>
+		<version.junit>4.13.1</version.junit>
 	</properties>
 
 	<dependencies>
