@@ -18,7 +18,7 @@
 		<version.jdk>1.8</version.jdk>
 		<maven.compiler.source>${version.jdk}</maven.compiler.source>
 		<maven.compiler.target>${version.jdk}</maven.compiler.target>
-		<version.gson>2.8.4</version.gson>
+		<version.gson>2.8.9</version.gson>
 		<version.log4j>1.2.17</version.log4j>
 		<version.junit>4.13.1</version.junit>
 	</properties>
